@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/simulation/modelsim
+vbasic_comp
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1547473443
+!i10b 1
+!s100 [B=aSjdSIj>A[EC;c_PCo2
+ImkaEWLa2E1e<JYY><:aGR3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 basic_comp_svo_unit
+S1
+R0
+w1547473438
+8basic_comp.svo
+Fbasic_comp.svo
+L0 31
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1547473443.000000
+!s107 basic_comp.svo|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+.|basic_comp.svo|
+!i113 1
+Z6 o-sv -work work
+!s92 -sv -work work +incdir+.
+Z7 tCvgOpt 0
+vbasic_comp_tb
+R1
+R2
+!i10b 1
+!s100 ?NeW`@e]jGjX>N3L0HDAR3
+I2l^k=L@?I>m>Z5j7e]I<H0
+R3
+!s105 basic_comp_tb_sv_unit
+S1
+R0
+w1547471294
+8C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp_tb.sv
+FC:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3|C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp_tb.sv|
+!i113 1
+R6
+!s92 -sv -work work +incdir+C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3
+R7

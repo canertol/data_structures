@@ -1,0 +1,358 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/simulation/modelsim
+valu
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1547496359
+!i10b 1
+!s100 LiZPBmKo^h25@SaBoHZjX3
+IaW1Siohhf>EgV=_9VK;OQ3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 basic_comp_sv_unit
+S1
+R0
+Z5 w1547473346
+Z6 8C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp.sv
+Z7 FC:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp.sv
+L0 503
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1547496359.000000
+Z10 !s107 C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3|C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work +incdir+C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3
+Z14 tCvgOpt 0
+vALU_tb
+R1
+Z15 !s110 1547498138
+!i10b 1
+!s100 0LhQn]oZ3eL8d[KM0=Z[<2
+I;>X0M^96bYh3_O]>Ui=_23
+R3
+Z16 !s105 basic_comp_tb_sv_unit
+S1
+R0
+Z17 w1547498110
+Z18 8C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp_tb.sv
+Z19 FC:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp_tb.sv
+L0 42
+R8
+r1
+!s85 0
+31
+Z20 !s108 1547498138.000000
+Z21 !s107 C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp_tb.sv|
+Z22 !s90 -reportprogress|300|-work|work|C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp_tb.sv|
+!i113 1
+Z23 o-work work
+R14
+n@a@l@u_tb
+vbasic_comp
+R1
+R2
+!i10b 1
+!s100 fkH@aD?Ik`amLYzaS;FK]3
+IUZV>>PV2l=10YJoB]BmMO1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vbasic_comp_tb
+R1
+R15
+!i10b 1
+!s100 Z@=jL9Fco>eY`3:0?AmH:1
+Idell]94Pd=SMl_hXd4<j71
+R3
+R16
+S1
+R0
+R17
+R18
+R19
+L0 1
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!i113 1
+R23
+R14
+vbus
+R1
+R2
+!i10b 1
+!s100 F^OI6o^cXA22@1d_aSlQg2
+IWLZiWM6ScR3;@JTMXkc[03
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 682
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vcontrol_logic
+R1
+R2
+!i10b 1
+!s100 [8azcmZ;]8L?>QoRDijgm1
+I70lhLSO<6_WBNKOS_dmnl2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 189
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vcontrol_timing_unit
+R1
+R2
+!i10b 1
+!s100 a[@EhmBBI8izD:?YgMhU91
+InXfAV<k]kL5D=Y7dhmWnD3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 98
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vcontrol_timing_unit_tb
+R1
+R15
+!i10b 1
+!s100 f_F>]>;K;No4A5kYbMCKD2
+IoLA]Yck4U[P>7kdWfnYRz0
+R3
+R16
+S1
+R0
+R17
+R18
+R19
+L0 143
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!i113 1
+R23
+R14
+vcounter
+R1
+R2
+!i10b 1
+!s100 ZlgVI8E>DB2U?UjfoffgB1
+IR`UQ^1j:TeF48gBojQQfH1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 627
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vdecoder
+R1
+R2
+!i10b 1
+!s100 mHnGY1`[<^LhLCA@SSGS^2
+IMeCE@zY^ooCcoAOgjbZ_D1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 651
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vencoder
+R1
+R2
+!i10b 1
+!s100 ?KJGdWMa<S[ZldAPcBcM61
+IQXiQT]6?7VUAHf_`I9INW3
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 666
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vff
+R1
+R2
+!i10b 1
+!s100 gmCD3c`:g[DGIJiLz_[<a2
+I=g6T?EHY4lf_gK]Mc9m772
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 598
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vram
+R1
+R2
+!i10b 1
+!s100 Ba0UR]QVX7gK2U8LIGS8`3
+I4h46O6ldFWU8NB`[BK2zG0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 697
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vregister
+R1
+R2
+!i10b 1
+!s100 Kcj366bI1d@X^E>bVzWPR0
+IlA<9359`=8kllIUlWkDL@1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 571
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14

@@ -1,0 +1,872 @@
+Analysis & Synthesis report for EE445-HW3
+Mon Jan 14 00:23:21 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: register:AR
+ 12. Parameter Settings for User Entity Instance: register:PC
+ 13. Parameter Settings for User Entity Instance: register:DR
+ 14. Parameter Settings for User Entity Instance: register:AC
+ 15. Parameter Settings for User Entity Instance: register:IR
+ 16. Parameter Settings for User Entity Instance: register:TR
+ 17. Parameter Settings for User Entity Instance: register:INPR
+ 18. Parameter Settings for User Entity Instance: register:OUTR
+ 19. Parameter Settings for User Entity Instance: ram:RAM
+ 20. Parameter Settings for User Entity Instance: bus:common_bus
+ 21. Parameter Settings for User Entity Instance: control_timing_unit:CTU|counter:SC
+ 22. Parameter Settings for User Entity Instance: control_timing_unit:CTU|decoder:dec3_8
+ 23. Parameter Settings for User Entity Instance: control_timing_unit:CTU|decoder:dec4_16
+ 24. Port Connectivity Checks: "control_timing_unit:CTU|control_logic:control_log"
+ 25. Port Connectivity Checks: "control_timing_unit:CTU|decoder:dec4_16"
+ 26. Port Connectivity Checks: "control_timing_unit:CTU|counter:SC"
+ 27. Port Connectivity Checks: "control_timing_unit:CTU|ff:I"
+ 28. Port Connectivity Checks: "control_timing_unit:CTU"
+ 29. Port Connectivity Checks: "alu:ALU"
+ 30. Port Connectivity Checks: "bus:common_bus"
+ 31. Port Connectivity Checks: "ff:FGO"
+ 32. Port Connectivity Checks: "ff:FGI"
+ 33. Port Connectivity Checks: "ff:S"
+ 34. Port Connectivity Checks: "ff:E"
+ 35. Port Connectivity Checks: "ff:IEN"
+ 36. Port Connectivity Checks: "ff:IRQ"
+ 37. Port Connectivity Checks: "ram:RAM"
+ 38. Port Connectivity Checks: "register:OUTR"
+ 39. Port Connectivity Checks: "register:INPR"
+ 40. Port Connectivity Checks: "register:TR"
+ 41. Port Connectivity Checks: "register:IR"
+ 42. Port Connectivity Checks: "register:DR"
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Jan 14 00:23:21 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; EE445-HW3                                   ;
+; Top-level Entity Name           ; basic_comp                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 2                                           ;
+; Total pins                      ; 15                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA4U23C6       ;                    ;
+; Top-level entity name                                                           ; basic_comp         ; EE445-HW3          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; EE445_HW3.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 1          ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 2          ;
+;     -- 7 input functions                    ; 0          ;
+;     -- 6 input functions                    ; 0          ;
+;     -- 5 input functions                    ; 0          ;
+;     -- 4 input functions                    ; 0          ;
+;     -- <=3 input functions                  ; 2          ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 2          ;
+;                                             ;            ;
+; I/O pins                                    ; 15         ;
+;                                             ;            ;
+; Total DSP Blocks                            ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; ff:FGI|out ;
+; Maximum fan-out                             ; 2          ;
+; Total fan-out                               ; 25         ;
+; Average fan-out                             ; 0.74       ;
++---------------------------------------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |basic_comp                ; 2 (0)               ; 2 (0)                     ; 0                 ; 0          ; 15   ; 0            ; |basic_comp         ; basic_comp  ; work         ;
+;    |ff:FGI|                ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |basic_comp|ff:FGI  ; ff          ; work         ;
+;    |ff:FGO|                ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |basic_comp|ff:FGO  ; ff          ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                      ;
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
+; Register name                                                   ; Reason for Removal                                                    ;
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
+; control_timing_unit:CTU|control_logic:control_log|ALU_add       ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|ALU_cil       ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|load_E        ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|ALU_cir       ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|comp_E        ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|ALU_comp      ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|clr_E         ; Lost fanout                                                           ;
+; ff:E|out                                                        ; Lost fanout                                                           ;
+; register:OUTR|out[1..7]                                         ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|RAM_w         ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|set_IRQ       ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|load_TR       ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|clr_PC        ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|clr_IRQ       ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|load_DR       ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|clr_IEN       ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|load_I        ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|load_IR       ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|ff:I|out                                ; Stuck at GND due to stuck port data_in                                ;
+; ff:IEN|out                                                      ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|inc_DR        ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|set_IEN       ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|inc_AC        ; Merged with control_timing_unit:CTU|control_logic:control_log|load_PC ;
+; control_timing_unit:CTU|control_logic:control_log|load_OUTR     ; Merged with control_timing_unit:CTU|control_logic:control_log|load_PC ;
+; control_timing_unit:CTU|control_logic:control_log|clr_AC        ; Merged with control_timing_unit:CTU|control_logic:control_log|load_PC ;
+; control_timing_unit:CTU|control_logic:control_log|clr_FGI       ; Merged with control_timing_unit:CTU|control_logic:control_log|load_PC ;
+; control_timing_unit:CTU|control_logic:control_log|clr_FGO       ; Merged with control_timing_unit:CTU|control_logic:control_log|load_PC ;
+; control_timing_unit:CTU|control_logic:control_log|load_AC       ; Merged with control_timing_unit:CTU|control_logic:control_log|load_PC ;
+; register:IR|out[0]                                              ; Merged with register:TR|out[0]                                        ;
+; register:DR|out[0]                                              ; Merged with register:TR|out[0]                                        ;
+; register:IR|out[1]                                              ; Merged with register:TR|out[1]                                        ;
+; register:DR|out[1]                                              ; Merged with register:TR|out[1]                                        ;
+; register:IR|out[2]                                              ; Merged with register:TR|out[2]                                        ;
+; register:DR|out[2]                                              ; Merged with register:TR|out[2]                                        ;
+; register:IR|out[3]                                              ; Merged with register:TR|out[3]                                        ;
+; register:DR|out[3]                                              ; Merged with register:TR|out[3]                                        ;
+; register:IR|out[4]                                              ; Merged with register:TR|out[4]                                        ;
+; register:DR|out[4]                                              ; Merged with register:TR|out[4]                                        ;
+; register:IR|out[5]                                              ; Merged with register:TR|out[5]                                        ;
+; register:DR|out[5]                                              ; Merged with register:TR|out[5]                                        ;
+; register:IR|out[6]                                              ; Merged with register:TR|out[6]                                        ;
+; register:DR|out[6]                                              ; Merged with register:TR|out[6]                                        ;
+; register:IR|out[7]                                              ; Merged with register:TR|out[7]                                        ;
+; register:DR|out[7]                                              ; Merged with register:TR|out[7]                                        ;
+; register:IR|out[8]                                              ; Merged with register:TR|out[8]                                        ;
+; register:DR|out[8]                                              ; Merged with register:TR|out[8]                                        ;
+; register:IR|out[9]                                              ; Merged with register:TR|out[9]                                        ;
+; register:DR|out[9]                                              ; Merged with register:TR|out[9]                                        ;
+; register:IR|out[10]                                             ; Merged with register:TR|out[10]                                       ;
+; register:DR|out[10]                                             ; Merged with register:TR|out[10]                                       ;
+; register:IR|out[11]                                             ; Merged with register:TR|out[11]                                       ;
+; register:DR|out[11]                                             ; Merged with register:TR|out[11]                                       ;
+; control_timing_unit:CTU|control_logic:control_log|inc_PC        ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|RAM_r         ; Lost fanout                                                           ;
+; control_timing_unit:CTU|control_logic:control_log|clr_SC        ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|load_PC       ; Stuck at GND due to stuck port data_in                                ;
+; control_timing_unit:CTU|counter:SC|out[3]                       ; Lost fanout                                                           ;
+; control_timing_unit:CTU|counter:SC|out[0..2]                    ; Stuck at GND due to stuck port data_in                                ;
+; register:OUTR|out[0]                                            ; Stuck at GND due to stuck port clock_enable                           ;
+; register:PC|out[0..11]                                          ; Stuck at GND due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|bus_select[0] ; Stuck at GND due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|bus_select[1] ; Stuck at VCC due to stuck port data_in                                ;
+; control_timing_unit:CTU|control_logic:control_log|bus_select[2] ; Stuck at GND due to stuck port data_in                                ;
+; ff:IRQ|out                                                      ; Lost fanout                                                           ;
+; register:TR|out[0..11]                                          ; Lost fanout                                                           ;
+; register:IR|out[12..15]                                         ; Lost fanout                                                           ;
+; register:AR|out[0]                                              ; Merged with register:AC|out[0]                                        ;
+; register:AC|out[0..15]                                          ; Lost fanout                                                           ;
+; register:AR|out[1..11]                                          ; Lost fanout                                                           ;
+; Total Number of Removed Registers = 127                         ;                                                                       ;
++-----------------------------------------------------------------+-----------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                ;
++-----------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+; Register name                                             ; Reason for Removal        ; Registers Removed due to This Register                                             ;
++-----------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+; control_timing_unit:CTU|control_logic:control_log|clr_PC  ; Stuck at VCC              ; register:PC|out[6], register:PC|out[7], register:PC|out[8], register:PC|out[9],    ;
+;                                                           ; due to stuck port data_in ; register:PC|out[10], register:PC|out[11], register:AC|out[6], register:AC|out[7],  ;
+;                                                           ;                           ; register:AC|out[8], register:AC|out[9], register:AC|out[10], register:AC|out[11],  ;
+;                                                           ;                           ; register:AR|out[1], register:AR|out[2], register:AR|out[3], register:AR|out[4],    ;
+;                                                           ;                           ; register:AR|out[5], register:AR|out[6], register:AR|out[7], register:AR|out[8],    ;
+;                                                           ;                           ; register:AR|out[9], register:AR|out[10], register:AR|out[11]                       ;
+; control_timing_unit:CTU|control_logic:control_log|RAM_w   ; Stuck at VCC              ; control_timing_unit:CTU|control_logic:control_log|inc_DR,                          ;
+;                                                           ; due to stuck port data_in ; control_timing_unit:CTU|control_logic:control_log|inc_PC,                          ;
+;                                                           ;                           ; control_timing_unit:CTU|control_logic:control_log|RAM_r, register:OUTR|out[0],     ;
+;                                                           ;                           ; register:PC|out[0], register:PC|out[1], register:PC|out[2], register:PC|out[3],    ;
+;                                                           ;                           ; register:PC|out[4], register:PC|out[5], register:AC|out[1], register:AC|out[2],    ;
+;                                                           ;                           ; register:AC|out[3], register:AC|out[4], register:AC|out[5]                         ;
+; control_timing_unit:CTU|control_logic:control_log|load_PC ; Stuck at GND              ; register:TR|out[0], register:TR|out[1], register:TR|out[2], register:TR|out[3],    ;
+;                                                           ; due to stuck port data_in ; register:TR|out[4], register:TR|out[5], register:TR|out[6], register:TR|out[7],    ;
+;                                                           ;                           ; register:TR|out[8], register:TR|out[9], register:TR|out[10], register:TR|out[11],  ;
+;                                                           ;                           ; register:AC|out[0]                                                                 ;
+; control_timing_unit:CTU|control_logic:control_log|load_I  ; Stuck at VCC              ; control_timing_unit:CTU|ff:I|out,                                                  ;
+;                                                           ; due to stuck port data_in ; control_timing_unit:CTU|control_logic:control_log|bus_select[0],                   ;
+;                                                           ;                           ; control_timing_unit:CTU|control_logic:control_log|bus_select[1],                   ;
+;                                                           ;                           ; control_timing_unit:CTU|control_logic:control_log|bus_select[2],                   ;
+;                                                           ;                           ; register:AC|out[12], register:AC|out[13], register:AC|out[14], register:AC|out[15] ;
+; control_timing_unit:CTU|control_logic:control_log|ALU_add ; Lost Fanouts              ; ff:IRQ|out                                                                         ;
+; control_timing_unit:CTU|control_logic:control_log|set_IRQ ; Stuck at VCC              ; ff:IEN|out                                                                         ;
+;                                                           ; due to stuck port data_in ;                                                                                    ;
+; control_timing_unit:CTU|control_logic:control_log|clr_IEN ; Stuck at VCC              ; control_timing_unit:CTU|control_logic:control_log|set_IEN                          ;
+;                                                           ; due to stuck port data_in ;                                                                                    ;
++-----------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:AR ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 12    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:PC ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 12    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:DR ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 12    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:AC ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 16    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:IR ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 16    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:TR ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 12    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:INPR ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 8     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:OUTR ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 8     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:RAM ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; ADDR_WIDTH     ; 12    ; Signed Integer              ;
+; DATA_WIDTH     ; 16    ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bus:common_bus ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                     ;
+; SELECT_WIDTH   ; 3     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: control_timing_unit:CTU|counter:SC ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: control_timing_unit:CTU|decoder:dec3_8 ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; IN_WIDTH       ; 3     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: control_timing_unit:CTU|decoder:dec4_16 ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; IN_WIDTH       ; 3     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control_timing_unit:CTU|control_logic:control_log"                                                                                                                                ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; T    ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (12 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control_timing_unit:CTU|decoder:dec4_16"                                                                                                                                         ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; out  ; Output ; Warning  ; Output or bidir port (8 bits) is smaller than the port expression (16 bits) it drives.  The 8 most-significant bit(s) in the port expression will be connected to GND.           ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control_timing_unit:CTU|counter:SC"                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; out[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control_timing_unit:CTU|ff:I"                                                                                                               ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; set  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; clr  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; comp ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "control_timing_unit:CTU"                                                                                                                          ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                        ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; IR      ; Input  ; Warning  ; Input port expression (12 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "IR[15..12]" will be connected to GND. ;
+; load_AR ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                            ;
+; clr_AR  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                            ;
+; inc_AR  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:ALU"                                                                                                                                               ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                             ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; from_DR ; Input  ; Warning  ; Input port expression (12 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "from_DR[15..12]" will be connected to GND. ;
+; out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                 ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "bus:common_bus"      ;
++---------------+-------+----------+--------------+
+; Port          ; Type  ; Severity ; Details      ;
++---------------+-------+----------+--------------+
+; in[0]         ; Input ; Info     ; Stuck at GND ;
+; in[1][15..12] ; Input ; Info     ; Stuck at GND ;
+; in[2][15..12] ; Input ; Info     ; Stuck at GND ;
+; in[3][15..12] ; Input ; Info     ; Stuck at GND ;
+; in[6][15..12] ; Input ; Info     ; Stuck at GND ;
++---------------+-------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ff:FGO"                                                                                                                                     ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; load ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; comp ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ff:FGI"                                                                                                                                     ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; load ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; comp ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ff:S"                                                                                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                      ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; in   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; load ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; comp ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ff:E"                                                                                                                                       ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; set  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ff:IEN"                                                                                                                                     ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; load ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; comp ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ff:IRQ"                                                                                                                                     ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; load ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; comp ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "ram:RAM"              ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; addr ; Input ; Info     ; Explicitly unconnected ;
++------+-------+----------+------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register:OUTR"                                                                                                                               ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                      ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "out[7..1]" have no fanouts                       ;
+; clr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; inc  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register:INPR"                                                                                                                              ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; load ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; clr  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; inc  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register:TR"                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clr  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; inc  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register:IR"                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clr  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; inc  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register:DR"                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clr  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 2                           ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 3                           ;
+;     normal            ; 3                           ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
+; boundary_port         ; 15                          ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.75                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Jan 14 00:23:02 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EE445-HW3 -c EE445-HW3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 0 design units, including 0 entities, in source file ee445-hw3.sv
+Info (12021): Found 11 design units, including 11 entities, in source file ee445_hw3.sv
+    Info (12023): Found entity 1: basic_comp File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 1
+    Info (12023): Found entity 2: control_timing_unit File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 98
+    Info (12023): Found entity 3: control_logic File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 189
+    Info (12023): Found entity 4: alu File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 503
+    Info (12023): Found entity 5: register File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 571
+    Info (12023): Found entity 6: ff File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 598
+    Info (12023): Found entity 7: counter File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 627
+    Info (12023): Found entity 8: decoder File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 651
+    Info (12023): Found entity 9: encoder File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 666
+    Info (12023): Found entity 10: bus File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 682
+    Info (12023): Found entity 11: ram File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 697
+Info (12021): Found 1 design units, including 1 entities, in source file ee445_hw3_tb.sv
+    Info (12023): Found entity 1: basic_comp_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3_tb.sv Line: 1
+Info (12127): Elaborating entity "basic_comp" for the top level hierarchy
+Warning (10030): Net "BUS[0]" at EE445_HW3.sv(12) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 12
+Warning (10030): Net "AC_out[14..0]" at EE445_HW3.sv(30) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 30
+Warning (10030): Net "AR_bus[15..12]" at EE445_HW3.sv(34) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 34
+Warning (10030): Net "PC_bus[15..12]" at EE445_HW3.sv(34) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 34
+Warning (10030): Net "DR_bus[15..12]" at EE445_HW3.sv(34) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 34
+Warning (10030): Net "TR_bus[15..12]" at EE445_HW3.sv(34) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 34
+Info (12128): Elaborating entity "register" for hierarchy "register:AR" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 50
+Info (12128): Elaborating entity "register" for hierarchy "register:AC" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 53
+Info (12128): Elaborating entity "register" for hierarchy "register:INPR" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 56
+Info (12128): Elaborating entity "ram" for hierarchy "ram:RAM" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 59
+Info (12128): Elaborating entity "ff" for hierarchy "ff:IRQ" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 61
+Info (12128): Elaborating entity "bus" for hierarchy "bus:common_bus" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 68
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 71
+Warning (10240): Verilog HDL Always Construct warning at EE445_HW3.sv(524): inferring latch(es) for variable "carry", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 524
+Info (10041): Inferred latch for "carry" at EE445_HW3.sv(524) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 524
+Info (12128): Elaborating entity "control_timing_unit" for hierarchy "control_timing_unit:CTU" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 90
+Info (12128): Elaborating entity "counter" for hierarchy "control_timing_unit:CTU|counter:SC" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 158
+Info (12128): Elaborating entity "decoder" for hierarchy "control_timing_unit:CTU|decoder:dec3_8" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 161
+Info (12128): Elaborating entity "control_logic" for hierarchy "control_timing_unit:CTU|control_logic:control_log" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 185
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "control_timing_unit:CTU|T[15]" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 146
+    Warning (12110): Net "control_timing_unit:CTU|T[14]" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 146
+    Warning (12110): Net "control_timing_unit:CTU|T[13]" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 146
+    Warning (12110): Net "control_timing_unit:CTU|T[12]" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 146
+    Warning (12110): Net "control_timing_unit:CTU|T[11]" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 146
+    Warning (12110): Net "control_timing_unit:CTU|T[10]" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 146
+    Warning (12110): Net "control_timing_unit:CTU|T[9]" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 146
+    Warning (12110): Net "control_timing_unit:CTU|T[8]" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 146
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "AC_zero" is missing source, defaulting to GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 33
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "ram:RAM|memory" is uninferred due to inappropriate RAM size File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 710
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[0]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[1]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[2]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[3]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[4]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[5]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[6]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[7]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[8]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[9]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[10]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[11]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[12]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[13]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[14]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+    Warning (13049): Converted tri-state buffer "ram:RAM|out[15]" feeding internal logic into a wire File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 708
+Warning (12241): 16 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "OUTR_out" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 9
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 65 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "set_S" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 7
+    Warning (15610): No output dependent on input pin "INPR_in[0]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 8
+    Warning (15610): No output dependent on input pin "INPR_in[1]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 8
+    Warning (15610): No output dependent on input pin "INPR_in[2]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 8
+    Warning (15610): No output dependent on input pin "INPR_in[3]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 8
+    Warning (15610): No output dependent on input pin "INPR_in[4]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 8
+    Warning (15610): No output dependent on input pin "INPR_in[5]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 8
+    Warning (15610): No output dependent on input pin "INPR_in[6]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 8
+    Warning (15610): No output dependent on input pin "INPR_in[7]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/EE445-HW3/EE445_HW3.sv Line: 8
+Info (21057): Implemented 17 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 2 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 83 warnings
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Mon Jan 14 00:23:21 2019
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:44
+
+

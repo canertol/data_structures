@@ -37,7 +37,7 @@ module alu #(parameter W = 1) (
 	endcase
 	
 	N = out[W];
-	Z = out==0;
+		Z = out==W{1'b0};
 	
 	
 	

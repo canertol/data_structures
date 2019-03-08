@@ -66,17 +66,17 @@ output		          		DRAM_CAS_N;
 output		          		DRAM_CKE;
 output		          		DRAM_CLK;
 output		          		DRAM_CS_N;
-inout 		    [15:0]		DRAM_DQ;
+input 		    [15:0]		DRAM_DQ;
 output		     [1:0]		DRAM_DQM;
 output		          		DRAM_RAS_N;
 output		          		DRAM_WE_N;
 
 //////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
-inout 		    [33:0]		GPIO_0;
+input 		    [33:0]		GPIO_0;
 input 		     [1:0]		GPIO_0_IN;
 
 //////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
-inout 		    [33:0]		GPIO_1;
+input 		    [33:0]		GPIO_1;
 input 		     [1:0]		GPIO_1_IN;
 
 

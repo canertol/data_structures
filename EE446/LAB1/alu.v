@@ -1,7 +1,6 @@
-
-module alu (
+module alu #(parameter W = 1) (
 	// Inputs
-	W, A, B,
+	A, B,
 	// Outputs
 	out, CO, OVF, Z ,N,
 	// Control Signal

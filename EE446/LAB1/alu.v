@@ -17,30 +17,31 @@ module alu #(parameter W = 1) (
 	
 	always@(*)
 	begin
-	case (ALU_control)
-	3'b000: out = A + B;
-	
-	3'b001: out = A - B;
-	
-	3'b010: out = B - A;
-	
-	3'b011: out = A & ~B;
-	
-	3'b100: out = A & B;
-	
-	3'b101: out = A | B;
-	
-	3'b110: out = A ^ B;
-	
-	3'b111: out = A ~^ B;
-	
-	endcase
-	
-	N = out[W];
-	Z = out==W{1'b0};
-	
-	
-	
+		case (ALU_control)
+			// Arithmetic operations
+			3'b000: {CO,out} = A + B;	
+			3'b001: out = A - B;	
+			3'b010: out = B - A;
+
+			// Logic operations	
+			3'b011: out = A & ~B;	
+			3'b100: out = A & B;	
+			3'b101: out = A | B;	
+			3'b110: out = A ^ B;	
+			3'b111: out = A ~^ B;
+
+		endcase
+
+		OVF = ({CO,out[W]} == 2'b01);
+
+		if(ALU_control ~= 3'b000 && ALU_control ~= 3'b001 && ALU_control ~= 3'b010)
+			begin
+				CO = 1'b0;
+				OVF = 1'b0;
+			end
+
+		N = out[W];
+		Z = out==W{1'b0};
 	
 	end
 

@@ -4,15 +4,14 @@ module alu #(parameter W = 1) (
 	// Outputs
 	out, CO, OVF, Z ,N,
 	// Control Signal
-	ALU_control
-);
+	ALU_control);
 	// Inputs
 	input [W:0] A;
 	input [W:0]  B;
 	// Outputs
 	output reg[W:0] out;
 	output reg CO, OVF, Z ,N;
-	// Signals
+	// Signal
 	input[2:0] ALU_control;
 	
 	always@(*)
@@ -20,8 +19,8 @@ module alu #(parameter W = 1) (
 		case (ALU_control)
 			// Arithmetic operations
 			3'b000: {CO,out} = A + B;	
-			3'b001: out = A - B;	
-			3'b010: out = B - A;
+			3'b001: {CO,out} = A - B;	
+			3'b010: {CO,out} = B - A;
 
 			// Logic operations	
 			3'b011: out = A & ~B;	
@@ -39,10 +38,8 @@ module alu #(parameter W = 1) (
 				CO = 1'b0;
 				OVF = 1'b0;
 			end
-
+		
 		N = out[W];
 		Z = out==W{1'b0};
-	
 	end
-
 endmodule

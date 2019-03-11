@@ -85,21 +85,56 @@ input 		     [1:0]		GPIO_1_IN;
 //=======================================================
 
 
-parameter N = 4;
+parameter W = 4;
 
-wire [3:0] p_in;
+/*
+//======================PART 1==========================
+wire [1:0] A1, A2, A3;
+wire WE; 
+assign WE = 1'b1;
+assign A1 = 2'b01;
+assign A2 = 2'b10;
+assign A3 = 2'b01;
 
-assign p_in = 4'b0101;
 
-//=======================================================
+
 //  Structural coding
-//=======================================================
 
-//reg_w_shft shftreg(.clk(CLOCK_50), .shft(KEY[1]), .in, .out);
-reg_w_shft #(N) (.clk(KEY[0]), .rst(SW[0]),
-						.par_ser(KEY[1]), .shftr_l(SW[1]),
-						.p_in(p_in), .p_out(LED[5:2]),
-						.s_in_l(SW[3]), .s_in_r(SW[2]),
-						.s_out_l(LED[7]), .s_out_r(LED[0]));
+
+register_file #(W) (.clk(KEY[1]),
+							.data_in(SW),
+								.WE3(WE),
+								.A1(A1), .A2(A2), .A3(A3), 
+								.RD1(LED[7:4]), .RD2(LED[3:0])			
+						);
+//=======================================================
+						
+*/
+
+//======================PART 2==========================
+wire [3:0] data_in;
+wire [2:0] add;
+wire R1Src,Q_right, Acc_parallel, ASrc;
+wire [1:0] Acc_Lsrc;
+
+assign data_in = 4'b0010;
+assign add = 3'b000;
+//assign R1Src = 1'b1;
+//assign Q_right = 1'b1;
+//assign Acc_Lsrc = 1'b00;
+//assign Acc_parallel = 1'b0;
+//assign ASrc = 1'b0;
+
+DATAPATH data_path(.CLK(!KEY[1]),
+					.R1Src(SW[3]),.Acc_parallel(!KEY[0]),
+					.Acc_Lsrc(SW[1:0]),//.Q_right(SW[2]),
+					.DATA(data_in),.test(LED[3:0]),
+					.ALUControl(add), .R1out(LED[7:4]), .ASrc(SW[2])
+					
+					);		
+							
+
+
+//=======================================================
 
 endmodule

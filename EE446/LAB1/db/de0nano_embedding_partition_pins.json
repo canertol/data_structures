@@ -4,15 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "LED[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[2]",
-					"strict" : false
-				},
-				{
-					"name" : "LED[3]",
+					"name" : "LED[1]",
 					"strict" : false
 				},
 				{
@@ -21,6 +13,10 @@
 				},
 				{
 					"name" : "LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[6]",
 					"strict" : false
 				},
 				{
@@ -36,11 +32,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[0]",
+					"name" : "SW[3]",
 					"strict" : false
 				},
 				{
@@ -48,7 +40,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[3]",
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
 					"strict" : false
 				}
 			]

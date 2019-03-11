@@ -1,8 +1,8 @@
 module decoder #(parameter IN_WIDTH = 3) (
 	in, out
 );
-	input [IN_WIDTH-1:0] in;
-	output reg [(1<<IN_WIDTH)-1:0] out;
+	input [(IN_WIDTH-1):0] in;
+	output reg [((1<<IN_WIDTH)-1):0] out;
 
 	always @(in)
 	begin

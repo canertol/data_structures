@@ -1,13 +1,9 @@
-module mux2 #(parameter W = 1)( select, mux_in, mux_out );
+module mux2 #(parameter W = 4)( select, mux_in1, mux_in2, mux_out );
 
 input 	  select;
-input[W:0] mux_in;
-output     mux_out;
+input[W-1:0] mux_in1, mux_in2;
+output wire [W-1:0] mux_out;
 
-wire      mux_out;
-wire 		 select;
-wire[W:0] mux_in;
-
-assign mux_out = mux_in[select];
+assign mux_out = select ? mux_in2 : mux_in1;
 
 endmodule

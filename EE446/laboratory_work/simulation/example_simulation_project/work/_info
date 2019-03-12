@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/17.1
+vmy_module
+!s110 1520851960
+!i10b 1
+!s100 FOH1e9S22K8N>]DhXU6oe1
+I5WeR>^@8iX7<J^bhbklF02
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dC:/Users/user/Desktop/Laboratory/EE446/laboratory_work/simulation
+w1520844452
+8C:\Users\user\Desktop\Laboratory\EE446\laboratory_work\simulation\my_module.v
+FC:\Users\user\Desktop\Laboratory\EE446\laboratory_work\simulation\my_module.v
+L0 1
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1520851960.000000
+!s107 C:\Users\user\Desktop\Laboratory\EE446\laboratory_work\simulation\my_module.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\user\Desktop\Laboratory\EE446\laboratory_work\simulation\my_module.v|
+!i113 1
+Z3 o-work work
+Z4 tCvgOpt 0
+vtest_bench
+!s110 1520851959
+!i10b 1
+!s100 HG;G5:NGMgjSiL8QV3SX>0
+IJm2MoMmOU[T^^K?iA]cl40
+R0
+R1
+w1520851957
+8C:\Users\user\Desktop\Laboratory\EE446\laboratory_work\simulation\test_bench.v
+FC:\Users\user\Desktop\Laboratory\EE446\laboratory_work\simulation\test_bench.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1520851959.000000
+!s107 C:\Users\user\Desktop\Laboratory\EE446\laboratory_work\simulation\test_bench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\user\Desktop\Laboratory\EE446\laboratory_work\simulation\test_bench.v|
+!i113 1
+R3
+R4

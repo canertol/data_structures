@@ -16,7 +16,9 @@ module controller(CLK,
      input R1Clr;
      input Nflag;
      output reg ERR;
-     output wire AccRight, AccParallel, ALUCtrl, ASrc, BSrc;
+     output wire ALUCtrl, ASrc, BSrc,
+                 AccRight, AccParallel, 
+                 QParallel, QSrc;
      
      
 

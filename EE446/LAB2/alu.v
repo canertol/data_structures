@@ -32,11 +32,11 @@ module alu #(parameter W = 4) (
 					  end
 
 			// Logic operations	
-			3'b011: out = A & ~B;	
+			3'b011: out = A ~^ B;
 			3'b100: out = A & B;	
 			3'b101: out = A | B;	
 			3'b110: out = A ^ B;	
-			3'b111: out = A ~^ B;
+			3'b111: out = A & ~B;
 
 		endcase
 		

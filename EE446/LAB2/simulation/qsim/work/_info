@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/LAB2/simulation/qsim
+vde0nano_embedding
+Z1 !s110 1552571597
+!i10b 1
+!s100 AV87^NK`J:>?WK6>czcbO0
+IROjB:o4L7NII>V=X<69la1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1552571594
+Z4 8de0nano_embedding.vo
+Z5 Fde0nano_embedding.vo
+L0 31
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1552571596.000000
+Z8 !s107 de0nano_embedding.vo|
+Z9 !s90 -work|work|de0nano_embedding.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vde0nano_embedding_vlg_vec_tst
+R1
+!i10b 1
+!s100 ?<YARm4_J?gbAzAOW^:0P0
+I2Y:GU^W@`Oz3U84IlO^nI3
+R2
+R0
+w1552571592
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+!s108 1552571597.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+vhard_block
+R1
+!i10b 1
+!s100 ZiCQZ<DeSS_0IIlj^DOlm0
+I37cNW3mNmJbYDCb[d0I=j0
+R2
+R0
+R3
+R4
+R5
+L0 3103
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

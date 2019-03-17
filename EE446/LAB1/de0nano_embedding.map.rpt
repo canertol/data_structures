@@ -1,5 +1,5 @@
 Analysis & Synthesis report for de0nano_embedding
-Tue Mar 12 17:12:46 2019
+Mon Mar 11 16:39:22 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,21 +13,22 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |de0nano_embedding
- 10. Parameter Settings for User Entity Instance: DATAPATH:data_path|register_A:R1
- 11. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux2:inst1
- 12. Parameter Settings for User Entity Instance: DATAPATH:data_path|shift_reg:Acc
- 13. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux4:inst6
- 14. Parameter Settings for User Entity Instance: DATAPATH:data_path|shift_reg:Q
- 15. Parameter Settings for User Entity Instance: DATAPATH:data_path|alu:inst4
- 16. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux2:inst3
- 17. Parameter Settings for User Entity Instance: DATAPATH:data_path|Constant_Value_Generator:inst11
- 18. Parameter Settings for User Entity Instance: DATAPATH:data_path|Constant_Value_Generator:inst10
- 19. Parameter Settings for User Entity Instance: DATAPATH:data_path|register_A:R0
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |de0nano_embedding
+ 11. Parameter Settings for User Entity Instance: DATAPATH:data_path|register_A:R1
+ 12. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux2:inst1
+ 13. Parameter Settings for User Entity Instance: DATAPATH:data_path|shift_reg:Acc
+ 14. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux4:inst6
+ 15. Parameter Settings for User Entity Instance: DATAPATH:data_path|shift_reg:Q
+ 16. Parameter Settings for User Entity Instance: DATAPATH:data_path|alu:inst4
+ 17. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux2:inst3
+ 18. Parameter Settings for User Entity Instance: DATAPATH:data_path|Constant_Value_Generator:inst11
+ 19. Parameter Settings for User Entity Instance: DATAPATH:data_path|Constant_Value_Generator:inst10
+ 20. Parameter Settings for User Entity Instance: DATAPATH:data_path|register_A:R0
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -53,15 +54,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 12 17:12:46 2019       ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 11 16:39:22 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; de0nano_embedding                           ;
 ; Top-level Entity Name              ; de0nano_embedding                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 20                                          ;
-;     Total combinational functions  ; 16                                          ;
-;     Dedicated logic registers      ; 16                                          ;
-; Total registers                    ; 16                                          ;
+; Total logic elements               ; 14                                          ;
+;     Total combinational functions  ; 9                                           ;
+;     Dedicated logic registers      ; 13                                          ;
+; Total registers                    ; 13                                          ;
 ; Total pins                         ; 126                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -172,20 +173,20 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
-; shift_reg.v                      ; yes             ; User Verilog HDL File              ; C:/Users/user/Desktop/empty_project/shift_reg.v                ;         ;
-; register_A.v                     ; yes             ; User Verilog HDL File              ; C:/Users/user/Desktop/empty_project/register_A.v               ;         ;
-; mux4.v                           ; yes             ; User Verilog HDL File              ; C:/Users/user/Desktop/empty_project/mux4.v                     ;         ;
-; mux2.v                           ; yes             ; User Verilog HDL File              ; C:/Users/user/Desktop/empty_project/mux2.v                     ;         ;
-; DATAPATH.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/user/Desktop/empty_project/DATAPATH.bdf               ;         ;
-; Constant_Value_Generator.v       ; yes             ; User Verilog HDL File              ; C:/Users/user/Desktop/empty_project/Constant_Value_Generator.v ;         ;
-; alu.v                            ; yes             ; User Verilog HDL File              ; C:/Users/user/Desktop/empty_project/alu.v                      ;         ;
-; de0nano_embedding.v              ; yes             ; Auto-Found Verilog HDL File        ; C:/Users/user/Desktop/empty_project/de0nano_embedding.v        ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                 ;
++----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path       ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
+; Constant_Value_Generator.v       ; yes             ; User Verilog HDL File              ; D:/LAB1/Constant_Value_Generator.v ;         ;
+; mux4.v                           ; yes             ; User Verilog HDL File              ; D:/LAB1/mux4.v                     ;         ;
+; mux2.v                           ; yes             ; User Verilog HDL File              ; D:/LAB1/mux2.v                     ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File              ; D:/LAB1/alu.v                      ;         ;
+; register_A.v                     ; yes             ; User Verilog HDL File              ; D:/LAB1/register_A.v               ;         ;
+; shift_reg.v                      ; yes             ; User Verilog HDL File              ; D:/LAB1/shift_reg.v                ;         ;
+; DATAPATH.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/LAB1/DATAPATH.bdf               ;         ;
+; de0nano_embedding.v              ; yes             ; User Verilog HDL File              ; D:/LAB1/de0nano_embedding.v        ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -193,20 +194,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 20           ;
+; Estimated Total logic elements              ; 14           ;
 ;                                             ;              ;
-; Total combinational functions               ; 16           ;
+; Total combinational functions               ; 9            ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 7            ;
-;     -- 3 input functions                    ; 8            ;
-;     -- <=2 input functions                  ; 1            ;
+;     -- 4 input functions                    ; 1            ;
+;     -- 3 input functions                    ; 4            ;
+;     -- <=2 input functions                  ; 4            ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 16           ;
+;     -- normal mode                          ; 9            ;
 ;     -- arithmetic mode                      ; 0            ;
 ;                                             ;              ;
-; Total registers                             ; 16           ;
-;     -- Dedicated logic registers            ; 16           ;
+; Total registers                             ; 13           ;
+;     -- Dedicated logic registers            ; 13           ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 126          ;
@@ -214,9 +215,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[1]~input ;
-; Maximum fan-out                             ; 16           ;
-; Total fan-out                               ; 304          ;
-; Average fan-out                             ; 0.83         ;
+; Maximum fan-out                             ; 13           ;
+; Total fan-out                               ; 180          ;
+; Average fan-out                             ; 0.66         ;
 +---------------------------------------------+--------------+
 
 
@@ -225,16 +226,25 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Entity Name       ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+-------------------+--------------+
-; |de0nano_embedding         ; 16 (0)              ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 126  ; 0            ; |de0nano_embedding                                  ; de0nano_embedding ; work         ;
-;    |DATAPATH:data_path|    ; 16 (0)              ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path               ; DATAPATH          ; work         ;
-;       |alu:inst4|          ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|alu:inst4     ; alu               ; work         ;
+; |de0nano_embedding         ; 9 (0)               ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 126  ; 0            ; |de0nano_embedding                                  ; de0nano_embedding ; work         ;
+;    |DATAPATH:data_path|    ; 9 (0)               ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path               ; DATAPATH          ; work         ;
 ;       |mux2:inst1|         ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|mux2:inst1    ; mux2              ; work         ;
-;       |register_A:R0|      ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|register_A:R0 ; register_A        ; work         ;
+;       |register_A:R0|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|register_A:R0 ; register_A        ; work         ;
 ;       |register_A:R1|      ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|register_A:R1 ; register_A        ; work         ;
 ;       |shift_reg:Acc|      ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|shift_reg:Acc ; shift_reg         ; work         ;
-;       |shift_reg:Q|        ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|shift_reg:Q   ; shift_reg         ; work         ;
+;       |shift_reg:Q|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|shift_reg:Q   ; shift_reg         ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++-------------------------------------------+----------------------------------------+
+; Register name                             ; Reason for Removal                     ;
++-------------------------------------------+----------------------------------------+
+; DATAPATH:data_path|register_A:R0|A[0,2,3] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 3     ;                                        ;
++-------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -242,7 +252,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 16    ;
+; Total registers                              ; 13    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -370,18 +380,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 126                         ;
-; cycloneiii_ff         ; 16                          ;
-;     plain             ; 16                          ;
-; cycloneiii_io_obuf    ; 84                          ;
-; cycloneiii_lcell_comb ; 17                          ;
-;     normal            ; 17                          ;
+; cycloneiii_ff         ; 13                          ;
+;     plain             ; 13                          ;
+; cycloneiii_lcell_comb ; 10                          ;
+;     normal            ; 10                          ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 7                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 0.41                        ;
+; Average LUT depth     ; 0.93                        ;
 +-----------------------+-----------------------------+
 
 
@@ -390,7 +399,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -400,44 +409,59 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Mar 12 17:12:27 2019
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de0nano_embedding -c de0nano_embedding
+    Info: Processing started: Mon Mar 11 16:38:59 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LAB1 -c de0nano_embedding
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file shift_reg.v
-    Info (12023): Found entity 1: shift_reg File: C:/Users/user/Desktop/empty_project/shift_reg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file register_file.v
-    Info (12023): Found entity 1: register_file File: C:/Users/user/Desktop/empty_project/register_file.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file register_b.v
-    Info (12023): Found entity 1: register_B File: C:/Users/user/Desktop/empty_project/register_B.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file register_a.v
-    Info (12023): Found entity 1: register_A File: C:/Users/user/Desktop/empty_project/register_A.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux4.v
-    Info (12023): Found entity 1: mux4 File: C:/Users/user/Desktop/empty_project/mux4.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file mux2.v
-    Info (12023): Found entity 1: mux2 File: C:/Users/user/Desktop/empty_project/mux2.v Line: 1
+    Info (12023): Found entity 1: register_file File: D:/LAB1/register_file.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file constant_value_generator.v
+    Info (12023): Found entity 1: Constant_Value_Generator File: D:/LAB1/Constant_Value_Generator.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file decoder.v
-    Info (12023): Found entity 1: decoder File: C:/Users/user/Desktop/empty_project/decoder.v Line: 1
+    Info (12023): Found entity 1: decoder File: D:/LAB1/decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux4.v
+    Info (12023): Found entity 1: mux4 File: D:/LAB1/mux4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2.v
+    Info (12023): Found entity 1: mux2 File: D:/LAB1/mux2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu File: D:/LAB1/alu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_a.v
+    Info (12023): Found entity 1: register_A File: D:/LAB1/register_A.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_b.v
+    Info (12023): Found entity 1: register_B File: D:/LAB1/register_B.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shift_reg.v
+    Info (12023): Found entity 1: shift_reg File: D:/LAB1/shift_reg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.bdf
     Info (12023): Found entity 1: DATAPATH
-Info (12021): Found 1 design units, including 1 entities, in source file constant_value_generator.v
-    Info (12023): Found entity 1: Constant_Value_Generator File: C:/Users/user/Desktop/empty_project/Constant_Value_Generator.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file alu.v
-    Info (12023): Found entity 1: alu File: C:/Users/user/Desktop/empty_project/alu.v Line: 1
-Warning (12125): Using design file de0nano_embedding.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: de0nano_embedding File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_tb.v
+    Info (12023): Found entity 1: decoder_tb File: D:/LAB1/decoder_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2_tb.v
+    Info (12023): Found entity 1: mux2_tb File: D:/LAB1/mux2_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux4_tb.v
+    Info (12023): Found entity 1: mux4_tb File: D:/LAB1/mux4_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.v
+    Info (12023): Found entity 1: alu_tb File: D:/LAB1/alu_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_a_tb.v
+    Info (12023): Found entity 1: register_A_tb File: D:/LAB1/register_A_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_b_tb.v
+    Info (12023): Found entity 1: register_B_tb File: D:/LAB1/register_B_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shift_reg_tb.v
+    Info (12023): Found entity 1: shift_reg_tb File: D:/LAB1/shift_reg_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_file_tb.v
+    Info (12023): Found entity 1: register_file_tb File: D:/LAB1/register_file_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file de0nano_embedding.v
+    Info (12023): Found entity 1: de0nano_embedding File: D:/LAB1/de0nano_embedding.v Line: 6
 Info (12127): Elaborating entity "de0nano_embedding" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at de0nano_embedding.v(126): object "data_in" assigned a value but never read File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 126
-Warning (10034): Output port "DRAM_ADDR" at de0nano_embedding.v(63) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-Warning (10034): Output port "DRAM_BA" at de0nano_embedding.v(64) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 64
-Warning (10034): Output port "DRAM_DQM" at de0nano_embedding.v(70) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 70
-Warning (10034): Output port "DRAM_CAS_N" at de0nano_embedding.v(65) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 65
-Warning (10034): Output port "DRAM_CKE" at de0nano_embedding.v(66) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 66
-Warning (10034): Output port "DRAM_CLK" at de0nano_embedding.v(67) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 67
-Warning (10034): Output port "DRAM_CS_N" at de0nano_embedding.v(68) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 68
-Warning (10034): Output port "DRAM_RAS_N" at de0nano_embedding.v(71) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 71
-Warning (10034): Output port "DRAM_WE_N" at de0nano_embedding.v(72) has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 72
-Info (12128): Elaborating entity "DATAPATH" for hierarchy "DATAPATH:data_path" File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 145
+Warning (10034): Output port "DRAM_ADDR" at de0nano_embedding.v(63) has no driver File: D:/LAB1/de0nano_embedding.v Line: 63
+Warning (10034): Output port "DRAM_BA" at de0nano_embedding.v(64) has no driver File: D:/LAB1/de0nano_embedding.v Line: 64
+Warning (10034): Output port "DRAM_DQM" at de0nano_embedding.v(70) has no driver File: D:/LAB1/de0nano_embedding.v Line: 70
+Warning (10034): Output port "DRAM_CAS_N" at de0nano_embedding.v(65) has no driver File: D:/LAB1/de0nano_embedding.v Line: 65
+Warning (10034): Output port "DRAM_CKE" at de0nano_embedding.v(66) has no driver File: D:/LAB1/de0nano_embedding.v Line: 66
+Warning (10034): Output port "DRAM_CLK" at de0nano_embedding.v(67) has no driver File: D:/LAB1/de0nano_embedding.v Line: 67
+Warning (10034): Output port "DRAM_CS_N" at de0nano_embedding.v(68) has no driver File: D:/LAB1/de0nano_embedding.v Line: 68
+Warning (10034): Output port "DRAM_RAS_N" at de0nano_embedding.v(71) has no driver File: D:/LAB1/de0nano_embedding.v Line: 71
+Warning (10034): Output port "DRAM_WE_N" at de0nano_embedding.v(72) has no driver File: D:/LAB1/de0nano_embedding.v Line: 72
+Info (12128): Elaborating entity "DATAPATH" for hierarchy "DATAPATH:data_path" File: D:/LAB1/de0nano_embedding.v Line: 134
 Warning (275083): Bus "A0[3]" found using same base name as "A0", which might lead to a name conflict.
 Warning (275083): Bus "A0[0]" found using same base name as "A0", which might lead to a name conflict.
 Warning (275011): Block or symbol "GND" of instance "inst" overlaps another block or symbol
@@ -453,139 +477,140 @@ Info (12128): Elaborating entity "mux2" for hierarchy "DATAPATH:data_path|mux2:i
 Info (12128): Elaborating entity "shift_reg" for hierarchy "DATAPATH:data_path|shift_reg:Acc"
 Info (12128): Elaborating entity "mux4" for hierarchy "DATAPATH:data_path|mux4:inst6"
 Info (12128): Elaborating entity "alu" for hierarchy "DATAPATH:data_path|alu:inst4"
-Warning (10240): Verilog HDL Always Construct warning at alu.v(19): inferring latch(es) for variable "CO", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/empty_project/alu.v Line: 19
-Warning (10240): Verilog HDL Always Construct warning at alu.v(19): inferring latch(es) for variable "OVF", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/empty_project/alu.v Line: 19
-Info (10041): Inferred latch for "OVF" at alu.v(47) File: C:/Users/user/Desktop/empty_project/alu.v Line: 47
-Info (10041): Inferred latch for "CO" at alu.v(47) File: C:/Users/user/Desktop/empty_project/alu.v Line: 47
+Warning (10240): Verilog HDL Always Construct warning at alu.v(19): inferring latch(es) for variable "CO", which holds its previous value in one or more paths through the always construct File: D:/LAB1/alu.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at alu.v(19): inferring latch(es) for variable "OVF", which holds its previous value in one or more paths through the always construct File: D:/LAB1/alu.v Line: 19
+Info (10041): Inferred latch for "OVF" at alu.v(47) File: D:/LAB1/alu.v Line: 47
+Info (10041): Inferred latch for "CO" at alu.v(47) File: D:/LAB1/alu.v Line: 47
 Info (12128): Elaborating entity "Constant_Value_Generator" for hierarchy "DATAPATH:data_path|Constant_Value_Generator:inst11"
 Info (12128): Elaborating entity "Constant_Value_Generator" for hierarchy "DATAPATH:data_path|Constant_Value_Generator:inst10"
-Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 69
-    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 75
-    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[8]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[9]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[10]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[11]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[24]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[25]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[26]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[27]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[29]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
-    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 79
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 64
-    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 64
-    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 65
-    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 66
-    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 67
-    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 68
-    Warning (13410): Pin "DRAM_DQM[0]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 70
-    Warning (13410): Pin "DRAM_DQM[1]" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 70
-    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 71
-    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 72
+    Warning (13410): Pin "LED[0]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 54
+    Warning (13410): Pin "LED[2]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 54
+    Warning (13410): Pin "LED[3]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 54
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 64
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 64
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 65
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 66
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 67
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 68
+    Warning (13410): Pin "DRAM_DQM[0]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 70
+    Warning (13410): Pin "DRAM_DQM[1]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 70
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 71
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 72
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 51
-    Warning (15610): No output dependent on input pin "GPIO_0_IN[0]" File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 76
-    Warning (15610): No output dependent on input pin "GPIO_0_IN[1]" File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 76
-    Warning (15610): No output dependent on input pin "GPIO_1_IN[0]" File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 80
-    Warning (15610): No output dependent on input pin "GPIO_1_IN[1]" File: C:/Users/user/Desktop/empty_project/de0nano_embedding.v Line: 80
-Info (21057): Implemented 146 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
+Warning (21074): Design contains 89 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: D:/LAB1/de0nano_embedding.v Line: 51
+    Warning (15610): No output dependent on input pin "DRAM_DQ[0]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[1]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[2]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[3]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[4]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[5]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[6]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[7]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[8]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[9]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[10]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[11]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[12]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[13]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[14]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "DRAM_DQ[15]" File: D:/LAB1/de0nano_embedding.v Line: 69
+    Warning (15610): No output dependent on input pin "GPIO_0[0]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[1]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[2]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[3]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[4]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[5]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[6]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[7]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[8]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[9]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[10]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[11]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[12]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[13]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[14]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[15]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[16]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[17]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[18]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[19]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[20]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[21]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[22]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[23]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[24]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[25]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[26]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[27]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[28]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[29]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[30]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[31]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[32]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0[33]" File: D:/LAB1/de0nano_embedding.v Line: 75
+    Warning (15610): No output dependent on input pin "GPIO_0_IN[0]" File: D:/LAB1/de0nano_embedding.v Line: 76
+    Warning (15610): No output dependent on input pin "GPIO_0_IN[1]" File: D:/LAB1/de0nano_embedding.v Line: 76
+    Warning (15610): No output dependent on input pin "GPIO_1[0]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[1]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[2]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[3]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[4]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[5]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[6]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[7]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[8]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[9]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[10]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[11]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[12]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[13]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[14]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[15]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[16]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[17]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[18]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[19]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[20]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[21]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[22]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[23]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[24]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[25]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[26]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[27]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[28]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[29]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[30]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[31]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[32]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1[33]" File: D:/LAB1/de0nano_embedding.v Line: 79
+    Warning (15610): No output dependent on input pin "GPIO_1_IN[0]" File: D:/LAB1/de0nano_embedding.v Line: 80
+    Warning (15610): No output dependent on input pin "GPIO_1_IN[1]" File: D:/LAB1/de0nano_embedding.v Line: 80
+Info (21057): Implemented 140 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 95 input pins
     Info (21059): Implemented 31 output pins
-    Info (21060): Implemented 84 bidirectional pins
-    Info (21061): Implemented 20 logic cells
+    Info (21061): Implemented 14 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 139 warnings
-    Info: Peak virtual memory: 592 megabytes
-    Info: Processing ended: Tue Mar 12 17:12:46 2019
-    Info: Elapsed time: 00:00:19
+    Info: Peak virtual memory: 596 megabytes
+    Info: Processing ended: Mon Mar 11 16:39:22 2019
+    Info: Elapsed time: 00:00:23
     Info: Total CPU time (on all processors): 00:00:43
 
 

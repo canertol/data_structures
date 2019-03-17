@@ -1,6 +1,6 @@
 EDA Netlist Writer report for de0nano_embedding
-Thu Mar 14 16:53:12 2019
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Sun Mar 17 18:23:12 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -17,7 +17,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Mar 14 16:53:12 2019 ;
+; EDA Netlist Writer Status ; Successful - Sun Mar 17 18:23:12 2019 ;
 ; Revision Name             ; de0nano_embedding                     ;
 ; Top-level Entity Name     ; de0nano_embedding                     ;
 ; Family                    ; Cyclone IV E                          ;
@@ -65,13 +65,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-----------------------------------------------+
-; Simulation Generated Files                    ;
-+-----------------------------------------------+
-; Generated Files                               ;
-+-----------------------------------------------+
-; D:/LAB2/simulation/qsim//de0nano_embedding.vo ;
-+-----------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                       ;
++--------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                  ;
++--------------------------------------------------------------------------------------------------+
+; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/simulation/qsim//de0nano_embedding.vo ;
++--------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -79,8 +79,8 @@ refer to the applicable agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Copyright (C) 2018  Intel Corporation. All rights reserved.
     Info: Your use of Intel Corporation's design tools, logic functions 
     Info: and other software and tools, and its AMPP partner logic 
     Info: functions, and any output files from any of the foregoing 
@@ -93,13 +93,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Mar 14 16:53:11 2019
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/LAB2/simulation/qsim/ de0nano_embedding -c de0nano_embedding
+    Info: Processing started: Sun Mar 17 18:23:11 2019
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/simulation/qsim/ de0nano_embedding -c de0nano_embedding
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file de0nano_embedding.vo in folder "D:/LAB2/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file de0nano_embedding.vo in folder "C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 497 megabytes
-    Info: Processing ended: Thu Mar 14 16:53:12 2019
+    Info: Peak virtual memory: 4653 megabytes
+    Info: Processing ended: Sun Mar 17 18:23:12 2019
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

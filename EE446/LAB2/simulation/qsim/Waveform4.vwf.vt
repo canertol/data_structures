@@ -1,0 +1,260 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "03/17/2019 16:44:08"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          de0nano_embedding
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module de0nano_embedding_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [2:0] ALUCtrl;
+reg [1:0] ASrc;
+reg AccCLR;
+reg AccParallel;
+reg AccRight;
+reg [1:0] BSrc;
+reg [33:0] treg_GPIO_0;
+reg [1:0] KEY;
+reg QParallel;
+reg QRight;
+reg QSrc;
+reg QnCLR;
+reg QzSrc;
+reg [1:0] R0Src;
+reg R0WE;
+reg R1Clr;
+reg R1Src;
+reg R1WE;
+reg RST;
+// wires                                               
+wire [33:0] GPIO_0;
+wire [7:0] LED;
+wire NFlag;
+wire Qn;
+wire R0m;
+wire R1m;
+wire [1:0] Stat;
+
+// assign statements (if any)                          
+assign GPIO_0 = treg_GPIO_0;
+de0nano_embedding i1 (
+// port map - connection between master ports and signals/registers   
+	.ALUCtrl(ALUCtrl),
+	.ASrc(ASrc),
+	.AccCLR(AccCLR),
+	.AccParallel(AccParallel),
+	.AccRight(AccRight),
+	.BSrc(BSrc),
+	.GPIO_0(GPIO_0),
+	.KEY(KEY),
+	.LED(LED),
+	.NFlag(NFlag),
+	.QParallel(QParallel),
+	.QRight(QRight),
+	.QSrc(QSrc),
+	.Qn(Qn),
+	.QnCLR(QnCLR),
+	.QzSrc(QzSrc),
+	.R0Src(R0Src),
+	.R0WE(R0WE),
+	.R0m(R0m),
+	.R1Clr(R1Clr),
+	.R1Src(R1Src),
+	.R1WE(R1WE),
+	.R1m(R1m),
+	.RST(RST),
+	.Stat(Stat)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// KEY[1]
+always
+begin
+	KEY[1] = 1'b0;
+	KEY[1] = #100000 1'b1;
+	#100000;
+end 
+// ALUCtrl[ 2 ]
+initial
+begin
+	ALUCtrl[2] = 1'b0;
+	ALUCtrl[2] = #400000 1'b1;
+	ALUCtrl[2] = #200000 1'b0;
+end 
+// ALUCtrl[ 1 ]
+initial
+begin
+	ALUCtrl[1] = 1'b0;
+	ALUCtrl[1] = #400000 1'b1;
+	ALUCtrl[1] = #200000 1'b0;
+end 
+// ALUCtrl[ 0 ]
+initial
+begin
+	ALUCtrl[0] = 1'b0;
+	ALUCtrl[0] = #400000 1'b1;
+	ALUCtrl[0] = #200000 1'b0;
+end 
+// ASrc[ 1 ]
+initial
+begin
+	ASrc[1] = 1'b1;
+end 
+// ASrc[ 0 ]
+initial
+begin
+	ASrc[0] = 1'b1;
+end 
+// BSrc[ 1 ]
+initial
+begin
+	BSrc[1] = 1'b0;
+	BSrc[1] = #400000 1'b1;
+	BSrc[1] = #200000 1'b0;
+end 
+// BSrc[ 0 ]
+initial
+begin
+	BSrc[0] = 1'b1;
+	BSrc[0] = #400000 1'b0;
+	BSrc[0] = #200000 1'b1;
+end 
+
+// GPIO_0[6]
+initial
+begin
+	treg_GPIO_0[6] = 1'b1;
+end 
+
+// GPIO_0[5]
+initial
+begin
+	treg_GPIO_0[5] = 1'b1;
+	treg_GPIO_0[5] = #200000 1'b0;
+	treg_GPIO_0[5] = #200000 1'b1;
+end 
+
+// GPIO_0[4]
+initial
+begin
+	treg_GPIO_0[4] = 1'b0;
+	treg_GPIO_0[4] = #200000 1'b1;
+	treg_GPIO_0[4] = #200000 1'b0;
+end 
+
+// GPIO_0[3]
+initial
+begin
+	treg_GPIO_0[3] = 1'b1;
+	treg_GPIO_0[3] = #200000 1'b0;
+	treg_GPIO_0[3] = #200000 1'b1;
+end 
+
+// QParallel
+initial
+begin
+	QParallel = 1'b0;
+end 
+
+// QRight
+initial
+begin
+	QRight = 1'b0;
+end 
+
+// QSrc
+initial
+begin
+	QSrc = 1'b0;
+end 
+
+// QnCLR
+initial
+begin
+	QnCLR = 1'b0;
+	QnCLR = #670000 1'b1;
+	QnCLR = #210000 1'b0;
+end 
+
+// QzSrc
+initial
+begin
+	QzSrc = 1'b0;
+end 
+// R0Src[ 1 ]
+initial
+begin
+	R0Src[1] = 1'b1;
+end 
+// R0Src[ 0 ]
+initial
+begin
+	R0Src[0] = 1'b1;
+	R0Src[0] = #400000 1'b0;
+	R0Src[0] = #200000 1'b1;
+end 
+
+// R1Src
+initial
+begin
+	R1Src = 1'b0;
+end 
+
+// R0WE
+initial
+begin
+	R0WE = 1'b1;
+end 
+
+// R1WE
+initial
+begin
+	R1WE = 1'b1;
+	R1WE = #400000 1'b0;
+	R1WE = #460000 1'b1;
+end 
+
+// R1Clr
+initial
+begin
+	R1Clr = 1'b0;
+	R1Clr = #400000 1'b1;
+	R1Clr = #200000 1'b0;
+	R1Clr = #70000 1'b1;
+	R1Clr = #210000 1'b0;
+end 
+
+// RST
+initial
+begin
+	RST = 1'b0;
+	RST = #670000 1'b1;
+	RST = #210000 1'b0;
+end 
+endmodule
+

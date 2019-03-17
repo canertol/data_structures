@@ -6,8 +6,8 @@
 module de0nano_embedding(
 
 	//////////// CLOCK //////////
-	CLOCK_50,
-
+	/*CLOCK_50,
+*/
 	//////////// LED //////////
 	LED,
 
@@ -18,7 +18,7 @@ module de0nano_embedding(
 	SW,
 
 	//////////// SDRAM //////////
-	DRAM_ADDR,
+/*	DRAM_ADDR,
 	DRAM_BA,
 	DRAM_CAS_N,
 	DRAM_CKE,
@@ -28,14 +28,20 @@ module de0nano_embedding(
 	DRAM_DQM,
 	DRAM_RAS_N,
 	DRAM_WE_N,
-
+*/
 	//////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
 	GPIO_0,
-	GPIO_0_IN,
+	//GPIO_0_IN,
 
 	//////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
-	GPIO_1,
-	GPIO_1_IN 
+/*	GPIO_1,
+	GPIO_1_IN,
+	*/
+Stat,R1m, R0m,R1Clr, R1Src, R0WE, R1WE,R0Src, ASrc, BSrc,ALUCtrl,NFlag , Qn,Qz,
+   
+   AccRight, AccParallel, AccCLR, QParallel, QSrc, QnCLR, RST, QRight, QzSrc
+	
+	
 );
 
 //=======================================================
@@ -48,7 +54,7 @@ module de0nano_embedding(
 //=======================================================
 
 //////////// CLOCK //////////
-input 		          		CLOCK_50;
+//input 		          		CLOCK_50;
 
 //////////// LED //////////
 output		     [7:0]		LED;
@@ -60,7 +66,7 @@ input 		     [1:0]		KEY;
 input 		     [3:0]		SW;
 
 //////////// SDRAM //////////
-output		    [12:0]		DRAM_ADDR;
+/*output		    [12:0]		DRAM_ADDR;
 output		     [1:0]		DRAM_BA;
 output		          		DRAM_CAS_N;
 output		          		DRAM_CKE;
@@ -70,48 +76,48 @@ inout 		    [15:0]		DRAM_DQ;
 output		     [1:0]		DRAM_DQM;
 output		          		DRAM_RAS_N;
 output		          		DRAM_WE_N;
-
+*/
 //////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
 inout 		    [33:0]		GPIO_0;
-input 		     [1:0]		GPIO_0_IN;
-
+//input 		     [1:0]		GPIO_0_IN;
+/*
 //////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
 inout 		    [33:0]		GPIO_1;
 input 		     [1:0]		GPIO_1_IN;
 
-
+*/
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
    
-     reg LOAD, COMP;
-     reg [2:0] OP;
-     reg [1:0] Stat;
-	  reg R1m, R0m;
-     wire R1Clr, R1Src, R0WE, R1WE;
-	  wire [1:0] R0Src, ASrc, Bsrc;
-	  wire [2:0] ALUCtrl;
-     reg NFlag , Qn;
-     reg ERR;
-     wire AccRight, AccParallel, AccCLR, QParallel, QSrc, QnCLR, RST, QRight, QzSrc;
+    //input [2:0] OP;
+     input [1:0] Stat;
+	input R1m, R0m;
+     output wire R1Clr, R1Src, R0WE, R1WE;
+	output wire [1:0] R0Src, ASrc, BSrc;
+	 output wire  [2:0] ALUCtrl;
+   input NFlag , Qn, Qz;
+      //output wire ERR;
+    output wire  AccRight, AccParallel, AccCLR, QParallel, QSrc, QnCLR, RST, QRight, QzSrc;
 
-
+  
 
 //=======================================================
 //  Structural coding
 //=======================================================
-controller #(4) CONTROL(.CLK(KEY[1]),
+Controller_Unit #(4) CONTROL(.CLK(KEY[1]),
             .AccRight(AccRight), .AccParallel(AccParallel), .AccCLR(AccCLR), // Acc register control
             .ALUCtrl(ALUCtrl), .ASrc(ASrc), .BSrc(BSrc),  // ALU Controllers
             .Stat(Stat), .NFlag(NFlag),    // Status bits
-            .LOAD(!KEY[0]),.R1m(R1m), .R0m(R0m),
+            .LOAD(KEY[0]),.R1m(R1m), .R0m(R0m),
             .COMP(GPIO_0[0]), .R1Clr(R1Clr), .R1Src(R1Src), .R0WE(R0WE), .R1WE(R1WE), .R0Src(R0Src),
             .OP(SW[2:0]),  //ALP Operation
-				.QParallel(QParallel), .QSrc(QSrc), .QnCLR(QnCLR), .RST(RST), .QRight(QRight), .QzSrc(QzSrc), .Qn(Qn),
+				.QParallel(QParallel), .QSrc(QSrc), .QnCLR(QnCLR), .RST(RST), .QRight(QRight), .QzSrc(QzSrc), .Qn(Qn), .Qz(Qz),
             .CLR(GPIO_0[1]), // reset registers
             .ERR(GPIO_0[2]) // Arithmetic overflow
             );
-				
+			
+/*				
 ALP DATAPATH(.CLK(KEY[1]),
             .AccRight(AccRight), .AccParallel(AccParallel), .AccCLR(AccCLR), // Acc register control
             .ALUCtrl(ALUCtrl), .ASrc(ASrc), .BSrc(BSrc),  // ALU Controllers
@@ -121,6 +127,6 @@ ALP DATAPATH(.CLK(KEY[1]),
            	.QParallel(QParallel), .QSrc(QSrc), .QnCLR(QnCLR), .RST(RST), .QRight(QRight), .QzSrc(QzSrc), .Qn(Qn),
             .DATA(GPIO_0[6:3]), .R0out(LED[3:0]), .R1out(LED[7:4]) 
 				);
-
+*/
 
 endmodule

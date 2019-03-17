@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE22F17) Path("C:/Users/user/Desktop/empty_project/") File("de0nano_embedding.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE22F17) Path("D:/LAB1/") File("de0nano_embedding.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

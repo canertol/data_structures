@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Mar 12 17:12:46 2019
+Analysis & Synthesis Status : Successful - Mon Mar 11 16:39:22 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : de0nano_embedding
 Top-level Entity Name : de0nano_embedding
 Family : Cyclone IV E
-Total logic elements : 20
-    Total combinational functions : 16
-    Dedicated logic registers : 16
-Total registers : 16
+Total logic elements : 14
+    Total combinational functions : 9
+    Dedicated logic registers : 13
+Total registers : 13
 Total pins : 126
 Total virtual pins : 0
 Total memory bits : 0

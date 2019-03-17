@@ -66,17 +66,17 @@ output		          		DRAM_CAS_N;
 output		          		DRAM_CKE;
 output		          		DRAM_CLK;
 output		          		DRAM_CS_N;
-inout 		    [15:0]		DRAM_DQ;
+input 		    [15:0]		DRAM_DQ;
 output		     [1:0]		DRAM_DQM;
 output		          		DRAM_RAS_N;
 output		          		DRAM_WE_N;
 
 //////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
-inout 		    [33:0]		GPIO_0;
+input 		    [33:0]		GPIO_0;
 input 		     [1:0]		GPIO_0_IN;
 
 //////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
-inout 		    [33:0]		GPIO_1;
+input 		    [33:0]		GPIO_1;
 input 		     [1:0]		GPIO_1_IN;
 
 
@@ -85,42 +85,31 @@ input 		     [1:0]		GPIO_1_IN;
 //=======================================================
 
 
-
-
-//=======================================================
-//  Structural coding
-//=======================================================
-
-
 parameter W = 4;
 
-
-//======================PART 1==========================
 /*
+//======================PART 1==========================
 wire [1:0] A1, A2, A3;
-wire WE, RST; 
-wire [3:0] data_in;
+wire WE; 
 assign WE = 1'b1;
 assign A1 = 2'b01;
 assign A2 = 2'b10;
 assign A3 = 2'b01;
-assign RST = 1'b0;
-assign data_in = 4'b1001;
 
-*/
+
+
 //  Structural coding
-/*
+
 
 register_file #(W) (.clk(KEY[1]),
 							.data_in(SW),
-								.WE3(GPIO_0[6]),
-								.A1(GPIO_0[1:0]), .A2(GPIO_0[3:2]), .A3(GPIO_0[5:4]), 
-								.RD2(LED[3:0]), .RD1(LED[7:4]), .rst(!KEY[0])			
+								.WE3(WE),
+								.A1(A1), .A2(A2), .A3(A3), 
+								.RD1(LED[7:4]), .RD2(LED[3:0])			
 						);
 //=======================================================
-	*/					
-
-
+						
+*/
 
 //======================PART 2==========================
 wire [3:0] data_in;
@@ -136,19 +125,16 @@ assign add = 3'b000;
 //assign Acc_parallel = 1'b0;
 //assign ASrc = 1'b0;
 
-DATAPATH data_path(.CLK(KEY[1]),
+DATAPATH data_path(.CLK(!KEY[1]),
 					.R1Src(SW[3]),.Acc_parallel(!KEY[0]),
-					.Acc_Lsrc(SW[1:0]),.Q_right(SW[2]),
-					.DATA(GPIO_0[3:0]),.test(LED[3:0]),
-					.ALUControl(add), .R1out(LED[7:4]), .ASrc(GPIO_0[4])
+					.Acc_Lsrc(SW[1:0]),//.Q_right(SW[2]),
+					.DATA(data_in),.test(LED[3:0]),
+					.ALUControl(add), .R1out(LED[7:4]), .ASrc(SW[2])
 					
 					);		
 							
 
 
 //=======================================================
-
-
-
 
 endmodule

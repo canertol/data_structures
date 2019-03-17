@@ -7,67 +7,155 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/LAB2/simulation/qsim
-vde0nano_embedding
-Z1 !s110 1552571597
+dD:/LAB2/simulation/qsim
+vALP
+!s110 1552682945
 !i10b 1
-!s100 AV87^NK`J:>?WK6>czcbO0
-IROjB:o4L7NII>V=X<69la1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z3 w1552571594
-Z4 8de0nano_embedding.vo
-Z5 Fde0nano_embedding.vo
-L0 31
-Z6 OV;L;10.5b;63
+!s100 RVTijMUmLTmeNH=Mf0DLG0
+I;L3kgOHJoL`C?1zzFeEY_0
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dC:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/simulation/qsim
+w1552682116
+Z2 8de0nano_embedding.vo
+Z3 Fde0nano_embedding.vo
+Z4 L0 31
+Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1552571596.000000
-Z8 !s107 de0nano_embedding.vo|
-Z9 !s90 -work|work|de0nano_embedding.vo|
+!s108 1552682945.000000
+Z6 !s107 de0nano_embedding.vo|
+Z7 !s90 -work|work|de0nano_embedding.vo|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
-vde0nano_embedding_vlg_vec_tst
-R1
+Z8 o-work work
+Z9 tCvgOpt 0
+n@a@l@p
+vALP_vlg_vec_tst
+!s110 1552682117
 !i10b 1
-!s100 ?<YARm4_J?gbAzAOW^:0P0
-I2Y:GU^W@`Oz3U84IlO^nI3
-R2
+!s100 _FWQiJTOVk@m`?EJ5C81E3
+I9>4WWP4LzUW0BdSbTj1P]1
 R0
-w1552571592
+R1
+w1552682114
 8Waveform.vwf.vt
 FWaveform.vwf.vt
-L0 29
-R6
+Z10 L0 29
+R5
 r1
 !s85 0
 31
-!s108 1552571597.000000
+!s108 1552682116.000000
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
-R10
-R11
-vhard_block
-R1
+R8
+R9
+n@a@l@p_vlg_vec_tst
+vController_Unit
+Z11 !s110 1552683361
 !i10b 1
-!s100 ZiCQZ<DeSS_0IIlj^DOlm0
-I37cNW3mNmJbYDCb[d0I=j0
-R2
+!s100 dOn4mFW4JWNR4YAk^hD?H0
+IbgnGm5ICo;X?bB^hLcOUY2
 R0
+R1
+w1552683360
+R2
 R3
 R4
 R5
-L0 3103
-R6
 r1
 !s85 0
 31
+Z12 !s108 1552683361.000000
+R6
 R7
+!i113 1
 R8
 R9
-!i113 1
-R10
+n@controller_@unit
+vController_Unit_vlg_vec_tst
 R11
+!i10b 1
+!s100 cDQ:G>AG]>bNJf[zfR15O3
+IZPJS<30F`jlG?aAA;cIT@1
+R0
+R1
+w1552683359
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+R10
+R5
+r1
+!s85 0
+31
+R12
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 1
+R8
+R9
+n@controller_@unit_vlg_vec_tst
+vde0nano_embedding
+Z13 !s110 1552836193
+!i10b 1
+!s100 cHa4O3XJlT_7Mb@ZHdc_71
+IKE?2nV3fmg7:0e2Kcnm[E2
+R0
+R1
+Z14 w1552836192
+R2
+R3
+R4
+R5
+r1
+!s85 0
+31
+Z15 !s108 1552836192.000000
+R6
+R7
+!i113 1
+R8
+R9
+vde0nano_embedding_vlg_vec_tst
+R13
+!i10b 1
+!s100 2IOV@A[9Y[^W]?n;Dg?Ub0
+Ikog=F6_fKm?fDS34QNTjS3
+R0
+R1
+w1552836190
+8Waveform5.vwf.vt
+FWaveform5.vwf.vt
+R10
+R5
+r1
+!s85 0
+31
+!s108 1552836193.000000
+!s107 Waveform5.vwf.vt|
+!s90 -work|work|Waveform5.vwf.vt|
+!i113 1
+R8
+R9
+vhard_block
+R13
+!i10b 1
+!s100 D0BKAF[C2`zA`J[ME0K4n3
+I69>4FZZcAc[k;f>DYYbJE3
+R0
+R1
+R14
+R2
+R3
+L0 3348
+R5
+r1
+!s85 0
+31
+R15
+R6
+R7
+!i113 1
+R8
+R9

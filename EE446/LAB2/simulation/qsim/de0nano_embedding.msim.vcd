@@ -3,7 +3,7 @@ $comment
 		vcd file de0nano_embedding.msim.vcd -direction
 $end
 $date
-	Thu Mar 14 16:53:18 2019
+	Sun Mar 17 18:23:13 2019
 $end
 $version
 	ModelSim Version 10.5b
@@ -13,379 +13,353 @@ $timescale
 $end
 
 $scope module de0nano_embedding_vlg_vec_tst $end
-$var reg 1 ! CLOCK_50 $end
-$var reg 16 " treg_DRAM_DQ [15:0] $end
-$var reg 34 # treg_GPIO_0 [33:0] $end
-$var reg 2 $ GPIO_0_IN [1:0] $end
-$var reg 34 % treg_GPIO_1 [33:0] $end
-$var reg 2 & GPIO_1_IN [1:0] $end
-$var reg 2 ' KEY [1:0] $end
+$var reg 34 ! treg_GPIO_0 [33:0] $end
+$var reg 2 " KEY [1:0] $end
+$var reg 1 # NFlag $end
+$var reg 1 $ Qn $end
+$var reg 1 % Qz $end
+$var reg 1 & R0m $end
+$var reg 1 ' R1m $end
 $var reg 4 ( SW [3:0] $end
-$var wire 1 ) DRAM_ADDR [12] $end
-$var wire 1 * DRAM_ADDR [11] $end
-$var wire 1 + DRAM_ADDR [10] $end
-$var wire 1 , DRAM_ADDR [9] $end
-$var wire 1 - DRAM_ADDR [8] $end
-$var wire 1 . DRAM_ADDR [7] $end
-$var wire 1 / DRAM_ADDR [6] $end
-$var wire 1 0 DRAM_ADDR [5] $end
-$var wire 1 1 DRAM_ADDR [4] $end
-$var wire 1 2 DRAM_ADDR [3] $end
-$var wire 1 3 DRAM_ADDR [2] $end
-$var wire 1 4 DRAM_ADDR [1] $end
-$var wire 1 5 DRAM_ADDR [0] $end
-$var wire 1 6 DRAM_BA [1] $end
-$var wire 1 7 DRAM_BA [0] $end
-$var wire 1 8 DRAM_CAS_N $end
-$var wire 1 9 DRAM_CKE $end
-$var wire 1 : DRAM_CLK $end
-$var wire 1 ; DRAM_CS_N $end
-$var wire 1 < DRAM_DQ [15] $end
-$var wire 1 = DRAM_DQ [14] $end
-$var wire 1 > DRAM_DQ [13] $end
-$var wire 1 ? DRAM_DQ [12] $end
-$var wire 1 @ DRAM_DQ [11] $end
-$var wire 1 A DRAM_DQ [10] $end
-$var wire 1 B DRAM_DQ [9] $end
-$var wire 1 C DRAM_DQ [8] $end
-$var wire 1 D DRAM_DQ [7] $end
-$var wire 1 E DRAM_DQ [6] $end
-$var wire 1 F DRAM_DQ [5] $end
-$var wire 1 G DRAM_DQ [4] $end
-$var wire 1 H DRAM_DQ [3] $end
-$var wire 1 I DRAM_DQ [2] $end
-$var wire 1 J DRAM_DQ [1] $end
-$var wire 1 K DRAM_DQ [0] $end
-$var wire 1 L DRAM_DQM [1] $end
-$var wire 1 M DRAM_DQM [0] $end
-$var wire 1 N DRAM_RAS_N $end
-$var wire 1 O DRAM_WE_N $end
-$var wire 1 P GPIO_0 [33] $end
-$var wire 1 Q GPIO_0 [32] $end
-$var wire 1 R GPIO_0 [31] $end
-$var wire 1 S GPIO_0 [30] $end
-$var wire 1 T GPIO_0 [29] $end
-$var wire 1 U GPIO_0 [28] $end
-$var wire 1 V GPIO_0 [27] $end
-$var wire 1 W GPIO_0 [26] $end
-$var wire 1 X GPIO_0 [25] $end
-$var wire 1 Y GPIO_0 [24] $end
-$var wire 1 Z GPIO_0 [23] $end
-$var wire 1 [ GPIO_0 [22] $end
-$var wire 1 \ GPIO_0 [21] $end
-$var wire 1 ] GPIO_0 [20] $end
-$var wire 1 ^ GPIO_0 [19] $end
-$var wire 1 _ GPIO_0 [18] $end
-$var wire 1 ` GPIO_0 [17] $end
-$var wire 1 a GPIO_0 [16] $end
-$var wire 1 b GPIO_0 [15] $end
-$var wire 1 c GPIO_0 [14] $end
-$var wire 1 d GPIO_0 [13] $end
-$var wire 1 e GPIO_0 [12] $end
-$var wire 1 f GPIO_0 [11] $end
-$var wire 1 g GPIO_0 [10] $end
-$var wire 1 h GPIO_0 [9] $end
-$var wire 1 i GPIO_0 [8] $end
-$var wire 1 j GPIO_0 [7] $end
-$var wire 1 k GPIO_0 [6] $end
-$var wire 1 l GPIO_0 [5] $end
-$var wire 1 m GPIO_0 [4] $end
-$var wire 1 n GPIO_0 [3] $end
-$var wire 1 o GPIO_0 [2] $end
-$var wire 1 p GPIO_0 [1] $end
-$var wire 1 q GPIO_0 [0] $end
-$var wire 1 r GPIO_1 [33] $end
-$var wire 1 s GPIO_1 [32] $end
-$var wire 1 t GPIO_1 [31] $end
-$var wire 1 u GPIO_1 [30] $end
-$var wire 1 v GPIO_1 [29] $end
-$var wire 1 w GPIO_1 [28] $end
-$var wire 1 x GPIO_1 [27] $end
-$var wire 1 y GPIO_1 [26] $end
-$var wire 1 z GPIO_1 [25] $end
-$var wire 1 { GPIO_1 [24] $end
-$var wire 1 | GPIO_1 [23] $end
-$var wire 1 } GPIO_1 [22] $end
-$var wire 1 ~ GPIO_1 [21] $end
-$var wire 1 !! GPIO_1 [20] $end
-$var wire 1 "! GPIO_1 [19] $end
-$var wire 1 #! GPIO_1 [18] $end
-$var wire 1 $! GPIO_1 [17] $end
-$var wire 1 %! GPIO_1 [16] $end
-$var wire 1 &! GPIO_1 [15] $end
-$var wire 1 '! GPIO_1 [14] $end
-$var wire 1 (! GPIO_1 [13] $end
-$var wire 1 )! GPIO_1 [12] $end
-$var wire 1 *! GPIO_1 [11] $end
-$var wire 1 +! GPIO_1 [10] $end
-$var wire 1 ,! GPIO_1 [9] $end
-$var wire 1 -! GPIO_1 [8] $end
-$var wire 1 .! GPIO_1 [7] $end
-$var wire 1 /! GPIO_1 [6] $end
-$var wire 1 0! GPIO_1 [5] $end
-$var wire 1 1! GPIO_1 [4] $end
-$var wire 1 2! GPIO_1 [3] $end
-$var wire 1 3! GPIO_1 [2] $end
-$var wire 1 4! GPIO_1 [1] $end
-$var wire 1 5! GPIO_1 [0] $end
-$var wire 1 6! LED [7] $end
-$var wire 1 7! LED [6] $end
-$var wire 1 8! LED [5] $end
-$var wire 1 9! LED [4] $end
-$var wire 1 :! LED [3] $end
-$var wire 1 ;! LED [2] $end
-$var wire 1 <! LED [1] $end
-$var wire 1 =! LED [0] $end
+$var reg 2 ) Stat [1:0] $end
+$var wire 1 * ALUCtrl [2] $end
+$var wire 1 + ALUCtrl [1] $end
+$var wire 1 , ALUCtrl [0] $end
+$var wire 1 - ASrc [1] $end
+$var wire 1 . ASrc [0] $end
+$var wire 1 / AccCLR $end
+$var wire 1 0 AccParallel $end
+$var wire 1 1 AccRight $end
+$var wire 1 2 BSrc [1] $end
+$var wire 1 3 BSrc [0] $end
+$var wire 1 4 GPIO_0 [33] $end
+$var wire 1 5 GPIO_0 [32] $end
+$var wire 1 6 GPIO_0 [31] $end
+$var wire 1 7 GPIO_0 [30] $end
+$var wire 1 8 GPIO_0 [29] $end
+$var wire 1 9 GPIO_0 [28] $end
+$var wire 1 : GPIO_0 [27] $end
+$var wire 1 ; GPIO_0 [26] $end
+$var wire 1 < GPIO_0 [25] $end
+$var wire 1 = GPIO_0 [24] $end
+$var wire 1 > GPIO_0 [23] $end
+$var wire 1 ? GPIO_0 [22] $end
+$var wire 1 @ GPIO_0 [21] $end
+$var wire 1 A GPIO_0 [20] $end
+$var wire 1 B GPIO_0 [19] $end
+$var wire 1 C GPIO_0 [18] $end
+$var wire 1 D GPIO_0 [17] $end
+$var wire 1 E GPIO_0 [16] $end
+$var wire 1 F GPIO_0 [15] $end
+$var wire 1 G GPIO_0 [14] $end
+$var wire 1 H GPIO_0 [13] $end
+$var wire 1 I GPIO_0 [12] $end
+$var wire 1 J GPIO_0 [11] $end
+$var wire 1 K GPIO_0 [10] $end
+$var wire 1 L GPIO_0 [9] $end
+$var wire 1 M GPIO_0 [8] $end
+$var wire 1 N GPIO_0 [7] $end
+$var wire 1 O GPIO_0 [6] $end
+$var wire 1 P GPIO_0 [5] $end
+$var wire 1 Q GPIO_0 [4] $end
+$var wire 1 R GPIO_0 [3] $end
+$var wire 1 S GPIO_0 [2] $end
+$var wire 1 T GPIO_0 [1] $end
+$var wire 1 U GPIO_0 [0] $end
+$var wire 1 V LED [7] $end
+$var wire 1 W LED [6] $end
+$var wire 1 X LED [5] $end
+$var wire 1 Y LED [4] $end
+$var wire 1 Z LED [3] $end
+$var wire 1 [ LED [2] $end
+$var wire 1 \ LED [1] $end
+$var wire 1 ] LED [0] $end
+$var wire 1 ^ QParallel $end
+$var wire 1 _ QRight $end
+$var wire 1 ` QSrc $end
+$var wire 1 a QnCLR $end
+$var wire 1 b QzSrc $end
+$var wire 1 c R0Src [1] $end
+$var wire 1 d R0Src [0] $end
+$var wire 1 e R0WE $end
+$var wire 1 f R1Clr $end
+$var wire 1 g R1Src $end
+$var wire 1 h R1WE $end
+$var wire 1 i RST $end
 
 $scope module i1 $end
-$var wire 1 >! gnd $end
-$var wire 1 ?! vcc $end
-$var wire 1 @! unknown $end
-$var tri1 1 A! devclrn $end
-$var tri1 1 B! devpor $end
-$var tri1 1 C! devoe $end
-$var wire 1 D! CLOCK_50~input_o $end
-$var wire 1 E! KEY[0]~input_o $end
-$var wire 1 F! KEY[1]~input_o $end
-$var wire 1 G! SW[0]~input_o $end
-$var wire 1 H! SW[1]~input_o $end
-$var wire 1 I! SW[2]~input_o $end
-$var wire 1 J! SW[3]~input_o $end
-$var wire 1 K! GPIO_0_IN[0]~input_o $end
-$var wire 1 L! GPIO_0_IN[1]~input_o $end
-$var wire 1 M! GPIO_1_IN[0]~input_o $end
-$var wire 1 N! GPIO_1_IN[1]~input_o $end
-$var wire 1 O! DRAM_DQ[0]~input_o $end
-$var wire 1 P! DRAM_DQ[1]~input_o $end
-$var wire 1 Q! DRAM_DQ[2]~input_o $end
-$var wire 1 R! DRAM_DQ[3]~input_o $end
-$var wire 1 S! DRAM_DQ[4]~input_o $end
-$var wire 1 T! DRAM_DQ[5]~input_o $end
-$var wire 1 U! DRAM_DQ[6]~input_o $end
-$var wire 1 V! DRAM_DQ[7]~input_o $end
-$var wire 1 W! DRAM_DQ[8]~input_o $end
-$var wire 1 X! DRAM_DQ[9]~input_o $end
-$var wire 1 Y! DRAM_DQ[10]~input_o $end
-$var wire 1 Z! DRAM_DQ[11]~input_o $end
-$var wire 1 [! DRAM_DQ[12]~input_o $end
-$var wire 1 \! DRAM_DQ[13]~input_o $end
-$var wire 1 ]! DRAM_DQ[14]~input_o $end
-$var wire 1 ^! DRAM_DQ[15]~input_o $end
-$var wire 1 _! GPIO_0[0]~input_o $end
-$var wire 1 `! GPIO_0[1]~input_o $end
-$var wire 1 a! GPIO_0[2]~input_o $end
-$var wire 1 b! GPIO_0[3]~input_o $end
-$var wire 1 c! GPIO_0[4]~input_o $end
-$var wire 1 d! GPIO_0[5]~input_o $end
-$var wire 1 e! GPIO_0[6]~input_o $end
-$var wire 1 f! GPIO_0[7]~input_o $end
-$var wire 1 g! GPIO_0[8]~input_o $end
-$var wire 1 h! GPIO_0[9]~input_o $end
-$var wire 1 i! GPIO_0[10]~input_o $end
-$var wire 1 j! GPIO_0[11]~input_o $end
-$var wire 1 k! GPIO_0[12]~input_o $end
-$var wire 1 l! GPIO_0[13]~input_o $end
-$var wire 1 m! GPIO_0[14]~input_o $end
-$var wire 1 n! GPIO_0[15]~input_o $end
-$var wire 1 o! GPIO_0[16]~input_o $end
-$var wire 1 p! GPIO_0[17]~input_o $end
-$var wire 1 q! GPIO_0[18]~input_o $end
-$var wire 1 r! GPIO_0[19]~input_o $end
-$var wire 1 s! GPIO_0[20]~input_o $end
-$var wire 1 t! GPIO_0[21]~input_o $end
-$var wire 1 u! GPIO_0[22]~input_o $end
-$var wire 1 v! GPIO_0[23]~input_o $end
-$var wire 1 w! GPIO_0[24]~input_o $end
-$var wire 1 x! GPIO_0[25]~input_o $end
-$var wire 1 y! GPIO_0[26]~input_o $end
-$var wire 1 z! GPIO_0[27]~input_o $end
-$var wire 1 {! GPIO_0[28]~input_o $end
-$var wire 1 |! GPIO_0[29]~input_o $end
-$var wire 1 }! GPIO_0[30]~input_o $end
-$var wire 1 ~! GPIO_0[31]~input_o $end
-$var wire 1 !" GPIO_0[32]~input_o $end
-$var wire 1 "" GPIO_0[33]~input_o $end
-$var wire 1 #" GPIO_1[0]~input_o $end
-$var wire 1 $" GPIO_1[1]~input_o $end
-$var wire 1 %" GPIO_1[2]~input_o $end
-$var wire 1 &" GPIO_1[3]~input_o $end
-$var wire 1 '" GPIO_1[4]~input_o $end
-$var wire 1 (" GPIO_1[5]~input_o $end
-$var wire 1 )" GPIO_1[6]~input_o $end
-$var wire 1 *" GPIO_1[7]~input_o $end
-$var wire 1 +" GPIO_1[8]~input_o $end
-$var wire 1 ," GPIO_1[9]~input_o $end
-$var wire 1 -" GPIO_1[10]~input_o $end
-$var wire 1 ." GPIO_1[11]~input_o $end
-$var wire 1 /" GPIO_1[12]~input_o $end
-$var wire 1 0" GPIO_1[13]~input_o $end
-$var wire 1 1" GPIO_1[14]~input_o $end
-$var wire 1 2" GPIO_1[15]~input_o $end
-$var wire 1 3" GPIO_1[16]~input_o $end
-$var wire 1 4" GPIO_1[17]~input_o $end
-$var wire 1 5" GPIO_1[18]~input_o $end
-$var wire 1 6" GPIO_1[19]~input_o $end
-$var wire 1 7" GPIO_1[20]~input_o $end
-$var wire 1 8" GPIO_1[21]~input_o $end
-$var wire 1 9" GPIO_1[22]~input_o $end
-$var wire 1 :" GPIO_1[23]~input_o $end
-$var wire 1 ;" GPIO_1[24]~input_o $end
-$var wire 1 <" GPIO_1[25]~input_o $end
-$var wire 1 =" GPIO_1[26]~input_o $end
-$var wire 1 >" GPIO_1[27]~input_o $end
-$var wire 1 ?" GPIO_1[28]~input_o $end
-$var wire 1 @" GPIO_1[29]~input_o $end
-$var wire 1 A" GPIO_1[30]~input_o $end
-$var wire 1 B" GPIO_1[31]~input_o $end
-$var wire 1 C" GPIO_1[32]~input_o $end
-$var wire 1 D" GPIO_1[33]~input_o $end
-$var wire 1 E" DRAM_DQ[0]~output_o $end
-$var wire 1 F" DRAM_DQ[1]~output_o $end
-$var wire 1 G" DRAM_DQ[2]~output_o $end
-$var wire 1 H" DRAM_DQ[3]~output_o $end
-$var wire 1 I" DRAM_DQ[4]~output_o $end
-$var wire 1 J" DRAM_DQ[5]~output_o $end
-$var wire 1 K" DRAM_DQ[6]~output_o $end
-$var wire 1 L" DRAM_DQ[7]~output_o $end
-$var wire 1 M" DRAM_DQ[8]~output_o $end
-$var wire 1 N" DRAM_DQ[9]~output_o $end
-$var wire 1 O" DRAM_DQ[10]~output_o $end
-$var wire 1 P" DRAM_DQ[11]~output_o $end
-$var wire 1 Q" DRAM_DQ[12]~output_o $end
-$var wire 1 R" DRAM_DQ[13]~output_o $end
-$var wire 1 S" DRAM_DQ[14]~output_o $end
-$var wire 1 T" DRAM_DQ[15]~output_o $end
-$var wire 1 U" GPIO_0[0]~output_o $end
-$var wire 1 V" GPIO_0[1]~output_o $end
-$var wire 1 W" GPIO_0[2]~output_o $end
-$var wire 1 X" GPIO_0[3]~output_o $end
-$var wire 1 Y" GPIO_0[4]~output_o $end
-$var wire 1 Z" GPIO_0[5]~output_o $end
-$var wire 1 [" GPIO_0[6]~output_o $end
-$var wire 1 \" GPIO_0[7]~output_o $end
-$var wire 1 ]" GPIO_0[8]~output_o $end
-$var wire 1 ^" GPIO_0[9]~output_o $end
-$var wire 1 _" GPIO_0[10]~output_o $end
-$var wire 1 `" GPIO_0[11]~output_o $end
-$var wire 1 a" GPIO_0[12]~output_o $end
-$var wire 1 b" GPIO_0[13]~output_o $end
-$var wire 1 c" GPIO_0[14]~output_o $end
-$var wire 1 d" GPIO_0[15]~output_o $end
-$var wire 1 e" GPIO_0[16]~output_o $end
-$var wire 1 f" GPIO_0[17]~output_o $end
-$var wire 1 g" GPIO_0[18]~output_o $end
-$var wire 1 h" GPIO_0[19]~output_o $end
-$var wire 1 i" GPIO_0[20]~output_o $end
-$var wire 1 j" GPIO_0[21]~output_o $end
-$var wire 1 k" GPIO_0[22]~output_o $end
-$var wire 1 l" GPIO_0[23]~output_o $end
-$var wire 1 m" GPIO_0[24]~output_o $end
-$var wire 1 n" GPIO_0[25]~output_o $end
-$var wire 1 o" GPIO_0[26]~output_o $end
-$var wire 1 p" GPIO_0[27]~output_o $end
-$var wire 1 q" GPIO_0[28]~output_o $end
-$var wire 1 r" GPIO_0[29]~output_o $end
-$var wire 1 s" GPIO_0[30]~output_o $end
-$var wire 1 t" GPIO_0[31]~output_o $end
-$var wire 1 u" GPIO_0[32]~output_o $end
-$var wire 1 v" GPIO_0[33]~output_o $end
-$var wire 1 w" GPIO_1[0]~output_o $end
-$var wire 1 x" GPIO_1[1]~output_o $end
-$var wire 1 y" GPIO_1[2]~output_o $end
-$var wire 1 z" GPIO_1[3]~output_o $end
-$var wire 1 {" GPIO_1[4]~output_o $end
-$var wire 1 |" GPIO_1[5]~output_o $end
-$var wire 1 }" GPIO_1[6]~output_o $end
-$var wire 1 ~" GPIO_1[7]~output_o $end
-$var wire 1 !# GPIO_1[8]~output_o $end
-$var wire 1 "# GPIO_1[9]~output_o $end
-$var wire 1 ## GPIO_1[10]~output_o $end
-$var wire 1 $# GPIO_1[11]~output_o $end
-$var wire 1 %# GPIO_1[12]~output_o $end
-$var wire 1 &# GPIO_1[13]~output_o $end
-$var wire 1 '# GPIO_1[14]~output_o $end
-$var wire 1 (# GPIO_1[15]~output_o $end
-$var wire 1 )# GPIO_1[16]~output_o $end
-$var wire 1 *# GPIO_1[17]~output_o $end
-$var wire 1 +# GPIO_1[18]~output_o $end
-$var wire 1 ,# GPIO_1[19]~output_o $end
-$var wire 1 -# GPIO_1[20]~output_o $end
-$var wire 1 .# GPIO_1[21]~output_o $end
-$var wire 1 /# GPIO_1[22]~output_o $end
-$var wire 1 0# GPIO_1[23]~output_o $end
-$var wire 1 1# GPIO_1[24]~output_o $end
-$var wire 1 2# GPIO_1[25]~output_o $end
-$var wire 1 3# GPIO_1[26]~output_o $end
-$var wire 1 4# GPIO_1[27]~output_o $end
-$var wire 1 5# GPIO_1[28]~output_o $end
-$var wire 1 6# GPIO_1[29]~output_o $end
-$var wire 1 7# GPIO_1[30]~output_o $end
-$var wire 1 8# GPIO_1[31]~output_o $end
-$var wire 1 9# GPIO_1[32]~output_o $end
-$var wire 1 :# GPIO_1[33]~output_o $end
-$var wire 1 ;# LED[0]~output_o $end
-$var wire 1 <# LED[1]~output_o $end
-$var wire 1 =# LED[2]~output_o $end
-$var wire 1 ># LED[3]~output_o $end
-$var wire 1 ?# LED[4]~output_o $end
-$var wire 1 @# LED[5]~output_o $end
-$var wire 1 A# LED[6]~output_o $end
-$var wire 1 B# LED[7]~output_o $end
-$var wire 1 C# DRAM_ADDR[0]~output_o $end
-$var wire 1 D# DRAM_ADDR[1]~output_o $end
-$var wire 1 E# DRAM_ADDR[2]~output_o $end
-$var wire 1 F# DRAM_ADDR[3]~output_o $end
-$var wire 1 G# DRAM_ADDR[4]~output_o $end
-$var wire 1 H# DRAM_ADDR[5]~output_o $end
-$var wire 1 I# DRAM_ADDR[6]~output_o $end
-$var wire 1 J# DRAM_ADDR[7]~output_o $end
-$var wire 1 K# DRAM_ADDR[8]~output_o $end
-$var wire 1 L# DRAM_ADDR[9]~output_o $end
-$var wire 1 M# DRAM_ADDR[10]~output_o $end
-$var wire 1 N# DRAM_ADDR[11]~output_o $end
-$var wire 1 O# DRAM_ADDR[12]~output_o $end
-$var wire 1 P# DRAM_BA[0]~output_o $end
-$var wire 1 Q# DRAM_BA[1]~output_o $end
-$var wire 1 R# DRAM_CAS_N~output_o $end
-$var wire 1 S# DRAM_CKE~output_o $end
-$var wire 1 T# DRAM_CLK~output_o $end
-$var wire 1 U# DRAM_CS_N~output_o $end
-$var wire 1 V# DRAM_DQM[0]~output_o $end
-$var wire 1 W# DRAM_DQM[1]~output_o $end
-$var wire 1 X# DRAM_RAS_N~output_o $end
-$var wire 1 Y# DRAM_WE_N~output_o $end
+$var wire 1 j gnd $end
+$var wire 1 k vcc $end
+$var wire 1 l unknown $end
+$var tri1 1 m devclrn $end
+$var tri1 1 n devpor $end
+$var tri1 1 o devoe $end
+$var wire 1 p SW[3]~input_o $end
+$var wire 1 q Stat[0]~input_o $end
+$var wire 1 r R1m~input_o $end
+$var wire 1 s R0m~input_o $end
+$var wire 1 t NFlag~input_o $end
+$var wire 1 u Qn~input_o $end
+$var wire 1 v Qz~input_o $end
+$var wire 1 w GPIO_0[3]~input_o $end
+$var wire 1 x GPIO_0[4]~input_o $end
+$var wire 1 y GPIO_0[5]~input_o $end
+$var wire 1 z GPIO_0[6]~input_o $end
+$var wire 1 { GPIO_0[7]~input_o $end
+$var wire 1 | GPIO_0[8]~input_o $end
+$var wire 1 } GPIO_0[9]~input_o $end
+$var wire 1 ~ GPIO_0[10]~input_o $end
+$var wire 1 !! GPIO_0[11]~input_o $end
+$var wire 1 "! GPIO_0[12]~input_o $end
+$var wire 1 #! GPIO_0[13]~input_o $end
+$var wire 1 $! GPIO_0[14]~input_o $end
+$var wire 1 %! GPIO_0[15]~input_o $end
+$var wire 1 &! GPIO_0[16]~input_o $end
+$var wire 1 '! GPIO_0[17]~input_o $end
+$var wire 1 (! GPIO_0[18]~input_o $end
+$var wire 1 )! GPIO_0[19]~input_o $end
+$var wire 1 *! GPIO_0[20]~input_o $end
+$var wire 1 +! GPIO_0[21]~input_o $end
+$var wire 1 ,! GPIO_0[22]~input_o $end
+$var wire 1 -! GPIO_0[23]~input_o $end
+$var wire 1 .! GPIO_0[24]~input_o $end
+$var wire 1 /! GPIO_0[25]~input_o $end
+$var wire 1 0! GPIO_0[26]~input_o $end
+$var wire 1 1! GPIO_0[27]~input_o $end
+$var wire 1 2! GPIO_0[28]~input_o $end
+$var wire 1 3! GPIO_0[29]~input_o $end
+$var wire 1 4! GPIO_0[30]~input_o $end
+$var wire 1 5! GPIO_0[31]~input_o $end
+$var wire 1 6! GPIO_0[32]~input_o $end
+$var wire 1 7! GPIO_0[33]~input_o $end
+$var wire 1 8! GPIO_0[2]~input_o $end
+$var wire 1 9! GPIO_0[3]~output_o $end
+$var wire 1 :! GPIO_0[4]~output_o $end
+$var wire 1 ;! GPIO_0[5]~output_o $end
+$var wire 1 <! GPIO_0[6]~output_o $end
+$var wire 1 =! GPIO_0[7]~output_o $end
+$var wire 1 >! GPIO_0[8]~output_o $end
+$var wire 1 ?! GPIO_0[9]~output_o $end
+$var wire 1 @! GPIO_0[10]~output_o $end
+$var wire 1 A! GPIO_0[11]~output_o $end
+$var wire 1 B! GPIO_0[12]~output_o $end
+$var wire 1 C! GPIO_0[13]~output_o $end
+$var wire 1 D! GPIO_0[14]~output_o $end
+$var wire 1 E! GPIO_0[15]~output_o $end
+$var wire 1 F! GPIO_0[16]~output_o $end
+$var wire 1 G! GPIO_0[17]~output_o $end
+$var wire 1 H! GPIO_0[18]~output_o $end
+$var wire 1 I! GPIO_0[19]~output_o $end
+$var wire 1 J! GPIO_0[20]~output_o $end
+$var wire 1 K! GPIO_0[21]~output_o $end
+$var wire 1 L! GPIO_0[22]~output_o $end
+$var wire 1 M! GPIO_0[23]~output_o $end
+$var wire 1 N! GPIO_0[24]~output_o $end
+$var wire 1 O! GPIO_0[25]~output_o $end
+$var wire 1 P! GPIO_0[26]~output_o $end
+$var wire 1 Q! GPIO_0[27]~output_o $end
+$var wire 1 R! GPIO_0[28]~output_o $end
+$var wire 1 S! GPIO_0[29]~output_o $end
+$var wire 1 T! GPIO_0[30]~output_o $end
+$var wire 1 U! GPIO_0[31]~output_o $end
+$var wire 1 V! GPIO_0[32]~output_o $end
+$var wire 1 W! GPIO_0[33]~output_o $end
+$var wire 1 X! GPIO_0[0]~output_o $end
+$var wire 1 Y! GPIO_0[1]~output_o $end
+$var wire 1 Z! GPIO_0[2]~output_o $end
+$var wire 1 [! LED[0]~output_o $end
+$var wire 1 \! LED[1]~output_o $end
+$var wire 1 ]! LED[2]~output_o $end
+$var wire 1 ^! LED[3]~output_o $end
+$var wire 1 _! LED[4]~output_o $end
+$var wire 1 `! LED[5]~output_o $end
+$var wire 1 a! LED[6]~output_o $end
+$var wire 1 b! LED[7]~output_o $end
+$var wire 1 c! R1Clr~output_o $end
+$var wire 1 d! R1Src~output_o $end
+$var wire 1 e! R0WE~output_o $end
+$var wire 1 f! R1WE~output_o $end
+$var wire 1 g! R0Src[0]~output_o $end
+$var wire 1 h! R0Src[1]~output_o $end
+$var wire 1 i! ASrc[0]~output_o $end
+$var wire 1 j! ASrc[1]~output_o $end
+$var wire 1 k! BSrc[0]~output_o $end
+$var wire 1 l! BSrc[1]~output_o $end
+$var wire 1 m! ALUCtrl[0]~output_o $end
+$var wire 1 n! ALUCtrl[1]~output_o $end
+$var wire 1 o! ALUCtrl[2]~output_o $end
+$var wire 1 p! AccRight~output_o $end
+$var wire 1 q! AccParallel~output_o $end
+$var wire 1 r! AccCLR~output_o $end
+$var wire 1 s! QParallel~output_o $end
+$var wire 1 t! QSrc~output_o $end
+$var wire 1 u! QnCLR~output_o $end
+$var wire 1 v! RST~output_o $end
+$var wire 1 w! QRight~output_o $end
+$var wire 1 x! QzSrc~output_o $end
+$var wire 1 y! Stat[1]~input_o $end
+$var wire 1 z! KEY[1]~input_o $end
+$var wire 1 {! GPIO_0[1]~input_o $end
+$var wire 1 |! KEY[0]~input_o $end
+$var wire 1 }! CONTROL|k[0]~2_combout $end
+$var wire 1 ~! CONTROL|k[1]~1_combout $end
+$var wire 1 !" CONTROL|k[1]~1clkctrl_outclk $end
+$var wire 1 "" CONTROL|Add0~0_combout $end
+$var wire 1 #" CONTROL|Add0~1 $end
+$var wire 1 $" CONTROL|Add0~2_combout $end
+$var wire 1 %" CONTROL|Add0~3 $end
+$var wire 1 &" CONTROL|Add0~4_combout $end
+$var wire 1 '" CONTROL|Add0~5 $end
+$var wire 1 (" CONTROL|Add0~6_combout $end
+$var wire 1 )" CONTROL|Add0~7 $end
+$var wire 1 *" CONTROL|Add0~8_combout $end
+$var wire 1 +" CONTROL|Add0~9 $end
+$var wire 1 ," CONTROL|Add0~10_combout $end
+$var wire 1 -" CONTROL|Add0~11 $end
+$var wire 1 ." CONTROL|Add0~12_combout $end
+$var wire 1 /" CONTROL|Add0~13 $end
+$var wire 1 0" CONTROL|Add0~14_combout $end
+$var wire 1 1" CONTROL|Add0~15 $end
+$var wire 1 2" CONTROL|Add0~16_combout $end
+$var wire 1 3" CONTROL|Add0~17 $end
+$var wire 1 4" CONTROL|Add0~18_combout $end
+$var wire 1 5" CONTROL|Add0~19 $end
+$var wire 1 6" CONTROL|Add0~20_combout $end
+$var wire 1 7" CONTROL|Add0~21 $end
+$var wire 1 8" CONTROL|Add0~22_combout $end
+$var wire 1 9" CONTROL|Add0~23 $end
+$var wire 1 :" CONTROL|Add0~24_combout $end
+$var wire 1 ;" CONTROL|Add0~25 $end
+$var wire 1 <" CONTROL|Add0~26_combout $end
+$var wire 1 =" CONTROL|Add0~27 $end
+$var wire 1 >" CONTROL|Add0~28_combout $end
+$var wire 1 ?" CONTROL|Add0~29 $end
+$var wire 1 @" CONTROL|Add0~30_combout $end
+$var wire 1 A" CONTROL|Add0~31 $end
+$var wire 1 B" CONTROL|Add0~32_combout $end
+$var wire 1 C" CONTROL|Add0~33 $end
+$var wire 1 D" CONTROL|Add0~34_combout $end
+$var wire 1 E" CONTROL|Add0~35 $end
+$var wire 1 F" CONTROL|Add0~36_combout $end
+$var wire 1 G" CONTROL|Add0~37 $end
+$var wire 1 H" CONTROL|Add0~38_combout $end
+$var wire 1 I" CONTROL|Add0~39 $end
+$var wire 1 J" CONTROL|Add0~40_combout $end
+$var wire 1 K" CONTROL|Add0~41 $end
+$var wire 1 L" CONTROL|Add0~42_combout $end
+$var wire 1 M" CONTROL|Add0~43 $end
+$var wire 1 N" CONTROL|Add0~44_combout $end
+$var wire 1 O" CONTROL|Add0~45 $end
+$var wire 1 P" CONTROL|Add0~46_combout $end
+$var wire 1 Q" CONTROL|Add0~47 $end
+$var wire 1 R" CONTROL|Add0~48_combout $end
+$var wire 1 S" CONTROL|Add0~49 $end
+$var wire 1 T" CONTROL|Add0~50_combout $end
+$var wire 1 U" CONTROL|Add0~51 $end
+$var wire 1 V" CONTROL|Add0~52_combout $end
+$var wire 1 W" CONTROL|Add0~53 $end
+$var wire 1 X" CONTROL|Add0~54_combout $end
+$var wire 1 Y" CONTROL|Add0~55 $end
+$var wire 1 Z" CONTROL|Add0~56_combout $end
+$var wire 1 [" CONTROL|Add0~57 $end
+$var wire 1 \" CONTROL|Add0~58_combout $end
+$var wire 1 ]" CONTROL|Add0~59 $end
+$var wire 1 ^" CONTROL|Add0~60_combout $end
+$var wire 1 _" CONTROL|NS~11_combout $end
+$var wire 1 `" CONTROL|NS~10_combout $end
+$var wire 1 a" CONTROL|NS~2_combout $end
+$var wire 1 b" SW[2]~input_o $end
+$var wire 1 c" SW[0]~input_o $end
+$var wire 1 d" SW[1]~input_o $end
+$var wire 1 e" CONTROL|NS~0_combout $end
+$var wire 1 f" GPIO_0[0]~input_o $end
+$var wire 1 g" CONTROL|NS~1_combout $end
+$var wire 1 h" CONTROL|NS~3_combout $end
+$var wire 1 i" CONTROL|NS~4_combout $end
+$var wire 1 j" CONTROL|NS~6_combout $end
+$var wire 1 k" CONTROL|NS~8_combout $end
+$var wire 1 l" CONTROL|NS~5_combout $end
+$var wire 1 m" CONTROL|NS~7_combout $end
+$var wire 1 n" CONTROL|NS~9_combout $end
+$var wire 1 o" CONTROL|NS~12_combout $end
+$var wire 1 p" CONTROL|CS~q $end
+$var wire 1 q" CONTROL|k[1]~0_combout $end
+$var wire 1 r" CONTROL|BSrc[1]~0_combout $end
+$var wire 1 s" CONTROL|BSrc[1]~0clkctrl_outclk $end
+$var wire 1 t" CONTROL|R1WE~combout $end
+$var wire 1 u" CONTROL|ALUCtrl[2]~0_combout $end
+$var wire 1 v" CONTROL|ALUCtrl[2]~0clkctrl_outclk $end
+$var wire 1 w" CONTROL|BSrc [1] $end
+$var wire 1 x" CONTROL|BSrc [0] $end
+$var wire 1 y" CONTROL|ALUCtrl [2] $end
+$var wire 1 z" CONTROL|ALUCtrl [1] $end
+$var wire 1 {" CONTROL|ALUCtrl [0] $end
+$var wire 1 |" CONTROL|k [31] $end
+$var wire 1 }" CONTROL|k [30] $end
+$var wire 1 ~" CONTROL|k [29] $end
+$var wire 1 !# CONTROL|k [28] $end
+$var wire 1 "# CONTROL|k [27] $end
+$var wire 1 ## CONTROL|k [26] $end
+$var wire 1 $# CONTROL|k [25] $end
+$var wire 1 %# CONTROL|k [24] $end
+$var wire 1 &# CONTROL|k [23] $end
+$var wire 1 '# CONTROL|k [22] $end
+$var wire 1 (# CONTROL|k [21] $end
+$var wire 1 )# CONTROL|k [20] $end
+$var wire 1 *# CONTROL|k [19] $end
+$var wire 1 +# CONTROL|k [18] $end
+$var wire 1 ,# CONTROL|k [17] $end
+$var wire 1 -# CONTROL|k [16] $end
+$var wire 1 .# CONTROL|k [15] $end
+$var wire 1 /# CONTROL|k [14] $end
+$var wire 1 0# CONTROL|k [13] $end
+$var wire 1 1# CONTROL|k [12] $end
+$var wire 1 2# CONTROL|k [11] $end
+$var wire 1 3# CONTROL|k [10] $end
+$var wire 1 4# CONTROL|k [9] $end
+$var wire 1 5# CONTROL|k [8] $end
+$var wire 1 6# CONTROL|k [7] $end
+$var wire 1 7# CONTROL|k [6] $end
+$var wire 1 8# CONTROL|k [5] $end
+$var wire 1 9# CONTROL|k [4] $end
+$var wire 1 :# CONTROL|k [3] $end
+$var wire 1 ;# CONTROL|k [2] $end
+$var wire 1 <# CONTROL|k [1] $end
+$var wire 1 =# CONTROL|k [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-x!
-bx "
-bx0101xzz #
-bx $
-bx %
-bx &
-b0 '
-b0 (
-05
-04
-03
-02
-01
-00
+bx000 !
+b1x "
+0#
+0$
+x%
+0&
+0'
+bx000 (
+b0 )
+x,
+x+
+x*
+1.
+1-
 0/
-0.
-0-
-0,
-0+
-0*
-0)
-07
-06
-08
-09
-0:
-0;
+00
+01
+x3
+x2
+0U
+0T
+0S
+xR
+xQ
+xP
+xO
+xN
+xM
+xL
 xK
 xJ
 xI
@@ -402,148 +376,146 @@ x?
 x>
 x=
 x<
-0M
-0L
-0N
-0O
-zq
-zp
-xo
-1n
-0m
-1l
-0k
-xj
-xi
-xh
-xg
-xf
-xe
+x;
+x:
+x9
+x8
+x7
+x6
+x5
+x4
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0^
+0_
+0`
+0a
+0b
 xd
-xc
-xb
-xa
-x`
-x_
-x^
-x]
-x\
-x[
-xZ
-xY
-xX
-xW
-xV
-xU
-xT
-xS
-xR
-xQ
-xP
-x5!
-x4!
-x3!
-x2!
-x1!
-x0!
-x/!
-x.!
-x-!
-x,!
-x+!
-x*!
-x)!
-x(!
-x'!
-x&!
-x%!
-x$!
-x#!
-x"!
-x!!
-x~
-x}
-x|
-x{
-xz
-xy
-xx
-xw
+1c
+1e
+0f
+0g
+xh
+0i
+0j
+1k
+xl
+1m
+1n
+1o
+xp
+0q
+0r
+0s
+0t
+0u
 xv
-xu
-xt
-xs
-xr
-0=!
-0<!
-0;!
-0:!
-09!
+xw
+xx
+xy
+xz
+x{
+x|
+x}
+x~
+x!!
+x"!
+x#!
+x$!
+x%!
+x&!
+x'!
+x(!
+x)!
+x*!
+x+!
+x,!
+x-!
+x.!
+x/!
+x0!
+x1!
+x2!
+x3!
+x4!
+x5!
+x6!
+x7!
 08!
-07!
-06!
-0>!
-1?!
-x@!
-1A!
-1B!
-1C!
-xD!
-0E!
-0F!
-0G!
-0H!
-0I!
-0J!
-xK!
-xL!
-xM!
-xN!
-xO!
-xP!
-xQ!
-xR!
-xS!
-xT!
-xU!
-xV!
-xW!
-xX!
-xY!
-xZ!
-x[!
-x\!
-x]!
-x^!
-z_!
-z`!
-xa!
-1b!
+z9!
+z:!
+z;!
+z<!
+z=!
+z>!
+z?!
+z@!
+zA!
+zB!
+zC!
+zD!
+zE!
+zF!
+zG!
+zH!
+zI!
+zJ!
+zK!
+zL!
+zM!
+zN!
+zO!
+zP!
+zQ!
+zR!
+zS!
+zT!
+zU!
+zV!
+zW!
+zX!
+zY!
+0Z!
+0[!
+0\!
+0]!
+0^!
+0_!
+0`!
+0a!
+0b!
 0c!
-1d!
-0e!
+0d!
+1e!
 xf!
 xg!
-xh!
-xi!
-xj!
+1h!
+1i!
+1j!
 xk!
 xl!
 xm!
 xn!
 xo!
-xp!
-xq!
-xr!
-xs!
-xt!
-xu!
-xv!
-xw!
-xx!
-xy!
-xz!
-x{!
+0p!
+0q!
+0r!
+0s!
+0t!
+0u!
+0v!
+0w!
+0x!
+0y!
+1z!
+0{!
 x|!
 x}!
 x~!
@@ -583,717 +555,119 @@ xA"
 xB"
 xC"
 xD"
-zE"
-zF"
-zG"
-zH"
-zI"
-zJ"
-zK"
-zL"
-zM"
-zN"
-zO"
-zP"
-zQ"
-zR"
-zS"
-zT"
-zU"
-zV"
-1W"
-zX"
-zY"
-zZ"
-z["
-z\"
-z]"
-z^"
-z_"
-z`"
-za"
-zb"
-zc"
-zd"
-ze"
-zf"
-zg"
-zh"
-zi"
-zj"
-zk"
-zl"
-zm"
-zn"
-zo"
-zp"
-zq"
-zr"
-zs"
-zt"
-zu"
-zv"
-zw"
+xE"
+xF"
+xG"
+xH"
+xI"
+xJ"
+xK"
+xL"
+xM"
+xN"
+xO"
+xP"
+xQ"
+xR"
+xS"
+xT"
+xU"
+xV"
+xW"
+xX"
+xY"
+xZ"
+x["
+x\"
+x]"
+x^"
+x_"
+x`"
+xa"
+0b"
+0c"
+0d"
+xe"
+0f"
+0g"
+xh"
+0i"
+xj"
+xk"
+xl"
+xm"
+xn"
+0o"
+0p"
+1q"
+xr"
+xs"
+xt"
+0u"
+0v"
 zx"
-zy"
-zz"
-z{"
-z|"
-z}"
-z~"
-z!#
-z"#
-z##
-z$#
-z%#
-z&#
-z'#
-z(#
-z)#
-z*#
-z+#
-z,#
-z-#
-z.#
-z/#
-z0#
-z1#
-z2#
-z3#
-z4#
-z5#
-z6#
-z7#
-z8#
-z9#
-z:#
-0;#
-0<#
-0=#
-0>#
-0?#
-0@#
-0A#
-0B#
-0C#
-0D#
-0E#
-0F#
-0G#
-0H#
-0I#
-0J#
-0K#
-0L#
-0M#
-0N#
-0O#
-0P#
-0Q#
-0R#
-0S#
-0T#
-0U#
-0V#
-0W#
-0X#
-0Y#
+xw"
+x{"
+xz"
+xy"
+z=#
+x<#
+x;#
+x:#
+x9#
+x8#
+x7#
+x6#
+x5#
+x4#
+x3#
+x2#
+x1#
+x0#
+x/#
+x.#
+x-#
+x,#
+x+#
+x*#
+x)#
+x(#
+x'#
+x&#
+x%#
+x$#
+x##
+x"#
+x!#
+x~"
+x}"
+x|"
 $end
-#5000
-b10 '
-1F!
-#10000
-b0 '
-0F!
-#15000
-b10 '
-1F!
-#20000
-b0 '
-0F!
-#25000
-b10 '
-1F!
-#30000
-b0 '
-0F!
-#35000
-b10 '
-1F!
-#40000
-b0 '
-0F!
-#45000
-b10 '
-1F!
-#50000
-b0 '
-0F!
-#55000
-b10 '
-1F!
-#60000
-b0 '
-0F!
-#65000
-b10 '
-1F!
-#70000
-b0 '
-0F!
-#75000
-b10 '
-1F!
-#80000
-b0 '
-0F!
-#85000
-b10 '
-1F!
-#90000
-b0 '
-0F!
-#95000
-b10 '
-1F!
 #100000
-b0 '
-0F!
-#105000
-b10 '
-1F!
-#110000
-b0 '
-0F!
-#115000
-b10 '
-1F!
-#120000
-b0 '
-0F!
-#125000
-b10 '
-1F!
-#130000
-b0 '
-0F!
-#135000
-b10 '
-1F!
-#140000
-b0 '
-0F!
-#145000
-b10 '
-1F!
-#150000
-b0 '
-0F!
-#155000
-b10 '
-1F!
-#160000
-b0 '
-0F!
-#165000
-b10 '
-1F!
-#170000
-b0 '
-0F!
-#175000
-b10 '
-1F!
-#180000
-b0 '
-0F!
-#185000
-b10 '
-1F!
-#190000
-b0 '
-0F!
-#195000
-b10 '
-1F!
+b0x "
+0z!
 #200000
-b0 '
-0F!
-#205000
-b10 '
-1F!
-#210000
-b0 '
-0F!
-#215000
-b10 '
-1F!
-#220000
-b0 '
-0F!
-#225000
-b10 '
-1F!
-#230000
-b0 '
-0F!
-#235000
-b10 '
-1F!
-#240000
-b0 '
-0F!
-#245000
-b10 '
-1F!
-#250000
-b0 '
-0F!
-#255000
-b10 '
-1F!
-#260000
-b0 '
-0F!
-#265000
-b10 '
-1F!
-#270000
-b0 '
-0F!
-#275000
-b10 '
-1F!
-#280000
-b0 '
-0F!
-#285000
-b10 '
-1F!
-#290000
-b0 '
-0F!
-#295000
-b10 '
-1F!
+b1x "
+1z!
 #300000
-b0 '
-0F!
-#305000
-b10 '
-1F!
-#310000
-b0 '
-0F!
-#315000
-b10 '
-1F!
-#320000
-b0 '
-0F!
-#325000
-b10 '
-1F!
-#330000
-b0 '
-0F!
-#335000
-b10 '
-1F!
-#340000
-b0 '
-0F!
-#345000
-b10 '
-1F!
-#350000
-b0 '
-0F!
-#355000
-b10 '
-1F!
-#360000
-b0 '
-0F!
-#365000
-b10 '
-1F!
-#370000
-b0 '
-0F!
-#375000
-b10 '
-1F!
-#380000
-b0 '
-0F!
-#385000
-b10 '
-1F!
-#390000
-b0 '
-0F!
-#395000
-b10 '
-1F!
+b0x "
+0z!
 #400000
-b0 '
-0F!
-#405000
-b10 '
-1F!
-#410000
-b0 '
-0F!
-#415000
-b10 '
-1F!
-#420000
-b0 '
-0F!
-#425000
-b10 '
-1F!
-#430000
-b0 '
-0F!
-#435000
-b10 '
-1F!
-#440000
-b0 '
-0F!
-#445000
-b10 '
-1F!
-#450000
-b0 '
-0F!
-#455000
-b10 '
-1F!
-#460000
-b0 '
-0F!
-#465000
-b10 '
-1F!
-#470000
-b0 '
-0F!
-#475000
-b10 '
-1F!
-#480000
-b0 '
-0F!
-#485000
-b10 '
-1F!
-#490000
-b0 '
-0F!
-#495000
-b10 '
-1F!
+b1x "
+1z!
 #500000
-b0 '
-0F!
-#505000
-b10 '
-1F!
-#510000
-b0 '
-0F!
-#515000
-b10 '
-1F!
-#520000
-b0 '
-0F!
-#525000
-b10 '
-1F!
-#530000
-b0 '
-0F!
-#535000
-b10 '
-1F!
-#540000
-b0 '
-0F!
-#545000
-b10 '
-1F!
-#550000
-b0 '
-0F!
-#555000
-b10 '
-1F!
-#560000
-b0 '
-0F!
-#565000
-b10 '
-1F!
-#570000
-b0 '
-0F!
-#575000
-b10 '
-1F!
-#580000
-b0 '
-0F!
-#585000
-b10 '
-1F!
-#590000
-b0 '
-0F!
-#595000
-b10 '
-1F!
+b0x "
+0z!
 #600000
-b0 '
-0F!
-#605000
-b10 '
-1F!
-#610000
-b0 '
-0F!
-#615000
-b10 '
-1F!
-#620000
-b0 '
-0F!
-#625000
-b10 '
-1F!
-#630000
-b0 '
-0F!
-#635000
-b10 '
-1F!
-#640000
-b0 '
-0F!
-#645000
-b10 '
-1F!
-#650000
-b0 '
-0F!
-#655000
-b10 '
-1F!
-#660000
-b0 '
-0F!
-#665000
-b10 '
-1F!
-#670000
-b0 '
-0F!
-#675000
-b10 '
-1F!
-#680000
-b0 '
-0F!
-#685000
-b10 '
-1F!
-#690000
-b0 '
-0F!
-#695000
-b10 '
-1F!
+b1x "
+1z!
 #700000
-b0 '
-0F!
-#705000
-b10 '
-1F!
-#710000
-b0 '
-0F!
-#715000
-b10 '
-1F!
-#720000
-b0 '
-0F!
-#725000
-b10 '
-1F!
-#730000
-b0 '
-0F!
-#735000
-b10 '
-1F!
-#740000
-b0 '
-0F!
-#745000
-b10 '
-1F!
-#750000
-b0 '
-0F!
-#755000
-b10 '
-1F!
-#760000
-b0 '
-0F!
-#765000
-b10 '
-1F!
-#770000
-b0 '
-0F!
-#775000
-b10 '
-1F!
-#780000
-b0 '
-0F!
-#785000
-b10 '
-1F!
-#790000
-b0 '
-0F!
-#795000
-b10 '
-1F!
+b0x "
+0z!
 #800000
-b0 '
-0F!
-#805000
-b10 '
-1F!
-#810000
-b0 '
-0F!
-#815000
-b10 '
-1F!
-#820000
-b0 '
-0F!
-#825000
-b10 '
-1F!
-#830000
-b0 '
-0F!
-#835000
-b10 '
-1F!
-#840000
-b0 '
-0F!
-#845000
-b10 '
-1F!
-#850000
-b0 '
-0F!
-#855000
-b10 '
-1F!
-#860000
-b0 '
-0F!
-#865000
-b10 '
-1F!
-#870000
-b0 '
-0F!
-#875000
-b10 '
-1F!
-#880000
-b0 '
-0F!
-#885000
-b10 '
-1F!
-#890000
-b0 '
-0F!
-#895000
-b10 '
-1F!
+b1x "
+1z!
 #900000
-b0 '
-0F!
-#905000
-b10 '
-1F!
-#910000
-b0 '
-0F!
-#915000
-b10 '
-1F!
-#920000
-b0 '
-0F!
-#925000
-b10 '
-1F!
-#930000
-b0 '
-0F!
-#935000
-b10 '
-1F!
-#940000
-b0 '
-0F!
-#945000
-b10 '
-1F!
-#950000
-b0 '
-0F!
-#955000
-b10 '
-1F!
-#960000
-b0 '
-0F!
-#965000
-b10 '
-1F!
-#970000
-b0 '
-0F!
-#975000
-b10 '
-1F!
-#980000
-b0 '
-0F!
-#985000
-b10 '
-1F!
-#990000
-b0 '
-0F!
-#995000
-b10 '
-1F!
+b0x "
+0z!
 #1000000

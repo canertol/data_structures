@@ -1,0 +1,37 @@
+ module shift_reg #(parameter W = 8) (
+	clk,
+	parallel, right,
+	DATA, A, R, L,
+	reset
+);
+ 	input clk;
+	input [W-1:0] DATA;
+	output reg [W-1:0] A;
+	input reset, R, L;
+
+	initial
+	begin
+		A = {W{1'b0}};
+	end
+
+	always @(posedge clk)
+	begin
+		if (reset)
+			always @(posedge clk)
+				A <= {W{1'b0}};
+		else if(parallel==1)
+			always @(posedge clk)
+				A <= DATA;
+		else	if(right)
+		begin
+			A <= A >> 1;
+			A[W-1] <= L;
+		end
+		else
+		begin
+			A <= A << 1;
+			A[W-1] <= R;
+		end
+		
+	end
+endmodule

@@ -1,17 +1,137 @@
 ------------------------------------------------------------
-TimeQuest Timing Analyzer Summary
+Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 16.000
+Type  : Slow 1200mV 85C Model Setup 'GPIO_0[1]'
+Slack : -6.787
+TNS   : -179.850
+
+Type  : Slow 1200mV 85C Model Setup 'KEY[0]'
+Slack : -5.526
+TNS   : -140.521
+
+Type  : Slow 1200mV 85C Model Setup 'KEY[1]'
+Slack : -5.049
+TNS   : -5.049
+
+Type  : Slow 1200mV 85C Model Hold 'KEY[1]'
+Slack : 1.080
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 16.000
+Type  : Slow 1200mV 85C Model Hold 'KEY[0]'
+Slack : 1.665
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 16.000
+Type  : Slow 1200mV 85C Model Hold 'GPIO_0[1]'
+Slack : 1.981
 TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'KEY[1]'
+Slack : -1.044
+TNS   : -1.044
+
+Type  : Slow 1200mV 85C Model Removal 'KEY[1]'
+Slack : 0.732
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GPIO_0[1]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'GPIO_0[1]'
+Slack : -6.005
+TNS   : -158.183
+
+Type  : Slow 1200mV 0C Model Setup 'KEY[0]'
+Slack : -4.906
+TNS   : -124.034
+
+Type  : Slow 1200mV 0C Model Setup 'KEY[1]'
+Slack : -4.461
+TNS   : -4.461
+
+Type  : Slow 1200mV 0C Model Hold 'KEY[1]'
+Slack : 1.006
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'KEY[0]'
+Slack : 1.558
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'GPIO_0[1]'
+Slack : 1.778
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'KEY[1]'
+Slack : -0.924
+TNS   : -0.924
+
+Type  : Slow 1200mV 0C Model Removal 'KEY[1]'
+Slack : 0.709
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GPIO_0[1]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'GPIO_0[1]'
+Slack : -4.340
+TNS   : -113.822
+
+Type  : Fast 1200mV 0C Model Setup 'KEY[1]'
+Slack : -3.124
+TNS   : -3.124
+
+Type  : Fast 1200mV 0C Model Setup 'KEY[0]'
+Slack : -2.902
+TNS   : -68.596
+
+Type  : Fast 1200mV 0C Model Hold 'KEY[1]'
+Slack : 0.513
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'KEY[0]'
+Slack : 0.609
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'GPIO_0[1]'
+Slack : 1.067
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'KEY[1]'
+Slack : -0.872
+TNS   : -0.872
+
+Type  : Fast 1200mV 0C Model Removal 'KEY[1]'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -3.000
+TNS   : -22.947
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GPIO_0[1]'
+Slack : -3.000
+TNS   : -12.879
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -4.173
 
 ------------------------------------------------------------

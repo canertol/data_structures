@@ -1,5 +1,5 @@
 Flow report for de0nano_embedding
-Tue Mar 12 17:13:02 2019
+Mon Mar 11 16:39:47 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Mar 12 17:12:58 2019       ;
+; Flow Status                        ; Successful - Mon Mar 11 16:39:47 2019       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; de0nano_embedding                           ;
 ; Top-level Entity Name              ; de0nano_embedding                           ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 17 / 22,320 ( < 1 % )                       ;
-;     Total combinational functions  ; 16 / 22,320 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 16 / 22,320 ( < 1 % )                       ;
-; Total registers                    ; 16                                          ;
+; Total logic elements               ; 13 / 22,320 ( < 1 % )                       ;
+;     Total combinational functions  ; 10 / 22,320 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 13 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 13                                          ;
 ; Total pins                         ; 126 / 154 ( 82 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -64,26 +64,32 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/12/2019 17:12:28 ;
+; Start date & time ; 03/11/2019 16:39:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; de0nano_embedding   ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 112702518966964.155239994805476        ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                ;
++-------------------------------------+--------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                      ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+--------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 112702519872704.155231154004996            ; --            ; --          ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                         ; --            ; --          ; eda_simulation ;
+; EDA_NETLIST_WRITER_OUTPUT_DIR       ; C:/intelFPGA_lite/18.1/simulation/modelsim ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                ; --            ; --          ; eda_simulation ;
+; EDA_RUN_TOOL_AUTOMATICALLY          ; Off                                        ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                  ; <None>        ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                       ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                         ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                          ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)     ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)     ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)     ; --            ; --          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                        ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW      ; --            ; --          ; --             ;
++-------------------------------------+--------------------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -91,11 +97,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 589 MB              ; 00:00:43                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 1051 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 534 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 608 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:31     ; --                      ; --                  ; 00:00:57                           ;
+; Analysis & Synthesis      ; 00:00:22     ; 1.0                     ; 591 MB              ; 00:00:43                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 1051 MB             ; 00:00:08                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 536 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 609 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 494 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:38     ; --                      ; --                  ; 00:00:57                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,16 +115,18 @@ refer to the applicable agreement for further details.
 ; Fitter                    ; hamis            ; Windows 7 ; 6.1        ; x86_64         ;
 ; Assembler                 ; hamis            ; Windows 7 ; 6.1        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; hamis            ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; hamis            ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off de0nano_embedding -c de0nano_embedding
-quartus_fit --read_settings_files=off --write_settings_files=off de0nano_embedding -c de0nano_embedding
-quartus_asm --read_settings_files=off --write_settings_files=off de0nano_embedding -c de0nano_embedding
-quartus_sta de0nano_embedding -c de0nano_embedding
+quartus_map --read_settings_files=on --write_settings_files=off LAB1 -c de0nano_embedding
+quartus_fit --read_settings_files=off --write_settings_files=off LAB1 -c de0nano_embedding
+quartus_asm --read_settings_files=off --write_settings_files=off LAB1 -c de0nano_embedding
+quartus_sta LAB1 -c de0nano_embedding
+quartus_eda --read_settings_files=off --write_settings_files=off LAB1 -c de0nano_embedding
 
 
 

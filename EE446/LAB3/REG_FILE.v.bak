@@ -1,0 +1,10 @@
+module REG_FILE #(parameter W = 32)(
+	clk, 
+	data_in,
+	WE3, rst,
+	A1, A2, A3, 
+	RD1, RD2
+	);
+
+	
+endmodule

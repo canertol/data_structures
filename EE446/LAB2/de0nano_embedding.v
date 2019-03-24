@@ -37,11 +37,7 @@ module de0nano_embedding(
 /*	GPIO_1,
 	GPIO_1_IN,
 	*/
-Stat,R1m, R0m,R1Clr, R1Src, R0WE, R1WE,R0Src, ASrc, BSrc,ALUCtrl,NFlag , Qn,Qz,
-   
-   AccRight, AccParallel, AccCLR, QParallel, QSrc, QnCLR, RST, QRight, QzSrc
-	
-	
+	R1Clr, R1Src, R0WE, R1WE, R0Src, ASrc, BSrc, ALUCtrl,NFlag , Qn, Qz , ERR, AccRight, AccParallel, AccCLR, QParallel, QSrc, QnCLR, RST, QRight, QzSrc, NS,CS, OverF_CO, OverF, CarryO, Stat, Count, AccOut, Qout
 );
 
 //=======================================================
@@ -90,17 +86,20 @@ input 		     [1:0]		GPIO_1_IN;
 //  REG/WIRE declarations
 //=======================================================
    
-    //input [2:0] OP;
-     input [1:0] Stat;
-	input R1m, R0m;
-     output wire R1Clr, R1Src, R0WE, R1WE;
-	output wire [1:0] R0Src, ASrc, BSrc;
-	 output wire  [2:0] ALUCtrl;
-   input NFlag , Qn, Qz;
-      //output wire ERR;
+    reg [2:0] OP;
+	 reg LOAD, COMP, CLR;
+    output wire [1:0] Stat;
+	 reg R1m, R0m;
+    output wire R1Clr, R1Src, R0WE, R1WE;
+	 output wire [1:0] R0Src, ASrc, BSrc;
+	 output wire  [2:0] ALUCtrl, Count;
+    output wire NFlag , Qn, Qz;
+    output wire ERR;
     output wire  AccRight, AccParallel, AccCLR, QParallel, QSrc, QnCLR, RST, QRight, QzSrc;
-
-  
+	 output wire [4:0] NS, CS;
+	 output wire OverF, CarryO;
+	 output wire [1:0] OverF_CO;
+	output wire [3:0] AccOut, Qout;
 
 //=======================================================
 //  Structural coding
@@ -114,19 +113,20 @@ Controller_Unit #(4) CONTROL(.CLK(KEY[1]),
             .OP(SW[2:0]),  //ALP Operation
 				.QParallel(QParallel), .QSrc(QSrc), .QnCLR(QnCLR), .RST(RST), .QRight(QRight), .QzSrc(QzSrc), .Qn(Qn), .Qz(Qz),
             .CLR(GPIO_0[1]), // reset registers
-            .ERR(GPIO_0[2]) // Arithmetic overflow
-            );
+            .ERR(GPIO_0[2]), // Arithmetic overflow
+				.Ready(GPIO_0[7]),
+            .NS(NS), .CS(CS), .Count(Count)
+				);
 			
-/*				
+			
 ALP DATAPATH(.CLK(KEY[1]),
             .AccRight(AccRight), .AccParallel(AccParallel), .AccCLR(AccCLR), // Acc register control
             .ALUCtrl(ALUCtrl), .ASrc(ASrc), .BSrc(BSrc),  // ALU Controllers
             .Stat(Stat), .NFlag(NFlag),    // Status bits
             .R1m(R1m), .R0m(R0m),
             .R1Clr(R1Clr), .R1Src(R1Src), .R0WE(R0WE), .R1WE(R1WE), .R0Src(R0Src),
-           	.QParallel(QParallel), .QSrc(QSrc), .QnCLR(QnCLR), .RST(RST), .QRight(QRight), .QzSrc(QzSrc), .Qn(Qn),
-            .DATA(GPIO_0[6:3]), .R0out(LED[3:0]), .R1out(LED[7:4]) 
+           	.QParallel(QParallel), .QSrc(QSrc), .QnCLR(QnCLR), .RST(RST), .QRight(QRight), .QzSrc(QzSrc), .Qn(Qn),.Qz(Qz),
+            .DATA(GPIO_0[6:3]), .R0out(LED[3:0]), .R1out(LED[7:4]), .OverF(OverF), .OverF_CO(OverF_CO), .CarryO(CarryO), .AccOut(AccOut), .Qout(Qout)
 				);
-*/
 
 endmodule

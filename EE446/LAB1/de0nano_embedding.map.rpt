@@ -1,6 +1,6 @@
 Analysis & Synthesis report for de0nano_embedding
-Mon Mar 11 16:39:22 2019
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Sun Mar 17 19:01:51 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -13,29 +13,19 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. User-Specified and Inferred Latches
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |de0nano_embedding
- 11. Parameter Settings for User Entity Instance: DATAPATH:data_path|register_A:R1
- 12. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux2:inst1
- 13. Parameter Settings for User Entity Instance: DATAPATH:data_path|shift_reg:Acc
- 14. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux4:inst6
- 15. Parameter Settings for User Entity Instance: DATAPATH:data_path|shift_reg:Q
- 16. Parameter Settings for User Entity Instance: DATAPATH:data_path|alu:inst4
- 17. Parameter Settings for User Entity Instance: DATAPATH:data_path|mux2:inst3
- 18. Parameter Settings for User Entity Instance: DATAPATH:data_path|Constant_Value_Generator:inst11
- 19. Parameter Settings for User Entity Instance: DATAPATH:data_path|Constant_Value_Generator:inst10
- 20. Parameter Settings for User Entity Instance: DATAPATH:data_path|register_A:R0
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |Controller_Unit
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -54,16 +44,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Mar 11 16:39:22 2019       ;
-; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 17 19:01:51 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; de0nano_embedding                           ;
-; Top-level Entity Name              ; de0nano_embedding                           ;
+; Top-level Entity Name              ; Controller_Unit                             ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 14                                          ;
-;     Total combinational functions  ; 9                                           ;
-;     Dedicated logic registers      ; 13                                          ;
-; Total registers                    ; 13                                          ;
-; Total pins                         ; 126                                         ;
+; Total logic elements               ; 85                                          ;
+;     Total combinational functions  ; 85                                          ;
+;     Dedicated logic registers      ; 1                                           ;
+; Total registers                    ; 1                                           ;
+; Total pins                         ; 37                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -71,90 +61,90 @@ refer to the applicable agreement for further details.
 +------------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                     ; Setting            ; Default Value      ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                                      ; de0nano_embedding  ; de0nano_embedding  ;
-; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
-; Use smart compilation                                                      ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                                ; Off                ; Off                ;
-; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
-; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
-; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto               ; Auto               ;
-; Safe State Machine                                                         ; Off                ; Off                ;
-; Extract Verilog State Machines                                             ; On                 ; On                 ;
-; Extract VHDL State Machines                                                ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
-; Parallel Synthesis                                                         ; On                 ; On                 ;
-; DSP Block Balancing                                                        ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                         ; On                 ; On                 ;
-; Power-Up Don't Care                                                        ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
-; Remove Duplicate Registers                                                 ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                         ; 70                 ; 70                 ;
-; Auto Carry Chains                                                          ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
-; Auto ROM Replacement                                                       ; On                 ; On                 ;
-; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
-; Strict RAM Replacement                                                     ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                      ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
-; Report Parameter Settings                                                  ; On                 ; On                 ;
-; Report Source Assignments                                                  ; On                 ; On                 ;
-; Report Connectivity Checks                                                 ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
-; HDL message level                                                          ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
-; Clock MUX Protection                                                       ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
-; Block Design Naming                                                        ; Auto               ; Auto               ;
-; SDC constraint protection                                                  ; Off                ; Off                ;
-; Synthesis Effort                                                           ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; Controller_Unit    ; de0nano_embedding  ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
 
 
 +------------------------------------------+
@@ -162,89 +152,116 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path       ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
-; Constant_Value_Generator.v       ; yes             ; User Verilog HDL File              ; D:/LAB1/Constant_Value_Generator.v ;         ;
-; mux4.v                           ; yes             ; User Verilog HDL File              ; D:/LAB1/mux4.v                     ;         ;
-; mux2.v                           ; yes             ; User Verilog HDL File              ; D:/LAB1/mux2.v                     ;         ;
-; alu.v                            ; yes             ; User Verilog HDL File              ; D:/LAB1/alu.v                      ;         ;
-; register_A.v                     ; yes             ; User Verilog HDL File              ; D:/LAB1/register_A.v               ;         ;
-; shift_reg.v                      ; yes             ; User Verilog HDL File              ; D:/LAB1/shift_reg.v                ;         ;
-; DATAPATH.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/LAB1/DATAPATH.bdf               ;         ;
-; de0nano_embedding.v              ; yes             ; User Verilog HDL File              ; D:/LAB1/de0nano_embedding.v        ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------+---------+
+; ../LAB2/Controller_Unit.v        ; yes             ; User Verilog HDL File  ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 14           ;
-;                                             ;              ;
-; Total combinational functions               ; 9            ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 1            ;
-;     -- 3 input functions                    ; 4            ;
-;     -- <=2 input functions                  ; 4            ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 9            ;
-;     -- arithmetic mode                      ; 0            ;
-;                                             ;              ;
-; Total registers                             ; 13           ;
-;     -- Dedicated logic registers            ; 13           ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 126          ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; KEY[1]~input ;
-; Maximum fan-out                             ; 13           ;
-; Total fan-out                               ; 180          ;
-; Average fan-out                             ; 0.66         ;
-+---------------------------------------------+--------------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 85     ;
+;                                             ;        ;
+; Total combinational functions               ; 85     ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 13     ;
+;     -- 3 input functions                    ; 39     ;
+;     -- <=2 input functions                  ; 33     ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 55     ;
+;     -- arithmetic mode                      ; 30     ;
+;                                             ;        ;
+; Total registers                             ; 1      ;
+;     -- Dedicated logic registers            ; 1      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 37     ;
+;                                             ;        ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+;                                             ;        ;
+; Maximum fan-out node                        ; k[1]~0 ;
+; Maximum fan-out                             ; 31     ;
+; Total fan-out                               ; 286    ;
+; Average fan-out                             ; 1.79   ;
++---------------------------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                            ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Entity Name       ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+-------------------+--------------+
-; |de0nano_embedding         ; 9 (0)               ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 126  ; 0            ; |de0nano_embedding                                  ; de0nano_embedding ; work         ;
-;    |DATAPATH:data_path|    ; 9 (0)               ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path               ; DATAPATH          ; work         ;
-;       |mux2:inst1|         ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|mux2:inst1    ; mux2              ; work         ;
-;       |register_A:R0|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|register_A:R0 ; register_A        ; work         ;
-;       |register_A:R1|      ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|register_A:R1 ; register_A        ; work         ;
-;       |shift_reg:Acc|      ; 5 (5)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|shift_reg:Acc ; shift_reg         ; work         ;
-;       |shift_reg:Q|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|DATAPATH:data_path|shift_reg:Q   ; shift_reg         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------+-------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                          ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-----------------+--------------+
+; |Controller_Unit           ; 85 (85)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |Controller_Unit    ; Controller_Unit ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                 ;
-+-------------------------------------------+----------------------------------------+
-; Register name                             ; Reason for Removal                     ;
-+-------------------------------------------+----------------------------------------+
-; DATAPATH:data_path|register_A:R0|A[0,2,3] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3     ;                                        ;
-+-------------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; ALUCtrl[0]$latch                                    ; ALUCtrl[2]          ; yes                    ;
+; ALUCtrl[1]$latch                                    ; ALUCtrl[2]          ; yes                    ;
+; ALUCtrl[2]$latch                                    ; ALUCtrl[2]          ; yes                    ;
+; BSrc[0]$latch                                       ; BSrc[1]             ; yes                    ;
+; BSrc[1]$latch                                       ; BSrc[1]             ; yes                    ;
+; R1WE$latch                                          ; BSrc[1]             ; yes                    ;
+; R0Src[0]$latch                                      ; BSrc[1]             ; yes                    ;
+; k[1]                                                ; k[1]                ; yes                    ;
+; k[2]                                                ; k[1]                ; yes                    ;
+; k[3]                                                ; k[1]                ; yes                    ;
+; k[4]                                                ; k[1]                ; yes                    ;
+; k[5]                                                ; k[1]                ; yes                    ;
+; k[6]                                                ; k[1]                ; yes                    ;
+; k[7]                                                ; k[1]                ; yes                    ;
+; k[8]                                                ; k[1]                ; yes                    ;
+; k[9]                                                ; k[1]                ; yes                    ;
+; k[10]                                               ; k[1]                ; yes                    ;
+; k[11]                                               ; k[1]                ; yes                    ;
+; k[12]                                               ; k[1]                ; yes                    ;
+; k[13]                                               ; k[1]                ; yes                    ;
+; k[14]                                               ; k[1]                ; yes                    ;
+; k[15]                                               ; k[1]                ; yes                    ;
+; k[16]                                               ; k[1]                ; yes                    ;
+; k[17]                                               ; k[1]                ; yes                    ;
+; k[18]                                               ; k[1]                ; yes                    ;
+; k[19]                                               ; k[1]                ; yes                    ;
+; k[20]                                               ; k[1]                ; yes                    ;
+; k[21]                                               ; k[1]                ; yes                    ;
+; k[22]                                               ; k[1]                ; yes                    ;
+; k[23]                                               ; k[1]                ; yes                    ;
+; k[24]                                               ; k[1]                ; yes                    ;
+; k[25]                                               ; k[1]                ; yes                    ;
+; k[26]                                               ; k[1]                ; yes                    ;
+; k[27]                                               ; k[1]                ; yes                    ;
+; k[28]                                               ; k[1]                ; yes                    ;
+; k[29]                                               ; k[1]                ; yes                    ;
+; k[30]                                               ; k[1]                ; yes                    ;
+; k[31]                                               ; k[1]                ; yes                    ;
+; k[0]                                                ; k[1]                ; yes                    ;
+; Number of user-specified and inferred latches = 39  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -252,125 +269,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 13    ;
+; Total registers                              ; 1     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 1     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |de0nano_embedding ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; W              ; 4     ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|register_A:R1 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; W              ; 4     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|mux2:inst1 ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; W              ; 4     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|shift_reg:Acc ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; W              ; 4     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|mux4:inst6 ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; W              ; 1     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|shift_reg:Q ;
-+----------------+-------+----------------------------------------------------+
-; Parameter Name ; Value ; Type                                               ;
-+----------------+-------+----------------------------------------------------+
-; W              ; 4     ; Signed Integer                                     ;
-+----------------+-------+----------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|alu:inst4 ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; W              ; 4     ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|mux2:inst3 ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; W              ; 4     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|Constant_Value_Generator:inst11 ;
-+----------------+-------+------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                   ;
-+----------------+-------+------------------------------------------------------------------------+
-; W              ; 4     ; Signed Integer                                                         ;
-; V              ; 0000  ; Unsigned Binary                                                        ;
-+----------------+-------+------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|Constant_Value_Generator:inst10 ;
-+----------------+-------+------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                   ;
-+----------------+-------+------------------------------------------------------------------------+
-; W              ; 4     ; Signed Integer                                                         ;
-; V              ; 0001  ; Unsigned Binary                                                        ;
-+----------------+-------+------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DATAPATH:data_path|register_A:R0 ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; W              ; 4     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Controller_Unit ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; W              ; 4     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -379,18 +294,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 126                         ;
-; cycloneiii_ff         ; 13                          ;
-;     plain             ; 13                          ;
-; cycloneiii_lcell_comb ; 10                          ;
-;     normal            ; 10                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 1                           ;
+; boundary_port         ; 37                          ;
+; cycloneiii_ff         ; 1                           ;
+;     CLR               ; 1                           ;
+; cycloneiii_lcell_comb ; 87                          ;
+;     arith             ; 30                          ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 57                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 38                          ;
+;         4 data inputs ; 13                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 0.93                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -408,209 +327,207 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Mar 11 16:38:59 2019
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun Mar 17 19:01:39 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LAB1 -c de0nano_embedding
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file register_file.v
-    Info (12023): Found entity 1: register_file File: D:/LAB1/register_file.v Line: 1
+    Info (12023): Found entity 1: register_file File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/register_file.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file constant_value_generator.v
-    Info (12023): Found entity 1: Constant_Value_Generator File: D:/LAB1/Constant_Value_Generator.v Line: 1
+    Info (12023): Found entity 1: Constant_Value_Generator File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/Constant_Value_Generator.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file decoder.v
-    Info (12023): Found entity 1: decoder File: D:/LAB1/decoder.v Line: 1
+    Info (12023): Found entity 1: decoder File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/decoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux4.v
-    Info (12023): Found entity 1: mux4 File: D:/LAB1/mux4.v Line: 1
+    Info (12023): Found entity 1: mux4 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/mux4.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux2.v
-    Info (12023): Found entity 1: mux2 File: D:/LAB1/mux2.v Line: 1
+    Info (12023): Found entity 1: mux2 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/mux2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
-    Info (12023): Found entity 1: alu File: D:/LAB1/alu.v Line: 1
+    Info (12023): Found entity 1: alu File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/alu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file register_a.v
-    Info (12023): Found entity 1: register_A File: D:/LAB1/register_A.v Line: 1
+    Info (12023): Found entity 1: register_A File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/register_A.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file register_b.v
-    Info (12023): Found entity 1: register_B File: D:/LAB1/register_B.v Line: 1
+    Info (12023): Found entity 1: register_B File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/register_B.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file shift_reg.v
-    Info (12023): Found entity 1: shift_reg File: D:/LAB1/shift_reg.v Line: 1
+    Info (12023): Found entity 1: shift_reg File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/shift_reg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.bdf
     Info (12023): Found entity 1: DATAPATH
 Info (12021): Found 1 design units, including 1 entities, in source file decoder_tb.v
-    Info (12023): Found entity 1: decoder_tb File: D:/LAB1/decoder_tb.v Line: 1
+    Info (12023): Found entity 1: decoder_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/decoder_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux2_tb.v
-    Info (12023): Found entity 1: mux2_tb File: D:/LAB1/mux2_tb.v Line: 1
+    Info (12023): Found entity 1: mux2_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/mux2_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux4_tb.v
-    Info (12023): Found entity 1: mux4_tb File: D:/LAB1/mux4_tb.v Line: 1
+    Info (12023): Found entity 1: mux4_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/mux4_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.v
-    Info (12023): Found entity 1: alu_tb File: D:/LAB1/alu_tb.v Line: 1
+    Info (12023): Found entity 1: alu_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/alu_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file register_a_tb.v
-    Info (12023): Found entity 1: register_A_tb File: D:/LAB1/register_A_tb.v Line: 1
+    Info (12023): Found entity 1: register_A_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/register_A_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file register_b_tb.v
-    Info (12023): Found entity 1: register_B_tb File: D:/LAB1/register_B_tb.v Line: 1
+    Info (12023): Found entity 1: register_B_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/register_B_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file shift_reg_tb.v
-    Info (12023): Found entity 1: shift_reg_tb File: D:/LAB1/shift_reg_tb.v Line: 1
+    Info (12023): Found entity 1: shift_reg_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/shift_reg_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file register_file_tb.v
-    Info (12023): Found entity 1: register_file_tb File: D:/LAB1/register_file_tb.v Line: 1
+    Info (12023): Found entity 1: register_file_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/register_file_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file de0nano_embedding.v
-    Info (12023): Found entity 1: de0nano_embedding File: D:/LAB1/de0nano_embedding.v Line: 6
-Info (12127): Elaborating entity "de0nano_embedding" for the top level hierarchy
-Warning (10034): Output port "DRAM_ADDR" at de0nano_embedding.v(63) has no driver File: D:/LAB1/de0nano_embedding.v Line: 63
-Warning (10034): Output port "DRAM_BA" at de0nano_embedding.v(64) has no driver File: D:/LAB1/de0nano_embedding.v Line: 64
-Warning (10034): Output port "DRAM_DQM" at de0nano_embedding.v(70) has no driver File: D:/LAB1/de0nano_embedding.v Line: 70
-Warning (10034): Output port "DRAM_CAS_N" at de0nano_embedding.v(65) has no driver File: D:/LAB1/de0nano_embedding.v Line: 65
-Warning (10034): Output port "DRAM_CKE" at de0nano_embedding.v(66) has no driver File: D:/LAB1/de0nano_embedding.v Line: 66
-Warning (10034): Output port "DRAM_CLK" at de0nano_embedding.v(67) has no driver File: D:/LAB1/de0nano_embedding.v Line: 67
-Warning (10034): Output port "DRAM_CS_N" at de0nano_embedding.v(68) has no driver File: D:/LAB1/de0nano_embedding.v Line: 68
-Warning (10034): Output port "DRAM_RAS_N" at de0nano_embedding.v(71) has no driver File: D:/LAB1/de0nano_embedding.v Line: 71
-Warning (10034): Output port "DRAM_WE_N" at de0nano_embedding.v(72) has no driver File: D:/LAB1/de0nano_embedding.v Line: 72
-Info (12128): Elaborating entity "DATAPATH" for hierarchy "DATAPATH:data_path" File: D:/LAB1/de0nano_embedding.v Line: 134
-Warning (275083): Bus "A0[3]" found using same base name as "A0", which might lead to a name conflict.
-Warning (275083): Bus "A0[0]" found using same base name as "A0", which might lead to a name conflict.
-Warning (275011): Block or symbol "GND" of instance "inst" overlaps another block or symbol
-Warning (275080): Converted elements in bus name "A" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "A[0]" to "A0"
-    Warning (275081): Converted element name(s) from "A[3..0]" to "A3..0"
-Warning (275080): Converted elements in bus name "A0" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "A0[3..0]" to "A03..0"
-    Warning (275081): Converted element name(s) from "A0[3]" to "A03"
-    Warning (275081): Converted element name(s) from "A0[0]" to "A00"
-Info (12128): Elaborating entity "register_A" for hierarchy "DATAPATH:data_path|register_A:R1"
-Info (12128): Elaborating entity "mux2" for hierarchy "DATAPATH:data_path|mux2:inst1"
-Info (12128): Elaborating entity "shift_reg" for hierarchy "DATAPATH:data_path|shift_reg:Acc"
-Info (12128): Elaborating entity "mux4" for hierarchy "DATAPATH:data_path|mux4:inst6"
-Info (12128): Elaborating entity "alu" for hierarchy "DATAPATH:data_path|alu:inst4"
-Warning (10240): Verilog HDL Always Construct warning at alu.v(19): inferring latch(es) for variable "CO", which holds its previous value in one or more paths through the always construct File: D:/LAB1/alu.v Line: 19
-Warning (10240): Verilog HDL Always Construct warning at alu.v(19): inferring latch(es) for variable "OVF", which holds its previous value in one or more paths through the always construct File: D:/LAB1/alu.v Line: 19
-Info (10041): Inferred latch for "OVF" at alu.v(47) File: D:/LAB1/alu.v Line: 47
-Info (10041): Inferred latch for "CO" at alu.v(47) File: D:/LAB1/alu.v Line: 47
-Info (12128): Elaborating entity "Constant_Value_Generator" for hierarchy "DATAPATH:data_path|Constant_Value_Generator:inst11"
-Info (12128): Elaborating entity "Constant_Value_Generator" for hierarchy "DATAPATH:data_path|Constant_Value_Generator:inst10"
+    Info (12023): Found entity 1: de0nano_embedding File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/de0nano_embedding.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/caner/documents/github/course-projects/ee446/lab2/controller_unit.v
+    Info (12023): Found entity 1: Controller_Unit File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 1
+Warning (12019): Can't analyze file -- file Controller_Unit_tb4.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file controller_unit_tb.v
+    Info (12023): Found entity 1: Controller_Unit_tb File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB1/Controller_Unit_tb.v Line: 1
+Warning (10222): Verilog HDL Parameter Declaration warning at Controller_Unit.v(26): Parameter Declaration in module "Controller_Unit" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 26
+Info (12127): Elaborating entity "Controller_Unit" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(36): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 36
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(41): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 41
+Warning (10235): Verilog HDL Always Construct warning at Controller_Unit.v(45): variable "LOAD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 45
+Warning (10235): Verilog HDL Always Construct warning at Controller_Unit.v(45): variable "k" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 45
+Warning (10235): Verilog HDL Always Construct warning at Controller_Unit.v(45): variable "COMP" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 45
+Warning (10235): Verilog HDL Always Construct warning at Controller_Unit.v(46): variable "OP" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 46
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(47): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 47
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(48): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 48
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(49): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 49
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(50): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 50
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(51): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 51
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(52): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 52
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(53): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 53
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(54): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 54
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(57): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 57
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(61): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 61
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(64): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 64
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(77): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 77
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(88): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 88
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(92): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 92
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(96): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 96
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(112): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 112
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(116): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 116
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(125): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 125
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(129): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 129
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(136): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 136
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(140): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 140
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(144): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 144
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(151): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 151
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(158): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 158
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(173): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 173
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(188): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 188
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(192): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 192
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(201): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 201
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(205): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 205
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(211): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 211
+Warning (10230): Verilog HDL assignment warning at Controller_Unit.v(221): truncated value with size 5 to match size of target (1) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 221
+Warning (10235): Verilog HDL Always Construct warning at Controller_Unit.v(245): variable "LOAD" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 245
+Warning (10235): Verilog HDL Always Construct warning at Controller_Unit.v(253): variable "k" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 253
+Warning (10235): Verilog HDL Always Construct warning at Controller_Unit.v(257): variable "OP" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 257
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(266): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 266
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(278): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 278
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(314): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 314
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(321): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 321
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(328): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 328
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(343): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 343
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(352): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 352
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(377): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 377
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(386): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 386
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(398): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 398
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(405): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 405
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(412): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 412
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(419): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 419
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(426): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 426
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(440): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 440
+Warning (10199): Verilog HDL Case Statement warning at Controller_Unit.v(454): case item expression never matches the case expression File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 454
+Warning (10240): Verilog HDL Always Construct warning at Controller_Unit.v(226): inferring latch(es) for variable "ALUCtrl", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 226
+Warning (10240): Verilog HDL Always Construct warning at Controller_Unit.v(226): inferring latch(es) for variable "ASrc", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 226
+Warning (10240): Verilog HDL Always Construct warning at Controller_Unit.v(226): inferring latch(es) for variable "BSrc", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 226
+Warning (10240): Verilog HDL Always Construct warning at Controller_Unit.v(226): inferring latch(es) for variable "R0WE", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 226
+Warning (10240): Verilog HDL Always Construct warning at Controller_Unit.v(226): inferring latch(es) for variable "R1WE", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 226
+Warning (10240): Verilog HDL Always Construct warning at Controller_Unit.v(226): inferring latch(es) for variable "R0Src", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 226
+Warning (10240): Verilog HDL Always Construct warning at Controller_Unit.v(226): inferring latch(es) for variable "R1Src", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 226
+Warning (10240): Verilog HDL Always Construct warning at Controller_Unit.v(226): inferring latch(es) for variable "k", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 226
+Warning (10034): Output port "AccRight" at Controller_Unit.v(23) has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+Warning (10034): Output port "AccParallel" at Controller_Unit.v(23) has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+Warning (10034): Output port "QParallel" at Controller_Unit.v(23) has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+Warning (10034): Output port "QSrc" at Controller_Unit.v(23) has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+Warning (10034): Output port "QRight" at Controller_Unit.v(23) has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+Warning (10034): Output port "QzSrc" at Controller_Unit.v(23) has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+Info (10041): Inferred latch for "k[0]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[1]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[2]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[3]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[4]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[5]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[6]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[7]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[8]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[9]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[10]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[11]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[12]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[13]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[14]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[15]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[16]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[17]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[18]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[19]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[20]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[21]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[22]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[23]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[24]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[25]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[26]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[27]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[28]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[29]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[30]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "k[31]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "R1Src" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "R0Src[0]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "R0Src[1]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "R1WE" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "R0WE" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "BSrc[0]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "BSrc[1]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "ASrc[0]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "ASrc[1]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "ALUCtrl[0]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "ALUCtrl[1]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (10041): Inferred latch for "ALUCtrl[2]" at Controller_Unit.v(239) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "R1WE$latch" merged with LATCH primitive "BSrc[0]$latch" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+    Info (13026): Duplicate LATCH primitive "R0Src[0]$latch" merged with LATCH primitive "BSrc[0]$latch" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+Warning (13012): Latch BSrc[0]$latch has unsafe behavior File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CS File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 32
+Warning (13012): Latch BSrc[1]$latch has unsafe behavior File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal CS File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 32
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LED[0]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 54
-    Warning (13410): Pin "LED[2]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 54
-    Warning (13410): Pin "LED[3]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 54
-    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 63
-    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 64
-    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 64
-    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 65
-    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 66
-    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 67
-    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 68
-    Warning (13410): Pin "DRAM_DQM[0]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 70
-    Warning (13410): Pin "DRAM_DQM[1]" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 70
-    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 71
-    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: D:/LAB1/de0nano_embedding.v Line: 72
+    Warning (13410): Pin "AccRight" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+    Warning (13410): Pin "AccParallel" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+    Warning (13410): Pin "ASrc[0]" is stuck at VCC File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+    Warning (13410): Pin "ASrc[1]" is stuck at VCC File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+    Warning (13410): Pin "R1Src" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 18
+    Warning (13410): Pin "R0WE" is stuck at VCC File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 18
+    Warning (13410): Pin "R0Src[1]" is stuck at VCC File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 239
+    Warning (13410): Pin "QParallel" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+    Warning (13410): Pin "QSrc" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+    Warning (13410): Pin "QRight" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
+    Warning (13410): Pin "QzSrc" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 89 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: D:/LAB1/de0nano_embedding.v Line: 51
-    Warning (15610): No output dependent on input pin "DRAM_DQ[0]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[1]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[2]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[3]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[4]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[5]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[6]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[7]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[8]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[9]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[10]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[11]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[12]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[13]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[14]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "DRAM_DQ[15]" File: D:/LAB1/de0nano_embedding.v Line: 69
-    Warning (15610): No output dependent on input pin "GPIO_0[0]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[1]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[2]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[3]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[4]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[5]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[6]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[7]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[8]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[9]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[10]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[11]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[12]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[13]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[14]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[15]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[16]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[17]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[18]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[19]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[20]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[21]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[22]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[23]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[24]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[25]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[26]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[27]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[28]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[29]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[30]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[31]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[32]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0[33]" File: D:/LAB1/de0nano_embedding.v Line: 75
-    Warning (15610): No output dependent on input pin "GPIO_0_IN[0]" File: D:/LAB1/de0nano_embedding.v Line: 76
-    Warning (15610): No output dependent on input pin "GPIO_0_IN[1]" File: D:/LAB1/de0nano_embedding.v Line: 76
-    Warning (15610): No output dependent on input pin "GPIO_1[0]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[1]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[2]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[3]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[4]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[5]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[6]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[7]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[8]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[9]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[10]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[11]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[12]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[13]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[14]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[15]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[16]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[17]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[18]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[19]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[20]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[21]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[22]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[23]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[24]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[25]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[26]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[27]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[28]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[29]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[30]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[31]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[32]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1[33]" File: D:/LAB1/de0nano_embedding.v Line: 79
-    Warning (15610): No output dependent on input pin "GPIO_1_IN[0]" File: D:/LAB1/de0nano_embedding.v Line: 80
-    Warning (15610): No output dependent on input pin "GPIO_1_IN[1]" File: D:/LAB1/de0nano_embedding.v Line: 80
-Info (21057): Implemented 140 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 95 input pins
-    Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 14 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 139 warnings
-    Info: Peak virtual memory: 596 megabytes
-    Info: Processing ended: Mon Mar 11 16:39:22 2019
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:43
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Stat[0]" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 16
+    Warning (15610): No output dependent on input pin "NFlag" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 21
+    Warning (15610): No output dependent on input pin "R1m" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 17
+    Warning (15610): No output dependent on input pin "R0m" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 17
+    Warning (15610): No output dependent on input pin "Qn" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 21
+    Warning (15610): No output dependent on input pin "Qz" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB2/Controller_Unit.v Line: 21
+Info (21057): Implemented 122 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 85 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 96 warnings
+    Info: Peak virtual memory: 4782 megabytes
+    Info: Processing ended: Sun Mar 17 19:01:51 2019
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
 
 

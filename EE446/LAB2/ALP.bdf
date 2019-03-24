@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -295,7 +295,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -536 88 -368 104)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "QnCLR" (rect 5 0 42 12)(font "Arial" ))
+	(text "QnCLR" (rect 5 0 41 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -425,7 +425,7 @@ refer to the applicable agreement for further details.
 	(output)
 	(rect 240 208 256 384)
 	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
-	(text "R0out[3..0]" (rect 1 5 13 61)(font "Arial" )(vertical))
+	(text "R0out[3..0]" (rect 1 5 13 60)(font "Arial" )(vertical))
 	(pt 8 176)
 	(drawing
 		(line (pt 8 176)(pt 8 124))
@@ -437,6 +437,107 @@ refer to the applicable agreement for further details.
 		(line (pt 12 98)(pt 8 94))
 	)
 	(rotate90)
+)
+(pin
+	(output)
+	(rect 1816 584 1832 760)
+	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
+	(text "Qz" (rect 0 5 12 17)(font "Arial" )(vertical))
+	(pt 8 176)
+	(drawing
+		(line (pt 8 176)(pt 8 124))
+		(line (pt 4 124)(pt 4 98))
+		(line (pt 12 124)(pt 12 98))
+		(line (pt 12 124)(pt 4 124))
+		(line (pt 4 98)(pt 8 94))
+		(line (pt 8 94)(pt 12 98))
+		(line (pt 12 98)(pt 8 94))
+	)
+	(rotate90)
+)
+(pin
+	(output)
+	(rect 960 272 976 448)
+	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
+	(text "OverF" (rect 0 5 12 36)(font "Arial" )(vertical))
+	(pt 8 176)
+	(drawing
+		(line (pt 8 176)(pt 8 124))
+		(line (pt 4 124)(pt 4 98))
+		(line (pt 12 124)(pt 12 98))
+		(line (pt 12 124)(pt 4 124))
+		(line (pt 4 98)(pt 8 94))
+		(line (pt 8 94)(pt 12 98))
+		(line (pt 12 98)(pt 8 94))
+	)
+	(rotate90)
+)
+(pin
+	(output)
+	(rect 1048 272 1064 448)
+	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
+	(text "OverF_CO[1..0]" (rect 0 5 17 79)(font "Intel Clear" )(vertical))
+	(pt 8 176)
+	(drawing
+		(line (pt 8 176)(pt 8 124))
+		(line (pt 4 124)(pt 4 98))
+		(line (pt 12 124)(pt 12 98))
+		(line (pt 12 124)(pt 4 124))
+		(line (pt 4 98)(pt 8 94))
+		(line (pt 8 94)(pt 12 98))
+		(line (pt 12 98)(pt 8 94))
+	)
+	(rotate90)
+)
+(pin
+	(output)
+	(rect 968 408 984 584)
+	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
+	(text "CarryO" (rect 0 5 17 39)(font "Intel Clear" )(vertical))
+	(pt 8 176)
+	(drawing
+		(line (pt 8 176)(pt 8 124))
+		(line (pt 4 124)(pt 4 98))
+		(line (pt 12 124)(pt 12 98))
+		(line (pt 12 124)(pt 4 124))
+		(line (pt 4 98)(pt 8 94))
+		(line (pt 8 94)(pt 12 98))
+		(line (pt 12 98)(pt 8 94))
+	)
+	(rotate90)
+)
+(pin
+	(output)
+	(rect 1816 384 1832 560)
+	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
+	(text "Qout[3..0]" (rect 0 5 17 52)(font "Intel Clear" )(vertical))
+	(pt 8 176)
+	(drawing
+		(line (pt 8 176)(pt 8 124))
+		(line (pt 4 124)(pt 4 98))
+		(line (pt 12 124)(pt 12 98))
+		(line (pt 12 124)(pt 4 124))
+		(line (pt 4 98)(pt 8 94))
+		(line (pt 8 94)(pt 12 98))
+		(line (pt 12 98)(pt 8 94))
+	)
+	(rotate90)
+)
+(pin
+	(output)
+	(rect 1312 736 1488 752)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "AccOut[3..0]" (rect 90 0 152 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
 )
 (symbol
 	(rect 376 680 616 824)
@@ -752,32 +853,6 @@ refer to the applicable agreement for further details.
 	(flipx)
 	(annotation_block (parameter)(rect -536 256 -360 296))
 	(fill (color 255 255 200))
-)
-(symbol
-	(rect 1352 488 1384 536)
-	(text "NOT" (rect 22 1 32 21)(font "Arial" (font_size 6))(vertical))
-	(text "inst10" (rect -6 3 11 31)(font "Intel Clear" )(vertical))
-	(port
-		(pt 16 0)
-		(input)
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 13 2 25 13)(font "Courier New" (bold))(vertical)(invisible))
-		(line (pt 16 0)(pt 16 13))
-	)
-	(port
-		(pt 16 48)
-		(output)
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 13 32 25 49)(font "Courier New" (bold))(vertical)(invisible))
-		(line (pt 16 39)(pt 16 48))
-	)
-	(drawing
-		(line (pt 7 13)(pt 25 13))
-		(line (pt 25 13)(pt 16 31))
-		(line (pt 7 13)(pt 16 31))
-		(circle (rect 12 31 20 39))
-	)
-	(rotate270)
 )
 (symbol
 	(rect 1584 608 1600 640)
@@ -1617,15 +1692,6 @@ refer to the applicable agreement for further details.
 	(color 0 0 0)
 )
 (connector
-	(pt 912 568)
-	(pt 960 568)
-	(color 0 0 0)
-)
-(connector
-	(pt 960 448)
-	(pt 984 448)
-)
-(connector
 	(pt -352 -80)
 	(pt 1016 -80)
 )
@@ -1700,28 +1766,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "Acc[3..0]" (rect 1288 764 1308 823)(font "Intel Clear" (font_size 10))(vertical)(invisible))
-	(pt 1312 712)
-	(pt 1312 832)
-	(bus)
-	(color 0 0 0)
-)
-(connector
-	(pt 336 832)
-	(pt 1312 832)
-	(bus)
-)
-(connector
-	(pt 336 760)
-	(pt 336 832)
-	(bus)
-)
-(connector
-	(pt 336 832)
-	(pt 336 880)
-	(bus)
-)
-(connector
 	(pt 1288 712)
 	(pt 1312 712)
 	(bus)
@@ -1776,10 +1820,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -352 192)
 	(pt 1384 192)
-)
-(connector
-	(pt 1368 216)
-	(pt 1368 488)
 )
 (connector
 	(pt -288 336)
@@ -1843,14 +1883,6 @@ refer to the applicable agreement for further details.
 	(pt 1000 216)
 )
 (connector
-	(pt 1000 216)
-	(pt 1368 216)
-)
-(connector
-	(pt 1368 216)
-	(pt 1888 216)
-)
-(connector
 	(pt 944 128)
 	(pt 1912 128)
 )
@@ -1872,10 +1904,6 @@ refer to the applicable agreement for further details.
 	(pt 1384 592)
 )
 (connector
-	(pt 1368 536)
-	(pt 1368 560)
-)
-(connector
 	(pt 1312 640)
 	(pt 1600 640)
 )
@@ -1895,11 +1923,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 1384 592)
 	(pt 1600 592)
-)
-(connector
-	(pt 1800 560)
-	(pt 1848 560)
-	(bus)
 )
 (connector
 	(pt 1512 608)
@@ -2015,11 +2038,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 952 776)
-	(pt 1568 776)
-	(bus)
-)
-(connector
 	(pt 1568 776)
 	(pt 1600 776)
 	(bus)
@@ -2060,25 +2078,8 @@ refer to the applicable agreement for further details.
 	(pt 1696 -24)
 )
 (connector
-	(text "Qn[0..0]" (rect 928 705 948 761)(font "Intel Clear" (font_size 10))(vertical)(invisible))
-	(pt 952 632)
-	(pt 952 776)
-	(bus)
-)
-(connector
-	(text "Qn[0]" (rect 994 608 1034 628)(font "Intel Clear" (font_size 10))(invisible))
-	(pt 952 632)
-	(pt 1088 632)
-)
-(connector
 	(pt 1848 792)
 	(pt 1872 792)
-	(bus)
-)
-(connector
-	(text "Q[0]" (rect 1810 776 1831 793)(font "Intel Clear" ))
-	(pt 1800 792)
-	(pt 1848 792)
 	(bus)
 )
 (connector
@@ -2144,14 +2145,32 @@ refer to the applicable agreement for further details.
 	(color 0 0 0)
 )
 (connector
-	(text "DAT[1]" (rect 936 509 956 557)(font "Intel Clear" (font_size 10))(vertical)(invisible))
+	(text "DAT[0]" (rect 975 467 992 500)(font "Intel Clear" )(vertical))
+	(pt 992 448)
+	(pt 992 584)
+	(color 0 0 0)
+)
+(connector
+	(pt 1824 760)
+	(pt 1824 792)
+)
+(connector
+	(pt 912 568)
+	(pt 960 568)
+	(color 0 0 0)
+)
+(connector
+	(text "DAT[1]" (rect 936 501 956 549)(font "Intel Clear" (font_size 10))(vertical)(invisible))
 	(pt 960 448)
 	(pt 960 568)
 )
 (connector
-	(pt 912 584)
-	(pt 992 584)
-	(color 0 0 0)
+	(pt 984 448)
+	(pt 968 448)
+)
+(connector
+	(pt 968 448)
+	(pt 960 448)
 )
 (connector
 	(text "DAT[1..0]" (rect 834 452 898 472)(font "Intel Clear" (font_size 10))(invisible))
@@ -2161,14 +2180,97 @@ refer to the applicable agreement for further details.
 )
 (connector
 	(pt 992 448)
+	(pt 1056 448)
+	(bus)
+)
+(connector
+	(pt 1056 448)
 	(pt 1088 448)
 	(bus)
 )
 (connector
-	(text "DAT[0]" (rect 975 467 992 500)(font "Intel Clear" )(vertical))
-	(pt 992 448)
+	(pt 912 584)
+	(pt 976 584)
+	(color 0 0 0)
+)
+(connector
+	(pt 976 584)
 	(pt 992 584)
 	(color 0 0 0)
+)
+(connector
+	(pt 1368 216)
+	(pt 1368 560)
+)
+(connector
+	(pt 1000 216)
+	(pt 1368 216)
+)
+(connector
+	(pt 1368 216)
+	(pt 1888 216)
+)
+(connector
+	(pt 336 760)
+	(pt 336 848)
+	(bus)
+)
+(connector
+	(pt 336 848)
+	(pt 336 880)
+	(bus)
+)
+(connector
+	(pt 336 848)
+	(pt 952 848)
+	(bus)
+)
+(connector
+	(text "Acc[3..0]" (rect 962 832 1002 849)(font "Intel Clear" ))
+	(pt 952 848)
+	(pt 1312 848)
+	(bus)
+)
+(connector
+	(text "Acc[3]" (rect 936 813 953 842)(font "Intel Clear" )(vertical))
+	(pt 952 632)
+	(pt 952 848)
+)
+(connector
+	(pt 952 632)
+	(pt 1088 632)
+)
+(connector
+	(pt 1800 560)
+	(pt 1824 560)
+	(bus)
+)
+(connector
+	(pt 1824 560)
+	(pt 1848 560)
+	(bus)
+)
+(connector
+	(pt 1312 712)
+	(pt 1312 744)
+	(bus)
+	(color 0 0 0)
+)
+(connector
+	(text "Acc[3..0]" (rect 1288 764 1308 823)(font "Intel Clear" (font_size 10))(vertical)(invisible))
+	(pt 1312 744)
+	(pt 1312 848)
+	(bus)
+	(color 0 0 0)
+)
+(connector
+	(pt 1824 792)
+	(pt 1800 792)
+)
+(connector
+	(text "Q[0]" (rect 1826 776 1847 793)(font "Intel Clear" ))
+	(pt 1848 792)
+	(pt 1824 792)
 )
 (junction (pt 280 536))
 (junction (pt 0 152))
@@ -2177,7 +2279,6 @@ refer to the applicable agreement for further details.
 (junction (pt -312 624))
 (junction (pt 296 384))
 (junction (pt 296 520))
-(junction (pt 336 832))
 (junction (pt 656 792))
 (junction (pt 936 664))
 (junction (pt 1064 152))
@@ -2189,7 +2290,14 @@ refer to the applicable agreement for further details.
 (junction (pt 1848 792))
 (junction (pt 1848 560))
 (junction (pt 1704 240))
-(junction (pt 1568 776))
 (junction (pt 248 384))
 (junction (pt 248 536))
 (junction (pt 992 448))
+(junction (pt 968 448))
+(junction (pt 1056 448))
+(junction (pt 976 584))
+(junction (pt 336 848))
+(junction (pt 952 848))
+(junction (pt 1824 560))
+(junction (pt 1312 744))
+(junction (pt 1824 792))

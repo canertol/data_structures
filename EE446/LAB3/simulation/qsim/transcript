@@ -1,0 +1,37 @@
+# do de0nano_embedding.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:17 on Mar 24,2019
+# vlog -work work de0nano_embedding.vo 
+# -- Compiling module CONTROLLER
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	CONTROLLER
+# End time: 16:53:17 on Mar 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:17 on Mar 24,2019
+# vlog -work work Waveform1.vwf.vt 
+# -- Compiling module CONTROLLER_vlg_vec_tst
+# 
+# Top level modules:
+# 	CONTROLLER_vlg_vec_tst
+# End time: 16:53:17 on Mar 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.CONTROLLER_vlg_vec_tst 
+# Start time: 16:53:17 on Mar 24,2019
+# Loading work.CONTROLLER_vlg_vec_tst
+# Loading work.CONTROLLER
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# after#26
+# ** Note: $finish    : Waveform1.vwf.vt(66)
+#    Time: 1 us  Iteration: 0  Instance: /CONTROLLER_vlg_vec_tst
+# End time: 16:53:17 on Mar 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

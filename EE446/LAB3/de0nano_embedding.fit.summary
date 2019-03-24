@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Mar 24 16:44:03 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : de0nano_embedding
+Top-level Entity Name : CONTROLLER
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 12 / 22,320 ( < 1 % )
+    Total combinational functions : 12 / 22,320 ( < 1 % )
+    Dedicated logic registers : 0 / 22,320 ( 0 % )
+Total registers : 0
+Total pins : 50 / 154 ( 32 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

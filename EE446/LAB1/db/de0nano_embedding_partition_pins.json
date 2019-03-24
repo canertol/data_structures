@@ -4,47 +4,83 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "LED[1]",
+					"name" : "AccCLR",
 					"strict" : false
 				},
 				{
-					"name" : "LED[4]",
+					"name" : "ALUCtrl[0]",
 					"strict" : false
 				},
 				{
-					"name" : "LED[5]",
+					"name" : "ALUCtrl[1]",
 					"strict" : false
 				},
 				{
-					"name" : "LED[6]",
+					"name" : "ALUCtrl[2]",
 					"strict" : false
 				},
 				{
-					"name" : "LED[7]",
+					"name" : "BSrc[0]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[1]",
+					"name" : "BSrc[1]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
+					"name" : "R1Clr",
 					"strict" : false
 				},
 				{
-					"name" : "SW[3]",
+					"name" : "R1WE",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "R0Src[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "QnCLR",
 					"strict" : false
 				},
 				{
-					"name" : "SW[1]",
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "ERR",
+					"strict" : false
+				},
+				{
+					"name" : "CLR",
+					"strict" : false
+				},
+				{
+					"name" : "Stat[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OP[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OP[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OP[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LOAD",
+					"strict" : false
+				},
+				{
+					"name" : "COMP",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
 					"strict" : false
 				}
 			]

@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "RegSrc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegSrc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RegWrite",
+					"strict" : false
+				},
+				{
+					"name" : "ImmSrc[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ImmSrc[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSrc",
+					"strict" : false
+				},
+				{
+					"name" : "ALUControl[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUControl[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MemWrite",
+					"strict" : false
+				},
+				{
+					"name" : "MemtoReg",
+					"strict" : false
+				},
+				{
+					"name" : "PCSrc",
+					"strict" : false
+				},
+				{
+					"name" : "Shift",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[21]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

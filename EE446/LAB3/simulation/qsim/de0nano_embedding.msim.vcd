@@ -1,0 +1,357 @@
+$comment
+	File created using the following command:
+		vcd file de0nano_embedding.msim.vcd -direction
+$end
+$date
+	Sun Mar 24 16:53:17 2019
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module CONTROLLER_vlg_vec_tst $end
+$var reg 4 ! ALUFlags [3:0] $end
+$var reg 32 " Inst [31:0] $end
+$var reg 1 # clk $end
+$var reg 1 $ reset $end
+$var wire 1 % ALUControl [1] $end
+$var wire 1 & ALUControl [0] $end
+$var wire 1 ' ALUSrc $end
+$var wire 1 ( ImmSrc [1] $end
+$var wire 1 ) ImmSrc [0] $end
+$var wire 1 * MemWrite $end
+$var wire 1 + MemtoReg $end
+$var wire 1 , PCSrc $end
+$var wire 1 - RegSrc [1] $end
+$var wire 1 . RegSrc [0] $end
+$var wire 1 / RegWrite $end
+$var wire 1 0 Shift $end
+
+$scope module i1 $end
+$var wire 1 1 gnd $end
+$var wire 1 2 vcc $end
+$var wire 1 3 unknown $end
+$var tri1 1 4 devclrn $end
+$var tri1 1 5 devpor $end
+$var tri1 1 6 devoe $end
+$var wire 1 7 clk~input_o $end
+$var wire 1 8 reset~input_o $end
+$var wire 1 9 Inst[0]~input_o $end
+$var wire 1 : Inst[1]~input_o $end
+$var wire 1 ; Inst[2]~input_o $end
+$var wire 1 < Inst[3]~input_o $end
+$var wire 1 = Inst[4]~input_o $end
+$var wire 1 > Inst[5]~input_o $end
+$var wire 1 ? Inst[6]~input_o $end
+$var wire 1 @ Inst[7]~input_o $end
+$var wire 1 A Inst[8]~input_o $end
+$var wire 1 B Inst[9]~input_o $end
+$var wire 1 C Inst[10]~input_o $end
+$var wire 1 D Inst[11]~input_o $end
+$var wire 1 E Inst[16]~input_o $end
+$var wire 1 F Inst[17]~input_o $end
+$var wire 1 G Inst[18]~input_o $end
+$var wire 1 H Inst[19]~input_o $end
+$var wire 1 I Inst[28]~input_o $end
+$var wire 1 J Inst[29]~input_o $end
+$var wire 1 K Inst[30]~input_o $end
+$var wire 1 L Inst[31]~input_o $end
+$var wire 1 M ALUFlags[0]~input_o $end
+$var wire 1 N ALUFlags[1]~input_o $end
+$var wire 1 O ALUFlags[2]~input_o $end
+$var wire 1 P ALUFlags[3]~input_o $end
+$var wire 1 Q RegSrc[0]~output_o $end
+$var wire 1 R RegSrc[1]~output_o $end
+$var wire 1 S RegWrite~output_o $end
+$var wire 1 T ImmSrc[0]~output_o $end
+$var wire 1 U ImmSrc[1]~output_o $end
+$var wire 1 V ALUSrc~output_o $end
+$var wire 1 W ALUControl[0]~output_o $end
+$var wire 1 X ALUControl[1]~output_o $end
+$var wire 1 Y MemWrite~output_o $end
+$var wire 1 Z MemtoReg~output_o $end
+$var wire 1 [ PCSrc~output_o $end
+$var wire 1 \ Shift~output_o $end
+$var wire 1 ] Inst[27]~input_o $end
+$var wire 1 ^ Inst[26]~input_o $end
+$var wire 1 _ Inst[20]~input_o $end
+$var wire 1 ` decoder|RegSrc[1]~0_combout $end
+$var wire 1 a Inst[21]~input_o $end
+$var wire 1 b Inst[22]~input_o $end
+$var wire 1 c Inst[24]~input_o $end
+$var wire 1 d Inst[23]~input_o $end
+$var wire 1 e decoder|Decoder0~0_combout $end
+$var wire 1 f decoder|Mux0~1_combout $end
+$var wire 1 g decoder|Mux0~1clkctrl_outclk $end
+$var wire 1 h decoder|NoWrite~combout $end
+$var wire 1 i conditional_logic|RegWrite~0_combout $end
+$var wire 1 j Inst[25]~input_o $end
+$var wire 1 k decoder|Mux0~0_combout $end
+$var wire 1 l decoder|ALUControl[0]~0_combout $end
+$var wire 1 m decoder|ALUControl[1]~1_combout $end
+$var wire 1 n Inst[13]~input_o $end
+$var wire 1 o Inst[15]~input_o $end
+$var wire 1 p decoder|PCS~0_combout $end
+$var wire 1 q Inst[12]~input_o $end
+$var wire 1 r Inst[14]~input_o $end
+$var wire 1 s decoder|PCS~1_combout $end
+$var wire 1 t decoder|WideOr0~0_combout $end
+$var wire 1 u decoder|Shift~combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+b11100000010011110000000000001111 "
+0#
+0$
+1&
+0%
+0'
+0)
+0(
+0*
+0+
+0,
+0.
+0-
+1/
+00
+01
+12
+x3
+14
+15
+16
+07
+08
+19
+1:
+1;
+1<
+0=
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+1E
+1F
+1G
+1H
+0I
+1J
+1K
+1L
+0M
+0N
+0O
+0P
+0Q
+0R
+1S
+0T
+0U
+0V
+1W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+1`
+0a
+1b
+0c
+0d
+0e
+0f
+0g
+0h
+1i
+0j
+0k
+1l
+1m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+$end
+#50000
+1#
+17
+#100000
+0#
+07
+#150000
+b11100010010011110000000000001111 "
+b11100010110011110000000000001111 "
+b11100010100011110000000000001111 "
+b11100010100001110000000000001111 "
+b11100010100000110000000000001111 "
+b11100010100000010000000000001111 "
+b11100010100000000000000000001111 "
+b11100010100000000010000000001111 "
+b11100010100000000010000000000111 "
+b11100010100000000010000000000101 "
+1#
+0:
+0<
+1n
+0E
+0F
+0G
+0H
+0b
+1d
+1j
+17
+0l
+1k
+1V
+0W
+0&
+1'
+#200000
+0#
+07
+#250000
+b11100010100000000011000000000101 "
+b11100010100000000011000000000100 "
+b11100010100000000011000000001100 "
+1#
+09
+1<
+1q
+17
+#300000
+0#
+07
+#350000
+b11100110100000000011000000001100 "
+b11100111100000000011000000001100 "
+b11100111100000000011100000001100 "
+b11100111100000000011100000001000 "
+b11100101100000000011100000001000 "
+b11100101100000000010100000001000 "
+b11100101100000000010100000000000 "
+1#
+0;
+0<
+1D
+0q
+1c
+0j
+17
+1^
+1T
+1Z
+0m
+1f
+0`
+1+
+1)
+1g
+0i
+0S
+1Y
+1R
+1X
+1m
+1%
+1-
+1*
+0/
+0X
+0%
+#400000
+0#
+07
+#450000
+b11100101100100000010100000000000 "
+1#
+1_
+17
+1`
+1i
+1S
+0Y
+0R
+0-
+0*
+1/
+#500000
+0#
+07
+#550000
+b1100101100100000010100000000000 "
+b100101100100000010100000000000 "
+b101100100000010100000000000 "
+b101000100000010100000000000 "
+b101000100000000100000000000 "
+b1000100000000100000000000 "
+b100000000100000000000 "
+b100000000000000000000 "
+b0 "
+1#
+0D
+0n
+0_
+0d
+0c
+0J
+0K
+0L
+17
+0^
+0T
+0Z
+0f
+0+
+0)
+0g
+0k
+0V
+0m
+0'
+1X
+1%
+#600000
+0#
+07
+#650000
+1#
+17
+#700000
+0#
+07
+#750000
+1#
+17
+#800000
+0#
+07
+#850000
+1#
+17
+#900000
+0#
+07
+#950000
+1#
+17
+#1000000

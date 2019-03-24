@@ -1,0 +1,117 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/simulation/qsim
+vCONTROLLER
+Z1 !s110 1553435597
+!i10b 1
+!s100 4nohlb?E4@QBalUboM?EN1
+Ijz`UCG4dNc;Ad@johALTN1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1553435596
+Z4 8de0nano_embedding.vo
+Z5 Fde0nano_embedding.vo
+Z6 L0 31
+Z7 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z8 !s108 1553435597.000000
+Z9 !s107 de0nano_embedding.vo|
+Z10 !s90 -work|work|de0nano_embedding.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+n@c@o@n@t@r@o@l@l@e@r
+vCONTROLLER_vlg_vec_tst
+R1
+!i10b 1
+!s100 X5Jj0ILcHn6[^LlWO;M<j0
+I>lQ6zmf;k:bIbgKFRF=]Q1
+R2
+R0
+w1553435594
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+Z13 L0 29
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R11
+R12
+n@c@o@n@t@r@o@l@l@e@r_vlg_vec_tst
+vde0nano_embedding
+Z14 !s110 1553376066
+!i10b 1
+!s100 j^cP7[nd_7=b6[G<Gd;_c0
+I6`9jHG5=i`25@`U`YgD_P0
+R2
+R0
+w1553376064
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+!s108 1553376065.000000
+R9
+R10
+!i113 1
+R11
+R12
+vde0nano_embedding_vlg_vec_tst
+R14
+!i10b 1
+!s100 ADEDAGGOb:ekLeBmLKR?S3
+IEoTHh]B;KjD0@0[DjSonP2
+R2
+R0
+w1553376062
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+!s108 1553376066.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R11
+R12
+vhard_block
+R1
+!i10b 1
+!s100 0a6=^cNC_Ua9jaQA1KMof3
+IlF60H=EP:fiRA=Ye>ZU?33
+R2
+R0
+R3
+R4
+R5
+L0 972
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12

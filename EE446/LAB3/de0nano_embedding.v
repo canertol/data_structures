@@ -6,7 +6,7 @@
 module de0nano_embedding(
 
 	//////////// CLOCK //////////
-	CLOCK_50,
+	//CLOCK_50,
 
 	//////////// LED //////////
 	LED,
@@ -15,7 +15,7 @@ module de0nano_embedding(
 	KEY,
 
 	//////////// SW //////////
-	SW,
+	//SW,
 /*
 	//////////// SDRAM //////////
 	DRAM_ADDR,
@@ -30,14 +30,14 @@ module de0nano_embedding(
 	DRAM_WE_N,
 */
 	//////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
-//	GPIO_0,
+	GPIO_0,
 //	GPIO_0_IN,
 
 	//////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
 //	GPIO_1,
 //	GPIO_1_IN,
-	Inst, RFread// dataA, writedata, RFreadtwo dataRead, 
-	,clk, RegWrite, ALUSrc, MemWrite, MemtoReg, PCSrc, Shift, reset
+	Inst//, dataRead//writedata, RFreadtwo , 
+	, RegWrite, ALUSrc, MemWrite, MemtoReg, PCSrc, Shift, reset, RegSrc, ImmSrc, ALUControl, Zero
 );
 
 //=======================================================
@@ -50,7 +50,7 @@ module de0nano_embedding(
 //=======================================================
 
 //////////// CLOCK //////////
-input 		          		CLOCK_50;
+//input 		          		CLOCK_50;
 
 //////////// LED //////////
 output		     [7:0]		LED;
@@ -59,7 +59,7 @@ output		     [7:0]		LED;
 input 		     [1:0]		KEY;
 
 //////////// SW //////////
-input 		     [3:0]		SW;
+//input 		     [3:0]		SW;
 
 //////////// SDRAM //////////
 /*
@@ -75,7 +75,7 @@ output		          		DRAM_RAS_N;
 output		          		DRAM_WE_N;*/
 
 //////////// GPIO_0, GPIO_0 connect to GPIO Default //////////
-//inout 		    [33:0]		GPIO_0;
+inout 		    [33:0]		GPIO_0;
 //input 		     [1:0]		GPIO_0_IN;
 
 //////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
@@ -86,10 +86,9 @@ output		          		DRAM_WE_N;*/
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-output reg [31:0]Inst,RFread;// dataA, writedata;// RFreadtwo dataRead;
-input clk;
-wire [3:0] ALUFlags;
-wire [1:0] RegSrc, ImmSrc, ALUControl;
+output reg [31:0]Inst;// dataA, writedata;// RFreadtwo dataRead;
+output wire RegSrc, Zero;
+output wire [1:0] ImmSrc, ALUControl;
 output  RegWrite, ALUSrc, MemWrite, MemtoReg, PCSrc, Shift;
 input reset;
 //=======================================================
@@ -97,15 +96,16 @@ input reset;
 //=======================================================
 datapath dp(.Shift(Shift), .MemWrite(MemWrite), .RegSrc(RegSrc), .ALUControl(ALUControl),
 				.PCSrc(PCSrc), .RegWrite(RegWrite), .ImmSrc(ImmSrc), .MemtoReg(MemtoReg), 
-				.ALUSrc(ALUSrc), .CLK(clk), .ALUFlags(ALUFlags), .Inst(Inst), .dataRead(dataRead), .RFread(RFread), .dataA(dataA), .writedata(writedata), .RFreadtwo(RFreadtwo) );
+				.ALUSrc(ALUSrc), .CLK(KEY[1]), .Zero(GPIO_0[0]), .Inst(Inst), .asd(asd),.dataRead(LED[7:0]),.reset(!KEY[0]));
 
-CONTROLLER cont(clk, reset, Inst,ALUFlags, RegSrc,
-					RegWrite,
-					ImmSrc,
-					ALUSrc,
-					ALUControl,
-					MemWrite, MemtoReg,
-					PCSrc, Shift);
+CONTROLLER cont(.clk(KEY[1]), .Inst(Inst),.RegSrc(RegSrc),
+					.RegWrite(RegWrite),
+					.ImmSrc(ImmSrc),
+					.ALUSrc(ALUSrc),
+					.ALUControl(ALUControl),
+					.MemWrite(MemWrite), .MemtoReg(MemtoReg),
+					.PCSrc(PCSrc), .Shift(Shift)
+					);
 
 
 endmodule

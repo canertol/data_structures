@@ -1,6 +1,5 @@
 module COND_LOGIC(input  clk, reset,
 				input [3:0] Cond,
-				input [3:0] ALUFlags,
 				input [1:0] FlagW,
 				input PCS, RegW, MemW, NoWrite,
 				output reg  RegWrite,

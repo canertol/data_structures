@@ -1,6 +1,5 @@
 module CONTROLLER(input  clk, reset,
 						input  [31:0] Inst,
-						input  [3:0] ALUFlags,
 						output  [1:0] RegSrc,
 						output  RegWrite,
 						output  [1:0] ImmSrc,
@@ -17,7 +16,7 @@ module CONTROLLER(input  clk, reset,
 					MemtoReg, ALUSrc, RegW, MemW, PCS, 
 					ALUControl, FlagW);
 
-	COND_LOGIC conditional_logic(clk, reset, Inst[31:28], ALUFlags,
+	COND_LOGIC conditional_logic(clk, reset, Inst[31:28],
 										  FlagW, PCS, RegW, MemW, NoWrite,
 										  RegWrite, MemWrite, PCSrc);
 			

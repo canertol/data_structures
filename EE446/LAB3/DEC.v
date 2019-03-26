@@ -1,27 +1,28 @@
 module DEC(input [1:0] Op,
 			  input [5:0] Funct,
 			  input [3:0] Rd,
-			  output [1:0]  ImmSrc, RegSrc,
-			  output reg NoWrite, Shift,
+			  output [1:0]  ImmSrc, 
+			  output RegSrc,
+			  output reg NoWrite,Shift,
 			  output MemtoReg, ALUSrc, RegW, MemW, PCS,
 			  output reg [1:0] ALUControl, FlagW
 				);
-	  reg [9:0] controls;
+	  reg [8:0] controls;
 	  wire Branch, ALUOp;
 	  
 	// Main Decoder
 	always
 		casex(Op)
 			
-			2'b00: if (Funct[5]) controls = 10'b0000101001; // Data-processing immediate
-					 else controls = 10'b0000001001; // Data-processing register
+			2'b00: if (Funct[5]) controls = 9'b000101001; // Data-processing immediate
+					 else controls = 9'b000001001; // Data-processing register
 					 
-			2'b01: if (Funct[0]) controls = 10'b0001111000; // LDR
-					 else controls = 10'b1001110100; // STR
+			2'b01: if (Funct[0]) controls = 9'b001111000; // LDR
+					 else controls = 9'b101110100; // STR
 					 
-			2'b10: controls = 10'b0110100010; // B 
+			2'b10: controls = 9'b110100010; // B 
 			
-			default: controls = 10'bx; // Unimplemented
+			default: controls = 9'bx; // Unimplemented
 		endcase
 		
 	assign {RegSrc, ImmSrc, ALUSrc, MemtoReg, RegW, MemW, Branch, ALUOp} = controls;
@@ -65,7 +66,7 @@ module DEC(input [1:0] Op,
 					default: begin 
 									NoWrite=0;
 									ALUControl = 2'bx;  // unimplemented
-									Shift=1;
+									Shift=0;
 								end		 
 				endcase
 			// update flags if S bit is set (C & V only for arith)
@@ -76,6 +77,7 @@ module DEC(input [1:0] Op,
 			begin
 				ALUControl = 2'b00; // add for non-DP instructions
 				FlagW = 2'b00; // don't update Flags
+				Shift = 0;
 			end
 			
 	// PC  

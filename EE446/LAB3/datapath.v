@@ -16,7 +16,7 @@
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 // CREATED		"Sun Mar 24 17:07:35 2019"
 
-module datapath(
+module data_path(
 	CLK,
 	PCSrc,
 	RegWrite,
@@ -28,11 +28,11 @@ module datapath(
 	ALUControl,
 	ImmSrc,
 	ALUFlags,
-	dataA,
+	//dataA,
 	dataRead,
 	Inst,
 	RFread,
-	RFreadtwo,
+	//RFreadtwo,
 	writedata
 );
 
@@ -48,11 +48,11 @@ input wire	MemWrite;
 input wire	[1:0] ALUControl;
 input wire	[1:0] ImmSrc;
 output wire	[3:0] ALUFlags;
-output wire	[31:0] dataA;
+wire	[31:0] dataA;
 output wire	[31:0] dataRead;
 output wire	[31:0] Inst;
 output wire	[31:0] RFread;
-output wire	[31:0] RFreadtwo;
+wire	[31:0] RFreadtwo;
 output wire	[31:0] writedata;
 
 wire	[3:0] ALUFlags_ALTERA_SYNTHESIZED;

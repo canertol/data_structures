@@ -3,7 +3,7 @@ module SHIFT (in, control,out);
 	input [31:0] in;
 	output reg [31:0] out;
 	
-	always
+	always @(*)
 	begin
 		if(control[1:0]==2'b00)
 		out = in << control[6:2] ;	

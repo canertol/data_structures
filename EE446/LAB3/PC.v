@@ -1,6 +1,6 @@
-module PC #(parameter W=32)(CLK,NEXT,CURRENT);
+module PC #(parameter W=32)(CLK,NEXT,CURRENT,RST);
 	input [W-1:0] NEXT;
-	input CLK;
+	input CLK,RST;
 	output reg [W-1:0] CURRENT;
 
 	initial begin
@@ -8,5 +8,9 @@ module PC #(parameter W=32)(CLK,NEXT,CURRENT);
 	end
 	
 	always @(posedge CLK)
-		CURRENT <= NEXT;
+		if(RST==0)
+			CURRENT <= NEXT;
+		else
+			CURRENT <= 0;
+		
 endmodule

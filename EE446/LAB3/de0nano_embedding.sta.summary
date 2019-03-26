@@ -2,16 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Inst[26]'
-Slack : -3.000
-TNS   : -3.000
+Type  : Slow 1200mV 85C Model Setup 'KEY[1]'
+Slack : -17.930
+TNS   : -112026.004
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Inst[26]'
-Slack : -3.000
-TNS   : -3.000
+Type  : Slow 1200mV 85C Model Setup 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : -3.719
+TNS   : -3.719
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Inst[26]'
+Type  : Slow 1200mV 85C Model Hold 'KEY[1]'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : 0.482
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[1]'
 Slack : -3.000
-TNS   : -3.000
+TNS   : -6947.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : 0.431
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'KEY[1]'
+Slack : -16.025
+TNS   : -100492.853
+
+Type  : Slow 1200mV 0C Model Setup 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : -3.284
+TNS   : -3.284
+
+Type  : Slow 1200mV 0C Model Hold 'KEY[1]'
+Slack : 0.333
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -6947.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'KEY[1]'
+Slack : -10.071
+TNS   : -61766.460
+
+Type  : Fast 1200mV 0C Model Setup 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : -1.868
+TNS   : -1.868
+
+Type  : Fast 1200mV 0C Model Hold 'KEY[1]'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : 0.269
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[1]'
+Slack : -3.000
+TNS   : -9006.559
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'datapath:dp|PC:instmem|CURRENT[0]'
+Slack : 0.424
+TNS   : 0.000
 
 ------------------------------------------------------------

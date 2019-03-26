@@ -4,11 +4,135 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "RegSrc[0]",
+					"name" : "LED[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RegSrc[1]",
+					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Inst[31]",
 					"strict" : false
 				},
 				{
@@ -16,23 +140,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "ImmSrc[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ImmSrc[1]",
-					"strict" : false
-				},
-				{
 					"name" : "ALUSrc",
-					"strict" : false
-				},
-				{
-					"name" : "ALUControl[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ALUControl[1]",
 					"strict" : false
 				},
 				{
@@ -52,51 +160,31 @@
 					"strict" : false
 				},
 				{
-					"name" : "Inst[27]",
+					"name" : "RegSrc",
 					"strict" : false
 				},
 				{
-					"name" : "Inst[20]",
+					"name" : "ImmSrc[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Inst[26]",
+					"name" : "ALUControl[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Inst[25]",
+					"name" : "ALUControl[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Inst[22]",
+					"name" : "GPIO_0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Inst[24]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Inst[23]",
-					"strict" : false
-				},
-				{
-					"name" : "Inst[12]",
-					"strict" : false
-				},
-				{
-					"name" : "Inst[14]",
-					"strict" : false
-				},
-				{
-					"name" : "Inst[13]",
-					"strict" : false
-				},
-				{
-					"name" : "Inst[15]",
-					"strict" : false
-				},
-				{
-					"name" : "Inst[21]",
+					"name" : "KEY[1]",
 					"strict" : false
 				}
 			]

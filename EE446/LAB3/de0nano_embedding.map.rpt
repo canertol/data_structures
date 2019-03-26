@@ -1,5 +1,5 @@
 Analysis & Synthesis report for de0nano_embedding
-Sun Mar 24 17:08:21 2019
+Mon Mar 25 14:20:46 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,8 +10,29 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: datapath:dp|ALU:inst13
+ 12. Parameter Settings for User Entity Instance: datapath:dp|ADDER:inst5
+ 13. Parameter Settings for User Entity Instance: datapath:dp|CONSTANT:inst19
+ 14. Parameter Settings for User Entity Instance: datapath:dp|ADDER:inst6
+ 15. Parameter Settings for User Entity Instance: datapath:dp|PC:instmem
+ 16. Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst8
+ 17. Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst11
+ 18. Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst16
+ 19. Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst14
+ 20. Parameter Settings for User Entity Instance: datapath:dp|CONSTANT:inst18
+ 21. Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst12
+ 22. Port Connectivity Checks: "CONTROLLER:cont|DEC:decoder"
+ 23. Port Connectivity Checks: "CONTROLLER:cont"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,20 +58,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sun Mar 24 17:08:21 2019           ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 25 14:20:46 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; de0nano_embedding                           ;
-; Top-level Entity Name              ; datapath                                    ;
+; Top-level Entity Name              ; de0nano_embedding                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 12,743                                      ;
+;     Total combinational functions  ; 5,895                                       ;
+;     Dedicated logic registers      ; 6,944                                       ;
+; Total registers                    ; 6944                                        ;
+; Total pins                         ; 89                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -60,7 +81,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                            ; datapath           ; de0nano_embedding  ;
+; Top-level entity name                                            ; de0nano_embedding  ; de0nano_embedding  ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -148,12 +169,540 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.3%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
 +----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                   ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; PC.v                             ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/PC.v                ;         ;
+; datapath.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.bdf        ;         ;
+; INST_MEM.v                       ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/INST_MEM.v          ;         ;
+; REG_FILE.v                       ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/REG_FILE.v          ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/ALU.v               ;         ;
+; EXTEND.v                         ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/EXTEND.v            ;         ;
+; ADDER.v                          ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/ADDER.v             ;         ;
+; DATA_MEM.v                       ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/DATA_MEM.v          ;         ;
+; SHIFT.v                          ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v             ;         ;
+; CONSTANT.v                       ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/CONSTANT.v          ;         ;
+; DEC.v                            ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/DEC.v               ;         ;
+; COND_LOGIC.v                     ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/COND_LOGIC.v        ;         ;
+; CONTROLLER.v                     ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/CONTROLLER.v        ;         ;
+; de0nano_embedding.v              ; yes             ; User Verilog HDL File              ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v ;         ;
+; busmux.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/busmux.tdf              ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.tdf             ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/muxlut.inc              ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; db/mux_rsc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/db/mux_rsc.tdf      ;         ;
+; db/mux_arc.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/db/mux_arc.tdf      ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 12,743       ;
+;                                             ;              ;
+; Total combinational functions               ; 5895         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 5508         ;
+;     -- 3 input functions                    ; 260          ;
+;     -- <=2 input functions                  ; 127          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 5805         ;
+;     -- arithmetic mode                      ; 90           ;
+;                                             ;              ;
+; Total registers                             ; 6944         ;
+;     -- Dedicated logic registers            ; 6944         ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 89           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[1]~input ;
+; Maximum fan-out                             ; 6944         ;
+; Total fan-out                               ; 44061        ;
+; Average fan-out                             ; 3.38         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                     ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                ; Entity Name       ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+-------------------+--------------+
+; |de0nano_embedding                   ; 5895 (0)            ; 6944 (0)                  ; 0           ; 0            ; 0       ; 0         ; 89   ; 0            ; |de0nano_embedding                                                                 ; de0nano_embedding ; work         ;
+;    |CONTROLLER:cont|                 ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|CONTROLLER:cont                                                 ; CONTROLLER        ; work         ;
+;       |COND_LOGIC:conditional_logic| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|CONTROLLER:cont|COND_LOGIC:conditional_logic                    ; COND_LOGIC        ; work         ;
+;       |DEC:decoder|                  ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|CONTROLLER:cont|DEC:decoder                                     ; DEC               ; work         ;
+;    |datapath:dp|                     ; 5882 (0)            ; 6944 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp                                                     ; datapath          ; work         ;
+;       |ADDER:inst5|                  ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|ADDER:inst5                                         ; ADDER             ; work         ;
+;       |ADDER:inst6|                  ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|ADDER:inst6                                         ; ADDER             ; work         ;
+;       |ALU:inst13|                   ; 134 (134)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|ALU:inst13                                          ; ALU               ; work         ;
+;       |DATA_MEM:inst1dataem|         ; 1498 (1498)         ; 6432 (6432)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem                                ; DATA_MEM          ; work         ;
+;       |INST_MEM:mem|                 ; 58 (58)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|INST_MEM:mem                                        ; INST_MEM          ; work         ;
+;       |PC:instmem|                   ; 40 (40)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|PC:instmem                                          ; PC                ; work         ;
+;       |REG_FILE:instregfile|         ; 691 (691)           ; 480 (480)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile                                ; REG_FILE          ; work         ;
+;       |SHIFT:inst15|                 ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|SHIFT:inst15                                        ; SHIFT             ; work         ;
+;       |busmux:inst11|                ; 3218 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst11                                       ; busmux            ; work         ;
+;          |lpm_mux:$00000|            ; 3218 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst11|lpm_mux:$00000                        ; lpm_mux           ; work         ;
+;             |mux_rsc:auto_generated| ; 3218 (3218)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst11|lpm_mux:$00000|mux_rsc:auto_generated ; mux_rsc           ; work         ;
+;       |busmux:inst12|                ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst12                                       ; busmux            ; work         ;
+;          |lpm_mux:$00000|            ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst12|lpm_mux:$00000                        ; lpm_mux           ; work         ;
+;             |mux_arc:auto_generated| ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst12|lpm_mux:$00000|mux_arc:auto_generated ; mux_arc           ; work         ;
+;       |busmux:inst14|                ; 129 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst14                                       ; busmux            ; work         ;
+;          |lpm_mux:$00000|            ; 129 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst14|lpm_mux:$00000                        ; lpm_mux           ; work         ;
+;             |mux_rsc:auto_generated| ; 129 (129)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst14|lpm_mux:$00000|mux_rsc:auto_generated ; mux_rsc           ; work         ;
+;       |busmux:inst16|                ; 46 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst16                                       ; busmux            ; work         ;
+;          |lpm_mux:$00000|            ; 46 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst16|lpm_mux:$00000                        ; lpm_mux           ; work         ;
+;             |mux_rsc:auto_generated| ; 46 (46)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0nano_embedding|datapath:dp|busmux:inst16|lpm_mux:$00000|mux_rsc:auto_generated ; mux_rsc           ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++----------------------------------------------------+-------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal           ; Free of Timing Hazards ;
++----------------------------------------------------+-------------------------------+------------------------+
+; CONTROLLER:cont|DEC:decoder|NoWrite                ; datapath:dp|INST_MEM:mem|INST ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                               ;                        ;
++----------------------------------------------------+-------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 6944  ;
+; Number of registers using Synchronous Clear  ; 30    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 6912  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |de0nano_embedding|datapath:dp|PC:instmem|CURRENT[0]                                               ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |de0nano_embedding|datapath:dp|PC:instmem|CURRENT[13]                                              ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[0][5]                                       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[1][4]                                       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[2][9]                                       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[3][29]                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[4][26]                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[5][15]                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[6][28]                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[7][31]                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[8][11]                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[9][4]                                       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[10][30]                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[11][22]                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[12][8]                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[13][14]                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RF[14][17]                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[0][6]                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[1][11]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[2][26]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[3][20]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[4][31]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[5][4]                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[6][17]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[7][30]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[8][24]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[9][28]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[10][7]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[11][29]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[12][28]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[13][12]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[14][21]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[15][2]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[16][1]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[17][16]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[18][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[19][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[20][1]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[21][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[22][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[23][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[24][31]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[25][31]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[26][13]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[27][25]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[28][23]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[29][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[30][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[31][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[32][13]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[33][26]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[34][15]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[35][15]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[36][28]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[37][11]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[38][2]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[39][15]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[40][1]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[41][20]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[42][8]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[43][20]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[44][7]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[45][10]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[46][16]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[47][21]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[48][26]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[49][0]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[50][31]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[51][27]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[52][28]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[53][30]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[54][16]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[55][27]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[56][16]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[57][0]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[58][9]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[59][24]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[60][16]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[61][2]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[62][6]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[63][0]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[64][29]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[65][8]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[66][30]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[67][8]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[68][28]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[69][29]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[70][17]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[71][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[72][24]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[73][10]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[74][12]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[75][7]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[76][31]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[77][31]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[78][10]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[79][16]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[80][29]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[81][29]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[82][29]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[83][29]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[84][12]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[85][7]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[86][0]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[87][0]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[88][11]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[89][20]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[90][27]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[91][7]                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[92][21]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[93][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[94][30]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[95][26]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[96][24]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[97][29]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[98][14]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[99][25]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[100][20]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[101][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[102][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[103][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[104][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[105][28]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[106][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[107][8]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[108][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[109][22]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[110][13]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[111][9]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[112][29]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[113][25]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[114][14]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[115][20]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[116][11]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[117][28]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[118][24]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[119][13]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[120][15]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[121][18]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[122][13]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[123][16]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[124][30]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[125][19]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[126][2]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[127][10]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[128][10]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[129][21]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[130][9]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[131][21]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[132][15]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[133][5]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[134][28]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[135][15]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[136][16]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[137][28]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[138][5]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[139][30]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[140][6]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[141][3]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[142][13]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[143][24]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[144][14]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[145][30]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[146][9]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[147][12]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[148][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[149][22]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[150][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[151][28]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[152][24]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[153][31]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[154][18]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[155][10]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[156][24]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[157][7]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[158][19]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[159][11]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[160][18]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[161][19]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[162][1]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[163][0]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[164][15]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[165][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[166][10]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[167][10]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[168][17]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[169][11]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[170][11]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[171][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[172][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[173][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[174][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[175][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[176][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[177][28]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[178][18]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[179][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[180][31]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[181][0]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[182][29]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[183][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[184][22]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[185][3]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[186][6]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[187][4]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[188][13]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[189][13]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[190][21]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[191][20]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[192][24]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[193][7]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[194][26]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[195][7]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[196][3]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[197][3]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[198][3]                                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[199][11]                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|DATA[200][6]                                   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |de0nano_embedding|datapath:dp|ALU:inst13|Mux6                                                     ;
+; 5:1                ; 23 bits   ; 69 LEs        ; 69 LEs               ; 0 LEs                  ; No         ; |de0nano_embedding|datapath:dp|busmux:inst14|lpm_mux:$00000|mux_rsc:auto_generated|result_node[9]  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |de0nano_embedding|datapath:dp|busmux:inst14|lpm_mux:$00000|mux_rsc:auto_generated|result_node[5]  ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RD2[29]                                        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |de0nano_embedding|datapath:dp|busmux:inst14|lpm_mux:$00000|mux_rsc:auto_generated|result_node[0]  ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |de0nano_embedding|datapath:dp|REG_FILE:instregfile|RD1[14]                                        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |de0nano_embedding|datapath:dp|busmux:inst14|lpm_mux:$00000|mux_rsc:auto_generated|result_node[31] ;
+; 201:1              ; 8 bits    ; 1072 LEs      ; 1072 LEs             ; 0 LEs                  ; No         ; |de0nano_embedding|datapath:dp|DATA_MEM:inst1dataem|Mux24                                          ;
+; 202:1              ; 24 bits   ; 3216 LEs      ; 3216 LEs             ; 0 LEs                  ; No         ; |de0nano_embedding|datapath:dp|busmux:inst11|lpm_mux:$00000|mux_rsc:auto_generated|result_node[22] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|ALU:inst13 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; W              ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|ADDER:inst5 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; W              ; 32    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|CONSTANT:inst19 ;
++----------------+----------+----------------------------------------------+
+; Parameter Name ; Value    ; Type                                         ;
++----------------+----------+----------------------------------------------+
+; W              ; 32       ; Signed Integer                               ;
+; V              ; 00000100 ; Unsigned Binary                              ;
++----------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|ADDER:inst6 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; W              ; 32    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|PC:instmem ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; W              ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst8 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WIDTH          ; 32    ; Untyped                                      ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst11 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 32    ; Untyped                                       ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst16 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 32    ; Untyped                                       ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst14 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 32    ; Untyped                                       ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|CONSTANT:inst18 ;
++----------------+----------+----------------------------------------------+
+; Parameter Name ; Value    ; Type                                         ;
++----------------+----------+----------------------------------------------+
+; W              ; 32       ; Signed Integer                               ;
+; V              ; 00000100 ; Unsigned Binary                              ;
++----------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:dp|BUSMUX:inst12 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; WIDTH          ; 4     ; Untyped                                       ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CONTROLLER:cont|DEC:decoder"                                                                                                                                            ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; RegSrc ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (2 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CONTROLLER:cont"                                                                                                                               ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                      ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; RegSrc ; Output ; Warning  ; Output or bidir port (2 bits) is wider than the port expression (1 bits) it drives; bit(s) "RegSrc[1..1]" have no fanouts                    ;
+; reset  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 89                          ;
+; cycloneiii_ff         ; 6944                        ;
+;     ENA               ; 6912                        ;
+;     SCLR              ; 30                          ;
+;     plain             ; 2                           ;
+; cycloneiii_io_obuf    ; 34                          ;
+; cycloneiii_lcell_comb ; 5907                        ;
+;     arith             ; 90                          ;
+;         2 data inputs ; 58                          ;
+;         3 data inputs ; 32                          ;
+;     normal            ; 5817                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 67                          ;
+;         3 data inputs ; 228                         ;
+;         4 data inputs ; 5508                        ;
+;                       ;                             ;
+; Max LUT depth         ; 28.50                       ;
+; Average LUT depth     ; 15.50                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:56     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,7 +711,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Mar 24 17:08:09 2019
+    Info: Processing started: Mon Mar 25 14:19:35 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off de0nano_embedding -c de0nano_embedding
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -194,21 +743,193 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: CONTROLLER File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/CONTROLLER.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file de0nano_embedding.v
     Info (12023): Found entity 1: de0nano_embedding File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 6
-Error (12049): Can't compile duplicate declarations of entity "datapath" into library "work" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 19
-    Error (12180): Instance could be entity "datapath" in file datapath.bdf compiled in library work
-    Error (12180): Instance could be entity "datapath" in file datapath.v compiled in library work File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 19
 Info (12021): Found 6 design units, including 6 entities, in source file datapath.v
-    Info (12023): Found entity 1: busmux_0 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 207
-    Info (12023): Found entity 2: busmux_1 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 217
-    Info (12023): Found entity 3: busmux_2 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 227
-    Info (12023): Found entity 4: busmux_3 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 237
-    Info (12023): Found entity 5: busmux_4 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 247
+    Info (12023): Found entity 1: data_path File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 19
+    Info (12023): Found entity 2: busmux_0 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 207
+    Info (12023): Found entity 3: busmux_1 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 217
+    Info (12023): Found entity 4: busmux_2 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 227
+    Info (12023): Found entity 5: busmux_3 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 237
+    Info (12023): Found entity 6: busmux_4 File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/datapath.v Line: 247
+Warning (10236): Verilog HDL Implicit Net warning at CONTROLLER.v(15): created implicit net for "NoWrite" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/CONTROLLER.v Line: 15
+Warning (10236): Verilog HDL Implicit Net warning at de0nano_embedding.v(99): created implicit net for "asd" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 99
+Info (12127): Elaborating entity "de0nano_embedding" for the top level hierarchy
+Warning (10034): Output port "Zero" at de0nano_embedding.v(90) has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 90
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:dp" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 99
+Warning (275011): Block or symbol "DATA_MEM" of instance "inst1dataem" overlaps another block or symbol
+Info (12128): Elaborating entity "ALU" for hierarchy "datapath:dp|ALU:inst13"
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(21): inferring latch(es) for variable "C", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/ALU.v Line: 21
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(21): inferring latch(es) for variable "O", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/ALU.v Line: 21
+Info (10041): Inferred latch for "O" at ALU.v(44) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/ALU.v Line: 44
+Info (10041): Inferred latch for "C" at ALU.v(44) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/ALU.v Line: 44
+Info (12128): Elaborating entity "REG_FILE" for hierarchy "datapath:dp|REG_FILE:instregfile"
+Info (12128): Elaborating entity "ADDER" for hierarchy "datapath:dp|ADDER:inst5"
+Info (12128): Elaborating entity "CONSTANT" for hierarchy "datapath:dp|CONSTANT:inst19"
+Info (12128): Elaborating entity "PC" for hierarchy "datapath:dp|PC:instmem"
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "datapath:dp|BUSMUX:inst8"
+Info (12130): Elaborated megafunction instantiation "datapath:dp|BUSMUX:inst8"
+Info (12133): Instantiated megafunction "datapath:dp|BUSMUX:inst8" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "32"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "datapath:dp|BUSMUX:inst8|lpm_mux:$00000" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12131): Elaborated megafunction instantiation "datapath:dp|BUSMUX:inst8|lpm_mux:$00000", which is child of megafunction instantiation "datapath:dp|BUSMUX:inst8" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_rsc.tdf
+    Info (12023): Found entity 1: mux_rsc File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/db/mux_rsc.tdf Line: 22
+Info (12128): Elaborating entity "mux_rsc" for hierarchy "datapath:dp|BUSMUX:inst8|lpm_mux:$00000|mux_rsc:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "SHIFT" for hierarchy "datapath:dp|SHIFT:inst15"
+Warning (10240): Verilog HDL Always Construct warning at SHIFT.v(8): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 8
+Info (10041): Inferred latch for "out[0]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[1]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[2]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[3]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[4]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[5]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[6]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[7]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[8]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[9]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[10]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[11]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[12]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[13]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[14]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[15]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[16]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[17]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[18]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[19]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[20]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[21]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[22]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[23]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[24]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[25]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[26]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[27]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[28]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[29]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[30]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (10041): Inferred latch for "out[31]" at SHIFT.v(11) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Info (12128): Elaborating entity "INST_MEM" for hierarchy "datapath:dp|INST_MEM:mem"
+Warning (10030): Net "INST.data_a" at INST_MEM.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/INST_MEM.v Line: 5
+Warning (10030): Net "INST.waddr_a" at INST_MEM.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/INST_MEM.v Line: 5
+Warning (10030): Net "INST.we_a" at INST_MEM.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/INST_MEM.v Line: 5
+Info (12128): Elaborating entity "EXTEND" for hierarchy "datapath:dp|EXTEND:inst3"
+Info (12128): Elaborating entity "DATA_MEM" for hierarchy "datapath:dp|DATA_MEM:inst1dataem"
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "datapath:dp|BUSMUX:inst12"
+Info (12130): Elaborated megafunction instantiation "datapath:dp|BUSMUX:inst12"
+Info (12133): Instantiated megafunction "datapath:dp|BUSMUX:inst12" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "4"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "datapath:dp|BUSMUX:inst12|lpm_mux:$00000" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12131): Elaborated megafunction instantiation "datapath:dp|BUSMUX:inst12|lpm_mux:$00000", which is child of megafunction instantiation "datapath:dp|BUSMUX:inst12" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_arc.tdf
+    Info (12023): Found entity 1: mux_arc File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/db/mux_arc.tdf Line: 22
+Info (12128): Elaborating entity "mux_arc" for hierarchy "datapath:dp|BUSMUX:inst12|lpm_mux:$00000|mux_arc:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "CONTROLLER" for hierarchy "CONTROLLER:cont" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 108
+Info (12128): Elaborating entity "DEC" for hierarchy "CONTROLLER:cont|DEC:decoder" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/CONTROLLER.v Line: 17
+Warning (10240): Verilog HDL Always Construct warning at DEC.v(32): inferring latch(es) for variable "NoWrite", which holds its previous value in one or more paths through the always construct File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/DEC.v Line: 32
+Info (10041): Inferred latch for "NoWrite" at DEC.v(78) File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/DEC.v Line: 78
+Info (12128): Elaborating entity "COND_LOGIC" for hierarchy "CONTROLLER:cont|COND_LOGIC:conditional_logic" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/CONTROLLER.v Line: 21
+Warning (12030): Port "asd" on the entity instantiation of "dp" is connected to a signal of width 1. The formal width of the signal in the module is 4.  The extra bits will be left dangling without any fan-out logic. File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 99
+Critical Warning (127005): Memory depth (128) in the design file differs from memory depth (89) in the Memory Initialization File "C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/db/de0nano_embedding.ram0_INST_MEM_e7d321e6.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/db/de0nano_embedding.ram0_INST_MEM_e7d321e6.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[0]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[1]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[2]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[3]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[4]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[5]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[6]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[7]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[8]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[9]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[10]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[11]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[12]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[13]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[14]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[15]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[16]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[17]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[18]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[19]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[20]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[21]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[22]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[23]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[24]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[25]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[26]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[27]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[28]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[29]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[30]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (14026): LATCH primitive "datapath:dp|SHIFT:inst15|out[31]" is permanently enabled File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/SHIFT.v Line: 11
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[0]" and its non-tri-state driver. File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+Warning (13012): Latch CONTROLLER:cont|DEC:decoder|NoWrite has unsafe behavior File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/DEC.v Line: 6
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal datapath:dp|PC:instmem|CURRENT[0] File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/PC.v Line: 10
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_0[0]~synth" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 78
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Inst[4]" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 89
+    Warning (13410): Pin "Inst[6]" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 89
+    Warning (13410): Pin "Inst[9]" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 89
+    Warning (13410): Pin "Inst[10]" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 89
+    Warning (13410): Pin "Inst[11]" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 89
+    Warning (13410): Pin "Inst[27]" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 89
+    Warning (13410): Pin "Inst[28]" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 89
+    Warning (13410): Pin "ImmSrc[1]" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 91
+    Warning (13410): Pin "Zero" is stuck at GND File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 90
+Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4726 megabytes
-    Error: Processing ended: Sun Mar 24 17:08:21 2019
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:30
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/de0nano_embedding.v Line: 93
+Info (21057): Implemented 12896 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21060): Implemented 34 bidirectional pins
+    Info (21061): Implemented 12807 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 100 warnings
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Mon Mar 25 14:20:46 2019
+    Info: Elapsed time: 00:01:11
+    Info: Total CPU time (on all processors): 00:01:29
 
 
 +------------------------------------------+

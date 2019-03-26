@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "03/24/2019 00:21:02"
+// Generated on "03/25/2019 14:24:37"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          de0nano_embedding
 // 
@@ -29,38 +29,42 @@
 module de0nano_embedding_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg CLOCK_50;
+reg [33:0] treg_GPIO_0;
 reg [1:0] KEY;
-reg [3:0] SW;
-reg clk;
 reg reset;
 // wires                                               
+wire [1:0] ALUControl;
 wire ALUSrc;
+wire [33:0] GPIO_0;
+wire [1:0] ImmSrc;
 wire [31:0] Inst;
 wire [7:0] LED;
 wire MemWrite;
 wire MemtoReg;
 wire PCSrc;
-wire [31:0] RFread;
+wire RegSrc;
 wire RegWrite;
 wire Shift;
+wire Zero;
 
 // assign statements (if any)                          
+assign GPIO_0 = treg_GPIO_0;
 de0nano_embedding i1 (
 // port map - connection between master ports and signals/registers   
+	.ALUControl(ALUControl),
 	.ALUSrc(ALUSrc),
-	.CLOCK_50(CLOCK_50),
+	.GPIO_0(GPIO_0),
+	.ImmSrc(ImmSrc),
 	.Inst(Inst),
 	.KEY(KEY),
 	.LED(LED),
 	.MemWrite(MemWrite),
 	.MemtoReg(MemtoReg),
 	.PCSrc(PCSrc),
-	.RFread(RFread),
+	.RegSrc(RegSrc),
 	.RegWrite(RegWrite),
-	.SW(SW),
 	.Shift(Shift),
-	.clk(clk),
+	.Zero(Zero),
 	.reset(reset)
 );
 initial 
@@ -68,19 +72,29 @@ begin
 #100000000 $finish;
 end 
 
-// clk
+// GPIO_0[0]
+initial
+begin
+	treg_GPIO_0[0] = 1'bZ;
+end 
+// KEY[ 1 ]
 always
 begin
-	clk = 1'b0;
-	clk = #2500000 1'b1;
-	#2500000;
+	KEY[1] = 1'b0;
+	KEY[1] = #500000 1'b1;
+	#500000;
+end 
+// KEY[ 0 ]
+initial
+begin
+	KEY[0] = 1'b1;
 end 
 
 // reset
 initial
 begin
 	reset = 1'b1;
-	reset = #7040000 1'b0;
+	reset = #6720000 1'b0;
 end 
 endmodule
 

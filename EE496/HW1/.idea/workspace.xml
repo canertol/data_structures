@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9ef8e2ea-f6b7-473d-be78-088f32467dc4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.cmp.hdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.cmp.hdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.cmp.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.cmp.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.db_info" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.db_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.eda.qmsg" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.eda.qmsg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.tmw_info" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/db/de0nano_embedding.tmw_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/de0nano_embedding.eda.rpt" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/de0nano_embedding.eda.rpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/de0nano_embedding.flow.rpt" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/de0nano_embedding.flow.rpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/de0nano_embedding.qws" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/de0nano_embedding.qws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/Waveform.vwf.vt" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/Waveform.vwf.vt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/de0nano_embedding.do" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/de0nano_embedding.do" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/de0nano_embedding.msim.vcd" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/de0nano_embedding.msim.vcd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/de0nano_embedding.vo" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/de0nano_embedding.vo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/transcript" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/transcript" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/vwf_sim_transcript" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/vwf_sim_transcript" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/work/_info" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/work/_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/work/_lib.qdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/work/_lib.qdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/work/_lib1_75.qdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/work/_lib1_75.qpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EE446/LAB3/simulation/qsim/work/_lib1_75.qtl" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="990" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HW1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HW1" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ef8e2ea-f6b7-473d-be78-088f32467dc4" name="Default Changelist" comment="" />
+      <created>1553683320499</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553683320499</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1770613" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+</project>

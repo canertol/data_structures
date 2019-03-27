@@ -1,5 +1,5 @@
 Flow report for de0nano_embedding
-Mon Mar 25 14:24:40 2019
+Tue Mar 26 16:12:07 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Mar 25 14:24:40 2019       ;
+; Flow Status                        ; Successful - Tue Mar 26 16:12:07 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; de0nano_embedding                           ;
 ; Top-level Entity Name              ; de0nano_embedding                           ;
@@ -97,7 +97,9 @@ refer to the applicable agreement for further details.
 ; Timing Analyzer      ; 00:00:13     ; 2.1                     ; 5084 MB             ; 00:00:17                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4677 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4693 MB             ; 00:00:03                           ;
-; Total                ; 00:03:57     ; --                      ; --                  ; 00:05:28                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4677 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4693 MB             ; 00:00:03                           ;
+; Total                ; 00:04:01     ; --                      ; --                  ; 00:05:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -112,6 +114,8 @@ refer to the applicable agreement for further details.
 ; Timing Analyzer      ; Caner            ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Caner            ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Caner            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Caner            ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Caner            ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -122,6 +126,8 @@ quartus_map --read_settings_files=on --write_settings_files=off de0nano_embeddin
 quartus_fit --read_settings_files=off --write_settings_files=off de0nano_embedding -c de0nano_embedding
 quartus_asm --read_settings_files=off --write_settings_files=off de0nano_embedding -c de0nano_embedding
 quartus_sta de0nano_embedding -c de0nano_embedding
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off de0nano_embedding -c de0nano_embedding --vector_source=C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/Waveform.vwf --testbench_file=C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/simulation/qsim/ de0nano_embedding -c de0nano_embedding
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off de0nano_embedding -c de0nano_embedding --vector_source=C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/Waveform.vwf --testbench_file=C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/simulation/qsim/Waveform.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB3/simulation/qsim/ de0nano_embedding -c de0nano_embedding
 

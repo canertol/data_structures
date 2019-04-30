@@ -1,0 +1,221 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -11.580
+TNS   : -7175.562
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:inst12|ALUCtrl[0]'
+Slack : -8.006
+TNS   : -8.006
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:inst12|state.S11'
+Slack : -4.707
+TNS   : -30.059
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:inst12|state.S0'
+Slack : -4.364
+TNS   : -29.161
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:inst12|Shift[0]'
+Slack : -3.723
+TNS   : -28.319
+
+Type  : Slow 1200mV 85C Model Setup 'INST_REG:inst5|out[11]'
+Slack : -3.262
+TNS   : -40.037
+
+Type  : Slow 1200mV 85C Model Hold 'INST_REG:inst5|out[11]'
+Slack : -0.581
+TNS   : -1.157
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:inst12|state.S11'
+Slack : -0.027
+TNS   : -0.055
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:inst12|state.S0'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:inst12|ALUCtrl[0]'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:inst12|Shift[0]'
+Slack : 0.822
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -778.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:inst12|state.S11'
+Slack : 0.316
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'INST_REG:inst5|out[11]'
+Slack : 0.324
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:inst12|state.S0'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:inst12|ALUCtrl[0]'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:inst12|Shift[0]'
+Slack : 0.456
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -10.312
+TNS   : -6415.035
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:inst12|ALUCtrl[0]'
+Slack : -7.157
+TNS   : -7.157
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:inst12|state.S11'
+Slack : -4.250
+TNS   : -27.025
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:inst12|state.S0'
+Slack : -3.910
+TNS   : -25.661
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:inst12|Shift[0]'
+Slack : -3.257
+TNS   : -24.528
+
+Type  : Slow 1200mV 0C Model Setup 'INST_REG:inst5|out[11]'
+Slack : -2.930
+TNS   : -35.597
+
+Type  : Slow 1200mV 0C Model Hold 'INST_REG:inst5|out[11]'
+Slack : -0.478
+TNS   : -0.898
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:inst12|state.S11'
+Slack : -0.014
+TNS   : -0.014
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:inst12|state.S0'
+Slack : 0.036
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:inst12|ALUCtrl[0]'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:inst12|Shift[0]'
+Slack : 0.800
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -778.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'INST_REG:inst5|out[11]'
+Slack : 0.389
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:inst12|state.S11'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:inst12|state.S0'
+Slack : 0.418
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:inst12|ALUCtrl[0]'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:inst12|Shift[0]'
+Slack : 0.479
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -6.204
+TNS   : -3801.780
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:inst12|ALUCtrl[0]'
+Slack : -4.044
+TNS   : -4.044
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:inst12|state.S11'
+Slack : -2.560
+TNS   : -14.900
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:inst12|state.S0'
+Slack : -2.065
+TNS   : -13.168
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:inst12|Shift[0]'
+Slack : -2.006
+TNS   : -15.215
+
+Type  : Fast 1200mV 0C Model Setup 'INST_REG:inst5|out[11]'
+Slack : -1.505
+TNS   : -16.965
+
+Type  : Fast 1200mV 0C Model Hold 'INST_REG:inst5|out[11]'
+Slack : -0.380
+TNS   : -0.677
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:inst12|state.S0'
+Slack : -0.009
+TNS   : -0.009
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:inst12|state.S11'
+Slack : 0.024
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:inst12|ALUCtrl[0]'
+Slack : 0.203
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:inst12|Shift[0]'
+Slack : 0.346
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -825.353
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'INST_REG:inst5|out[11]'
+Slack : 0.276
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:inst12|state.S11'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:inst12|state.S0'
+Slack : 0.359
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:inst12|Shift[0]'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:inst12|ALUCtrl[0]'
+Slack : 0.427
+TNS   : 0.000
+
+------------------------------------------------------------

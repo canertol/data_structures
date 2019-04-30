@@ -1,0 +1,326 @@
+ -- Copyright (C) 2018  Intel Corporation. All rights reserved.
+ -- Your use of Intel Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Intel Program License 
+ -- Subscription Agreement, the Intel Quartus Prime License Agreement,
+ -- the Intel FPGA IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Intel and sold by Intel or its authorized distributors.  Please
+ -- refer to the applicable agreement for further details.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 1:       2.5V
+ --                  Bank 2:       2.5V
+ --                  Bank 3:       2.5V
+ --                  Bank 4:       2.5V
+ --                  Bank 5:       2.5V
+ --                  Bank 6:       2.5V
+ --                  Bank 7:       2.5V
+ --                  Bank 8:       2.5V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+CHIP  "de0nano_embedding"  ASSIGNED TO AN: EP4CE22F17C6
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+VCCIO8                       : A1        : power  :                   : 2.5V    : 8         :                
+Shiftin[4]                   : A2        : output : 2.5 V             :         : 8         : N              
+regadr1[1]                   : A3        : output : 2.5 V             :         : 8         : N              
+Shiftin[2]                   : A4        : output : 2.5 V             :         : 8         : N              
+ALUa[6]                      : A5        : output : 2.5 V             :         : 8         : N              
+ALUa[0]                      : A6        : output : 2.5 V             :         : 8         : N              
+R2[7]                        : A7        : output : 2.5 V             :         : 8         : N              
+GND+                         : A8        :        :                   :         : 8         :                
+GND+                         : A9        :        :                   :         : 7         :                
+Inst[0]                      : A10       : output : 2.5 V             :         : 7         : N              
+ALUout[5]                    : A11       : output : 2.5 V             :         : 7         : N              
+Inst[8]                      : A12       : output : 2.5 V             :         : 7         : N              
+toReg[5]                     : A13       : output : 2.5 V             :         : 7         : N              
+FetchedInst[12]              : A14       : output : 2.5 V             :         : 7         : N              
+R2[6]                        : A15       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
+ALUb[0]                      : B1        : output : 2.5 V             :         : 1         : N              
+GND                          : B2        : gnd    :                   :         :           :                
+toReg[7]                     : B3        : output : 2.5 V             :         : 8         : N              
+ALUb[3]                      : B4        : output : 2.5 V             :         : 8         : N              
+Shiftout[0]                  : B5        : output : 2.5 V             :         : 8         : N              
+Inst[12]                     : B6        : output : 2.5 V             :         : 8         : N              
+R3[2]                        : B7        : output : 2.5 V             :         : 8         : N              
+GND+                         : B8        :        :                   :         : 8         :                
+GND+                         : B9        :        :                   :         : 7         :                
+FetchedInst[3]               : B10       : output : 2.5 V             :         : 7         : N              
+Shiftin[6]                   : B11       : output : 2.5 V             :         : 7         : N              
+FetchedInst[7]               : B12       : output : 2.5 V             :         : 7         : N              
+shiftselectout[2]            : B13       : output : 2.5 V             :         : 7         : N              
+wa[0]                        : B14       : output : 2.5 V             :         : 7         : N              
+GND                          : B15       : gnd    :                   :         :           :                
+shiftselectout[0]            : B16       : output : 2.5 V             :         : 6         : N              
+~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C1        : input  : 2.5 V             :         : 1         : N              
+RD2[6]                       : C2        : output : 2.5 V             :         : 1         : N              
+PCout[0]                     : C3        : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : C4        : power  :                   : 2.5V    : 8         :                
+GND                          : C5        : gnd    :                   :         :           :                
+Inst[14]                     : C6        : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : C7        : power  :                   : 2.5V    : 8         :                
+ALUb[1]                      : C8        : output : 2.5 V             :         : 8         : N              
+ALUa[5]                      : C9        : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : C10       : power  :                   : 2.5V    : 7         :                
+ALUa[3]                      : C11       : output : 2.5 V             :         : 7         : N              
+GND                          : C12       : gnd    :                   :         :           :                
+VCCIO7                       : C13       : power  :                   : 2.5V    : 7         :                
+Shiftout[2]                  : C14       : output : 2.5 V             :         : 7         : N              
+regadr1[0]                   : C15       : output : 2.5 V             :         : 6         : N              
+Inst[5]                      : C16       : output : 2.5 V             :         : 6         : N              
+toReg[0]                     : D1        : output : 2.5 V             :         : 1         : N              
+~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : D2        : input  : 2.5 V             :         : 1         : N              
+ALUout[4]                    : D3        : output : 2.5 V             :         : 8         : N              
+VCCD_PLL3                    : D4        : power  :                   : 1.2V    :           :                
+Inst[6]                      : D5        : output : 2.5 V             :         : 8         : N              
+Inst[15]                     : D6        : output : 2.5 V             :         : 8         : N              
+GND                          : D7        : gnd    :                   :         :           :                
+ALUa[1]                      : D8        : output : 2.5 V             :         : 8         : N              
+shiftselectout[5]            : D9        : output : 2.5 V             :         : 7         : N              
+GND                          : D10       : gnd    :                   :         :           :                
+FetchedInst[8]               : D11       : output : 2.5 V             :         : 7         : N              
+ALUout[2]                    : D12       : output : 2.5 V             :         : 7         : N              
+VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
+PCout[4]                     : D14       : output : 2.5 V             :         : 7         : N              
+PCout[5]                     : D15       : output : 2.5 V             :         : 6         : N              
+shiftselectout[3]            : D16       : output : 2.5 V             :         : 6         : N              
+clock                        : E1        : input  : 2.5 V             :         : 1         : N              
+GND                          : E2        : gnd    :                   :         :           :                
+VCCIO1                       : E3        : power  :                   : 2.5V    : 1         :                
+GND                          : E4        : gnd    :                   :         :           :                
+GNDA3                        : E5        : gnd    :                   :         :           :                
+R3[0]                        : E6        : output : 2.5 V             :         : 8         : N              
+R2[2]                        : E7        : output : 2.5 V             :         : 8         : N              
+R3[3]                        : E8        : output : 2.5 V             :         : 8         : N              
+ALUa[4]                      : E9        : output : 2.5 V             :         : 7         : N              
+ALUout[0]                    : E10       : output : 2.5 V             :         : 7         : N              
+FetchedInst[4]               : E11       : output : 2.5 V             :         : 7         : N              
+GNDA2                        : E12       : gnd    :                   :         :           :                
+GND                          : E13       : gnd    :                   :         :           :                
+VCCIO6                       : E14       : power  :                   : 2.5V    : 6         :                
+GND+                         : E15       :        :                   :         : 6         :                
+GND+                         : E16       :        :                   :         : 6         :                
+ShiftCtrl[2]                 : F1        : output : 2.5 V             :         : 1         : N              
+shiftselectout[7]            : F2        : output : 2.5 V             :         : 1         : N              
+ALUa[2]                      : F3        : output : 2.5 V             :         : 1         : N              
+nSTATUS                      : F4        :        :                   :         : 1         :                
+VCCA3                        : F5        : power  :                   : 2.5V    :           :                
+GND                          : F6        : gnd    :                   :         :           :                
+VCCINT                       : F7        : power  :                   : 1.2V    :           :                
+R2[5]                        : F8        : output : 2.5 V             :         : 8         : N              
+FetchedInst[5]               : F9        : output : 2.5 V             :         : 7         : N              
+GND                          : F10       : gnd    :                   :         :           :                
+VCCINT                       : F11       : power  :                   : 1.2V    :           :                
+VCCA2                        : F12       : power  :                   : 2.5V    :           :                
+R2[3]                        : F13       : output : 2.5 V             :         : 6         : N              
+FetchedInst[0]               : F14       : output : 2.5 V             :         : 6         : N              
+ALUout[3]                    : F15       : output : 2.5 V             :         : 6         : N              
+~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : F16       : output : 2.5 V             :         : 6         : N              
+ALUb[2]                      : G1        : output : 2.5 V             :         : 1         : N              
+PCout[3]                     : G2        : output : 2.5 V             :         : 1         : N              
+VCCIO1                       : G3        : power  :                   : 2.5V    : 1         :                
+GND                          : G4        : gnd    :                   :         :           :                
+R2[4]                        : G5        : output : 2.5 V             :         : 1         : N              
+VCCINT                       : G6        : power  :                   : 1.2V    :           :                
+VCCINT                       : G7        : power  :                   : 1.2V    :           :                
+VCCINT                       : G8        : power  :                   : 1.2V    :           :                
+VCCINT                       : G9        : power  :                   : 1.2V    :           :                
+VCCINT                       : G10       : power  :                   : 1.2V    :           :                
+GND                          : G11       : gnd    :                   :         :           :                
+MSEL2                        : G12       :        :                   :         : 6         :                
+GND                          : G13       : gnd    :                   :         :           :                
+VCCIO6                       : G14       : power  :                   : 2.5V    : 6         :                
+Inst[11]                     : G15       : output : 2.5 V             :         : 6         : N              
+ALUb[5]                      : G16       : output : 2.5 V             :         : 6         : N              
+~ALTERA_DCLK~                : H1        : output : 2.5 V             :         : 1         : N              
+~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : H2        : input  : 2.5 V             :         : 1         : N              
+TCK                          : H3        : input  :                   :         : 1         :                
+TDI                          : H4        : input  :                   :         : 1         :                
+nCONFIG                      : H5        :        :                   :         : 1         :                
+VCCINT                       : H6        : power  :                   : 1.2V    :           :                
+GND                          : H7        : gnd    :                   :         :           :                
+GND                          : H8        : gnd    :                   :         :           :                
+GND                          : H9        : gnd    :                   :         :           :                
+GND                          : H10       : gnd    :                   :         :           :                
+VCCINT                       : H11       : power  :                   : 1.2V    :           :                
+MSEL1                        : H12       :        :                   :         : 6         :                
+MSEL0                        : H13       :        :                   :         : 6         :                
+CONF_DONE                    : H14       :        :                   :         : 6         :                
+GND                          : H15       : gnd    :                   :         :           :                
+GND                          : H16       : gnd    :                   :         :           :                
+ALUb[7]                      : J1        : output : 2.5 V             :         : 2         : N              
+reset                        : J2        : input  : 2.5 V             :         : 2         : N              
+nCE                          : J3        :        :                   :         : 1         :                
+TDO                          : J4        : output :                   :         : 1         :                
+TMS                          : J5        : input  :                   :         : 1         :                
+VCCINT                       : J6        : power  :                   : 1.2V    :           :                
+GND                          : J7        : gnd    :                   :         :           :                
+GND                          : J8        : gnd    :                   :         :           :                
+GND                          : J9        : gnd    :                   :         :           :                
+GND                          : J10       : gnd    :                   :         :           :                
+GND                          : J11       : gnd    :                   :         :           :                
+VCCINT                       : J12       : power  :                   : 1.2V    :           :                
+FetchedInst[2]               : J13       : output : 2.5 V             :         : 5         : N              
+Shiftout[3]                  : J14       : output : 2.5 V             :         : 5         : N              
+Shiftin[1]                   : J15       : output : 2.5 V             :         : 5         : N              
+Shiftout[4]                  : J16       : output : 2.5 V             :         : 5         : N              
+ShiftCtrl[0]                 : K1        : output : 2.5 V             :         : 2         : N              
+Inst[13]                     : K2        : output : 2.5 V             :         : 2         : N              
+VCCIO2                       : K3        : power  :                   : 2.5V    : 2         :                
+GND                          : K4        : gnd    :                   :         :           :                
+R2[1]                        : K5        : output : 2.5 V             :         : 2         : N              
+GND                          : K6        : gnd    :                   :         :           :                
+VCCINT                       : K7        : power  :                   : 1.2V    :           :                
+GND                          : K8        : gnd    :                   :         :           :                
+VCCINT                       : K9        : power  :                   : 1.2V    :           :                
+VCCINT                       : K10       : power  :                   : 1.2V    :           :                
+VCCINT                       : K11       : power  :                   : 1.2V    :           :                
+GND                          : K12       : gnd    :                   :         :           :                
+GND                          : K13       : gnd    :                   :         :           :                
+VCCIO5                       : K14       : power  :                   : 2.5V    : 5         :                
+R3[7]                        : K15       : output : 2.5 V             :         : 5         : N              
+FetchedInst[14]              : K16       : output : 2.5 V             :         : 5         : N              
+toReg[1]                     : L1        : output : 2.5 V             :         : 2         : N              
+Shiftin[7]                   : L2        : output : 2.5 V             :         : 2         : N              
+ALUout[7]                    : L3        : output : 2.5 V             :         : 2         : N              
+shiftselectout[4]            : L4        : output : 2.5 V             :         : 2         : N              
+VCCA1                        : L5        : power  :                   : 2.5V    :           :                
+VCCINT                       : L6        : power  :                   : 1.2V    :           :                
+ALUb[6]                      : L7        : output : 2.5 V             :         : 3         : N              
+zeroflag                     : L8        : output : 2.5 V             :         : 3         : N              
+GND                          : L9        : gnd    :                   :         :           :                
+GND                          : L10       : gnd    :                   :         :           :                
+GND                          : L11       : gnd    :                   :         :           :                
+VCCA4                        : L12       : power  :                   : 2.5V    :           :                
+ALUa[7]                      : L13       : output : 2.5 V             :         : 5         : N              
+ALUout[6]                    : L14       : output : 2.5 V             :         : 5         : N              
+regadr1[2]                   : L15       : output : 2.5 V             :         : 5         : N              
+Inst[7]                      : L16       : output : 2.5 V             :         : 5         : N              
+GND+                         : M1        :        :                   :         : 2         :                
+GND+                         : M2        :        :                   :         : 2         :                
+VCCIO2                       : M3        : power  :                   : 2.5V    : 2         :                
+GND                          : M4        : gnd    :                   :         :           :                
+GNDA1                        : M5        : gnd    :                   :         :           :                
+FetchedInst[11]              : M6        : output : 2.5 V             :         : 3         : N              
+RD2[7]                       : M7        : output : 2.5 V             :         : 3         : N              
+RD2[1]                       : M8        : output : 2.5 V             :         : 3         : N              
+VCCINT                       : M9        : power  :                   : 1.2V    :           :                
+toReg[4]                     : M10       : output : 2.5 V             :         : 4         : N              
+VCCINT                       : M11       : power  :                   : 1.2V    :           :                
+GNDA4                        : M12       : gnd    :                   :         :           :                
+GND                          : M13       : gnd    :                   :         :           :                
+VCCIO5                       : M14       : power  :                   : 2.5V    : 5         :                
+GND+                         : M15       :        :                   :         : 5         :                
+GND+                         : M16       :        :                   :         : 5         :                
+Shiftin[5]                   : N1        : output : 2.5 V             :         : 2         : N              
+RD2[3]                       : N2        : output : 2.5 V             :         : 2         : N              
+Inst[1]                      : N3        : output : 2.5 V             :         : 3         : N              
+VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
+RD2[5]                       : N5        : output : 2.5 V             :         : 3         : N              
+Inst[9]                      : N6        : output : 2.5 V             :         : 3         : N              
+GND                          : N7        : gnd    :                   :         :           :                
+Shiftin[0]                   : N8        : output : 2.5 V             :         : 3         : N              
+toReg[3]                     : N9        : output : 2.5 V             :         : 4         : N              
+GND                          : N10       : gnd    :                   :         :           :                
+Inst[3]                      : N11       : output : 2.5 V             :         : 4         : N              
+shiftselectout[1]            : N12       : output : 2.5 V             :         : 4         : N              
+VCCD_PLL4                    : N13       : power  :                   : 1.2V    :           :                
+Shiftout[7]                  : N14       : output : 2.5 V             :         : 5         : N              
+R3[4]                        : N15       : output : 2.5 V             :         : 5         : N              
+FetchedInst[6]               : N16       : output : 2.5 V             :         : 5         : N              
+Inst[10]                     : P1        : output : 2.5 V             :         : 2         : N              
+wa[2]                        : P2        : output : 2.5 V             :         : 2         : N              
+ShiftCtrl[1]                 : P3        : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : P4        : power  :                   : 2.5V    : 3         :                
+GND                          : P5        : gnd    :                   :         :           :                
+R3[1]                        : P6        : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : P7        : power  :                   : 2.5V    : 3         :                
+RD2[4]                       : P8        : output : 2.5 V             :         : 3         : N              
+Shiftout[1]                  : P9        : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : P10       : power  :                   : 2.5V    : 4         :                
+Inst[2]                      : P11       : output : 2.5 V             :         : 4         : N              
+GND                          : P12       : gnd    :                   :         :           :                
+VCCIO4                       : P13       : power  :                   : 2.5V    : 4         :                
+shiftselectout[6]            : P14       : output : 2.5 V             :         : 4         : N              
+PCout[6]                     : P15       : output : 2.5 V             :         : 5         : N              
+Shiftout[5]                  : P16       : output : 2.5 V             :         : 5         : N              
+Shiftout[6]                  : R1        : output : 2.5 V             :         : 2         : N              
+GND                          : R2        : gnd    :                   :         :           :                
+Inst[4]                      : R3        : output : 2.5 V             :         : 3         : N              
+wa[1]                        : R4        : output : 2.5 V             :         : 3         : N              
+R3[5]                        : R5        : output : 2.5 V             :         : 3         : N              
+PCout[7]                     : R6        : output : 2.5 V             :         : 3         : N              
+R3[6]                        : R7        : output : 2.5 V             :         : 3         : N              
+GND+                         : R8        :        :                   :         : 3         :                
+GND+                         : R9        :        :                   :         : 4         :                
+FetchedInst[9]               : R10       : output : 2.5 V             :         : 4         : N              
+FetchedInst[1]               : R11       : output : 2.5 V             :         : 4         : N              
+ALUout[1]                    : R12       : output : 2.5 V             :         : 4         : N              
+PCout[1]                     : R13       : output : 2.5 V             :         : 4         : N              
+RD2[0]                       : R14       : output : 2.5 V             :         : 4         : N              
+GND                          : R15       : gnd    :                   :         :           :                
+PCout[2]                     : R16       : output : 2.5 V             :         : 5         : N              
+VCCIO3                       : T1        : power  :                   : 2.5V    : 3         :                
+toReg[2]                     : T2        : output : 2.5 V             :         : 3         : N              
+regadr2[2]                   : T3        : output : 2.5 V             :         : 3         : N              
+FetchedInst[15]              : T4        : output : 2.5 V             :         : 3         : N              
+R2[0]                        : T5        : output : 2.5 V             :         : 3         : N              
+toReg[6]                     : T6        : output : 2.5 V             :         : 3         : N              
+ALUb[4]                      : T7        : output : 2.5 V             :         : 3         : N              
+GND+                         : T8        :        :                   :         : 3         :                
+GND+                         : T9        :        :                   :         : 4         :                
+FetchedInst[10]              : T10       : output : 2.5 V             :         : 4         : N              
+RD2[2]                       : T11       : output : 2.5 V             :         : 4         : N              
+regadr2[0]                   : T12       : output : 2.5 V             :         : 4         : N              
+FetchedInst[13]              : T13       : output : 2.5 V             :         : 4         : N              
+Shiftin[3]                   : T14       : output : 2.5 V             :         : 4         : N              
+regadr2[1]                   : T15       : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : T16       : power  :                   : 2.5V    : 4         :                

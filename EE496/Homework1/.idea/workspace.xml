@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="597ff37e-a778-417b-bd2a-0e5214de656c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/deneme.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part_3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="597ff37e-a778-417b-bd2a-0e5214de656c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
+            <state relative-caret-position="10560">
               <caret line="533" column="17" selection-end-line="545" selection-end-column="136" />
             </state>
           </provider>
@@ -46,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1504">
+            <state relative-caret-position="320">
               <caret line="19" column="54" selection-end-line="112" selection-end-column="135" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -58,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2436">
+            <state relative-caret-position="2740">
               <caret line="140" column="60" selection-start-line="140" selection-start-column="60" selection-end-line="140" selection-end-column="60" />
             </state>
           </provider>
@@ -99,9 +90,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="425" />
+    <option name="y" value="217" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -186,6 +178,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.36290324" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -254,23 +247,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2436">
-          <caret line="140" column="60" selection-start-line="140" selection-start-column="60" selection-end-line="140" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1504">
-          <caret line="19" column="54" selection-end-line="112" selection-end-column="135" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/part_2.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -291,13 +267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/part3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="533" column="17" selection-end-line="545" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/part_4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -305,6 +274,30 @@
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10560">
+          <caret line="533" column="17" selection-end-line="545" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="19" column="54" selection-end-line="112" selection-end-column="135" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2740">
+          <caret line="140" column="60" selection-start-line="140" selection-start-column="60" selection-end-line="140" selection-end-column="60" />
         </state>
       </provider>
     </entry>

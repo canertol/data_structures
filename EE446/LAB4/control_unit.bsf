@@ -110,9 +110,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 200 144)
 		(output)
-		(text "BSrc" (rect 0 0 20 12)(font "Arial" ))
-		(text "BSrc" (rect 159 139 179 151)(font "Arial" ))
-		(line (pt 200 144)(pt 184 144)(line_width 1))
+		(text "BSrc[1..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "BSrc[1..0]" (rect 141 139 179 151)(font "Arial" ))
+		(line (pt 200 144)(pt 184 144)(line_width 3))
 	)
 	(port
 		(pt 200 160)

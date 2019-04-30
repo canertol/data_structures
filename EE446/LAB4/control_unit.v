@@ -20,8 +20,8 @@ module control_unit(
     );
 	 
 output	reg	[2:0]	Shift,ALUCtrl;
-output	reg	[1:0]	RegSrc;
-output	reg	PCen,IDMSrc,IDMWrite,IRegen,RegWrite,ASrc0,ASrc1,BSrc, FlgWrite;
+output	reg	[1:0]	RegSrc, BSrc;
+output	reg	PCen,IDMSrc,IDMWrite,IRegen,RegWrite,ASrc0,ASrc1, FlgWrite;
 
 input	[4:0]	Op;
 input	CLK,RST;
@@ -76,7 +76,7 @@ begin
 		next_state = S0;
 		IDMSrc = 1'b0;
       ALUCtrl = 3'b000;
-      BSrc = 1'b0;
+      BSrc = 2'b00;
       ASrc1 = 1'b0;
       RegWrite = 1'b0;
       IRegen = 1'b0;
@@ -105,7 +105,7 @@ begin
 			IRegen = 1'b1;
 			ALUCtrl = 3'b000;
 			RegSrc = 2'b10;
-			BSrc = 1'b1;
+			BSrc = 2'b01;
 			ASrc0 = 1'b0;
 			Shift = 3'b000;
 			FlgWrite = 1'b0;
@@ -119,7 +119,7 @@ begin
 			IRegen = 1'b0;
 			PCen = 1'b0;
 			ASrc1 = 1'b1;
-			BSrc = 1'b1;
+			BSrc = 2'b01;
 			Shift = 3'b000;
 			ALUCtrl = 3'b000;
 			FlgWrite = 1'b0;
@@ -131,7 +131,7 @@ begin
 				end
 				
 			//R-Type
-			else if(Op[4:3] == 2'b00)
+			else if(Op[4:3] == 2'b00 && Op[2:0] != 3'b010 && Op[2:0] != 3'b011)
 				begin
 				ASrc0 = 1'b0;
 					next_state = S6;
@@ -141,9 +141,14 @@ begin
 			//Branch Type
 			else if(Op[4:3] == 2'b10)
 				begin
-				ASrc0 = 1'b0;
-				RegWrite = 1'b1;
-					next_state = S10;
+					if(Op[2:0] == 3'b010)
+						next_state = S4;
+					else 
+						begin
+						ASrc0 = 1'b0;
+						RegWrite = 1'b1;
+						next_state = S10;
+						end
 				end
 			
 			//I-Type
@@ -166,6 +171,10 @@ begin
 					end
 
 				end
+				else if(Op[4:3] == 2'b00 ) //ADDI or SUBI
+					begin
+						next_state = S5;
+					end
 			end
 		
 		//load
@@ -191,23 +200,43 @@ begin
 			next_state= S0;
 		end
 		
-		//LWI/LUI/LI Completion
+		// BLI
 		S4:
 		begin
-		
+			RegSrc = 2'b11;
+			IDMSrc = 1'b1;
+			PCen = 1'b0;
+			IRegen = 1'b1;
+			ASrc0 = 1'b0;
+			ASrc1 = 1'b0;
+			
+			next_state = S10;
 		end
 		
-		//
+		// ADDI SUBI
 		S5:
 		begin
-		
+		   RegSrc = 2'b11;
+			IDMSrc = 1'b1;
+			PCen = 1'b0;
+			IRegen = 1'b0;
+			ASrc0 = 1'b0;
+			ASrc1 = 1'b0;
+			//ADD ind	
+			if(Op[2:0] == 3'b010)
+             ALUCtrl = 3'b000;
+			
+			//SUB ind
+			else if(Op[2:0] == 3'b011)
+             ALUCtrl = 3'b001;
+			next_state = S7;
 		end
 			
 		//Execution: R-Type
 		S6:
 		begin    
 			ASrc1 = 1'b0;
-		   BSrc = 1'b0;
+		   BSrc = 2'b00;
 			ASrc0 = 1'b0;
 			FlgWrite = 1'b1;
 		   next_state = S7;
@@ -269,8 +298,8 @@ begin
 
 		//I-Type Completion
 		S9:
-		begin
-			
+		begin	
+			next_state = S10;
 		end
 	
 		//Write Back - I-Type
@@ -278,7 +307,7 @@ begin
 		begin
 			RegWrite=1'b0;
 			ASrc1 = 1'b0;
-			BSrc = 1'b0;
+			BSrc = 2'b00;
 			ASrc0 = 1'b0;
 			next_state = S0;
 			
@@ -380,7 +409,7 @@ begin
 		S11:
 		begin    
 	    	ASrc1 = 1'b0;
-		   BSrc = 1'b0;
+		   BSrc = 2'b00;
 		   ASrc0 = 1'b1;
 			RegSrc = 2'b00;
 			ALUCtrl = 3'b110;

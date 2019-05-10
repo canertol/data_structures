@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -12.364
+TNS   : -7447.695
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : -8.489
+TNS   : -16.271
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:b2v_inst12|state[0]'
+Slack : -4.727
+TNS   : -76.189
+
+Type  : Slow 1200mV 85C Model Setup 'control_unit:b2v_inst12|Shift[0]'
+Slack : -2.923
+TNS   : -14.066
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:b2v_inst12|state[0]'
+Slack : 0.001
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.334
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'control_unit:b2v_inst12|Shift[0]'
+Slack : 0.724
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -771.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:b2v_inst12|state[0]'
+Slack : 0.368
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : 0.388
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'control_unit:b2v_inst12|Shift[0]'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -10.941
+TNS   : -6610.542
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : -7.520
+TNS   : -14.362
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:b2v_inst12|state[0]'
+Slack : -4.260
+TNS   : -68.168
+
+Type  : Slow 1200mV 0C Model Setup 'control_unit:b2v_inst12|Shift[0]'
+Slack : -2.642
+TNS   : -12.781
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:b2v_inst12|state[0]'
+Slack : 0.035
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.286
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : 0.441
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'control_unit:b2v_inst12|Shift[0]'
+Slack : 0.731
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -771.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:b2v_inst12|state[0]'
+Slack : 0.396
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'control_unit:b2v_inst12|Shift[0]'
+Slack : 0.437
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -6.597
+TNS   : -3922.298
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : -4.574
+TNS   : -8.513
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:b2v_inst12|state[0]'
+Slack : -2.457
+TNS   : -36.750
+
+Type  : Fast 1200mV 0C Model Setup 'control_unit:b2v_inst12|Shift[0]'
+Slack : -1.610
+TNS   : -6.952
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:b2v_inst12|state[0]'
+Slack : 0.004
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.106
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : 0.125
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'control_unit:b2v_inst12|Shift[0]'
+Slack : 0.261
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -819.527
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:b2v_inst12|state[0]'
+Slack : 0.308
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:b2v_inst12|ALUCtrl[0]'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'control_unit:b2v_inst12|Shift[0]'
+Slack : 0.415
+TNS   : 0.000
+
+------------------------------------------------------------

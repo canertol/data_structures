@@ -103,8 +103,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 192 80)
 		(output)
-		(text "R0[7..0]" (rect 0 0 33 12)(font "Arial" ))
-		(text "R0[7..0]" (rect 138 75 171 87)(font "Arial" ))
+		(text "R6[7..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "R6[7..0]" (rect 138 75 171 87)(font "Arial" ))
 		(line (pt 192 80)(pt 176 80)(line_width 3))
 	)
 	(port

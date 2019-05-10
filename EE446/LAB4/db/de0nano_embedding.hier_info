@@ -1,9 +1,137 @@
-|multicycle
-zeroflag <= Z.DB_MAX_OUTPUT_PORT_TYPE
-reset => control_unit:inst12.RST
-reset => PC:inst000.RST
-reset => REG_FILE:inst11.RST
+|de0nano_embedding
+CLOCK_50 => ~NO_FANOUT~
+LED[0] <= multicycle:my_multicycle.R2
+LED[1] <= multicycle:my_multicycle.R2
+LED[2] <= multicycle:my_multicycle.R2
+LED[3] <= multicycle:my_multicycle.R2
+LED[4] <= multicycle:my_multicycle.R2
+LED[5] <= multicycle:my_multicycle.R2
+LED[6] <= multicycle:my_multicycle.R2
+LED[7] <= multicycle:my_multicycle.R2
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+DRAM_ADDR[0] <= <GND>
+DRAM_ADDR[1] <= <GND>
+DRAM_ADDR[2] <= <GND>
+DRAM_ADDR[3] <= <GND>
+DRAM_ADDR[4] <= <GND>
+DRAM_ADDR[5] <= <GND>
+DRAM_ADDR[6] <= <GND>
+DRAM_ADDR[7] <= <GND>
+DRAM_ADDR[8] <= <GND>
+DRAM_ADDR[9] <= <GND>
+DRAM_ADDR[10] <= <GND>
+DRAM_ADDR[11] <= <GND>
+DRAM_ADDR[12] <= <GND>
+DRAM_BA[0] <= <GND>
+DRAM_BA[1] <= <GND>
+DRAM_CAS_N <= <GND>
+DRAM_CKE <= <GND>
+DRAM_CLK <= <GND>
+DRAM_CS_N <= <GND>
+DRAM_DQ[0] <> <UNC>
+DRAM_DQ[1] <> <UNC>
+DRAM_DQ[2] <> <UNC>
+DRAM_DQ[3] <> <UNC>
+DRAM_DQ[4] <> <UNC>
+DRAM_DQ[5] <> <UNC>
+DRAM_DQ[6] <> <UNC>
+DRAM_DQ[7] <> <UNC>
+DRAM_DQ[8] <> <UNC>
+DRAM_DQ[9] <> <UNC>
+DRAM_DQ[10] <> <UNC>
+DRAM_DQ[11] <> <UNC>
+DRAM_DQ[12] <> <UNC>
+DRAM_DQ[13] <> <UNC>
+DRAM_DQ[14] <> <UNC>
+DRAM_DQ[15] <> <UNC>
+DRAM_DQM[0] <= <GND>
+DRAM_DQM[1] <= <GND>
+DRAM_RAS_N <= <GND>
+DRAM_WE_N <= <GND>
+GPIO_0[0] <> <UNC>
+GPIO_0[1] <> <UNC>
+GPIO_0[2] <> <UNC>
+GPIO_0[3] <> <UNC>
+GPIO_0[4] <> <UNC>
+GPIO_0[5] <> <UNC>
+GPIO_0[6] <> <UNC>
+GPIO_0[7] <> <UNC>
+GPIO_0[8] <> <UNC>
+GPIO_0[9] <> <UNC>
+GPIO_0[10] <> <UNC>
+GPIO_0[11] <> <UNC>
+GPIO_0[12] <> <UNC>
+GPIO_0[13] <> <UNC>
+GPIO_0[14] <> <UNC>
+GPIO_0[15] <> <UNC>
+GPIO_0[16] <> <UNC>
+GPIO_0[17] <> <UNC>
+GPIO_0[18] <> <UNC>
+GPIO_0[19] <> <UNC>
+GPIO_0[20] <> <UNC>
+GPIO_0[21] <> <UNC>
+GPIO_0[22] <> <UNC>
+GPIO_0[23] <> <UNC>
+GPIO_0[24] <> <UNC>
+GPIO_0[25] <> <UNC>
+GPIO_0[26] <> <UNC>
+GPIO_0[27] <> <UNC>
+GPIO_0[28] <> <UNC>
+GPIO_0[29] <> <UNC>
+GPIO_0[30] <> <UNC>
+GPIO_0[31] <> <UNC>
+GPIO_0[32] <> <UNC>
+GPIO_0[33] <> <UNC>
+GPIO_0_IN[0] => ~NO_FANOUT~
+GPIO_0_IN[1] => ~NO_FANOUT~
+GPIO_1[0] <> <UNC>
+GPIO_1[1] <> <UNC>
+GPIO_1[2] <> <UNC>
+GPIO_1[3] <> <UNC>
+GPIO_1[4] <> <UNC>
+GPIO_1[5] <> <UNC>
+GPIO_1[6] <> <UNC>
+GPIO_1[7] <> <UNC>
+GPIO_1[8] <> <UNC>
+GPIO_1[9] <> <UNC>
+GPIO_1[10] <> <UNC>
+GPIO_1[11] <> <UNC>
+GPIO_1[12] <> <UNC>
+GPIO_1[13] <> <UNC>
+GPIO_1[14] <> <UNC>
+GPIO_1[15] <> <UNC>
+GPIO_1[16] <> <UNC>
+GPIO_1[17] <> <UNC>
+GPIO_1[18] <> <UNC>
+GPIO_1[19] <> <UNC>
+GPIO_1[20] <> <UNC>
+GPIO_1[21] <> <UNC>
+GPIO_1[22] <> <UNC>
+GPIO_1[23] <> <UNC>
+GPIO_1[24] <> <UNC>
+GPIO_1[25] <> <UNC>
+GPIO_1[26] <> <UNC>
+GPIO_1[27] <> <UNC>
+GPIO_1[28] <> <UNC>
+GPIO_1[29] <> <UNC>
+GPIO_1[30] <> <UNC>
+GPIO_1[31] <> <UNC>
+GPIO_1[32] <> <UNC>
+GPIO_1[33] <> <UNC>
+GPIO_1_IN[0] => ~NO_FANOUT~
+GPIO_1_IN[1] => ~NO_FANOUT~
+
+
+|de0nano_embedding|multicycle:my_multicycle
+zeroflag <= zero.DB_MAX_OUTPUT_PORT_TYPE
+clock => FLAG_REG:inst11111.clk
 clock => control_unit:inst12.CLK
+clock => FLAG_REG:inst13.clk
 clock => INST_REG:inst5.clk
 clock => IDM:inst4.clk
 clock => PC:inst000.CLK
@@ -12,8 +140,14 @@ clock => DATA_REG:inst6.clk
 clock => REG_FILE:inst11.CLK
 clock => DATA_REG:inst21.clk
 clock => DATA_REG:inst14.clk
+reset => control_unit:inst12.RST
+reset => PC:inst000.RST
+reset => REG_FILE:inst11.RST
+carry <= FLAG_REG:inst13.out
+FlgWrite <= control_unit:inst12.FlgWrite
 IRegen <= control_unit:inst12.IRegen
 ASrc1 <= control_unit:inst12.ASrc1
+RegWrite <= control_unit:inst12.RegWrite
 ALUa[0] <= mux2:inst15.out[0]
 ALUa[1] <= mux2:inst15.out[1]
 ALUa[2] <= mux2:inst15.out[2]
@@ -22,14 +156,14 @@ ALUa[4] <= mux2:inst15.out[4]
 ALUa[5] <= mux2:inst15.out[5]
 ALUa[6] <= mux2:inst15.out[6]
 ALUa[7] <= mux2:inst15.out[7]
-ALUb[0] <= mux2:inst16.out[0]
-ALUb[1] <= mux2:inst16.out[1]
-ALUb[2] <= mux2:inst16.out[2]
-ALUb[3] <= mux2:inst16.out[3]
-ALUb[4] <= mux2:inst16.out[4]
-ALUb[5] <= mux2:inst16.out[5]
-ALUb[6] <= mux2:inst16.out[6]
-ALUb[7] <= mux2:inst16.out[7]
+ALUb[0] <= mux4:inst19.out[0]
+ALUb[1] <= mux4:inst19.out[1]
+ALUb[2] <= mux4:inst19.out[2]
+ALUb[3] <= mux4:inst19.out[3]
+ALUb[4] <= mux4:inst19.out[4]
+ALUb[5] <= mux4:inst19.out[5]
+ALUb[6] <= mux4:inst19.out[6]
+ALUb[7] <= mux4:inst19.out[7]
 ALUout[0] <= ALU:inst2.out[0]
 ALUout[1] <= ALU:inst2.out[1]
 ALUout[2] <= ALU:inst2.out[2]
@@ -82,6 +216,14 @@ PCout[4] <= PC:inst000.CURRENT[4]
 PCout[5] <= PC:inst000.CURRENT[5]
 PCout[6] <= PC:inst000.CURRENT[6]
 PCout[7] <= PC:inst000.CURRENT[7]
+R0[0] <= REG_FILE:inst11.R0[0]
+R0[1] <= REG_FILE:inst11.R0[1]
+R0[2] <= REG_FILE:inst11.R0[2]
+R0[3] <= REG_FILE:inst11.R0[3]
+R0[4] <= REG_FILE:inst11.R0[4]
+R0[5] <= REG_FILE:inst11.R0[5]
+R0[6] <= REG_FILE:inst11.R0[6]
+R0[7] <= REG_FILE:inst11.R0[7]
 R2[0] <= REG_FILE:inst11.R2[0]
 R2[1] <= REG_FILE:inst11.R2[1]
 R2[2] <= REG_FILE:inst11.R2[2]
@@ -156,7 +298,14 @@ wa[1] <= Instr[9].DB_MAX_OUTPUT_PORT_TYPE
 wa[2] <= Instr[10].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|ALU:inst2
+|de0nano_embedding|multicycle:my_multicycle|FLAG_REG:inst11111
+clk => out~reg0.CLK
+in => out~reg0.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+EN => out~reg0.ENA
+
+
+|de0nano_embedding|multicycle:my_multicycle|ALU:inst2
 ALUCtrl[0] => Mux2.IN10
 ALUCtrl[0] => Mux3.IN10
 ALUCtrl[0] => Mux4.IN10
@@ -313,7 +462,7 @@ z <= z$latch.DB_MAX_OUTPUT_PORT_TYPE
 n <= n$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|mux2:inst15
+|de0nano_embedding|multicycle:my_multicycle|mux2:inst15
 data0[0] => out.DATAA
 data0[1] => out.DATAA
 data0[2] => out.DATAA
@@ -348,7 +497,7 @@ out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|control_unit:inst12
+|de0nano_embedding|multicycle:my_multicycle|control_unit:inst12
 Shift[0] <= Shift[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 Shift[1] <= Shift[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 Shift[2] <= Shift[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -358,7 +507,8 @@ IDMSrc <= IDMSrc$latch.DB_MAX_OUTPUT_PORT_TYPE
 ASrc0 <= ASrc0$latch.DB_MAX_OUTPUT_PORT_TYPE
 RegWrite <= RegWrite$latch.DB_MAX_OUTPUT_PORT_TYPE
 ASrc1 <= ASrc1$latch.DB_MAX_OUTPUT_PORT_TYPE
-BSrc <= BSrc$latch.DB_MAX_OUTPUT_PORT_TYPE
+BSrc[0] <= BSrc[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BSrc[1] <= <GND>
 PCen <= PCen$latch.DB_MAX_OUTPUT_PORT_TYPE
 ALUCtrl[0] <= ALUCtrl[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 ALUCtrl[1] <= ALUCtrl[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -367,6 +517,7 @@ RegSrc[0] <= RegSrc[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 RegSrc[1] <= RegSrc[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 RST => RegSrc[1]$latch.PRESET
 RST => RegSrc[0]$latch.ACLR
+RST => IDMSrc$latch.ACLR
 RST => PCen$latch.ACLR
 RST => Shift[2]$latch.ACLR
 RST => Shift[1]$latch.ACLR
@@ -376,13 +527,13 @@ RST => IDMWrite$latch.ACLR
 RST => IRegen$latch.ACLR
 RST => RegWrite$latch.ACLR
 RST => ASrc1$latch.ACLR
-RST => BSrc$latch.ACLR
-RST => IDMSrc$latch.ACLR
+RST => FlgWrite$latch.ACLR
+RST => BSrc[0]$latch.ACLR
+RST => next_state[0]$latch.ACLR
+RST => next_state[1]$latch.ACLR
 RST => ALUCtrl[0]$latch.ACLR
 RST => ALUCtrl[1]$latch.ACLR
 RST => ALUCtrl[2]$latch.ACLR
-RST => next_state[0]$latch.ACLR
-RST => next_state[1]$latch.ACLR
 RST => next_state[2]$latch.ACLR
 RST => next_state[3]$latch.ACLR
 CLK => state[0]~reg0.CLK
@@ -390,7 +541,9 @@ CLK => state[1]~reg0.CLK
 CLK => state[2]~reg0.CLK
 CLK => state[3]~reg0.CLK
 Z => IDMSrc.DATAB
-C => ~NO_FANOUT~
+Z => IDMSrc.DATAB
+C => IDMSrc.DATAB
+C => IDMSrc.DATAA
 Op[0] => Equal4.IN2
 Op[0] => Equal5.IN1
 Op[0] => Equal6.IN2
@@ -431,9 +584,17 @@ next_state[0] <= next_state[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 next_state[1] <= next_state[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 next_state[2] <= next_state[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
 next_state[3] <= next_state[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+FlgWrite <= FlgWrite$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|INST_REG:inst5
+|de0nano_embedding|multicycle:my_multicycle|FLAG_REG:inst13
+clk => out~reg0.CLK
+in => out~reg0.DATAIN
+out <= out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+EN => out~reg0.ENA
+
+
+|de0nano_embedding|multicycle:my_multicycle|INST_REG:inst5
 clk => out[0]~reg0.CLK
 clk => out[1]~reg0.CLK
 clk => out[2]~reg0.CLK
@@ -500,7 +661,7 @@ EN => out[14]~reg0.ENA
 EN => out[15]~reg0.ENA
 
 
-|multicycle|IDM:inst4
+|de0nano_embedding|multicycle:my_multicycle|IDM:inst4
 A[0] => data.waddr_a[0].DATAIN
 A[0] => data.WADDR
 A[0] => data.RADDR
@@ -581,7 +742,7 @@ out[14] <= data.DATAOUT14
 out[15] <= data.DATAOUT15
 
 
-|multicycle|mux2:inst3
+|de0nano_embedding|multicycle:my_multicycle|mux2:inst3
 data0[0] => out.DATAA
 data0[1] => out.DATAA
 data0[2] => out.DATAA
@@ -616,7 +777,7 @@ out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|PC:inst000
+|de0nano_embedding|multicycle:my_multicycle|PC:inst000
 CLK => CURRENT[0]~reg0.CLK
 CLK => CURRENT[1]~reg0.CLK
 CLK => CURRENT[2]~reg0.CLK
@@ -653,7 +814,7 @@ RST => always0.IN0
 EN => always0.IN1
 
 
-|multicycle|mux4:inst18
+|de0nano_embedding|multicycle:my_multicycle|mux4:inst18
 D0[0] => out.DATAA
 D0[1] => out.DATAA
 D0[2] => out.DATAA
@@ -720,7 +881,7 @@ out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|DATA_REG:inst17
+|de0nano_embedding|multicycle:my_multicycle|DATA_REG:inst17
 clk => out[0]~reg0.CLK
 clk => out[1]~reg0.CLK
 clk => out[2]~reg0.CLK
@@ -755,7 +916,7 @@ EN => out[6]~reg0.ENA
 EN => out[7]~reg0.ENA
 
 
-|multicycle|DATA_REG:inst6
+|de0nano_embedding|multicycle:my_multicycle|DATA_REG:inst6
 clk => out[0]~reg0.CLK
 clk => out[1]~reg0.CLK
 clk => out[2]~reg0.CLK
@@ -790,7 +951,7 @@ EN => out[6]~reg0.ENA
 EN => out[7]~reg0.ENA
 
 
-|multicycle|REG_FILE:inst11
+|de0nano_embedding|multicycle:my_multicycle|REG_FILE:inst11
 RST => RF.OUTPUTSELECT
 RST => RF.OUTPUTSELECT
 RST => RF.OUTPUTSELECT
@@ -1146,6 +1307,14 @@ RDstr[4] <= Mux19.DB_MAX_OUTPUT_PORT_TYPE
 RDstr[5] <= Mux18.DB_MAX_OUTPUT_PORT_TYPE
 RDstr[6] <= Mux17.DB_MAX_OUTPUT_PORT_TYPE
 RDstr[7] <= Mux16.DB_MAX_OUTPUT_PORT_TYPE
+R0[0] <= RF[0][0].DB_MAX_OUTPUT_PORT_TYPE
+R0[1] <= RF[0][1].DB_MAX_OUTPUT_PORT_TYPE
+R0[2] <= RF[0][2].DB_MAX_OUTPUT_PORT_TYPE
+R0[3] <= RF[0][3].DB_MAX_OUTPUT_PORT_TYPE
+R0[4] <= RF[0][4].DB_MAX_OUTPUT_PORT_TYPE
+R0[5] <= RF[0][5].DB_MAX_OUTPUT_PORT_TYPE
+R0[6] <= RF[0][6].DB_MAX_OUTPUT_PORT_TYPE
+R0[7] <= RF[0][7].DB_MAX_OUTPUT_PORT_TYPE
 R2[0] <= RF[2][0].DB_MAX_OUTPUT_PORT_TYPE
 R2[1] <= RF[2][1].DB_MAX_OUTPUT_PORT_TYPE
 R2[2] <= RF[2][2].DB_MAX_OUTPUT_PORT_TYPE
@@ -1164,7 +1333,7 @@ R3[6] <= RF[3][6].DB_MAX_OUTPUT_PORT_TYPE
 R3[7] <= RF[3][7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|mux2:inst10
+|de0nano_embedding|multicycle:my_multicycle|mux2:inst10
 data0[0] => out.DATAA
 data0[1] => out.DATAA
 data0[2] => out.DATAA
@@ -1199,7 +1368,7 @@ out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|DATA_REG:inst21
+|de0nano_embedding|multicycle:my_multicycle|DATA_REG:inst21
 clk => out[0]~reg0.CLK
 clk => out[1]~reg0.CLK
 clk => out[2]~reg0.CLK
@@ -1234,7 +1403,7 @@ EN => out[6]~reg0.ENA
 EN => out[7]~reg0.ENA
 
 
-|multicycle|SHIFT:inst9
+|de0nano_embedding|multicycle:my_multicycle|SHIFT:inst9
 data[0] => out[1].DATAB
 data[0] => out[1].DATAB
 data[0] => out[7].DATAB
@@ -1291,31 +1460,63 @@ out[6] <= out[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= out[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|mux2:inst16
-data0[0] => out.DATAA
-data0[1] => out.DATAA
-data0[2] => out.DATAA
-data0[3] => out.DATAA
-data0[4] => out.DATAA
-data0[5] => out.DATAA
-data0[6] => out.DATAA
-data0[7] => out.DATAA
-data1[0] => out.DATAB
-data1[1] => out.DATAB
-data1[2] => out.DATAB
-data1[3] => out.DATAB
-data1[4] => out.DATAB
-data1[5] => out.DATAB
-data1[6] => out.DATAB
-data1[7] => out.DATAB
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
-select => out.OUTPUTSELECT
+|de0nano_embedding|multicycle:my_multicycle|mux4:inst19
+D0[0] => out.DATAA
+D0[1] => out.DATAA
+D0[2] => out.DATAA
+D0[3] => out.DATAA
+D0[4] => out.DATAA
+D0[5] => out.DATAA
+D0[6] => out.DATAA
+D0[7] => out.DATAA
+D1[0] => out.DATAB
+D1[1] => out.DATAB
+D1[2] => out.DATAB
+D1[3] => out.DATAB
+D1[4] => out.DATAB
+D1[5] => out.DATAB
+D1[6] => out.DATAB
+D1[7] => out.DATAB
+D2[0] => out.DATAA
+D2[1] => out.DATAA
+D2[2] => out.DATAA
+D2[3] => out.DATAA
+D2[4] => out.DATAA
+D2[5] => out.DATAA
+D2[6] => out.DATAA
+D2[7] => out.DATAA
+D3[0] => out.DATAB
+D3[1] => out.DATAB
+D3[2] => out.DATAB
+D3[3] => out.DATAB
+D3[4] => out.DATAB
+D3[5] => out.DATAB
+D3[6] => out.DATAB
+D3[7] => out.DATAB
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[0] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
+select[1] => out.OUTPUTSELECT
 out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
@@ -1326,7 +1527,7 @@ out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|multicycle|DATA_REG:inst14
+|de0nano_embedding|multicycle:my_multicycle|DATA_REG:inst14
 clk => out[0]~reg0.CLK
 clk => out[1]~reg0.CLK
 clk => out[2]~reg0.CLK
@@ -1361,7 +1562,7 @@ EN => out[6]~reg0.ENA
 EN => out[7]~reg0.ENA
 
 
-|multicycle|CONSTANT:inst8
+|de0nano_embedding|multicycle:my_multicycle|CONSTANT:inst8
 bus_in[0] <= <VCC>
 bus_in[1] <= <GND>
 bus_in[2] <= <GND>

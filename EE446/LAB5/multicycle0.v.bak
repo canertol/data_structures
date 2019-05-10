@@ -1,0 +1,441 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// PROGRAM		"Quartus Prime"
+// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+// CREATED		"Sun May 05 11:05:31 2019"
+
+module multicycle0(
+	reset,
+	clock,
+	zeroflag,
+	IRegen,
+	ASrc1,
+	RegWrite,
+	carry,
+	FlgWrite,
+	pcEN,
+	IDMWrite,
+	IDMSrc,
+	ASrc0,
+	ALUCtrl,
+	BSrc,
+	Inst,
+	LR,
+	next_state,
+	PCout,
+	R0,
+	R1,
+	R2,
+	R3,
+	R4,
+	R5,
+	RegSrc,
+	ShiftCtrl,
+	state
+);
+
+
+input wire	reset;
+input wire	clock;
+output wire	zeroflag;
+output wire	IRegen;
+output wire	ASrc1;
+output wire	RegWrite;
+output wire	carry;
+output wire	FlgWrite;
+output wire	pcEN;
+output wire	IDMWrite;
+output wire	IDMSrc;
+output wire	ASrc0;
+output wire	[2:0] ALUCtrl;
+output wire	[1:0] BSrc;
+output wire	[15:0] Inst;
+output wire	[7:0] LR;
+output wire	[3:0] next_state;
+output wire	[7:0] PCout;
+output wire	[7:0] R0;
+output wire	[7:0] R1;
+output wire	[7:0] R2;
+output wire	[7:0] R3;
+output wire	[7:0] R4;
+output wire	[7:0] R5;
+output wire	[1:0] RegSrc;
+output wire	[2:0] ShiftCtrl;
+output wire	[3:0] state;
+
+wire	C;
+wire	carry_ALTERA_SYNTHESIZED;
+wire	CLK;
+wire	FlgWrite_ALTERA_SYNTHESIZED;
+wire	[15:0] IDM;
+wire	[15:0] Instr;
+wire	RST;
+wire	Z;
+wire	zero;
+wire	SYNTHESIZED_WIRE_0;
+wire	[7:0] SYNTHESIZED_WIRE_44;
+wire	SYNTHESIZED_WIRE_2;
+wire	[7:0] SYNTHESIZED_WIRE_45;
+wire	[7:0] SYNTHESIZED_WIRE_4;
+wire	SYNTHESIZED_WIRE_5;
+wire	SYNTHESIZED_WIRE_15;
+wire	[7:0] SYNTHESIZED_WIRE_46;
+wire	SYNTHESIZED_WIRE_17;
+wire	[7:0] SYNTHESIZED_WIRE_18;
+wire	[7:0] SYNTHESIZED_WIRE_47;
+wire	SYNTHESIZED_WIRE_20;
+wire	[7:0] SYNTHESIZED_WIRE_48;
+wire	[7:0] SYNTHESIZED_WIRE_22;
+wire	[1:0] SYNTHESIZED_WIRE_25;
+wire	[7:0] SYNTHESIZED_WIRE_26;
+wire	[7:0] SYNTHESIZED_WIRE_27;
+wire	[1:0] SYNTHESIZED_WIRE_28;
+wire	[7:0] SYNTHESIZED_WIRE_29;
+wire	[2:0] SYNTHESIZED_WIRE_30;
+wire	[7:0] SYNTHESIZED_WIRE_31;
+wire	SYNTHESIZED_WIRE_32;
+wire	[7:0] SYNTHESIZED_WIRE_33;
+wire	SYNTHESIZED_WIRE_34;
+wire	SYNTHESIZED_WIRE_37;
+wire	[7:0] SYNTHESIZED_WIRE_38;
+wire	[7:0] SYNTHESIZED_WIRE_39;
+wire	SYNTHESIZED_WIRE_40;
+wire	SYNTHESIZED_WIRE_41;
+wire	[2:0] SYNTHESIZED_WIRE_42;
+
+assign	IRegen = SYNTHESIZED_WIRE_40;
+assign	ASrc1 = SYNTHESIZED_WIRE_17;
+assign	RegWrite = SYNTHESIZED_WIRE_5;
+assign	pcEN = SYNTHESIZED_WIRE_0;
+assign	IDMWrite = SYNTHESIZED_WIRE_37;
+assign	IDMSrc = SYNTHESIZED_WIRE_34;
+assign	ASrc0 = SYNTHESIZED_WIRE_2;
+assign	ALUCtrl = SYNTHESIZED_WIRE_30;
+assign	BSrc = SYNTHESIZED_WIRE_28;
+assign	PCout = SYNTHESIZED_WIRE_47;
+assign	RegSrc = SYNTHESIZED_WIRE_25;
+assign	ShiftCtrl = SYNTHESIZED_WIRE_42;
+assign	SYNTHESIZED_WIRE_15 = 1;
+assign	SYNTHESIZED_WIRE_20 = 1;
+assign	SYNTHESIZED_WIRE_32 = 1;
+assign	SYNTHESIZED_WIRE_41 = 1;
+wire	GDFX_TEMP_SIGNAL_0;
+wire	GDFX_TEMP_SIGNAL_1;
+wire	GDFX_TEMP_SIGNAL_2;
+wire	GDFX_TEMP_SIGNAL_3;
+wire	GDFX_TEMP_SIGNAL_4;
+wire	GDFX_TEMP_SIGNAL_5;
+wire	GDFX_TEMP_SIGNAL_6;
+wire	GDFX_TEMP_SIGNAL_7;
+
+
+assign	R17 = GDFX_TEMP_SIGNAL_0[0];
+assign	R16 = GDFX_TEMP_SIGNAL_0[4294967295];
+assign	R15 = GDFX_TEMP_SIGNAL_0[4294967294];
+assign	R14 = GDFX_TEMP_SIGNAL_0[4294967293];
+assign	R13 = GDFX_TEMP_SIGNAL_0[4294967292];
+assign	R12 = GDFX_TEMP_SIGNAL_0[4294967291];
+assign	R11 = GDFX_TEMP_SIGNAL_0[4294967290];
+assign	R10 = GDFX_TEMP_SIGNAL_0[4294967289];
+
+assign	R17 = GDFX_TEMP_SIGNAL_1[0];
+assign	R16 = GDFX_TEMP_SIGNAL_1[4294967295];
+assign	R15 = GDFX_TEMP_SIGNAL_1[4294967294];
+assign	R14 = GDFX_TEMP_SIGNAL_1[4294967293];
+assign	R13 = GDFX_TEMP_SIGNAL_1[4294967292];
+assign	R12 = GDFX_TEMP_SIGNAL_1[4294967291];
+assign	R11 = GDFX_TEMP_SIGNAL_1[4294967290];
+assign	R10 = GDFX_TEMP_SIGNAL_1[4294967289];
+
+assign	R17 = GDFX_TEMP_SIGNAL_2[0];
+assign	R16 = GDFX_TEMP_SIGNAL_2[4294967295];
+assign	R15 = GDFX_TEMP_SIGNAL_2[4294967294];
+assign	R14 = GDFX_TEMP_SIGNAL_2[4294967293];
+assign	R13 = GDFX_TEMP_SIGNAL_2[4294967292];
+assign	R12 = GDFX_TEMP_SIGNAL_2[4294967291];
+assign	R11 = GDFX_TEMP_SIGNAL_2[4294967290];
+assign	R10 = GDFX_TEMP_SIGNAL_2[4294967289];
+
+assign	R17 = GDFX_TEMP_SIGNAL_3[0];
+assign	R16 = GDFX_TEMP_SIGNAL_3[4294967295];
+assign	R15 = GDFX_TEMP_SIGNAL_3[4294967294];
+assign	R14 = GDFX_TEMP_SIGNAL_3[4294967293];
+assign	R13 = GDFX_TEMP_SIGNAL_3[4294967292];
+assign	R12 = GDFX_TEMP_SIGNAL_3[4294967291];
+assign	R11 = GDFX_TEMP_SIGNAL_3[4294967290];
+assign	R10 = GDFX_TEMP_SIGNAL_3[4294967289];
+
+assign	R17 = GDFX_TEMP_SIGNAL_4[0];
+assign	R16 = GDFX_TEMP_SIGNAL_4[4294967295];
+assign	R15 = GDFX_TEMP_SIGNAL_4[4294967294];
+assign	R14 = GDFX_TEMP_SIGNAL_4[4294967293];
+assign	R13 = GDFX_TEMP_SIGNAL_4[4294967292];
+assign	R12 = GDFX_TEMP_SIGNAL_4[4294967291];
+assign	R11 = GDFX_TEMP_SIGNAL_4[4294967290];
+assign	R10 = GDFX_TEMP_SIGNAL_4[4294967289];
+
+assign	R17 = GDFX_TEMP_SIGNAL_5[0];
+assign	R16 = GDFX_TEMP_SIGNAL_5[4294967295];
+assign	R15 = GDFX_TEMP_SIGNAL_5[4294967294];
+assign	R14 = GDFX_TEMP_SIGNAL_5[4294967293];
+assign	R13 = GDFX_TEMP_SIGNAL_5[4294967292];
+assign	R12 = GDFX_TEMP_SIGNAL_5[4294967291];
+assign	R11 = GDFX_TEMP_SIGNAL_5[4294967290];
+assign	R10 = GDFX_TEMP_SIGNAL_5[4294967289];
+
+assign	R17 = GDFX_TEMP_SIGNAL_6[0];
+assign	R16 = GDFX_TEMP_SIGNAL_6[4294967295];
+assign	R15 = GDFX_TEMP_SIGNAL_6[4294967294];
+assign	R14 = GDFX_TEMP_SIGNAL_6[4294967293];
+assign	R13 = GDFX_TEMP_SIGNAL_6[4294967292];
+assign	R12 = GDFX_TEMP_SIGNAL_6[4294967291];
+assign	R11 = GDFX_TEMP_SIGNAL_6[4294967290];
+assign	R10 = GDFX_TEMP_SIGNAL_6[4294967289];
+
+assign	R17 = GDFX_TEMP_SIGNAL_7[0];
+assign	R16 = GDFX_TEMP_SIGNAL_7[4294967295];
+assign	R15 = GDFX_TEMP_SIGNAL_7[4294967294];
+assign	R14 = GDFX_TEMP_SIGNAL_7[4294967293];
+assign	R13 = GDFX_TEMP_SIGNAL_7[4294967292];
+assign	R12 = GDFX_TEMP_SIGNAL_7[4294967291];
+assign	R11 = GDFX_TEMP_SIGNAL_7[4294967290];
+assign	R10 = GDFX_TEMP_SIGNAL_7[4294967289];
+
+
+
+PC	b2v_inst000(
+	.CLK(CLK),
+	.RST(RST),
+	.EN(SYNTHESIZED_WIRE_0),
+	.NEXT(SYNTHESIZED_WIRE_44),
+	.CURRENT(SYNTHESIZED_WIRE_47));
+	defparam	b2v_inst000.W = 8;
+
+
+mux2	b2v_inst10(
+	.select(SYNTHESIZED_WIRE_2),
+	.data0(SYNTHESIZED_WIRE_45),
+	.data1(SYNTHESIZED_WIRE_4),
+	.out(SYNTHESIZED_WIRE_18));
+	defparam	b2v_inst10.W = 8;
+
+
+REG_FILE	b2v_inst11(
+	.RST(RST),
+	.CLK(CLK),
+	.WE3(SYNTHESIZED_WIRE_5),
+	.R157(SYNTHESIZED_WIRE_44),
+	.R156(SYNTHESIZED_WIRE_44),
+	.R155(SYNTHESIZED_WIRE_44),
+	.R154(SYNTHESIZED_WIRE_44),
+	.R153(SYNTHESIZED_WIRE_44),
+	.R152(SYNTHESIZED_WIRE_44),
+	.R151(SYNTHESIZED_WIRE_44),
+	.R150(SYNTHESIZED_WIRE_44),
+	.RA1(Instr[7:5]),
+	.RA2(Instr[4:2]),
+	.WA3(Instr[10:8]),
+	.WD3(SYNTHESIZED_WIRE_44),
+	.R0(R0),
+	.R17(GDFX_TEMP_SIGNAL_0),
+	.R16(GDFX_TEMP_SIGNAL_1),
+	.R15(GDFX_TEMP_SIGNAL_2),
+	.R14(GDFX_TEMP_SIGNAL_3),
+	.R13(GDFX_TEMP_SIGNAL_4),
+	.R12(GDFX_TEMP_SIGNAL_5),
+	.R11(GDFX_TEMP_SIGNAL_6),
+	.R10(GDFX_TEMP_SIGNAL_7),
+	.R2(R2),
+	.R3(R3),
+	.R4(R4),
+	.R5(R5),
+	.R6(LR),
+	.RD1(SYNTHESIZED_WIRE_33),
+	.RD2(SYNTHESIZED_WIRE_46),
+	.RDstr(SYNTHESIZED_WIRE_39));
+
+
+FLAG_REG	b2v_inst11111(
+	.clk(CLK),
+	.in(Z),
+	.EN(FlgWrite_ALTERA_SYNTHESIZED),
+	.out(zero));
+
+
+control_unit	b2v_inst12(
+	.RST(RST),
+	.CLK(CLK),
+	.Z(zero),
+	.C(carry_ALTERA_SYNTHESIZED),
+	.Op(Instr[15:11]),
+	.IDMWrite(SYNTHESIZED_WIRE_37),
+	.IRegen(SYNTHESIZED_WIRE_40),
+	.IDMSrc(SYNTHESIZED_WIRE_34),
+	.ASrc0(SYNTHESIZED_WIRE_2),
+	.RegWrite(SYNTHESIZED_WIRE_5),
+	.ASrc1(SYNTHESIZED_WIRE_17),
+	.PCen(SYNTHESIZED_WIRE_0),
+	.FlgWrite(FlgWrite_ALTERA_SYNTHESIZED),
+	.ALUCtrl(SYNTHESIZED_WIRE_30),
+	.BSrc(SYNTHESIZED_WIRE_28),
+	.next_state(next_state),
+	.RegSrc(SYNTHESIZED_WIRE_25),
+	.Shift(SYNTHESIZED_WIRE_42),
+	.state(state));
+	defparam	b2v_inst12.S0 = 4'b0000;
+	defparam	b2v_inst12.S1 = 4'b0001;
+	defparam	b2v_inst12.S10 = 4'b1010;
+	defparam	b2v_inst12.S11 = 4'b1011;
+	defparam	b2v_inst12.S12 = 4'b1100;
+	defparam	b2v_inst12.S13 = 4'b1101;
+	defparam	b2v_inst12.S14 = 4'b1110;
+	defparam	b2v_inst12.S15 = 4'b1111;
+	defparam	b2v_inst12.S2 = 4'b0010;
+	defparam	b2v_inst12.S3 = 4'b0011;
+	defparam	b2v_inst12.S4 = 4'b0100;
+	defparam	b2v_inst12.S5 = 4'b0101;
+	defparam	b2v_inst12.S6 = 4'b0110;
+	defparam	b2v_inst12.S7 = 4'b0111;
+	defparam	b2v_inst12.S8 = 4'b1000;
+	defparam	b2v_inst12.S9 = 4'b1001;
+
+
+FLAG_REG	b2v_inst13(
+	.clk(CLK),
+	.in(C),
+	.EN(FlgWrite_ALTERA_SYNTHESIZED),
+	.out(carry_ALTERA_SYNTHESIZED));
+
+
+DATA_REG	b2v_inst14(
+	.clk(CLK),
+	.EN(SYNTHESIZED_WIRE_15),
+	.in(SYNTHESIZED_WIRE_46),
+	.out(SYNTHESIZED_WIRE_26));
+
+
+mux2	b2v_inst15(
+	.select(SYNTHESIZED_WIRE_17),
+	.data0(SYNTHESIZED_WIRE_18),
+	.data1(SYNTHESIZED_WIRE_47),
+	.out(SYNTHESIZED_WIRE_29));
+	defparam	b2v_inst15.W = 8;
+
+
+DATA_REG	b2v_inst17(
+	.clk(CLK),
+	.EN(SYNTHESIZED_WIRE_20),
+	.in(SYNTHESIZED_WIRE_48),
+	.out(SYNTHESIZED_WIRE_22));
+
+
+mux4	b2v_inst18(
+	.D0(SYNTHESIZED_WIRE_22),
+	.D1(Instr[7:0]),
+	.D2(SYNTHESIZED_WIRE_48),
+	.D3(SYNTHESIZED_WIRE_46),
+	.select(SYNTHESIZED_WIRE_25),
+	.out(SYNTHESIZED_WIRE_44));
+	defparam	b2v_inst18.W = 8;
+
+
+mux4	b2v_inst19(
+	.D0(SYNTHESIZED_WIRE_26),
+	.D1(SYNTHESIZED_WIRE_27),
+	.D2(Instr[7:0]),
+	
+	.select(SYNTHESIZED_WIRE_28),
+	.out(SYNTHESIZED_WIRE_31));
+	defparam	b2v_inst19.W = 8;
+
+
+ALU	b2v_inst2(
+	.A(SYNTHESIZED_WIRE_29),
+	.ALUCtrl(SYNTHESIZED_WIRE_30),
+	.B(SYNTHESIZED_WIRE_31),
+	.co(C),
+	.z(Z),
+	.out(SYNTHESIZED_WIRE_48));
+	defparam	b2v_inst2.W = 8;
+
+
+DATA_REG	b2v_inst21(
+	.clk(CLK),
+	.EN(SYNTHESIZED_WIRE_32),
+	.in(SYNTHESIZED_WIRE_33),
+	.out(SYNTHESIZED_WIRE_45));
+
+
+
+
+
+mux2	b2v_inst3(
+	.select(SYNTHESIZED_WIRE_34),
+	.data0(SYNTHESIZED_WIRE_47),
+	.data1(SYNTHESIZED_WIRE_44),
+	.out(SYNTHESIZED_WIRE_38));
+	defparam	b2v_inst3.W = 8;
+
+
+IDM	b2v_inst4(
+	.clk(CLK),
+	.WE(SYNTHESIZED_WIRE_37),
+	.A(SYNTHESIZED_WIRE_38),
+	.WD(SYNTHESIZED_WIRE_39),
+	.out(IDM));
+
+
+INST_REG	b2v_inst5(
+	.clk(CLK),
+	.EN(SYNTHESIZED_WIRE_40),
+	.in(IDM),
+	.out(Instr));
+
+
+DATA_REG	b2v_inst6(
+	.clk(CLK),
+	.EN(SYNTHESIZED_WIRE_41),
+	.in(IDM[7:0])
+	);
+
+
+
+CONSTANT	b2v_inst8(
+	.bus_in(SYNTHESIZED_WIRE_27));
+	defparam	b2v_inst8.V = 1;
+	defparam	b2v_inst8.W = 8;
+
+
+SHIFT	b2v_inst9(
+	.control(SYNTHESIZED_WIRE_42),
+	.data(SYNTHESIZED_WIRE_45),
+	.out(SYNTHESIZED_WIRE_4));
+
+assign	zeroflag = zero;
+assign	CLK = clock;
+assign	RST = reset;
+assign	carry = carry_ALTERA_SYNTHESIZED;
+assign	FlgWrite = FlgWrite_ALTERA_SYNTHESIZED;
+assign	Inst = Instr;
+assign	R1[7] = R17;
+assign	R1[6] = R16;
+assign	R1[5] = R15;
+assign	R1[4] = R14;
+assign	R1[3] = R13;
+assign	R1[2] = R12;
+assign	R1[1] = R11;
+assign	R1[0] = R10;
+
+endmodule

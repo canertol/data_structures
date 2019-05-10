@@ -2,7 +2,7 @@ module REG_FILE(input RST,CLK,
 					 input WE3,
 				 	 input [2:0] RA1, RA2, WA3,
 					 input [7:0] WD3, R15,
-					 output wire [7:0] RD1, RD2, RDstr, R0,R2, R3);
+					 output wire [7:0] RD1, RD2, RDstr, R6,R2, R3);
 					 
 	reg [7:0] RF[7:0];
 	integer i;

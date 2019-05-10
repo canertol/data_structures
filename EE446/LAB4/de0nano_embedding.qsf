@@ -4,7 +4,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY multicycle
+set_global_assignment -name TOP_LEVEL_ENTITY de0nano_embedding
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "12.0"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:31:45 MARCH 09,2018"
@@ -175,6 +175,31 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SDC_FILE de0nano_embedding.sdc
+set_global_assignment -name BDF_FILE multicycle.bdf
+set_global_assignment -name VERILOG_FILE SHIFT.v
+set_global_assignment -name VERILOG_FILE REG_FILE.v
+set_global_assignment -name VERILOG_FILE register_B.v
+set_global_assignment -name VERILOG_FILE register_A.v
+set_global_assignment -name VERILOG_FILE PC.v
+set_global_assignment -name VERILOG_FILE mux_2.v
+set_global_assignment -name VERILOG_FILE mux4.v
+set_global_assignment -name VERILOG_FILE multicycle_tb.v
+set_global_assignment -name VERILOG_FILE INST_REG.v
+set_global_assignment -name VERILOG_FILE INST_MEM.v
+set_global_assignment -name VERILOG_FILE IDM.v
+set_global_assignment -name VERILOG_FILE EXTEND.v
+set_global_assignment -name VERILOG_FILE DEC.v
+set_global_assignment -name VERILOG_FILE de0nano_embedding.v
+set_global_assignment -name VERILOG_FILE DATA_REG.v
+set_global_assignment -name VERILOG_FILE DATA_MEM.v
+set_global_assignment -name VERILOG_FILE control_unit.v
+set_global_assignment -name VERILOG_FILE CONSTANT.v
+set_global_assignment -name VERILOG_FILE ALU.v
+set_global_assignment -name VERILOG_FILE FLAG_REG.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[1]
@@ -301,29 +326,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[30]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[31]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[32]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[33]
-set_global_assignment -name SDC_FILE de0nano_embedding.sdc
-set_global_assignment -name BDF_FILE multicycle.bdf
-set_global_assignment -name VERILOG_FILE SHIFT.v
-set_global_assignment -name VERILOG_FILE REG_FILE.v
-set_global_assignment -name VERILOG_FILE register_B.v
-set_global_assignment -name VERILOG_FILE register_A.v
-set_global_assignment -name VERILOG_FILE PC.v
-set_global_assignment -name VERILOG_FILE mux_2.v
-set_global_assignment -name VERILOG_FILE mux4.v
-set_global_assignment -name VERILOG_FILE multicycle_tb.v
-set_global_assignment -name VERILOG_FILE INST_REG.v
-set_global_assignment -name VERILOG_FILE INST_MEM.v
-set_global_assignment -name VERILOG_FILE IDM.v
-set_global_assignment -name VERILOG_FILE EXTEND.v
-set_global_assignment -name VERILOG_FILE DEC.v
-set_global_assignment -name VERILOG_FILE de0nano_embedding.v
-set_global_assignment -name VERILOG_FILE DATA_REG.v
-set_global_assignment -name VERILOG_FILE DATA_MEM.v
-set_global_assignment -name VERILOG_FILE control_unit.v
-set_global_assignment -name VERILOG_FILE CONSTANT.v
-set_global_assignment -name VERILOG_FILE ALU.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE FLAG_REG.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

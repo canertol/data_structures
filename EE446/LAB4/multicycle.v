@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Tue Apr 30 06:16:08 2019"
+// CREATED		"Tue Apr 30 18:05:54 2019"
 
 module multicycle(
 	reset,
@@ -25,19 +25,27 @@ module multicycle(
 	RegWrite,
 	carry,
 	FlgWrite,
+	pcEN,
+	IDMWrite,
+	IDMSrc,
+	ASrc0,
 	ALUa,
 	ALUb,
+	ALUCtrl,
 	ALUout,
+	BSrc,
 	FetchedInst,
 	Inst,
+	LR,
 	next_state,
 	PCout,
-	R0,
 	R2,
 	R3,
 	RD2,
 	regadr1,
 	regadr2,
+	RegSrc,
+	Shift,
 	ShiftCtrl,
 	Shiftin,
 	Shiftout,
@@ -56,19 +64,27 @@ output wire	ASrc1;
 output wire	RegWrite;
 output wire	carry;
 output wire	FlgWrite;
+output wire	pcEN;
+output wire	IDMWrite;
+output wire	IDMSrc;
+output wire	ASrc0;
 output wire	[7:0] ALUa;
 output wire	[7:0] ALUb;
+output wire	[2:0] ALUCtrl;
 output wire	[7:0] ALUout;
+output wire	[1:0] BSrc;
 output wire	[15:0] FetchedInst;
 output wire	[15:0] Inst;
+output wire	[7:0] LR;
 output wire	[3:0] next_state;
 output wire	[7:0] PCout;
-output wire	[7:0] R0;
 output wire	[7:0] R2;
 output wire	[7:0] R3;
 output wire	[7:0] RD2;
 output wire	[2:0] regadr1;
 output wire	[2:0] regadr2;
+output wire	[1:0] RegSrc;
+output wire	[2:0] Shift;
 output wire	[2:0] ShiftCtrl;
 output wire	[7:0] Shiftin;
 output wire	[7:0] Shiftout;
@@ -87,20 +103,20 @@ wire	RST;
 wire	Z;
 wire	zero;
 wire	SYNTHESIZED_WIRE_0;
-wire	[7:0] SYNTHESIZED_WIRE_38;
-wire	SYNTHESIZED_WIRE_2;
 wire	[7:0] SYNTHESIZED_WIRE_39;
+wire	SYNTHESIZED_WIRE_2;
+wire	[7:0] SYNTHESIZED_WIRE_40;
 wire	[7:0] SYNTHESIZED_WIRE_4;
 wire	SYNTHESIZED_WIRE_5;
 wire	SYNTHESIZED_WIRE_8;
 wire	[7:0] SYNTHESIZED_WIRE_9;
 wire	SYNTHESIZED_WIRE_10;
 wire	[7:0] SYNTHESIZED_WIRE_11;
-wire	[7:0] SYNTHESIZED_WIRE_40;
-wire	SYNTHESIZED_WIRE_13;
 wire	[7:0] SYNTHESIZED_WIRE_41;
-wire	[7:0] SYNTHESIZED_WIRE_15;
+wire	SYNTHESIZED_WIRE_13;
 wire	[7:0] SYNTHESIZED_WIRE_42;
+wire	[7:0] SYNTHESIZED_WIRE_15;
+wire	[7:0] SYNTHESIZED_WIRE_43;
 wire	[1:0] SYNTHESIZED_WIRE_18;
 wire	[7:0] SYNTHESIZED_WIRE_19;
 wire	[7:0] SYNTHESIZED_WIRE_20;
@@ -116,21 +132,29 @@ wire	[7:0] SYNTHESIZED_WIRE_32;
 wire	[7:0] SYNTHESIZED_WIRE_33;
 wire	SYNTHESIZED_WIRE_34;
 wire	SYNTHESIZED_WIRE_35;
-wire	[2:0] SYNTHESIZED_WIRE_36;
+wire	[2:0] SYNTHESIZED_WIRE_44;
 
 assign	IRegen = SYNTHESIZED_WIRE_34;
 assign	ASrc1 = SYNTHESIZED_WIRE_10;
 assign	RegWrite = SYNTHESIZED_WIRE_5;
+assign	pcEN = SYNTHESIZED_WIRE_0;
+assign	IDMWrite = SYNTHESIZED_WIRE_31;
+assign	IDMSrc = SYNTHESIZED_WIRE_28;
+assign	ASrc0 = SYNTHESIZED_WIRE_2;
 assign	ALUa = SYNTHESIZED_WIRE_23;
 assign	ALUb = SYNTHESIZED_WIRE_25;
-assign	ALUout = SYNTHESIZED_WIRE_41;
-assign	PCout = SYNTHESIZED_WIRE_40;
+assign	ALUCtrl = SYNTHESIZED_WIRE_24;
+assign	ALUout = SYNTHESIZED_WIRE_42;
+assign	BSrc = SYNTHESIZED_WIRE_22;
+assign	PCout = SYNTHESIZED_WIRE_41;
 assign	RD2 = SYNTHESIZED_WIRE_9;
-assign	ShiftCtrl = SYNTHESIZED_WIRE_36;
-assign	Shiftin = SYNTHESIZED_WIRE_39;
+assign	RegSrc = SYNTHESIZED_WIRE_18;
+assign	Shift = SYNTHESIZED_WIRE_44;
+assign	ShiftCtrl = SYNTHESIZED_WIRE_44;
+assign	Shiftin = SYNTHESIZED_WIRE_40;
 assign	Shiftout = SYNTHESIZED_WIRE_4;
 assign	shiftselectout = SYNTHESIZED_WIRE_11;
-assign	toReg = SYNTHESIZED_WIRE_38;
+assign	toReg = SYNTHESIZED_WIRE_39;
 assign	SYNTHESIZED_WIRE_8 = 1;
 assign	SYNTHESIZED_WIRE_13 = 1;
 assign	SYNTHESIZED_WIRE_26 = 1;
@@ -143,14 +167,14 @@ PC	b2v_inst000(
 	.CLK(CLK),
 	.RST(RST),
 	.EN(SYNTHESIZED_WIRE_0),
-	.NEXT(SYNTHESIZED_WIRE_38),
-	.CURRENT(SYNTHESIZED_WIRE_40));
+	.NEXT(SYNTHESIZED_WIRE_39),
+	.CURRENT(SYNTHESIZED_WIRE_41));
 	defparam	b2v_inst000.W = 8;
 
 
 mux2	b2v_inst10(
 	.select(SYNTHESIZED_WIRE_2),
-	.data0(SYNTHESIZED_WIRE_39),
+	.data0(SYNTHESIZED_WIRE_40),
 	.data1(SYNTHESIZED_WIRE_4),
 	.out(SYNTHESIZED_WIRE_11));
 	defparam	b2v_inst10.W = 8;
@@ -160,14 +184,14 @@ REG_FILE	b2v_inst11(
 	.RST(RST),
 	.CLK(CLK),
 	.WE3(SYNTHESIZED_WIRE_5),
-	.R15(SYNTHESIZED_WIRE_38),
+	.R15(SYNTHESIZED_WIRE_39),
 	.RA1(Instr[7:5]),
 	.RA2(Instr[4:2]),
 	.WA3(Instr[10:8]),
-	.WD3(SYNTHESIZED_WIRE_38),
-	.R0(R0),
+	.WD3(SYNTHESIZED_WIRE_39),
 	.R2(R2),
 	.R3(R3),
+	.R6(LR),
 	.RD1(SYNTHESIZED_WIRE_27),
 	.RD2(SYNTHESIZED_WIRE_9),
 	.RDstr(SYNTHESIZED_WIRE_33));
@@ -198,7 +222,7 @@ control_unit	b2v_inst12(
 	.BSrc(SYNTHESIZED_WIRE_22),
 	.next_state(next_state),
 	.RegSrc(SYNTHESIZED_WIRE_18),
-	.Shift(SYNTHESIZED_WIRE_36),
+	.Shift(SYNTHESIZED_WIRE_44),
 	.state(state));
 	defparam	b2v_inst12.S0 = 4'b0000;
 	defparam	b2v_inst12.S1 = 4'b0001;
@@ -234,7 +258,7 @@ DATA_REG	b2v_inst14(
 mux2	b2v_inst15(
 	.select(SYNTHESIZED_WIRE_10),
 	.data0(SYNTHESIZED_WIRE_11),
-	.data1(SYNTHESIZED_WIRE_40),
+	.data1(SYNTHESIZED_WIRE_41),
 	.out(SYNTHESIZED_WIRE_23));
 	defparam	b2v_inst15.W = 8;
 
@@ -242,24 +266,24 @@ mux2	b2v_inst15(
 DATA_REG	b2v_inst17(
 	.clk(CLK),
 	.EN(SYNTHESIZED_WIRE_13),
-	.in(SYNTHESIZED_WIRE_41),
+	.in(SYNTHESIZED_WIRE_42),
 	.out(SYNTHESIZED_WIRE_15));
 
 
 mux4	b2v_inst18(
 	.D0(SYNTHESIZED_WIRE_15),
-	.D1(SYNTHESIZED_WIRE_42),
-	.D2(SYNTHESIZED_WIRE_41),
+	.D1(SYNTHESIZED_WIRE_43),
+	.D2(SYNTHESIZED_WIRE_42),
 	.D3(Instr[7:0]),
 	.select(SYNTHESIZED_WIRE_18),
-	.out(SYNTHESIZED_WIRE_38));
+	.out(SYNTHESIZED_WIRE_39));
 	defparam	b2v_inst18.W = 8;
 
 
 mux4	b2v_inst19(
 	.D0(SYNTHESIZED_WIRE_19),
 	.D1(SYNTHESIZED_WIRE_20),
-	.D2(SYNTHESIZED_WIRE_42),
+	.D2(SYNTHESIZED_WIRE_43),
 	
 	.select(SYNTHESIZED_WIRE_22),
 	.out(SYNTHESIZED_WIRE_25));
@@ -272,7 +296,7 @@ ALU	b2v_inst2(
 	.B(SYNTHESIZED_WIRE_25),
 	.co(C),
 	.z(Z),
-	.out(SYNTHESIZED_WIRE_41));
+	.out(SYNTHESIZED_WIRE_42));
 	defparam	b2v_inst2.W = 8;
 
 
@@ -280,7 +304,7 @@ DATA_REG	b2v_inst21(
 	.clk(CLK),
 	.EN(SYNTHESIZED_WIRE_26),
 	.in(SYNTHESIZED_WIRE_27),
-	.out(SYNTHESIZED_WIRE_39));
+	.out(SYNTHESIZED_WIRE_40));
 
 
 
@@ -288,8 +312,8 @@ DATA_REG	b2v_inst21(
 
 mux2	b2v_inst3(
 	.select(SYNTHESIZED_WIRE_28),
-	.data0(SYNTHESIZED_WIRE_40),
-	.data1(SYNTHESIZED_WIRE_38),
+	.data0(SYNTHESIZED_WIRE_41),
+	.data1(SYNTHESIZED_WIRE_39),
 	.out(SYNTHESIZED_WIRE_32));
 	defparam	b2v_inst3.W = 8;
 
@@ -313,7 +337,7 @@ DATA_REG	b2v_inst6(
 	.clk(CLK),
 	.EN(SYNTHESIZED_WIRE_35),
 	.in(IDM[7:0]),
-	.out(SYNTHESIZED_WIRE_42));
+	.out(SYNTHESIZED_WIRE_43));
 
 
 
@@ -324,8 +348,8 @@ CONSTANT	b2v_inst8(
 
 
 SHIFT	b2v_inst9(
-	.control(SYNTHESIZED_WIRE_36),
-	.data(SYNTHESIZED_WIRE_39),
+	.control(SYNTHESIZED_WIRE_44),
+	.data(SYNTHESIZED_WIRE_40),
 	.out(SYNTHESIZED_WIRE_4));
 
 assign	zeroflag = zero;

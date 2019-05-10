@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon May 06 23:37:48 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : de0nano_embedding
+Top-level Entity Name : multicycle
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 1,422 / 22,320 ( 6 % )
+    Total combinational functions : 1,229 / 22,320 ( 6 % )
+    Dedicated logic registers : 768 / 22,320 ( 3 % )
+Total registers : 768
+Total pins : 120 / 154 ( 78 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

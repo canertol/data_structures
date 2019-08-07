@@ -1,0 +1,144 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;*******************************************************
+                       ******** 
+    2 00000000         ; cursor.s  
+    3 00000000         ; This program gets (X,Y) coordinates from R7 and R8. 
+    4 00000000         ; Displays the cursor on the screen according to (X,Y).
+    5 00000000         ;*******************************************************
+                       ******** 
+    6 00000000         ;*******************************************************
+                       ******** 
+    7 00000000         ; EQU Directives
+    8 00000000         ; These directives do not allocate memory
+    9 00000000         ;*******************************************************
+                       ********
+   10 00000000         ;LABEL   DIRECTIVE VALUE  COMMENT
+   11 00000000 40004100 
+                       DC      EQU              0x40004100
+   12 00000000 4000800C 
+                       SSI0_SR_R
+                               EQU              0x4000800C
+   13 00000000 40008008 
+                       SSI0_DR_R
+                               EQU              0x40008008
+   14 00000000         ;*******************************************************
+                       ********
+   15 00000000         ; Program section           
+   16 00000000         ;*******************************************************
+                       ********
+   17 00000000         ;LABEL   DIRECTIVE VALUE     COMMENT
+   18 00000000                 AREA             main, READONLY, CODE
+   19 00000000                 THUMB
+   20 00000000                 EXPORT           clear_cursor ; Make available
+   21 00000000         
+   22 00000000         clear_cursor
+   23 00000000 B503            PUSH             {R0-R1,LR}
+   24 00000002 F248 000C 
+              F2C4 0000 
+                       setX    MOV32            R0, SSI0_SR_R
+   25 0000000A 6801            LDR              R1, [R0]
+   26 0000000C F001 0110       AND              R1, #0x10
+   27 00000010 2910            CMP              R1, #0x10
+   28 00000012 D0F6            BEQ              setX
+   29 00000014 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+   30 0000001C F04F 0140       MOV              R1, #0x40
+   31 00000020 6001            STR              R1, [R0]
+   32 00000022 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+   33 0000002A F04F 0100       MOV              R1, #0
+   34 0000002E 6001            STR              R1, [R0]
+   35 00000030         
+   36 00000030 E8BD 4003 
+                       done    POP              {R0-R1,LR}
+   37 00000034 4770            BX               LR
+   38 00000036 00 00           ALIGN
+   39 00000038                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\clear_cursor.d -o.\objects\clear_cursor.o -I.\RTE\_Ta
+rget_1 -IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 -IC:\Ke
+il_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERS
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+ION SETA 526" --predefine="TM4C123GH6PM SETA 1" --list=.\listings\clear_cursor.
+lst clear_cursor.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+clear_cursor 00000000
+
+Symbol: clear_cursor
+   Definitions
+      At line 22 in file clear_cursor.s
+   Uses
+      At line 20 in file clear_cursor.s
+Comment: clear_cursor used once
+done 00000030
+
+Symbol: done
+   Definitions
+      At line 36 in file clear_cursor.s
+   Uses
+      None
+Comment: done unused
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 18 in file clear_cursor.s
+   Uses
+      None
+Comment: main unused
+setX 00000002
+
+Symbol: setX
+   Definitions
+      At line 24 in file clear_cursor.s
+   Uses
+      At line 28 in file clear_cursor.s
+Comment: setX used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+DC 40004100
+
+Symbol: DC
+   Definitions
+      At line 11 in file clear_cursor.s
+   Uses
+      At line 29 in file clear_cursor.s
+Comment: DC used once
+SSI0_DR_R 40008008
+
+Symbol: SSI0_DR_R
+   Definitions
+      At line 13 in file clear_cursor.s
+   Uses
+      At line 32 in file clear_cursor.s
+Comment: SSI0_DR_R used once
+SSI0_SR_R 4000800C
+
+Symbol: SSI0_SR_R
+   Definitions
+      At line 12 in file clear_cursor.s
+   Uses
+      At line 24 in file clear_cursor.s
+Comment: SSI0_SR_R used once
+3 symbols
+341 symbols in table

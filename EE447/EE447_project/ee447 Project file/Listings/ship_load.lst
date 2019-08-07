@@ -1,0 +1,378 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;*******************************************************
+                       ******** 
+    2 00000000         ; cursor.s  
+    3 00000000         ; This program gets (X,Y) coordinates from R7 and R8. 
+    4 00000000         ; Displays the cursor on the screen according to (X,Y).
+    5 00000000         ;*******************************************************
+                       ******** 
+    6 00000000         ;*******************************************************
+                       ******** 
+    7 00000000         ; EQU Directives
+    8 00000000         ; These directives do not allocate memory
+    9 00000000         ;*******************************************************
+                       ********
+   10 00000000         ;LABEL   DIRECTIVE VALUE  COMMENT
+   11 00000000 40004100 
+                       DC      EQU              0x40004100
+   12 00000000 4000800C 
+                       SSI0_SR_R
+                               EQU              0x4000800C
+   13 00000000 40008008 
+                       SSI0_DR_R
+                               EQU              0x40008008
+   14 00000000 00000087 
+                       X       EQU              0x87
+   15 00000000 00000041 
+                       Y       EQU              0x41
+   16 00000000 20000400 
+                       memory  EQU              0x20000400
+   17 00000000 20000500 
+                       offset_memory
+                               EQU              0x20000500
+   18 00000000         ;*******************************************************
+                       ********
+   19 00000000         ; Program section           
+   20 00000000         ;*******************************************************
+                       ********
+   21 00000000         ;LABEL   DIRECTIVE VALUE     COMMENT
+   22 00000000                 AREA             main, READONLY, CODE
+   23 00000000                 THUMB
+   24 00000000                 EXPORT           ship_load   ; Make available
+   25 00000000         
+   26 00000000         ship_load
+   27 00000000 E92D 5FFF       PUSH             {R0-R12,LR}
+   28 00000004         
+   29 00000004 F248 000C 
+              F2C4 0000 
+                       init_XY MOV32            R0, SSI0_SR_R
+   30 0000000C 6801            LDR              R1, [R0]
+   31 0000000E F011 0110       ANDS             R1, R1, #0x10
+   32 00000012 D1F7            BNE              init_XY
+   33 00000014 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+   34 0000001C F04F 0100       MOV              R1, #0
+   35 00000020 6001            STR              R1, [R0]
+   36 00000022         ; sent
+   37 00000022 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+   38 0000002A F04F 0186       MOV              R1, #0x86   ; CURSOR RESET X=6
+   39 0000002E 6001            STR              R1, [R0]
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   40 00000030 F04F 0141       MOV              R1, #0x41   ;  CURSOR RESET Y=1
+                                                            
+   41 00000034 6001            STR              R1, [R0]
+   42 00000036 F240 4200 
+              F2C2 0200        MOV32            R2, memory
+   43 0000003E F240 5400 
+              F2C2 0400        MOV32            R4, offset_memory
+   44 00000046 F04F 0500       MOV              R5, #0      ; for loop = 64  
+   45 0000004A F04F 0604       MOV              R6, #4      ; change Y
+   46 0000004E         
+   47 0000004E         from_memory                          ;CMP R2, R4   ; mem
+                                                            ory check in order 
+                                                            to be done
+   48 0000004E         ;    BEQ finish
+   49 0000004E F812 3B01       LDRB             R3, [R2], #1 ; R3 holds the mem
+                                                            ory value
+   50 00000052         ;    CMP R3, #0x0
+   51 00000052         ;    BEQ from_memory
+   52 00000052         ;    MVN R3, R3
+   53 00000052         
+   54 00000052         
+   55 00000052 F248 000C 
+              F2C4 0000 
+                       display MOV32            R0, SSI0_SR_R
+   56 0000005A 6801            LDR              R1, [R0]
+   57 0000005C F011 0110       ANDS             R1, R1, #0x10
+   58 00000060 D1F7            BNE              display
+   59 00000062         ; sent
+   60 00000062 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+   61 0000006A F04F 0140       MOV              R1, #0x40   ; screen update
+   62 0000006E 6001            STR              R1, [R0]
+   63 00000070 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+   64 00000078         ;MVN R3, R3
+   65 00000078 6003            STR              R3, [R0]    ; R3 value => scree
+                                                            n 
+   66 0000007A F105 0501       ADD              R5, #1      ; memory++
+   67 0000007E 2D40            CMP              R5, #64     ; memory 64 check
+   68 00000080 D1E5            BNE              from_memory
+   69 00000082 F04F 0500       MOV              R5, #0
+   70 00000086         
+   71 00000086 42A2            CMP              R2, R4      ; memory check in o
+                                                            rder to be done
+   72 00000088 D053            BEQ              finish
+   73 0000008A F1A6 0601       SUB              R6, #1
+   74 0000008E 2E02            CMP              R6, #2
+   75 00000090 D801            BHI              Y2
+   76 00000092 D01A            BEQ              Y3
+   77 00000094 D333            BLO              Y4
+   78 00000096         
+   79 00000096 F248 000C 
+              F2C4 0000 
+                       Y2      MOV32            R0, SSI0_SR_R
+   80 0000009E 6801            LDR              R1, [R0]
+   81 000000A0 F011 0110       ANDS             R1, R1, #0x10
+   82 000000A4 D1F7            BNE              Y2
+   83 000000A6 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   84 000000AE F04F 0100       MOV              R1, #0
+   85 000000B2 6001            STR              R1, [R0]
+   86 000000B4         ; sent
+   87 000000B4 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+   88 000000BC F04F 0186       MOV              R1, #0x86   ; CURSOR RESET X=6
+   89 000000C0 6001            STR              R1, [R0]
+   90 000000C2 F04F 0142       MOV              R1, #0x42   ;  CURSOR RESET Y=2
+                                                            
+   91 000000C6 6001            STR              R1, [R0]
+   92 000000C8 E7C1            B                from_memory
+   93 000000CA         
+   94 000000CA F248 000C 
+              F2C4 0000 
+                       Y3      MOV32            R0, SSI0_SR_R
+   95 000000D2 6801            LDR              R1, [R0]
+   96 000000D4 F011 0110       ANDS             R1, R1, #0x10
+   97 000000D8 D1F7            BNE              Y3
+   98 000000DA F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+   99 000000E2 F04F 0100       MOV              R1, #0
+  100 000000E6 6001            STR              R1, [R0]
+  101 000000E8         ; sent
+  102 000000E8 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+  103 000000F0 F04F 0186       MOV              R1, #0x86   ; CURSOR RESET X=6
+  104 000000F4 6001            STR              R1, [R0]
+  105 000000F6 F04F 0143       MOV              R1, #0x43   ;  CURSOR RESET Y=3
+                                                            
+  106 000000FA 6001            STR              R1, [R0]
+  107 000000FC E7A7            B                from_memory
+  108 000000FE         
+  109 000000FE F248 000C 
+              F2C4 0000 
+                       Y4      MOV32            R0, SSI0_SR_R
+  110 00000106 6801            LDR              R1, [R0]
+  111 00000108 F011 0110       ANDS             R1, R1, #0x10
+  112 0000010C D1F7            BNE              Y4
+  113 0000010E F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+  114 00000116 F04F 0100       MOV              R1, #0
+  115 0000011A 6001            STR              R1, [R0]
+  116 0000011C         ; sent
+  117 0000011C F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+  118 00000124 F04F 0186       MOV              R1, #0x86   ; CURSOR RESET X=6
+  119 00000128 6001            STR              R1, [R0]
+  120 0000012A F04F 0144       MOV              R1, #0x44   ;  CURSOR RESET Y=4
+                                                            
+  121 0000012E 6001            STR              R1, [R0]
+  122 00000130 E78D            B                from_memory
+  123 00000132         
+  124 00000132 E8BD 5FFF 
+                       finish  POP              {R0-R12,LR}
+  125 00000136 4770            BX               LR
+  126 00000138                 ALIGN
+  127 00000138                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\ship_load.d -o.\objects\ship_load.o -I.\RTE\_Target_1
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+ -IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 -IC:\Keil_v5\
+ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SE
+TA 526" --predefine="TM4C123GH6PM SETA 1" --list=.\listings\ship_load.lst ship_
+load.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Y2 00000096
+
+Symbol: Y2
+   Definitions
+      At line 79 in file ship_load.s
+   Uses
+      At line 75 in file ship_load.s
+      At line 82 in file ship_load.s
+
+Y3 000000CA
+
+Symbol: Y3
+   Definitions
+      At line 94 in file ship_load.s
+   Uses
+      At line 76 in file ship_load.s
+      At line 97 in file ship_load.s
+
+Y4 000000FE
+
+Symbol: Y4
+   Definitions
+      At line 109 in file ship_load.s
+   Uses
+      At line 77 in file ship_load.s
+      At line 112 in file ship_load.s
+
+display 00000052
+
+Symbol: display
+   Definitions
+      At line 55 in file ship_load.s
+   Uses
+      At line 58 in file ship_load.s
+Comment: display used once
+finish 00000132
+
+Symbol: finish
+   Definitions
+      At line 124 in file ship_load.s
+   Uses
+      At line 72 in file ship_load.s
+Comment: finish used once
+from_memory 0000004E
+
+Symbol: from_memory
+   Definitions
+      At line 47 in file ship_load.s
+   Uses
+      At line 68 in file ship_load.s
+      At line 92 in file ship_load.s
+      At line 107 in file ship_load.s
+      At line 122 in file ship_load.s
+
+init_XY 00000004
+
+Symbol: init_XY
+   Definitions
+      At line 29 in file ship_load.s
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Uses
+      At line 32 in file ship_load.s
+Comment: init_XY used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 22 in file ship_load.s
+   Uses
+      None
+Comment: main unused
+ship_load 00000000
+
+Symbol: ship_load
+   Definitions
+      At line 26 in file ship_load.s
+   Uses
+      At line 24 in file ship_load.s
+Comment: ship_load used once
+9 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+DC 40004100
+
+Symbol: DC
+   Definitions
+      At line 11 in file ship_load.s
+   Uses
+      At line 33 in file ship_load.s
+      At line 60 in file ship_load.s
+      At line 83 in file ship_load.s
+      At line 98 in file ship_load.s
+      At line 113 in file ship_load.s
+
+SSI0_DR_R 40008008
+
+Symbol: SSI0_DR_R
+   Definitions
+      At line 13 in file ship_load.s
+   Uses
+      At line 37 in file ship_load.s
+      At line 63 in file ship_load.s
+      At line 87 in file ship_load.s
+      At line 102 in file ship_load.s
+      At line 117 in file ship_load.s
+
+SSI0_SR_R 4000800C
+
+Symbol: SSI0_SR_R
+   Definitions
+      At line 12 in file ship_load.s
+   Uses
+      At line 29 in file ship_load.s
+      At line 55 in file ship_load.s
+      At line 79 in file ship_load.s
+      At line 94 in file ship_load.s
+      At line 109 in file ship_load.s
+
+X 00000087
+
+Symbol: X
+   Definitions
+      At line 14 in file ship_load.s
+   Uses
+      None
+Comment: X unused
+Y 00000041
+
+Symbol: Y
+   Definitions
+      At line 15 in file ship_load.s
+   Uses
+      None
+Comment: Y unused
+memory 20000400
+
+Symbol: memory
+   Definitions
+      At line 16 in file ship_load.s
+   Uses
+      At line 42 in file ship_load.s
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+Comment: memory used once
+offset_memory 20000500
+
+Symbol: offset_memory
+   Definitions
+      At line 17 in file ship_load.s
+   Uses
+      At line 43 in file ship_load.s
+Comment: offset_memory used once
+7 symbols
+350 symbols in table

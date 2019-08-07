@@ -1,0 +1,555 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;*******************************************************
+                       ******** 
+    2 00000000         ; cursor.s  
+    3 00000000         ; This program gets (X,Y) coordinates from R7 and R8. 
+    4 00000000         ; Displays the cursor on the screen according to (X,Y).
+    5 00000000         ;*******************************************************
+                       ******** 
+    6 00000000         ;*******************************************************
+                       ******** 
+    7 00000000         ; EQU Directives
+    8 00000000         ; These directives do not allocate memory
+    9 00000000         ;*******************************************************
+                       ********
+   10 00000000         ;LABEL   DIRECTIVE VALUE  COMMENT
+   11 00000000 40004100 
+                       DC      EQU              0x40004100
+   12 00000000 4000800C 
+                       SSI0_SR_R
+                               EQU              0x4000800C
+   13 00000000 40008008 
+                       SSI0_DR_R
+                               EQU              0x40008008
+   14 00000000         
+   15 00000000         ;*******************************************************
+                       ********
+   16 00000000         ; Program section           
+   17 00000000         ;*******************************************************
+                       ********
+   18 00000000         ;LABEL   DIRECTIVE VALUE     COMMENT
+   19 00000000                 AREA             main, READONLY, CODE
+   20 00000000                 THUMB
+   21 00000000                 EXPORT           draw_borders ; Make available
+   22 00000000         
+   23 00000000         draw_borders
+   24 00000000 B403            PUSH             {R0-R1}
+   25 00000002 B440            PUSH{R6}
+   26 00000004         
+   27 00000004 F44F 76FC       MOV              R6, #504
+   28 00000008 4893    CLEAR   LDR              R0,=SSI0_SR_R
+   29 0000000A 6801            LDR              R1, [R0]
+   30 0000000C F001 0110       AND              R1, #0x10
+   31 00000010 2910            CMP              R1, #0x10
+   32 00000012 D0F9            BEQ              CLEAR
+   33 00000014 4891            LDR              R0, =DC     ;dc_command  
+   34 00000016 F04F 0140       MOV              R1, #0x40
+   35 0000001A 6001            STR              R1, [R0]
+   36 0000001C         ; sent
+   37 0000001C 4890            LDR              R0,=SSI0_DR_R
+   38 0000001E F04F 0100       MOV              R1, #0x0
+   39 00000022 6001            STR              R1, [R0]
+   40 00000024 3E01            SUBS             R6, #1
+   41 00000026 D1EF            BNE              CLEAR
+   42 00000028         
+   43 00000028         
+   44 00000028 F244 1000 
+              F2C4 0000 
+                       set_Xy  MOV32            R0, DC      ;dc_command  
+   45 00000030 F04F 0100       MOV              R1, #0
+   46 00000034 6001            STR              R1, [R0]
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   47 00000036         ; sent
+   48 00000036 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+   49 0000003E F04F 0185       MOV              R1, #0x85   ; CURSOR RESET X=5
+   50 00000042 6001            STR              R1, [R0]
+   51 00000044 F04F 0140       MOV              R1, #0x40   ;  CURSOR RESET Y=0
+                                                            
+   52 00000048 6001            STR              R1, [R0]
+   53 0000004A         
+   54 0000004A F04F 0642       MOV              R6, #66
+   55 0000004E 4882    draw_border
+                               LDR              R0,=SSI0_SR_R
+   56 00000050 6801            LDR              R1, [R0]
+   57 00000052 F001 0110       AND              R1, #0x10
+   58 00000056 2910            CMP              R1, #0x10
+   59 00000058 D0F9            BEQ              draw_border
+   60 0000005A 4880            LDR              R0, =DC     ;dc_command  
+   61 0000005C F04F 0140       MOV              R1, #0x40
+   62 00000060 6001            STR              R1, [R0]
+   63 00000062         ; sent
+   64 00000062 487F            LDR              R0,=SSI0_DR_R
+   65 00000064 F04F 0180       MOV              R1, #0x80
+   66 00000068 6001            STR              R1, [R0]
+   67 0000006A 3E01            SUBS             R6, #1
+   68 0000006C D1EF            BNE              draw_border
+   69 0000006E         
+   70 0000006E F248 000C 
+              F2C4 0000        MOV32            R0, SSI0_SR_R
+   71 00000076 6801    ASD     LDR              R1, [R0]
+   72 00000078 F001 0110       AND              R1, #0x10
+   73 0000007C 2910            CMP              R1, #0x10
+   74 0000007E D0FA            BEQ              ASD
+   75 00000080 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+   76 00000088 F04F 0100       MOV              R1, #0
+   77 0000008C 6001            STR              R1, [R0]
+   78 0000008E         ; sent
+   79 0000008E F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+   80 00000096 F04F 0185       MOV              R1, #0x85   ; CURSOR RESET X=5
+   81 0000009A 6001            STR              R1, [R0]
+   82 0000009C F04F 0145       MOV              R1, #0x45   ;  CURSOR RESET Y=5
+                                                            
+   83 000000A0 6001            STR              R1, [R0]
+   84 000000A2         
+   85 000000A2 F04F 0642       MOV              R6, #66
+   86 000000A6         draw_border2                         ; alt çizgi _
+   87 000000A6 F248 000C 
+              F2C4 0000        MOV32            R0, SSI0_SR_R
+   88 000000AE 6801            LDR              R1, [R0]
+   89 000000B0 F001 0110       AND              R1, #0x10
+   90 000000B4 2910            CMP              R1, #0x10
+   91 000000B6 D0F6            BEQ              draw_border2
+   92 000000B8 4868            LDR              R0, =DC     ;dc_command  
+   93 000000BA F04F 0140       MOV              R1, #0x40
+   94 000000BE 6001            STR              R1, [R0]
+   95 000000C0         ; sent
+   96 000000C0 4867            LDR              R0,=SSI0_DR_R
+   97 000000C2 F04F 0101       MOV              R1, #0x01
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   98 000000C6 6001            STR              R1, [R0]
+   99 000000C8 3E01            SUBS             R6, #1
+  100 000000CA D1EC            BNE              draw_border2
+  101 000000CC         
+  102 000000CC         
+  103 000000CC         ; kenarlar için cursor update
+  104 000000CC F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+  105 000000D4 F04F 0100       MOV              R1, #0
+  106 000000D8 6001            STR              R1, [R0]
+  107 000000DA         ; sent
+  108 000000DA F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+  109 000000E2 F04F 0185       MOV              R1, #0x85   ; CURSOR RESET X=5
+  110 000000E6 6001            STR              R1, [R0]
+  111 000000E8 F04F 0141       MOV              R1, #0x41   ;  CURSOR RESET Y=1
+                                                            
+  112 000000EC 6001            STR              R1, [R0]
+  113 000000EE         
+  114 000000EE F04F 0201       MOV              R2, #1
+  115 000000F2 F04F 0303       MOV              R3, #3
+  116 000000F6         ;*******************************************************
+                       ** right-left border
+  117 000000F6         draw_border3                         ; | |
+  118 000000F6 F248 000C 
+              F2C4 0000        MOV32            R0, SSI0_SR_R
+  119 000000FE 6801            LDR              R1, [R0]
+  120 00000100 F001 0110       AND              R1, #0x10
+  121 00000104 2910            CMP              R1, #0x10
+  122 00000106 D0F6            BEQ              draw_border3
+  123 00000108 4854            LDR              R0, =DC     ;dc_command  
+  124 0000010A F04F 0140       MOV              R1, #0x40
+  125 0000010E 6001            STR              R1, [R0]
+  126 00000110         ; sent
+  127 00000110 4853            LDR              R0,=SSI0_DR_R ; |
+  128 00000112 F04F 01FF       MOV              R1, #0xFF
+  129 00000116 6001            STR              R1, [R0]
+  130 00000118         
+  131 00000118 F248 000C 
+              F2C4 0000 
+                       sdf     MOV32            R0, SSI0_SR_R
+  132 00000120 6801            LDR              R1, [R0]
+  133 00000122 F001 0110       AND              R1, #0x10
+  134 00000126 2910            CMP              R1, #0x10
+  135 00000128 D0F6            BEQ              sdf
+  136 0000012A F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+  137 00000132 F04F 0100       MOV              R1, #0
+  138 00000136 6001            STR              R1, [R0]
+  139 00000138         ; sent
+  140 00000138 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+  141 00000140 F04F 01C6       MOV              R1, #0xC6   ; CURSOR RESET X=60
+                                                            +
+  142 00000144 6001            STR              R1, [R0]
+  143 00000146         
+  144 00000146         ; sent
+  145 00000146 F248 000C 
+              F2C4 0000 
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+                       sdf1    MOV32            R0, SSI0_SR_R
+  146 0000014E 6801            LDR              R1, [R0]
+  147 00000150 F001 0110       AND              R1, #0x10
+  148 00000154 2910            CMP              R1, #0x10
+  149 00000156 D0F6            BEQ              sdf1
+  150 00000158 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+  151 00000160 F04F 0140       MOV              R1, #0x40
+  152 00000164 6001            STR              R1, [R0]
+  153 00000166 483E            LDR              R0,=SSI0_DR_R ;|
+  154 00000168 F04F 01FF       MOV              R1, #0xFF
+  155 0000016C 6001            STR              R1, [R0]
+  156 0000016E F102 0201       ADD              R2, #1
+  157 00000172 2A05            CMP              R2, #5
+  158 00000174 D054            BEQ              pass
+  159 00000176 4293            CMP              R3, R2
+  160 00000178 D01C            BEQ              Y4
+  161 0000017A D300            BLO              Y3
+  162 0000017C D835            BHI              Y5
+  163 0000017E         ; DRAWBORDER END
+  164 0000017E         
+  165 0000017E         
+  166 0000017E         ;change Y
+  167 0000017E         
+  168 0000017E F248 000C 
+              F2C4 0000 
+                       Y3      MOV32            R0, SSI0_SR_R
+  169 00000186 6801            LDR              R1, [R0]
+  170 00000188 F001 0110       AND              R1, #0x10
+  171 0000018C 2910            CMP              R1, #0x10
+  172 0000018E D0F6            BEQ              Y3
+  173 00000190 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+  174 00000198 F04F 0100       MOV              R1, #0
+  175 0000019C 6001            STR              R1, [R0]
+  176 0000019E         ; sent
+  177 0000019E F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+  178 000001A6 F04F 0185       MOV              R1, #0x85   ; CURSOR RESET X=5
+  179 000001AA 6001            STR              R1, [R0]
+  180 000001AC F04F 0142       MOV              R1, #0x42   ;  CURSOR RESET Y=2
+                                                            
+  181 000001B0 6001            STR              R1, [R0]
+  182 000001B2 E7A0            B                draw_border3
+  183 000001B4         
+  184 000001B4 F248 000C 
+              F2C4 0000 
+                       Y4      MOV32            R0, SSI0_SR_R
+  185 000001BC 6801            LDR              R1, [R0]
+  186 000001BE F001 0110       AND              R1, #0x10
+  187 000001C2 2910            CMP              R1, #0x10
+  188 000001C4 D0F6            BEQ              Y4
+  189 000001C6 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+  190 000001CE F04F 0100       MOV              R1, #0
+  191 000001D2 6001            STR              R1, [R0]
+  192 000001D4         ; sent
+  193 000001D4 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+  194 000001DC F04F 0185       MOV              R1, #0x85   ; CURSOR RESET X=5
+  195 000001E0 6001            STR              R1, [R0]
+  196 000001E2 F04F 0143       MOV              R1, #0x43   ;  CURSOR RESET Y=3
+                                                            
+  197 000001E6 6001            STR              R1, [R0]
+  198 000001E8 E785            B                draw_border3
+  199 000001EA         
+  200 000001EA F248 000C 
+              F2C4 0000 
+                       Y5      MOV32            R0, SSI0_SR_R
+  201 000001F2 6801            LDR              R1, [R0]
+  202 000001F4 F001 0110       AND              R1, #0x10
+  203 000001F8 2910            CMP              R1, #0x10
+  204 000001FA D0F6            BEQ              Y5
+  205 000001FC F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+  206 00000204 F04F 0100       MOV              R1, #0
+  207 00000208 6001            STR              R1, [R0]
+  208 0000020A         ; sent
+  209 0000020A F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+  210 00000212 F04F 0185       MOV              R1, #0x85   ; CURSOR RESET X=5
+  211 00000216 6001            STR              R1, [R0]
+  212 00000218 F04F 0144       MOV              R1, #0x44   ;  CURSOR RESET Y=3
+                                                            
+  213 0000021C 6001            STR              R1, [R0]
+  214 0000021E E76A            B                draw_border3
+  215 00000220         ;*******************************************************
+                       * ; Mission is completed for borders :D   
+  216 00000220         pass
+  217 00000220 F248 000C 
+              F2C4 0000        MOV32            R0, SSI0_SR_R
+  218 00000228 6801            LDR              R1, [R0]
+  219 0000022A F001 0110       AND              R1, #0x10
+  220 0000022E 2910            CMP              R1, #0x10
+  221 00000230 D0F6            BEQ              pass
+  222 00000232 F244 1000 
+              F2C4 0000        MOV32            R0, DC      ;dc_command  
+  223 0000023A F04F 0100       MOV              R1, #0
+  224 0000023E 6001            STR              R1, [R0]
+  225 00000240         ; sent
+  226 00000240 F248 0008 
+              F2C4 0000        MOV32            R0, SSI0_DR_R
+  227 00000248 F04F 0186       MOV              R1, #0x86   ; CURSOR RESET X=5
+  228 0000024C 6001            STR              R1, [R0]
+  229 0000024E F04F 0141       MOV              R1, #0x41   ;  CURSOR RESET Y=3
+                                                            
+  230 00000252 6001            STR              R1, [R0]
+  231 00000254         
+  232 00000254 BC43    donee   POP              {R0-R1,R6}
+  233 00000256 4770            BX               LR
+  234 00000258                 ALIGN
+  235 00000258                 END
+              4000800C 
+              40004100 
+              40008008 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\draw_border.d -o.\objects\draw_border.o -I.\RTE\_Targ
+et_1 -IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 -IC:\Keil
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSIO
+N SETA 526" --predefine="TM4C123GH6PM SETA 1" --list=.\listings\draw_border.lst
+ draw_border.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ASD 00000076
+
+Symbol: ASD
+   Definitions
+      At line 71 in file draw_border.s
+   Uses
+      At line 74 in file draw_border.s
+Comment: ASD used once
+CLEAR 00000008
+
+Symbol: CLEAR
+   Definitions
+      At line 28 in file draw_border.s
+   Uses
+      At line 32 in file draw_border.s
+      At line 41 in file draw_border.s
+
+Y3 0000017E
+
+Symbol: Y3
+   Definitions
+      At line 168 in file draw_border.s
+   Uses
+      At line 161 in file draw_border.s
+      At line 172 in file draw_border.s
+
+Y4 000001B4
+
+Symbol: Y4
+   Definitions
+      At line 184 in file draw_border.s
+   Uses
+      At line 160 in file draw_border.s
+      At line 188 in file draw_border.s
+
+Y5 000001EA
+
+Symbol: Y5
+   Definitions
+      At line 200 in file draw_border.s
+   Uses
+      At line 162 in file draw_border.s
+      At line 204 in file draw_border.s
+
+donee 00000254
+
+Symbol: donee
+   Definitions
+      At line 232 in file draw_border.s
+   Uses
+      None
+Comment: donee unused
+draw_border 0000004E
+
+Symbol: draw_border
+   Definitions
+      At line 55 in file draw_border.s
+   Uses
+      At line 59 in file draw_border.s
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 68 in file draw_border.s
+
+draw_border2 000000A6
+
+Symbol: draw_border2
+   Definitions
+      At line 86 in file draw_border.s
+   Uses
+      At line 91 in file draw_border.s
+      At line 100 in file draw_border.s
+
+draw_border3 000000F6
+
+Symbol: draw_border3
+   Definitions
+      At line 117 in file draw_border.s
+   Uses
+      At line 122 in file draw_border.s
+      At line 182 in file draw_border.s
+      At line 198 in file draw_border.s
+      At line 214 in file draw_border.s
+
+draw_borders 00000000
+
+Symbol: draw_borders
+   Definitions
+      At line 23 in file draw_border.s
+   Uses
+      At line 21 in file draw_border.s
+Comment: draw_borders used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 19 in file draw_border.s
+   Uses
+      None
+Comment: main unused
+pass 00000220
+
+Symbol: pass
+   Definitions
+      At line 216 in file draw_border.s
+   Uses
+      At line 158 in file draw_border.s
+      At line 221 in file draw_border.s
+
+sdf 00000118
+
+Symbol: sdf
+   Definitions
+      At line 131 in file draw_border.s
+   Uses
+      At line 135 in file draw_border.s
+Comment: sdf used once
+sdf1 00000146
+
+Symbol: sdf1
+   Definitions
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 145 in file draw_border.s
+   Uses
+      At line 149 in file draw_border.s
+Comment: sdf1 used once
+set_Xy 00000028
+
+Symbol: set_Xy
+   Definitions
+      At line 44 in file draw_border.s
+   Uses
+      None
+Comment: set_Xy unused
+15 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+DC 40004100
+
+Symbol: DC
+   Definitions
+      At line 11 in file draw_border.s
+   Uses
+      At line 33 in file draw_border.s
+      At line 44 in file draw_border.s
+      At line 60 in file draw_border.s
+      At line 75 in file draw_border.s
+      At line 92 in file draw_border.s
+      At line 104 in file draw_border.s
+      At line 123 in file draw_border.s
+      At line 136 in file draw_border.s
+      At line 150 in file draw_border.s
+      At line 173 in file draw_border.s
+      At line 189 in file draw_border.s
+      At line 205 in file draw_border.s
+      At line 222 in file draw_border.s
+
+SSI0_DR_R 40008008
+
+Symbol: SSI0_DR_R
+   Definitions
+      At line 13 in file draw_border.s
+   Uses
+      At line 37 in file draw_border.s
+      At line 48 in file draw_border.s
+      At line 64 in file draw_border.s
+      At line 79 in file draw_border.s
+      At line 96 in file draw_border.s
+      At line 108 in file draw_border.s
+      At line 127 in file draw_border.s
+      At line 140 in file draw_border.s
+      At line 153 in file draw_border.s
+      At line 177 in file draw_border.s
+      At line 193 in file draw_border.s
+      At line 209 in file draw_border.s
+      At line 226 in file draw_border.s
+
+SSI0_SR_R 4000800C
+
+Symbol: SSI0_SR_R
+   Definitions
+      At line 12 in file draw_border.s
+   Uses
+      At line 28 in file draw_border.s
+      At line 55 in file draw_border.s
+      At line 70 in file draw_border.s
+      At line 87 in file draw_border.s
+      At line 118 in file draw_border.s
+      At line 131 in file draw_border.s
+      At line 145 in file draw_border.s
+      At line 168 in file draw_border.s
+      At line 184 in file draw_border.s
+      At line 200 in file draw_border.s
+      At line 217 in file draw_border.s
+
+3 symbols
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+354 symbols in table

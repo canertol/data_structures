@@ -1,0 +1,379 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    init.o(main) refers to delay100.o(main) for DELAY100
+    startup.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to mainn.o(main) for __main
+    startup.o(RESET) refers to systick_handler.o(main) for MySysTick
+    startup.o(RESET) refers to my_gpioportf_handler.o(main) for My_GPIOPortF_Handler
+    startup.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(.text) refers to startup.o(HEAP) for HeapMem
+    startup.o(.text) refers to startup.o(STACK) for StackMem
+    mainn.o(main) refers (Special) to clear_cursor.o(main) for clear_cursor
+    mainn.o(main) refers (Special) to timer.o(main) for timer
+    mainn.o(main) refers to init.o(main) for INIT
+    mainn.o(main) refers to clear_sram.o(main) for clear_SRAM
+    mainn.o(main) refers to clear_sram_mine.o(main) for clear_SRAM_mine
+    mainn.o(main) refers to draw_border.o(main) for draw_borders
+    mainn.o(main) refers to delay100.o(main) for DELAY100
+    mainn.o(main) refers to ship_load.o(main) for ship_load
+    mainn.o(main) refers to mine_load.o(main) for mine_load
+    mainn.o(main) refers to cursor.o(main) for cursor
+    mainn.o(main) refers to cursor2.o(main) for cursor2
+    my_gpioportf_handler.o(main) refers to put_battle.o(main) for put_battle
+    my_gpioportf_handler.o(main) refers to put_civil.o(main) for put_civil
+    my_gpioportf_handler.o(main) refers to mine_load.o(main) for mine_load
+    my_gpioportf_handler.o(main) refers to ship_load.o(main) for ship_load
+    my_gpioportf_handler.o(main) refers to delay100.o(main) for DELAY100
+    my_gpioportf_handler.o(main) refers to timer.o(main) for timer
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup.o(HEAP), (0 bytes).
+    Removing startup.o(.text), (48 bytes).
+    Removing numbers.o(main), (140 bytes).
+    Removing clear_screen.o(main), (334 bytes).
+
+4 unused section(s) (total 522 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      664  startup.o(RESET)
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    Delay100.s                               0x00000000   Number         0  delay100.o ABSOLUTE
+    INIT.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    My_GPIOPortF_Handler.s                   0x00000000   Number         0  my_gpioportf_handler.o ABSOLUTE
+    Startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    SysTick_Handler.s                        0x00000000   Number         0  systick_handler.o ABSOLUTE
+    clear_SRAM.s                             0x00000000   Number         0  clear_sram.o ABSOLUTE
+    clear_SRAM_mine.s                        0x00000000   Number         0  clear_sram_mine.o ABSOLUTE
+    clear_cursor.s                           0x00000000   Number         0  clear_cursor.o ABSOLUTE
+    clear_screen.s                           0x00000000   Number         0  clear_screen.o ABSOLUTE
+    cursor.s                                 0x00000000   Number         0  cursor.o ABSOLUTE
+    cursor2.s                                0x00000000   Number         0  cursor2.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    draw_border.s                            0x00000000   Number         0  draw_border.o ABSOLUTE
+    mainn.s                                  0x00000000   Number         0  mainn.o ABSOLUTE
+    mine_load.s                              0x00000000   Number         0  mine_load.o ABSOLUTE
+    numbers.s                                0x00000000   Number         0  numbers.o ABSOLUTE
+    put_battle.s                             0x00000000   Number         0  put_battle.o ABSOLUTE
+    put_civil.s                              0x00000000   Number         0  put_civil.o ABSOLUTE
+    ship_load.s                              0x00000000   Number         0  ship_load.o ABSOLUTE
+    timer.s                                  0x00000000   Number         0  timer.o ABSOLUTE
+    $v0                                      0x0000026c   Number         0  startup.o(RESET)
+    .text                                    0x00000298   Section        0  heapauxi.o(.text)
+    main                                     0x000002a0   Section      952  init.o(main)
+    $v0                                      0x000002a0   Number         0  init.o(main)
+    main                                     0x00000658   Section       20  delay100.o(main)
+    $v0                                      0x00000658   Number         0  delay100.o(main)
+    main                                     0x0000066c   Section      720  mainn.o(main)
+    $v0                                      0x0000066c   Number         0  mainn.o(main)
+    main                                     0x0000093c   Section      704  cursor.o(main)
+    $v0                                      0x0000093c   Number         0  cursor.o(main)
+    main                                     0x00000bfc   Section      312  ship_load.o(main)
+    $v0                                      0x00000bfc   Number         0  ship_load.o(main)
+    main                                     0x00000d34   Section      612  draw_border.o(main)
+    $v0                                      0x00000d34   Number         0  draw_border.o(main)
+    main                                     0x00000f98   Section      228  clear_sram.o(main)
+    $v0                                      0x00000f98   Number         0  clear_sram.o(main)
+    main                                     0x0000107c   Section       56  clear_cursor.o(main)
+    $v0                                      0x0000107c   Number         0  clear_cursor.o(main)
+    main                                     0x000010b4   Section      412  cursor2.o(main)
+    $v0                                      0x000010b4   Number         0  cursor2.o(main)
+    main                                     0x00001250   Section       40  timer.o(main)
+    $v0                                      0x00001250   Number         0  timer.o(main)
+    main                                     0x00001278   Section     1496  systick_handler.o(main)
+    $v0                                      0x00001278   Number         0  systick_handler.o(main)
+    main                                     0x00001850   Section      304  my_gpioportf_handler.o(main)
+    $v0                                      0x00001850   Number         0  my_gpioportf_handler.o(main)
+    main                                     0x00001980   Section     1124  put_battle.o(main)
+    $v0                                      0x00001980   Number         0  put_battle.o(main)
+    main                                     0x00001de4   Section      648  put_civil.o(main)
+    $v0                                      0x00001de4   Number         0  put_civil.o(main)
+    main                                     0x0000206c   Section      228  clear_sram_mine.o(main)
+    $v0                                      0x0000206c   Number         0  clear_sram_mine.o(main)
+    main                                     0x00002150   Section      312  mine_load.o(main)
+    $v0                                      0x00002150   Number         0  mine_load.o(main)
+    STACK                                    0x20000000   Section     1024  startup.o(STACK)
+    StackMem                                 0x20000000   Data           0  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$ROPI$EBA8$STANDARDLIB$REQ8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           0  startup.o(RESET)
+    Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
+    NMI_Handler                              0x00000271   Thumb Code     2  startup.o(RESET)
+    HardFault_Handler                        0x00000273   Thumb Code     2  startup.o(RESET)
+    MemManage_Handler                        0x00000275   Thumb Code     2  startup.o(RESET)
+    BusFault_Handler                         0x00000277   Thumb Code     2  startup.o(RESET)
+    UsageFault_Handler                       0x00000279   Thumb Code     2  startup.o(RESET)
+    SVC_Handler                              0x0000027b   Thumb Code     2  startup.o(RESET)
+    DebugMon_Handler                         0x0000027d   Thumb Code     2  startup.o(RESET)
+    PendSV_Handler                           0x0000027f   Thumb Code     2  startup.o(RESET)
+    SysTick_Handler                          0x00000281   Thumb Code    10  startup.o(RESET)
+    ADC0Seq0_Handler                         0x0000028b   Thumb Code     0  startup.o(RESET)
+    ADC0Seq1_Handler                         0x0000028b   Thumb Code     0  startup.o(RESET)
+    ADC0Seq2_Handler                         0x0000028b   Thumb Code     0  startup.o(RESET)
+    ADC0Seq3_Handler                         0x0000028b   Thumb Code     0  startup.o(RESET)
+    Comp0_Handler                            0x0000028b   Thumb Code     0  startup.o(RESET)
+    Comp1_Handler                            0x0000028b   Thumb Code     0  startup.o(RESET)
+    Comp2_Handler                            0x0000028b   Thumb Code     0  startup.o(RESET)
+    FlashCtl_Handler                         0x0000028b   Thumb Code     0  startup.o(RESET)
+    GPIOPortA_Handler                        0x0000028b   Thumb Code     0  startup.o(RESET)
+    GPIOPortB_Handler                        0x0000028b   Thumb Code     0  startup.o(RESET)
+    GPIOPortC_Handler                        0x0000028b   Thumb Code     0  startup.o(RESET)
+    GPIOPortD_Handler                        0x0000028b   Thumb Code     0  startup.o(RESET)
+    GPIOPortE_Handler                        0x0000028b   Thumb Code     0  startup.o(RESET)
+    GPIOPortF_Handler                        0x0000028b   Thumb Code    12  startup.o(RESET)
+    I2C0_Handler                             0x0000028b   Thumb Code     0  startup.o(RESET)
+    PWM0Fault_Handler                        0x0000028b   Thumb Code     0  startup.o(RESET)
+    PWM0Generator0_Handler                   0x0000028b   Thumb Code     0  startup.o(RESET)
+    PWM0Generator1_Handler                   0x0000028b   Thumb Code     0  startup.o(RESET)
+    PWM0Generator2_Handler                   0x0000028b   Thumb Code     0  startup.o(RESET)
+    Quadrature0_Handler                      0x0000028b   Thumb Code     0  startup.o(RESET)
+    SSI0_Handler                             0x0000028b   Thumb Code     0  startup.o(RESET)
+    SysCtl_Handler                           0x0000028b   Thumb Code     0  startup.o(RESET)
+    Timer0A_Handler                          0x0000028b   Thumb Code     0  startup.o(RESET)
+    Timer0B_Handler                          0x0000028b   Thumb Code     0  startup.o(RESET)
+    Timer1A_Handler                          0x0000028b   Thumb Code     0  startup.o(RESET)
+    Timer1B_Handler                          0x0000028b   Thumb Code     0  startup.o(RESET)
+    Timer2A_Handler                          0x0000028b   Thumb Code     0  startup.o(RESET)
+    Timer2B_Handler                          0x0000028b   Thumb Code     0  startup.o(RESET)
+    UART0_Handler                            0x0000028b   Thumb Code     0  startup.o(RESET)
+    UART1_Handler                            0x0000028b   Thumb Code     0  startup.o(RESET)
+    WDT_Handler                              0x0000028b   Thumb Code     0  startup.o(RESET)
+    ADC1Seq0_Handler                         0x00000297   Thumb Code     0  startup.o(RESET)
+    ADC1Seq1_Handler                         0x00000297   Thumb Code     0  startup.o(RESET)
+    ADC1Seq2_Handler                         0x00000297   Thumb Code     0  startup.o(RESET)
+    ADC1Seq3_Handler                         0x00000297   Thumb Code     0  startup.o(RESET)
+    CAN0_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    CAN1_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    CAN2_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    Ethernet_Handler                         0x00000297   Thumb Code     0  startup.o(RESET)
+    ExtBus_Handler                           0x00000297   Thumb Code     0  startup.o(RESET)
+    FPU_Handler                              0x00000297   Thumb Code     0  startup.o(RESET)
+    Fan0_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortG_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortH_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortJ_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortK_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortL_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortM_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortN_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortP1_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortP2_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortP3_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortP4_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortP5_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortP6_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortP7_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortP_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ1_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ2_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ3_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ4_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ5_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ6_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ7_Handler                       0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortQ_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortR_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    GPIOPortS_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    Hibernate_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    I2C1_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    I2C2_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    I2C3_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    I2C4_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    I2C5_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    I2S0_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    LPC0_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    PECI0_Handler                            0x00000297   Thumb Code     0  startup.o(RESET)
+    PWM0Generator3_Handler                   0x00000297   Thumb Code     0  startup.o(RESET)
+    PWM1Fault_Handler                        0x00000297   Thumb Code     0  startup.o(RESET)
+    PWM1Generator0_Handler                   0x00000297   Thumb Code     0  startup.o(RESET)
+    PWM1Generator1_Handler                   0x00000297   Thumb Code     0  startup.o(RESET)
+    PWM1Generator2_Handler                   0x00000297   Thumb Code     0  startup.o(RESET)
+    PWM1Generator3_Handler                   0x00000297   Thumb Code     0  startup.o(RESET)
+    Quadrature1_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    Quadrature2_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    SSI1_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    SSI2_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    SSI3_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    Timer3A_Handler                          0x00000297   Thumb Code     0  startup.o(RESET)
+    Timer3B_Handler                          0x00000297   Thumb Code     0  startup.o(RESET)
+    Timer4A_Handler                          0x00000297   Thumb Code     0  startup.o(RESET)
+    Timer4B_Handler                          0x00000297   Thumb Code     0  startup.o(RESET)
+    Timer5A_Handler                          0x00000297   Thumb Code     0  startup.o(RESET)
+    Timer5B_Handler                          0x00000297   Thumb Code     0  startup.o(RESET)
+    UART2_Handler                            0x00000297   Thumb Code     0  startup.o(RESET)
+    UART3_Handler                            0x00000297   Thumb Code     0  startup.o(RESET)
+    UART4_Handler                            0x00000297   Thumb Code     0  startup.o(RESET)
+    UART5_Handler                            0x00000297   Thumb Code     0  startup.o(RESET)
+    UART6_Handler                            0x00000297   Thumb Code     0  startup.o(RESET)
+    UART7_Handler                            0x00000297   Thumb Code     0  startup.o(RESET)
+    USB0_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer0A_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer0B_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer1A_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer1B_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer2A_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer2B_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer3A_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer3B_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer4A_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer4B_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer5A_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    WideTimer5B_Handler                      0x00000297   Thumb Code     0  startup.o(RESET)
+    uDMA_Error                               0x00000297   Thumb Code     0  startup.o(RESET)
+    uDMA_Handler                             0x00000297   Thumb Code     0  startup.o(RESET)
+    __use_two_region_memory                  0x00000299   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0000029b   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x0000029d   Thumb Code     2  heapauxi.o(.text)
+    INIT                                     0x000002a1   Thumb Code   816  init.o(main)
+    DELAY100                                 0x00000659   Thumb Code    16  delay100.o(main)
+    __main                                   0x0000066d   Thumb Code     0  mainn.o(main)
+    cursor                                   0x0000093d   Thumb Code     0  cursor.o(main)
+    ship_load                                0x00000bfd   Thumb Code     0  ship_load.o(main)
+    draw_borders                             0x00000d35   Thumb Code     0  draw_border.o(main)
+    clear_SRAM                               0x00000f99   Thumb Code     0  clear_sram.o(main)
+    clear_cursor                             0x0000107d   Thumb Code     0  clear_cursor.o(main)
+    cursor2                                  0x000010b5   Thumb Code     0  cursor2.o(main)
+    timer                                    0x00001251   Thumb Code    32  timer.o(main)
+    MySysTick                                0x00001279   Thumb Code  1490  systick_handler.o(main)
+    My_GPIOPortF_Handler                     0x00001851   Thumb Code     0  my_gpioportf_handler.o(main)
+    put_battle                               0x00001981   Thumb Code     0  put_battle.o(main)
+    put_civil                                0x00001de5   Thumb Code     0  put_civil.o(main)
+    clear_SRAM_mine                          0x0000206d   Thumb Code     0  clear_sram_mine.o(main)
+    mine_load                                0x00002151   Thumb Code     0  mine_load.o(main)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0000026d
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00002688, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00002288, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x00000298   Code   RO           13  * RESET               startup.o
+    0x00000298   0x00000298   0x00000006   Code   RO           73    .text               c_w.l(heapauxi.o)
+    0x0000029e   0x0000029e   0x00000002   PAD
+    0x000002a0   0x000002a0   0x000003b8   Code   RO            1    main                init.o
+    0x00000658   0x00000658   0x00000014   Code   RO            7    main                delay100.o
+    0x0000066c   0x0000066c   0x000002d0   Code   RO           20    main                mainn.o
+    0x0000093c   0x0000093c   0x000002c0   Code   RO           23    main                cursor.o
+    0x00000bfc   0x00000bfc   0x00000138   Code   RO           26    main                ship_load.o
+    0x00000d34   0x00000d34   0x00000264   Code   RO           29    main                draw_border.o
+    0x00000f98   0x00000f98   0x000000e4   Code   RO           32    main                clear_sram.o
+    0x0000107c   0x0000107c   0x00000038   Code   RO           35    main                clear_cursor.o
+    0x000010b4   0x000010b4   0x0000019c   Code   RO           38    main                cursor2.o
+    0x00001250   0x00001250   0x00000028   Code   RO           41    main                timer.o
+    0x00001278   0x00001278   0x000005d8   Code   RO           45    main                systick_handler.o
+    0x00001850   0x00001850   0x00000130   Code   RO           53    main                my_gpioportf_handler.o
+    0x00001980   0x00001980   0x00000464   Code   RO           56    main                put_battle.o
+    0x00001de4   0x00001de4   0x00000288   Code   RO           59    main                put_civil.o
+    0x0000206c   0x0000206c   0x000000e4   Code   RO           65    main                clear_sram_mine.o
+    0x00002150   0x00002150   0x00000138   Code   RO           68    main                mine_load.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00002288, Size: 0x00000400, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00002288   0x00000400   Data   RW           11    STACK               startup.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000400, Load base: 0x00002688, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        56          2          0          0          0        244   clear_cursor.o
+       228          2          0          0          0        288   clear_sram.o
+       228          2          0          0          0        300   clear_sram_mine.o
+       704          2          0          0          0        416   cursor.o
+       412          0          0          0          0        336   cursor2.o
+        20          4          0          0          0        364   delay100.o
+       612         12          0          0          0        404   draw_border.o
+       952        136          0          0          0        684   init.o
+       720         50          0          0          0        420   mainn.o
+       312          0          0          0          0        304   mine_load.o
+       304          4          0          0          0        336   my_gpioportf_handler.o
+      1124          0          0          0          0        520   put_battle.o
+       648          0          0          0          0        396   put_civil.o
+       312          0          0          0          0        304   ship_load.o
+       664        620          0       1024          0        764   startup.o
+      1496          6          0          0          0        828   systick_handler.o
+        40          8          0          0          0        356   timer.o
+
+    ----------------------------------------------------------------------
+      8832        848          0       1024          0       7264   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         6          0          0          0          0        152   heapauxi.o
+
+    ----------------------------------------------------------------------
+         8          0          0          0          0        152   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+         6          0          0          0          0        152   c_w.l
+
+    ----------------------------------------------------------------------
+         8          0          0          0          0        152   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      8840        848          0       1024          0       7016   Grand Totals
+      8840        848          0       1024          0       7016   ELF Image Totals
+      8840        848          0       1024          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 8840 (   8.63kB)
+    Total RW  Size (RW Data + ZI Data)              1024 (   1.00kB)
+    Total ROM Size (Code + RO Data + RW Data)       9864 (   9.63kB)
+
+==============================================================================
+

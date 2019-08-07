@@ -1,0 +1,665 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;*******************************************************
+                       ******** 
+    2 00000000         ; cursor.s  
+    3 00000000         ; This program gets (X,Y) coordinates from R7 and R8. 
+    4 00000000         ; Displays the cursor on the screen according to (X,Y).
+    5 00000000         ;*******************************************************
+                       ******** 
+    6 00000000         ;*******************************************************
+                       ******** 
+    7 00000000         ; EQU Directives
+    8 00000000         ; These directives do not allocate memory
+    9 00000000         ;*******************************************************
+                       ********
+   10 00000000         ;LABEL   DIRECTIVE VALUE  COMMENT
+   11 00000000 40004100 
+                       DC      EQU              0x40004100
+   12 00000000 4000800C 
+                       SSI0_SR_R
+                               EQU              0x4000800C
+   13 00000000 40008008 
+                       SSI0_DR_R
+                               EQU              0x40008008
+   14 00000000 00000087 
+                       X       EQU              0x87
+   15 00000000 00000041 
+                       Y       EQU              0x41
+   16 00000000 20000400 
+                       memory  EQU              0x20000400
+   17 00000000 20000500 
+                       offset_memory
+                               EQU              0x20000500
+   18 00000000 20000008 
+                       case_memory
+                               EQU              0x20000008
+   19 00000000 2000000C 
+                       xy_memory
+                               EQU              0x2000000C  ; Y 
+   20 00000000         ;*******************************************************
+                       ********
+   21 00000000         ; Program section           
+   22 00000000         ;*******************************************************
+                       ********
+   23 00000000         ;LABEL   DIRECTIVE VALUE     COMMENT
+   24 00000000                 AREA             main, READONLY, CODE
+   25 00000000                 THUMB
+   26 00000000                 IMPORT           DELAY100
+   27 00000000                 EXPORT           put_battle  ; Make available
+   28 00000000         
+   29 00000000         put_battle
+   30 00000000         
+   31 00000000 E92D 5FFF       PUSH             {R0-R12,LR}
+   32 00000004 F240 4000 
+              F2C2 0000        MOV32            R0, memory
+   33 0000000C F240 010C 
+              F2C2 0100        MOV32            R1, xy_memory
+   34 00000014 F891 C000       LDRB             R12, [R1]
+   35 00000018 F00C 0C0F       AND              R12, #0xF
+   36 0000001C F10B 0B01       ADD              R11, #1
+   37 00000020 FB0C F30B       MUL              R3, R12, R11
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   38 00000024 4403            ADD              R3, R0
+   39 00000026         
+   40 00000026         
+   41 00000026 F240 0108 
+              F2C2 0100        MOV32            R1, case_memory
+   42 0000002E 6808            LDR              R0, [R1]
+   43 00000030 2801            CMP              R0, #1
+   44 00000032 F000 8016       BEQ.W            case_one
+   45 00000036 2802            CMP              R0, #2
+   46 00000038 F000 8057       BEQ.W            case_two
+   47 0000003C 2803            CMP              R0, #3
+   48 0000003E F000 8098       BEQ.W            case_three
+   49 00000042 2804            CMP              R0, #4
+   50 00000044 F000 80D9       BEQ.W            case_four
+   51 00000048 2805            CMP              R0, #5
+   52 0000004A F000 811A       BEQ.W            case_five
+   53 0000004E 2806            CMP              R0, #6
+   54 00000050 F000 815B       BEQ.W            case_six
+   55 00000054 2807            CMP              R0, #7
+   56 00000056 F000 817A       BEQ.W            case_seven
+   57 0000005A 2808            CMP              R0, #8
+   58 0000005C F000 81BB       BEQ.W            case_eight
+   59 00000060         
+   60 00000060 E1FD            B                finish
+   61 00000062         
+   62 00000062 4618    case_one
+                               MOV              R0, R3
+   63 00000064 F04F 01F8       MOV              R1, #0xF8
+   64 00000068 F840 1B01       STR              R1, [R0] , #1
+   65 0000006C F04F 01F8       MOV              R1, #0xF8
+   66 00000070 F840 1B01       STR              R1, [R0] , #1
+   67 00000074 F04F 01F8       MOV              R1, #0xF8
+   68 00000078 F840 1B01       STR              R1, [R0] , #1
+   69 0000007C F04F 01F8       MOV              R1, #0xF8
+   70 00000080 F840 1B01       STR              R1, [R0] , #1
+   71 00000084 F04F 01F8       MOV              R1, #0xF8
+   72 00000088 F840 1B01       STR              R1, [R0] , #1
+   73 0000008C F04F 01F8       MOV              R1, #0xF8
+   74 00000090 F840 1B01       STR              R1, [R0] , #1
+   75 00000094 F04F 01F8       MOV              R1, #0xF8
+   76 00000098 F840 1B01       STR              R1, [R0] , #1
+   77 0000009C F04F 01F8       MOV              R1, #0xF8
+   78 000000A0 F840 1B01       STR              R1, [R0] , #1
+   79 000000A4         
+   80 000000A4 F100 0038       ADD              R0, #56
+   81 000000A8         
+   82 000000A8 F04F 0107       MOV              R1, #0x07
+   83 000000AC F840 1B01       STR              R1, [R0] , #1
+   84 000000B0 F04F 0107       MOV              R1, #0x07
+   85 000000B4 F840 1B01       STR              R1, [R0] , #1
+   86 000000B8 F04F 0107       MOV              R1, #0x07
+   87 000000BC F840 1B01       STR              R1, [R0] , #1
+   88 000000C0 F04F 0107       MOV              R1, #0x07
+   89 000000C4 F840 1B01       STR              R1, [R0] , #1
+   90 000000C8 F04F 0107       MOV              R1, #0x07
+   91 000000CC F840 1B01       STR              R1, [R0] , #1
+   92 000000D0 F04F 0107       MOV              R1, #0x07
+   93 000000D4 F840 1B01       STR              R1, [R0] , #1
+   94 000000D8 F04F 0107       MOV              R1, #0x07
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   95 000000DC F840 1B01       STR              R1, [R0] , #1
+   96 000000E0 F04F 0107       MOV              R1, #0x07
+   97 000000E4 F840 1B01       STR              R1, [R0] , #1
+   98 000000E8         
+   99 000000E8 E1B9            B                finish
+  100 000000EA         
+  101 000000EA         
+  102 000000EA 4618    case_two
+                               MOV              R0, R3
+  103 000000EC F04F 01F0       MOV              R1, #0xF0
+  104 000000F0 F840 1B01       STR              R1, [R0] , #1
+  105 000000F4 F04F 01F0       MOV              R1, #0xF0
+  106 000000F8 F840 1B01       STR              R1, [R0] , #1
+  107 000000FC F04F 01F0       MOV              R1, #0xF0
+  108 00000100 F840 1B01       STR              R1, [R0] , #1
+  109 00000104 F04F 01F0       MOV              R1, #0xF0
+  110 00000108 F840 1B01       STR              R1, [R0] , #1
+  111 0000010C F04F 01F0       MOV              R1, #0xF0
+  112 00000110 F840 1B01       STR              R1, [R0] , #1
+  113 00000114 F04F 01F0       MOV              R1, #0xF0
+  114 00000118 F840 1B01       STR              R1, [R0] , #1
+  115 0000011C F04F 01F0       MOV              R1, #0xF0
+  116 00000120 F840 1B01       STR              R1, [R0] , #1
+  117 00000124 F04F 01F0       MOV              R1, #0xF0
+  118 00000128 F840 1B01       STR              R1, [R0] , #1
+  119 0000012C         
+  120 0000012C         ; OFFSET
+  121 0000012C F100 0038       ADD              R0, #56
+  122 00000130         
+  123 00000130 F04F 010F       MOV              R1, #0x0F
+  124 00000134 F840 1B01       STR              R1, [R0] , #1
+  125 00000138 F04F 010F       MOV              R1, #0x0F
+  126 0000013C F840 1B01       STR              R1, [R0] , #1
+  127 00000140 F04F 010F       MOV              R1, #0x0F
+  128 00000144 F840 1B01       STR              R1, [R0] , #1
+  129 00000148 F04F 010F       MOV              R1, #0x0F
+  130 0000014C F840 1B01       STR              R1, [R0] , #1
+  131 00000150 F04F 010F       MOV              R1, #0x0F
+  132 00000154 F840 1B01       STR              R1, [R0] , #1
+  133 00000158 F04F 010F       MOV              R1, #0x0F
+  134 0000015C F840 1B01       STR              R1, [R0] , #1
+  135 00000160 F04F 010F       MOV              R1, #0x0F
+  136 00000164 F840 1B01       STR              R1, [R0] , #1
+  137 00000168 F04F 010F       MOV              R1, #0x0F
+  138 0000016C F840 1B01       STR              R1, [R0] , #1
+  139 00000170         
+  140 00000170 E175            B                finish
+  141 00000172         
+  142 00000172 4618    case_three
+                               MOV              R0, R3
+  143 00000174 F04F 01E0       MOV              R1, #0xE0
+  144 00000178 F840 1B01       STR              R1, [R0] , #1
+  145 0000017C F04F 01E0       MOV              R1, #0xE0
+  146 00000180 F840 1B01       STR              R1, [R0] , #1
+  147 00000184 F04F 01E0       MOV              R1, #0xE0
+  148 00000188 F840 1B01       STR              R1, [R0] , #1
+  149 0000018C F04F 01E0       MOV              R1, #0xE0
+  150 00000190 F840 1B01       STR              R1, [R0] , #1
+  151 00000194 F04F 01E0       MOV              R1, #0xE0
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  152 00000198 F840 1B01       STR              R1, [R0] , #1
+  153 0000019C F04F 01E0       MOV              R1, #0xE0
+  154 000001A0 F840 1B01       STR              R1, [R0] , #1
+  155 000001A4 F04F 01E0       MOV              R1, #0xE0
+  156 000001A8 F840 1B01       STR              R1, [R0] , #1
+  157 000001AC F04F 01E0       MOV              R1, #0xE0
+  158 000001B0 F840 1B01       STR              R1, [R0] , #1
+  159 000001B4         
+  160 000001B4         ;    OFFSET
+  161 000001B4 F100 0038       ADD              R0, #56
+  162 000001B8         
+  163 000001B8         
+  164 000001B8 F04F 011F       MOV              R1, #0x1F
+  165 000001BC F840 1B01       STR              R1, [R0] , #1
+  166 000001C0 F04F 011F       MOV              R1, #0x1F
+  167 000001C4 F840 1B01       STR              R1, [R0] , #1
+  168 000001C8 F04F 011F       MOV              R1, #0x1F
+  169 000001CC F840 1B01       STR              R1, [R0] , #1
+  170 000001D0 F04F 011F       MOV              R1, #0x1F
+  171 000001D4 F840 1B01       STR              R1, [R0] , #1
+  172 000001D8 F04F 011F       MOV              R1, #0x1F
+  173 000001DC F840 1B01       STR              R1, [R0] , #1
+  174 000001E0 F04F 011F       MOV              R1, #0x1F
+  175 000001E4 F840 1B01       STR              R1, [R0] , #1
+  176 000001E8 F04F 011F       MOV              R1, #0x1F
+  177 000001EC F840 1B01       STR              R1, [R0] , #1
+  178 000001F0 F04F 011F       MOV              R1, #0x1F
+  179 000001F4 F840 1B01       STR              R1, [R0] , #1
+  180 000001F8         
+  181 000001F8 E131            B                finish
+  182 000001FA         
+  183 000001FA         
+  184 000001FA 4618    case_four
+                               MOV              R0, R3
+  185 000001FC F04F 01C0       MOV              R1, #0xC0
+  186 00000200 F840 1B01       STR              R1, [R0] , #1
+  187 00000204 F04F 01C0       MOV              R1, #0xC0
+  188 00000208 F840 1B01       STR              R1, [R0] , #1
+  189 0000020C F04F 01C0       MOV              R1, #0xC0
+  190 00000210 F840 1B01       STR              R1, [R0] , #1
+  191 00000214 F04F 01C0       MOV              R1, #0xC0
+  192 00000218 F840 1B01       STR              R1, [R0] , #1
+  193 0000021C F04F 01C0       MOV              R1, #0xC0
+  194 00000220 F840 1B01       STR              R1, [R0] , #1
+  195 00000224 F04F 01C0       MOV              R1, #0xC0
+  196 00000228 F840 1B01       STR              R1, [R0] , #1
+  197 0000022C F04F 01C0       MOV              R1, #0xC0
+  198 00000230 F840 1B01       STR              R1, [R0] , #1
+  199 00000234 F04F 01C0       MOV              R1, #0xC0
+  200 00000238 F840 1B01       STR              R1, [R0] , #1
+  201 0000023C         
+  202 0000023C         ; OFFSET
+  203 0000023C F100 0038       ADD              R0, #56
+  204 00000240         
+  205 00000240 F04F 013F       MOV              R1, #0x3F
+  206 00000244 F840 1B01       STR              R1, [R0] , #1
+  207 00000248 F04F 013F       MOV              R1, #0x3F
+  208 0000024C F840 1B01       STR              R1, [R0] , #1
+  209 00000250 F04F 013F       MOV              R1, #0x3F
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+  210 00000254 F840 1B01       STR              R1, [R0] , #1
+  211 00000258 F04F 013F       MOV              R1, #0x3F
+  212 0000025C F840 1B01       STR              R1, [R0] , #1
+  213 00000260 F04F 013F       MOV              R1, #0x3F
+  214 00000264 F840 1B01       STR              R1, [R0] , #1
+  215 00000268 F04F 013F       MOV              R1, #0x3F
+  216 0000026C F840 1B01       STR              R1, [R0] , #1
+  217 00000270 F04F 013F       MOV              R1, #0x3F
+  218 00000274 F840 1B01       STR              R1, [R0] , #1
+  219 00000278 F04F 013F       MOV              R1, #0x3F
+  220 0000027C F840 1B01       STR              R1, [R0] , #1
+  221 00000280         
+  222 00000280 E0ED            B                finish
+  223 00000282         
+  224 00000282         
+  225 00000282         case_five
+  226 00000282 4618            MOV              R0, R3
+  227 00000284 F04F 0180       MOV              R1, #0x80
+  228 00000288 F840 1B01       STR              R1, [R0] , #1
+  229 0000028C F04F 0180       MOV              R1, #0x80
+  230 00000290 F840 1B01       STR              R1, [R0] , #1
+  231 00000294 F04F 0180       MOV              R1, #0x80
+  232 00000298 F840 1B01       STR              R1, [R0] , #1
+  233 0000029C F04F 0180       MOV              R1, #0x80
+  234 000002A0 F840 1B01       STR              R1, [R0] , #1
+  235 000002A4 F04F 0180       MOV              R1, #0x80
+  236 000002A8 F840 1B01       STR              R1, [R0] , #1
+  237 000002AC F04F 0180       MOV              R1, #0x80
+  238 000002B0 F840 1B01       STR              R1, [R0] , #1
+  239 000002B4 F04F 0180       MOV              R1, #0x80
+  240 000002B8 F840 1B01       STR              R1, [R0] , #1
+  241 000002BC F04F 0180       MOV              R1, #0x80
+  242 000002C0 F840 1B01       STR              R1, [R0] , #1
+  243 000002C4         
+  244 000002C4         ; OFFSET
+  245 000002C4 F100 0038       ADD              R0, #56
+  246 000002C8         
+  247 000002C8 F04F 017F       MOV              R1, #0x7F
+  248 000002CC F840 1B01       STR              R1, [R0] , #1
+  249 000002D0 F04F 017F       MOV              R1, #0x7F
+  250 000002D4 F840 1B01       STR              R1, [R0] , #1
+  251 000002D8 F04F 017F       MOV              R1, #0x7F
+  252 000002DC F840 1B01       STR              R1, [R0] , #1
+  253 000002E0 F04F 017F       MOV              R1, #0x7F
+  254 000002E4 F840 1B01       STR              R1, [R0] , #1
+  255 000002E8 F04F 017F       MOV              R1, #0x7F
+  256 000002EC F840 1B01       STR              R1, [R0] , #1
+  257 000002F0 F04F 017F       MOV              R1, #0x7F
+  258 000002F4 F840 1B01       STR              R1, [R0] , #1
+  259 000002F8 F04F 017F       MOV              R1, #0x7F
+  260 000002FC F840 1B01       STR              R1, [R0] , #1
+  261 00000300 F04F 017F       MOV              R1, #0x7F
+  262 00000304 F840 1B01       STR              R1, [R0] , #1
+  263 00000308         
+  264 00000308 E0A9            B                finish
+  265 0000030A         
+  266 0000030A         
+  267 0000030A 4618    case_six
+                               MOV              R0, R3
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+  268 0000030C F04F 01FF       MOV              R1, #0xFF
+  269 00000310 F840 1B01       STR              R1, [R0] , #1
+  270 00000314 F04F 01FF       MOV              R1, #0xFF
+  271 00000318 F840 1B01       STR              R1, [R0] , #1
+  272 0000031C F04F 01FF       MOV              R1, #0xFF
+  273 00000320 F840 1B01       STR              R1, [R0] , #1
+  274 00000324 F04F 01FF       MOV              R1, #0xFF
+  275 00000328 F840 1B01       STR              R1, [R0] , #1
+  276 0000032C F04F 01FF       MOV              R1, #0xFF
+  277 00000330 F840 1B01       STR              R1, [R0] , #1
+  278 00000334 F04F 01FF       MOV              R1, #0xFF
+  279 00000338 F840 1B01       STR              R1, [R0] , #1
+  280 0000033C F04F 01FF       MOV              R1, #0xFF
+  281 00000340 F840 1B01       STR              R1, [R0] , #1
+  282 00000344 F04F 01FF       MOV              R1, #0xFF
+  283 00000348 F840 1B01       STR              R1, [R0] , #1
+  284 0000034C         
+  285 0000034C         
+  286 0000034C         
+  287 0000034C E087            B                finish
+  288 0000034E         
+  289 0000034E 4618    case_seven
+                               MOV              R0, R3
+  290 00000350 F04F 01FE       MOV              R1, #0xFE
+  291 00000354 F840 1B01       STR              R1, [R0] , #1
+  292 00000358 F04F 01FE       MOV              R1, #0xFE
+  293 0000035C F840 1B01       STR              R1, [R0] , #1
+  294 00000360 F04F 01FE       MOV              R1, #0xFE
+  295 00000364 F840 1B01       STR              R1, [R0] , #1
+  296 00000368 F04F 01FE       MOV              R1, #0xFE
+  297 0000036C F840 1B01       STR              R1, [R0] , #1
+  298 00000370 F04F 01FE       MOV              R1, #0xFE
+  299 00000374 F840 1B01       STR              R1, [R0] , #1
+  300 00000378 F04F 01FE       MOV              R1, #0xFE
+  301 0000037C F840 1B01       STR              R1, [R0] , #1
+  302 00000380 F04F 01FE       MOV              R1, #0xFE
+  303 00000384 F840 1B01       STR              R1, [R0] , #1
+  304 00000388 F04F 01FE       MOV              R1, #0xFE
+  305 0000038C F840 1B01       STR              R1, [R0] , #1
+  306 00000390         
+  307 00000390         ; OFFSET
+  308 00000390 F100 0038       ADD              R0, #56
+  309 00000394         
+  310 00000394 F04F 0101       MOV              R1, #0x01
+  311 00000398 F840 1B01       STR              R1, [R0] , #1
+  312 0000039C F04F 0101       MOV              R1, #0x01
+  313 000003A0 F840 1B01       STR              R1, [R0] , #1
+  314 000003A4 F04F 0101       MOV              R1, #0x01
+  315 000003A8 F840 1B01       STR              R1, [R0] , #1
+  316 000003AC F04F 0101       MOV              R1, #0x01
+  317 000003B0 F840 1B01       STR              R1, [R0] , #1
+  318 000003B4 F04F 0101       MOV              R1, #0x01
+  319 000003B8 F840 1B01       STR              R1, [R0] , #1
+  320 000003BC F04F 0101       MOV              R1, #0x01
+  321 000003C0 F840 1B01       STR              R1, [R0] , #1
+  322 000003C4 F04F 0101       MOV              R1, #0x01
+  323 000003C8 F840 1B01       STR              R1, [R0] , #1
+  324 000003CC F04F 0101       MOV              R1, #0x01
+  325 000003D0 F840 1B01       STR              R1, [R0] , #1
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+  326 000003D4         
+  327 000003D4         
+  328 000003D4 E043            B                finish
+  329 000003D6         
+  330 000003D6 4618    case_eight
+                               MOV              R0, R3
+  331 000003D8 F04F 01FC       MOV              R1, #0xFC
+  332 000003DC F840 1B01       STR              R1, [R0] , #1
+  333 000003E0 F04F 01FC       MOV              R1, #0xFC
+  334 000003E4 F840 1B01       STR              R1, [R0] , #1
+  335 000003E8 F04F 01FC       MOV              R1, #0xFC
+  336 000003EC F840 1B01       STR              R1, [R0] , #1
+  337 000003F0 F04F 01FC       MOV              R1, #0xFC
+  338 000003F4 F840 1B01       STR              R1, [R0] , #1
+  339 000003F8 F04F 01FC       MOV              R1, #0xFC
+  340 000003FC F840 1B01       STR              R1, [R0] , #1
+  341 00000400 F04F 01FC       MOV              R1, #0xFC
+  342 00000404 F840 1B01       STR              R1, [R0] , #1
+  343 00000408 F04F 01FC       MOV              R1, #0xFC
+  344 0000040C F840 1B01       STR              R1, [R0] , #1
+  345 00000410 F04F 01FC       MOV              R1, #0xFC
+  346 00000414 F840 1B01       STR              R1, [R0] , #1
+  347 00000418         
+  348 00000418         
+  349 00000418         ; OFFSET
+  350 00000418 F100 0038       ADD              R0, #56
+  351 0000041C         
+  352 0000041C F04F 0103       MOV              R1, #0x03
+  353 00000420 F840 1B01       STR              R1, [R0] , #1
+  354 00000424 F04F 0103       MOV              R1, #0x03
+  355 00000428 F840 1B01       STR              R1, [R0] , #1
+  356 0000042C F04F 0103       MOV              R1, #0x03
+  357 00000430 F840 1B01       STR              R1, [R0] , #1
+  358 00000434 F04F 0103       MOV              R1, #0x03
+  359 00000438 F840 1B01       STR              R1, [R0] , #1
+  360 0000043C F04F 0103       MOV              R1, #0x03
+  361 00000440 F840 1B01       STR              R1, [R0] , #1
+  362 00000444 F04F 0103       MOV              R1, #0x03
+  363 00000448 F840 1B01       STR              R1, [R0] , #1
+  364 0000044C F04F 0103       MOV              R1, #0x03
+  365 00000450 F840 1B01       STR              R1, [R0] , #1
+  366 00000454 F04F 0103       MOV              R1, #0x03
+  367 00000458 F840 1B01       STR              R1, [R0] , #1
+  368 0000045C         
+  369 0000045C         
+  370 0000045C E7FF            B                finish
+  371 0000045E         
+  372 0000045E         
+  373 0000045E E8BD 5FFF 
+                       finish  POP              {R0-R12,LR}
+  374 00000462 4770            BX               LR
+  375 00000464                 ALIGN
+  376 00000464                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\put_battle.d -o.\objects\put_battle.o -I.\RTE\_Target
+_1 -IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 -IC:\Keil_v
+5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION 
+SETA 526" --predefine="TM4C123GH6PM SETA 1" --list=.\listings\put_battle.lst pu
+t_battle.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+case_eight 000003D6
+
+Symbol: case_eight
+   Definitions
+      At line 330 in file put_battle.s
+   Uses
+      At line 58 in file put_battle.s
+Comment: case_eight used once
+case_five 00000282
+
+Symbol: case_five
+   Definitions
+      At line 225 in file put_battle.s
+   Uses
+      At line 52 in file put_battle.s
+Comment: case_five used once
+case_four 000001FA
+
+Symbol: case_four
+   Definitions
+      At line 184 in file put_battle.s
+   Uses
+      At line 50 in file put_battle.s
+Comment: case_four used once
+case_one 00000062
+
+Symbol: case_one
+   Definitions
+      At line 62 in file put_battle.s
+   Uses
+      At line 44 in file put_battle.s
+Comment: case_one used once
+case_seven 0000034E
+
+Symbol: case_seven
+   Definitions
+      At line 289 in file put_battle.s
+   Uses
+      At line 56 in file put_battle.s
+Comment: case_seven used once
+case_six 0000030A
+
+Symbol: case_six
+   Definitions
+      At line 267 in file put_battle.s
+   Uses
+      At line 54 in file put_battle.s
+Comment: case_six used once
+case_three 00000172
+
+Symbol: case_three
+   Definitions
+      At line 142 in file put_battle.s
+   Uses
+      At line 48 in file put_battle.s
+Comment: case_three used once
+case_two 000000EA
+
+Symbol: case_two
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 102 in file put_battle.s
+   Uses
+      At line 46 in file put_battle.s
+Comment: case_two used once
+finish 0000045E
+
+Symbol: finish
+   Definitions
+      At line 373 in file put_battle.s
+   Uses
+      At line 60 in file put_battle.s
+      At line 99 in file put_battle.s
+      At line 140 in file put_battle.s
+      At line 181 in file put_battle.s
+      At line 222 in file put_battle.s
+      At line 264 in file put_battle.s
+      At line 287 in file put_battle.s
+      At line 328 in file put_battle.s
+      At line 370 in file put_battle.s
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 24 in file put_battle.s
+   Uses
+      None
+Comment: main unused
+put_battle 00000000
+
+Symbol: put_battle
+   Definitions
+      At line 29 in file put_battle.s
+   Uses
+      At line 27 in file put_battle.s
+Comment: put_battle used once
+11 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+DC 40004100
+
+Symbol: DC
+   Definitions
+      At line 11 in file put_battle.s
+   Uses
+      None
+Comment: DC unused
+SSI0_DR_R 40008008
+
+Symbol: SSI0_DR_R
+   Definitions
+      At line 13 in file put_battle.s
+   Uses
+      None
+Comment: SSI0_DR_R unused
+SSI0_SR_R 4000800C
+
+Symbol: SSI0_SR_R
+   Definitions
+      At line 12 in file put_battle.s
+   Uses
+      None
+Comment: SSI0_SR_R unused
+X 00000087
+
+Symbol: X
+   Definitions
+      At line 14 in file put_battle.s
+   Uses
+      None
+Comment: X unused
+Y 00000041
+
+Symbol: Y
+   Definitions
+      At line 15 in file put_battle.s
+   Uses
+      None
+Comment: Y unused
+case_memory 20000008
+
+Symbol: case_memory
+   Definitions
+      At line 18 in file put_battle.s
+   Uses
+      At line 41 in file put_battle.s
+Comment: case_memory used once
+memory 20000400
+
+Symbol: memory
+   Definitions
+      At line 16 in file put_battle.s
+   Uses
+      At line 32 in file put_battle.s
+Comment: memory used once
+offset_memory 20000500
+
+Symbol: offset_memory
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 17 in file put_battle.s
+   Uses
+      None
+Comment: offset_memory unused
+xy_memory 2000000C
+
+Symbol: xy_memory
+   Definitions
+      At line 19 in file put_battle.s
+   Uses
+      At line 33 in file put_battle.s
+Comment: xy_memory used once
+9 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+DELAY100 00000000
+
+Symbol: DELAY100
+   Definitions
+      At line 26 in file put_battle.s
+   Uses
+      None
+Comment: DELAY100 unused
+1 symbol
+355 symbols in table

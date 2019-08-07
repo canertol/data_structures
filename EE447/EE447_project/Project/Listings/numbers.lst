@@ -1,0 +1,598 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         ;*******************************************************
+                       ********
+    3 00000000         ; Directives - This Data Section is part of the code
+    4 00000000         ; It is in the read only section  so values cannot be ch
+                       anged.
+    5 00000000 40004100 
+                       DC      EQU              0x40004100
+    6 00000000 4000800C 
+                       SSI0_SR_R
+                               EQU              0x4000800C
+    7 00000000 40008008 
+                       SSI0_DR_R
+                               EQU              0x40008008
+    8 00000000         
+    9 00000000         ;LABEL  DIRECTIVE VALUE  COMMENT
+   10 00000000                 AREA             main, READONLY, CODE
+   11 00000000                 THUMB
+   12 00000000                 EXPORT           numbers     ; Make available 
+   13 00000000         
+   14 00000000         
+   15 00000000         numbers PROC
+   16 00000000         
+   17 00000000 B500            PUSH{LR}
+   18 00000002         ; This becomes SysTick Handler
+   19 00000002         ; It uses R0,R1 and R12
+   20 00000002 481F    check   LDR              R0,=SSI0_SR_R
+   21 00000004 6801            LDR              R1, [R0]
+   22 00000006 F001 0110       AND              R1, #0x10
+   23 0000000A 2910            CMP              R1, #0x10
+   24 0000000C D0F9            BEQ              check
+   25 0000000E 481D            LDR              R0, =DC     ;dc_command  
+   26 00000010 F04F 0100       MOV              R1, #0      ; 0 because we coor
+                                                            dinate
+   27 00000014 6001            STR              R1, [R0]
+   28 00000016         ; set the direction of the clock X=0x45, Y = 000 (bank0)
+                       
+   29 00000016 481C            LDR              R0,=SSI0_DR_R
+   30 00000018 F04F 0140       MOV              R1, #0x40   ;  CURSOR RESET Y=0
+                                                            
+   31 0000001C 6001            STR              R1, [R0]
+   32 0000001E F04F 01C5       MOV              R1, #0xC5   ; X = 0b_1100_0101
+   33 00000022 6001            STR              R1, [R0]
+   34 00000024         
+   35 00000024         ;  MOV R1, #1
+   36 00000024         ;  CMP R12, R1
+   37 00000024         ;  BEQ one
+   38 00000024         ;  MOV R1, #2
+   39 00000024         ;  CMP R12, R1
+   40 00000024         ;  BEQ two
+   41 00000024         ;  MOV R1, #3
+   42 00000024         ;  CMP R12, R1
+   43 00000024         ;  BEQ three
+   44 00000024         ;  BHI jump1
+   45 00000024         ;  
+   46 00000024         ;  
+   47 00000024 4816    check2  LDR              R0,=SSI0_SR_R
+   48 00000026 6801            LDR              R1, [R0]
+   49 00000028 F001 0110       AND              R1, #0x10
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   50 0000002C 2910            CMP              R1, #0x10
+   51 0000002E D0F9            BEQ              check2
+   52 00000030 4814            LDR              R0, =DC     ; dc_command  
+   53 00000032 F04F 0140       MOV              R1, #0x40   ; make DC 1 because
+                                                             we display 1-20 in
+                                                            stead of writting i
+                                                            n Handler I put her
+                                                            e
+   54 00000036 6001            STR              R1, [R0]
+   55 00000038 F04F 0C01       MOV              R12, #1
+   56 0000003C 4810    one     LDR              R0,=SSI0_SR_R
+   57 0000003E 6801            LDR              R1, [R0]
+   58 00000040 F001 0110       AND              R1, #0x10
+   59 00000044 2910            CMP              R1, #0x10
+   60 00000046 D0F9            BEQ              one
+   61 00000048         
+   62 00000048         ; sent
+   63 00000048 480F            LDR              R0, =SSI0_DR_R
+   64 0000004A F04F 0100       MOV              R1, #0x0
+   65 0000004E 6001            STR              R1, [R0]
+   66 00000050 F04F 0104       MOV              R1, #0x04
+   67 00000054 6001            STR              R1, [R0]
+   68 00000056 F04F 0102       MOV              R1, #0x02
+   69 0000005A 6001            STR              R1, [R0]
+   70 0000005C F04F 01FF       MOV              R1, #0xFF
+   71 00000060 6001            STR              R1, [R0]
+   72 00000062 F04F 0100       MOV              R1, #0x0
+   73 00000066 6001            STR              R1, [R0]
+   74 00000068 F04F 0100       MOV              R1, #0x0
+   75 0000006C 6001            STR              R1, [R0]
+   76 0000006E F04F 0100       MOV              R1, #0x0
+   77 00000072 6001            STR              R1, [R0]
+   78 00000074 F10C 0C01       ADD              R12, #1
+   79 00000078 E7FF            B                endnumbers
+   80 0000007A         
+   81 0000007A         ;   
+   82 0000007A         ;two   LDR R0,=SSI0_SR_R
+   83 0000007A         ;   LDR R1, [R0]
+   84 0000007A         ;   AND R1, #0x10
+   85 0000007A         ;   CMP R1, #0x10
+   86 0000007A         ;   BEQ two
+   87 0000007A         
+   88 0000007A         ;   LDR R0,=SSI0_DR_R
+   89 0000007A         ;   MOV R1, #0x0
+   90 0000007A         ;   STR R1, [R0]
+   91 0000007A         ;   MOV R1, #0x84
+   92 0000007A         ;   STR R1, [R0]
+   93 0000007A         ;   MOV R1, #0xC2
+   94 0000007A         ;   STR R1, [R0]
+   95 0000007A         ;   MOV R1, #0xA1
+   96 0000007A         ;   STR R1, [R0]
+   97 0000007A         ;   MOV R1, #0x91
+   98 0000007A         ;   STR R1, [R0]
+   99 0000007A         ;   MOV R1, #0x8E
+  100 0000007A         ;   STR R1, [R0]
+  101 0000007A         ;   MOV R1, #0x0
+  102 0000007A         ;   STR R1, [R0]
+  103 0000007A         ;   ADD R12, #1
+  104 0000007A         ;   B endnumbers
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+  105 0000007A         
+  106 0000007A         ;three  LDR R0,=SSI0_SR_R
+  107 0000007A         ;   LDR R1, [R0]
+  108 0000007A         ;   AND R1, #0x10
+  109 0000007A         ;   CMP R1, #0x10
+  110 0000007A         ;   BEQ three
+  111 0000007A         ;   ; sent
+  112 0000007A         ;   LDR R0,=SSI0_DR_R
+  113 0000007A         ;   MOV R1, #0x0
+  114 0000007A         ;   STR R1, [R0]
+  115 0000007A         ;   MOV R1, #0x42
+  116 0000007A         ;   STR R1, [R0]
+  117 0000007A         ;   MOV R1, #0x91
+  118 0000007A         ;   STR R1, [R0]
+  119 0000007A         ;   MOV R1, #0x91
+  120 0000007A         ;   STR R1, [R0]
+  121 0000007A         ;   MOV R1, #0x91
+  122 0000007A         ;   STR R1, [R0]
+  123 0000007A         ;   MOV R1, #0x6E
+  124 0000007A         ;   STR R1, [R0]
+  125 0000007A         ;   MOV R1, #0x0
+  126 0000007A         ;   STR R1, [R0]
+  127 0000007A         ;   ADD R12, #1
+  128 0000007A         ;   B endnumbers
+  129 0000007A         
+  130 0000007A         ;four  LDR R0,=SSI0_SR_R
+  131 0000007A         ;   LDR R1, [R0]
+  132 0000007A         ;   AND R1, #0x10
+  133 0000007A         ;   CMP R1, #0x10
+  134 0000007A         ;   BEQ four
+  135 0000007A         ;   ; sent
+  136 0000007A         ;   LDR R0,=SSI0_DR_R
+  137 0000007A         ;   MOV R1, #0x0
+  138 0000007A         ;   STR R1, [R0]
+  139 0000007A         ;   MOV R1, #0x70
+  140 0000007A         ;   STR R1, [R0]
+  141 0000007A         ;   MOV R1, #0x48
+  142 0000007A         ;   STR R1, [R0]
+  143 0000007A         ;   MOV R1, #0x44
+  144 0000007A         ;   STR R1, [R0]
+  145 0000007A         ;   MOV R1, #0x42
+  146 0000007A         ;   STR R1, [R0]
+  147 0000007A         ;   MOV R1, #0xE1
+  148 0000007A         ;   STR R1, [R0]
+  149 0000007A         ;   MOV R1, #0x0
+  150 0000007A         ;   STR R1, [R0]
+  151 0000007A         ;   ADD R12, #1
+  152 0000007A         ;   B endnumbers  
+  153 0000007A         
+  154 0000007A         
+  155 0000007A         ;jump1 MOV R1, #4
+  156 0000007A         ;  CMP R12, R1
+  157 0000007A         ;  BEQ four
+  158 0000007A         ;  MOV R1, #5
+  159 0000007A         ;  CMP R12, R1
+  160 0000007A         ;  BEQ five  
+  161 0000007A         ;  MOV R1, #6
+  162 0000007A         ;  CMP R12, R1
+  163 0000007A         ;  BEQ six
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  164 0000007A         ;  MOV R1, #7
+  165 0000007A         ;  CMP R12, R1
+  166 0000007A         ;  BEQ seven
+  167 0000007A         ;  MOV R1, #8
+  168 0000007A         ;  CMP R12, R1
+  169 0000007A         ;  BEQ eight
+  170 0000007A         ;  BHI jump2
+  171 0000007A         ;  
+  172 0000007A         ;five  LDR R0,=SSI0_SR_R
+  173 0000007A         ;   LDR R1, [R0]
+  174 0000007A         ;   AND R1, #0x10
+  175 0000007A         ;   CMP R1, #0x10
+  176 0000007A         ;   BEQ five
+  177 0000007A         ;   ; sent
+  178 0000007A         ;   LDR R0,=SSI0_DR_R
+  179 0000007A         ;   MOV R1, #0x0
+  180 0000007A         ;   STR R1, [R0]
+  181 0000007A         ;   MOV R1, #0x4F
+  182 0000007A         ;   STR R1, [R0]
+  183 0000007A         ;   MOV R1, #0x89
+  184 0000007A         ;   STR R1, [R0]
+  185 0000007A         ;   MOV R1, #0x89
+  186 0000007A         ;   STR R1, [R0]
+  187 0000007A         ;   MOV R1, #0x89
+  188 0000007A         ;   STR R1, [R0]
+  189 0000007A         ;   MOV R1, #0x71
+  190 0000007A         ;   STR R1, [R0]
+  191 0000007A         ;   MOV R1, #0x0
+  192 0000007A         ;   STR R1, [R0]
+  193 0000007A         ;   ADD R12, #1
+  194 0000007A         ;   B endnumbers 
+  195 0000007A         ;   
+  196 0000007A         
+  197 0000007A         ;     
+  198 0000007A         ;  
+  199 0000007A         ;six   LDR R0,=SSI0_SR_R
+  200 0000007A         ;   LDR R1, [R0]
+  201 0000007A         ;   AND R1, #0x10
+  202 0000007A         ;   CMP R1, #0x10
+  203 0000007A         ;   BEQ six
+  204 0000007A         ;   ; sent
+  205 0000007A         ;   LDR R0,=SSI0_DR_R
+  206 0000007A         ;   MOV R1, #0x0
+  207 0000007A         ;   STR R1, [R0]
+  208 0000007A         ;   MOV R1, #0x7E
+  209 0000007A         ;   STR R1, [R0]
+  210 0000007A         ;   MOV R1, #0x91
+  211 0000007A         ;   STR R1, [R0]
+  212 0000007A         ;   MOV R1, #0x91
+  213 0000007A         ;   STR R1, [R0]
+  214 0000007A         ;   MOV R1, #0x91
+  215 0000007A         ;   STR R1, [R0]
+  216 0000007A         ;   MOV R1, #0x62
+  217 0000007A         ;   STR R1, [R0]
+  218 0000007A         ;   MOV R1, #0x0
+  219 0000007A         ;   STR R1, [R0]
+  220 0000007A         ;   ADD R12, #1
+  221 0000007A         ;   B endnumbers 
+  222 0000007A         
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+  223 0000007A         
+  224 0000007A         ;seven  LDR R0,=SSI0_SR_R
+  225 0000007A         ;   LDR R1, [R0]
+  226 0000007A         ;   AND R1, #0x10
+  227 0000007A         ;   CMP R1, #0x10
+  228 0000007A         ;   BEQ seven
+  229 0000007A         ;   ; sent
+  230 0000007A         ;   LDR R0,=SSI0_DR_R
+  231 0000007A         ;   MOV R1, #0x0
+  232 0000007A         ;   STR R1, [R0]
+  233 0000007A         ;   MOV R1, #0xC1
+  234 0000007A         ;   STR R1, [R0]
+  235 0000007A         ;   MOV R1, #0x21
+  236 0000007A         ;   STR R1, [R0]
+  237 0000007A         ;   MOV R1, #0x11
+  238 0000007A         ;   STR R1, [R0]
+  239 0000007A         ;   MOV R1, #0x9
+  240 0000007A         ;   STR R1, [R0]
+  241 0000007A         ;   MOV R1, #0x7
+  242 0000007A         ;   STR R1, [R0]
+  243 0000007A         ;   MOV R1, #0x0
+  244 0000007A         ;   STR R1, [R0]
+  245 0000007A         ;   ADD R12, #1
+  246 0000007A         ;   B endnumbers
+  247 0000007A         ;   
+  248 0000007A         ;   
+  249 0000007A         ;eight  LDR R0,=SSI0_SR_R
+  250 0000007A         ;   LDR R1, [R0]
+  251 0000007A         ;   AND R1, #0x10
+  252 0000007A         ;   CMP R1, #0x10
+  253 0000007A         ;   BEQ eight
+  254 0000007A         ;   ; sent
+  255 0000007A         ;   LDR R0,=SSI0_DR_R
+  256 0000007A         ;   MOV R1, #0x0
+  257 0000007A         ;   STR R1, [R0]
+  258 0000007A         ;   MOV R1, #0x76
+  259 0000007A         ;   STR R1, [R0]
+  260 0000007A         ;   MOV R1, #0x89
+  261 0000007A         ;   STR R1, [R0]
+  262 0000007A         ;   MOV R1, #0x89
+  263 0000007A         ;   STR R1, [R0]
+  264 0000007A         ;   MOV R1, #0x89
+  265 0000007A         ;   STR R1, [R0]
+  266 0000007A         ;   MOV R1, #0x76
+  267 0000007A         ;   STR R1, [R0]
+  268 0000007A         ;   MOV R1, #0x0
+  269 0000007A         ;   STR R1, [R0]
+  270 0000007A         ;   ADD R12, #1
+  271 0000007A         ;   B endnumbers
+  272 0000007A         
+  273 0000007A         ;jump2 MOV R1, #9
+  274 0000007A         ;  CMP R12, R1
+  275 0000007A         ;  BEQ nine
+  276 0000007A         ;  MOV R1, #10
+  277 0000007A         ;  CMP R12, R1
+  278 0000007A         ;  BEQ ten
+  279 0000007A         ;  BHI tenplus
+  280 0000007A         
+  281 0000007A         
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+  282 0000007A         
+  283 0000007A         ;nine  LDR R0,=SSI0_SR_R
+  284 0000007A         ;   LDR R1, [R0]
+  285 0000007A         ;   AND R1, #0x10
+  286 0000007A         ;   CMP R1, #0x10
+  287 0000007A         ;   BEQ nine
+  288 0000007A         ;   ; sent
+  289 0000007A         ;   LDR R0,=SSI0_DR_R
+  290 0000007A         ;   MOV R1, #0x0
+  291 0000007A         ;   STR R1, [R0]
+  292 0000007A         ;   MOV R1, #0x46
+  293 0000007A         ;   STR R1, [R0]
+  294 0000007A         ;   MOV R1, #0x89
+  295 0000007A         ;   STR R1, [R0]
+  296 0000007A         ;   MOV R1, #0x89
+  297 0000007A         ;   STR R1, [R0]
+  298 0000007A         ;   MOV R1, #0x89
+  299 0000007A         ;   STR R1, [R0]
+  300 0000007A         ;   MOV R1, #0x76
+  301 0000007A         ;   STR R1, [R0]
+  302 0000007A         ;   MOV R1, #0x0
+  303 0000007A         ;   STR R1, [R0]
+  304 0000007A         ;   ADD R12, #1
+  305 0000007A         ;   B endnumbers
+  306 0000007A         ;   
+  307 0000007A         ;zero LDR R0,=SSI0_SR_R
+  308 0000007A         ;   LDR R1, [R0]
+  309 0000007A         ;   AND R1, #0x10
+  310 0000007A         ;   CMP R1, #0x10
+  311 0000007A         ;   BEQ zero
+  312 0000007A         ;   ; sent
+  313 0000007A         ;   LDR R0,=SSI0_DR_R
+  314 0000007A         ;   MOV R1, #0x0
+  315 0000007A         ;   STR R1, [R0]
+  316 0000007A         ;   MOV R1, #0x7E
+  317 0000007A         ;   STR R1, [R0]
+  318 0000007A         ;   MOV R1, #0x81
+  319 0000007A         ;   STR R1, [R0]
+  320 0000007A         ;   MOV R1, #0x81
+  321 0000007A         ;   STR R1, [R0]
+  322 0000007A         ;   MOV R1, #0x81
+  323 0000007A         ;   STR R1, [R0]
+  324 0000007A         ;   MOV R1, #0x7E
+  325 0000007A         ;   STR R1, [R0]
+  326 0000007A         ;   MOV R1, #0x0
+  327 0000007A         ;   STR R1, [R0]
+  328 0000007A         ;   B endnumbers
+  329 0000007A         ;   
+  330 0000007A         ;ten   LDR R0,=SSI0_SR_R
+  331 0000007A         ;   LDR R1, [R0]
+  332 0000007A         ;   AND R1, #0x10
+  333 0000007A         ;   CMP R1, #0x10
+  334 0000007A         ;   BEQ ten
+  335 0000007A         ;   ; sent
+  336 0000007A         ;   LDR R0,=SSI0_DR_R
+  337 0000007A         ;   MOV R1, #0x0
+  338 0000007A         ;   STR R1, [R0]
+  339 0000007A         ;   MOV R1, #0x04
+  340 0000007A         ;   STR R1, [R0]
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+  341 0000007A         ;   MOV R1, #0x02
+  342 0000007A         ;   STR R1, [R0]
+  343 0000007A         ;   MOV R1, #0xFF
+  344 0000007A         ;   STR R1, [R0]
+  345 0000007A         ;   MOV R1, #0x0
+  346 0000007A         ;   STR R1, [R0]
+  347 0000007A         ;   MOV R1, #0x0
+  348 0000007A         ;   STR R1, [R0]
+  349 0000007A         ;   MOV R1, #0x0
+  350 0000007A         ;   STR R1, [R0]
+  351 0000007A         ;   ADD R12, #1
+  352 0000007A         ;   B zero 
+  353 0000007A         
+  354 0000007A         ;tenplus  LDR R0,=SSI0_SR_R
+  355 0000007A         ;   LDR R1, [R0]
+  356 0000007A         ;   AND R1, #0x10
+  357 0000007A         ;   CMP R1, #0x10
+  358 0000007A         ;   BEQ tenplus
+  359 0000007A         ;   ; sent
+  360 0000007A         ;   LDR R0,=SSI0_DR_R
+  361 0000007A         ;   MOV R1, #0x0
+  362 0000007A         ;   STR R1, [R0]
+  363 0000007A         ;   MOV R1, #0x04
+  364 0000007A         ;   STR R1, [R0]
+  365 0000007A         ;   MOV R1, #0x02
+  366 0000007A         ;   STR R1, [R0]
+  367 0000007A         ;   MOV R1, #0xFF
+  368 0000007A         ;   STR R1, [R0]
+  369 0000007A         ;   MOV R1, #0x0
+  370 0000007A         ;   STR R1, [R0]
+  371 0000007A         ;   MOV R1, #0x0
+  372 0000007A         ;   STR R1, [R0]
+  373 0000007A         ;   MOV R1, #0x0
+  374 0000007A         ;   STR R1, [R0]
+  375 0000007A         ;   MOV R1, #11
+  376 0000007A         ;   CMP R12, R1
+  377 0000007A         ;   BEQ one
+  378 0000007A         ;   MOV R1, #12
+  379 0000007A         ;   CMP R12, R1
+  380 0000007A         ;   BEQ two
+  381 0000007A         ;   MOV R1, #13
+  382 0000007A         ;   CMP R12, R1
+  383 0000007A         ;   BEQ three
+  384 0000007A         ;   MOV R1, #14
+  385 0000007A         ;   CMP R12, R1
+  386 0000007A         ;   BEQ four
+  387 0000007A         ;   MOV R1, #15
+  388 0000007A         ;   CMP R12, R1
+  389 0000007A         ;   BEQ five  
+  390 0000007A         ;   MOV R1, #16
+  391 0000007A         ;   CMP R12, R1
+  392 0000007A         ;   BEQ six
+  393 0000007A         ;   MOV R1, #17
+  394 0000007A         ;   CMP R12, R1
+  395 0000007A         ;   BEQ seven
+  396 0000007A         ;   MOV R1, #18
+  397 0000007A         ;   CMP R12, R1
+  398 0000007A         ;   BEQ eight
+  399 0000007A         ;   MOV R1, #19
+
+
+
+ARM Macro Assembler    Page 8 
+
+
+  400 0000007A         ;   CMP R12, R1
+  401 0000007A         ;   BEQ nine
+  402 0000007A         ;   BHI twenty
+  403 0000007A         ;   
+  404 0000007A         ;   
+  405 0000007A         ;twenty  LDR R0,=SSI0_SR_R
+  406 0000007A         ;   LDR R1, [R0]
+  407 0000007A         ;   AND R1, #0x10
+  408 0000007A         ;   CMP R1, #0x10
+  409 0000007A         ;   BEQ two
+  410 0000007A         ;   LDR R0, =DC    ; dc_command  
+  411 0000007A         ;   MOV R1, #0x40   ; make DC 1
+  412 0000007A         ;   STR R1, [R0]
+  413 0000007A         ;   ; sent
+  414 0000007A         ;   LDR R0,=SSI0_DR_R
+  415 0000007A         ;   MOV R1, #0x0
+  416 0000007A         ;   STR R1, [R0]
+  417 0000007A         ;   MOV R1, #0x84
+  418 0000007A         ;   STR R1, [R0]
+  419 0000007A         ;   MOV R1, #0xC2
+  420 0000007A         ;   STR R1, [R0]
+  421 0000007A         ;   MOV R1, #0xA1
+  422 0000007A         ;   STR R1, [R0]
+  423 0000007A         ;   MOV R1, #0x91
+  424 0000007A         ;   STR R1, [R0]
+  425 0000007A         ;   MOV R1, #0x8E
+  426 0000007A         ;   STR R1, [R0]
+  427 0000007A         ;   MOV R1, #0x0
+  428 0000007A         ;   STR R1, [R0]
+  429 0000007A         ;   MOV R12, #0  ; R12=20->0 ; END OF THIS SECTION
+  430 0000007A         ;   B zero   
+  431 0000007A         
+  432 0000007A         endnumbers
+  433 0000007A F85D EB04       POP{LR}
+  434 0000007E 4770            BX               LR
+  435 00000080                 ENDP
+  436 00000080                 ALIGN
+  437 00000080                 END
+              4000800C 
+              40004100 
+              40008008 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\numbers.d -o.\objects\numbers.o -I.\RTE\_Target_1 -IC
+:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 -IC:\Keil_v5\ARM\
+CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 5
+26" --predefine="TM4C123GH6PM SETA 1" --list=.\listings\numbers.lst numbers.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+check 00000002
+
+Symbol: check
+   Definitions
+      At line 20 in file numbers.s
+   Uses
+      At line 24 in file numbers.s
+Comment: check used once
+check2 00000024
+
+Symbol: check2
+   Definitions
+      At line 47 in file numbers.s
+   Uses
+      At line 51 in file numbers.s
+Comment: check2 used once
+endnumbers 0000007A
+
+Symbol: endnumbers
+   Definitions
+      At line 432 in file numbers.s
+   Uses
+      At line 79 in file numbers.s
+Comment: endnumbers used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 10 in file numbers.s
+   Uses
+      None
+Comment: main unused
+numbers 00000000
+
+Symbol: numbers
+   Definitions
+      At line 15 in file numbers.s
+   Uses
+      At line 12 in file numbers.s
+Comment: numbers used once
+one 0000003C
+
+Symbol: one
+   Definitions
+      At line 56 in file numbers.s
+   Uses
+      At line 60 in file numbers.s
+Comment: one used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+DC 40004100
+
+Symbol: DC
+   Definitions
+      At line 5 in file numbers.s
+   Uses
+      At line 25 in file numbers.s
+      At line 52 in file numbers.s
+
+SSI0_DR_R 40008008
+
+Symbol: SSI0_DR_R
+   Definitions
+      At line 7 in file numbers.s
+   Uses
+      At line 29 in file numbers.s
+      At line 63 in file numbers.s
+
+SSI0_SR_R 4000800C
+
+Symbol: SSI0_SR_R
+   Definitions
+      At line 6 in file numbers.s
+   Uses
+      At line 20 in file numbers.s
+      At line 47 in file numbers.s
+      At line 56 in file numbers.s
+
+3 symbols
+345 symbols in table

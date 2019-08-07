@@ -1,0 +1,23 @@
+--cpu=Cortex-M4.fp
+".\objects\init.o"
+".\objects\delay100.o"
+".\objects\startup.o"
+".\objects\mainn.o"
+".\objects\cursor.o"
+".\objects\ship_load.o"
+".\objects\draw_border.o"
+".\objects\clear_sram.o"
+".\objects\clear_cursor.o"
+".\objects\cursor2.o"
+".\objects\timer.o"
+".\objects\systick_handler.o"
+".\objects\numbers.o"
+".\objects\my_gpioportf_handler.o"
+".\objects\put_battle.o"
+".\objects\put_civil.o"
+".\objects\clear_screen.o"
+".\objects\clear_sram_mine.o"
+".\objects\mine_load.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Project.map" -o .\Objects\Project.axf

@@ -1,0 +1,8 @@
+module Test_singleCycle();
+
+	reg clk, rst;
+	reg CO, OVF, Z, N;
+	
+	singleCycle DUT(clk, rst, CO, OVF, Z, N);
+	
+	

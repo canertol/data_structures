@@ -1,0 +1,18 @@
+module multiplier (in1,in2,out);
+input [7:0] in1,in2;
+output [15:0] out;
+
+wire [15:0] out;
+wire [15:0] mul,cmpmul;
+wire [7:0] a,b;
+wire sign;
+
+assign a = (in1[7]==0) ? in1[7:0] : ~in1[7:0] + 1'b1;
+assign b = (in2[7]==0) ? in2[7:0] : ~in2[7:0] + 1'b1;
+assign sign = in1[7] ^ in2[7];
+
+assign mul = a * b;
+assign cmpmul = ~mul + 1'b1;
+assign out = (sign==0) ? mul : cmpmul;
+
+endmodule

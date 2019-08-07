@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Mar 30 00:14:17 2018
+Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Web Edition
+Revision Name : de0nano_embedding
+Top-level Entity Name : datapath
+Family : Cyclone IV E
+Total logic elements : 34
+    Total combinational functions : 33
+    Dedicated logic registers : 25
+Total registers : 25
+Total pins : 14
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,283 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/simulation/modelsim
+vadder
+Z1 !s110 1523887168
+!i10b 1
+!s100 >l0Afcl1^VKfWDhTaI6>k3
+IzSKHAC>jaQPObAGZKfNLD0
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1523481540
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/adder.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/adder.v
+L0 1
+Z3 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1523887168.766000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/adder.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work +incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice
+valu
+R1
+!i10b 1
+!s100 zEg0RSMG6dYRR33W^5ddJ1
+IiR`cBa3Y=f2hF4AjeSc`U3
+R2
+R0
+w1523812835
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/alu.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/alu.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887168.603000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/alu.v|
+!i113 1
+R4
+R5
+vconstant_value_generator
+R1
+!i10b 1
+!s100 <f3TZmJCV3Z?b<;:EHjVB0
+ITA^mWC8Z:[fS5]d2L9^VZ1
+R2
+R0
+w1521814306
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/constant_value_generator.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/constant_value_generator.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887168.507000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/constant_value_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/constant_value_generator.v|
+!i113 1
+R4
+R5
+vdatamem
+R1
+!i10b 1
+!s100 ehaEMghfNEhTG:IEUB8Wj3
+IV`RLk=10N>LNNhSeWggS]1
+R2
+R0
+w1523483955
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/datamem.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/datamem.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887168.928000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/datamem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/datamem.v|
+!i113 1
+R4
+R5
+vextend
+R1
+!i10b 1
+!s100 XeSa<P<:4H_TcAYFnQ<5Q1
+I6DmTAa>^WJ3]d6n;Jj[3Q0
+R2
+R0
+w1523482481
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/extend.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/extend.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887168.842000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/extend.v|
+!i113 1
+R4
+R5
+vinstmem
+Z6 !s110 1523887169
+!i10b 1
+!s100 7[`d<V8SUX_<TlVScC@[X1
+I2j?ME>SkmX7e0n;[T7UFX0
+R2
+R0
+w1523877992
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/instmem.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/instmem.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887169.006000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/instmem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/instmem.v|
+!i113 1
+R4
+R5
+vmux_2to1
+R1
+!i10b 1
+!s100 c^el4_>U8f[Z77QODnmQo2
+IP1EO]1k7BkM9^d;4IO;zY1
+R2
+R0
+w1523482835
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/mux_2to1.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/mux_2to1.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887168.353000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/mux_2to1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/mux_2to1.v|
+!i113 1
+R4
+R5
+vpcreg
+R6
+!i10b 1
+!s100 _Z8PS^AC@h:^RBo4lYmnJ2
+I0Tk:^ABF1Zb=ZO8XB9Gda0
+R2
+R0
+w1523862751
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/pcreg.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/pcreg.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887169.105000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/pcreg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/pcreg.v|
+!i113 1
+R4
+R5
+vregisterfile
+R1
+!i10b 1
+!s100 hKT2VIChU2?o2X]z;4CEb2
+IR3QeGfVTIHlE<_T>z9aEM3
+R2
+R0
+w1523869224
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/registerfile.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/registerfile.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887168.687000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/registerfile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/registerfile.v|
+!i113 1
+R4
+R5
+vshifter_arm
+R6
+!i10b 1
+!s100 =dhFae;l6Cz8MVUh3P_:]2
+I0]3MLMLEEo;HdPf0AeKI23
+R2
+R0
+w1523639482
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/shifter_arm.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/shifter_arm.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887169.219000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/shifter_arm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/shifter_arm.v|
+!i113 1
+R4
+R5
+vsinglearm_conditional_controller
+R6
+!i10b 1
+!s100 D[0J27g6l5_BHJDL2_6NB2
+IIOLAeEzABGzPRD7QjI_b53
+R2
+R0
+w1523870616
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlearm_conditional_controller.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlearm_conditional_controller.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887169.539000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlearm_conditional_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlearm_conditional_controller.v|
+!i113 1
+R4
+R5
+vsinglearm_decoder_controller
+R6
+!i10b 1
+!s100 _S:h>KXP6WUnen2A3gRhB1
+IdD6[FWG:F]<dUA?d8adRN1
+R2
+R0
+w1523877314
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlearm_decoder_controller.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlearm_decoder_controller.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1523887169.324000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlearm_decoder_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlearm_decoder_controller.v|
+!i113 1
+R4
+R5
+vsinglecyclearm
+R6
+!i10b 1
+!s100 In[k^<QJR?UE8JGeN:QV[0
+Ind@KnKCB86zoh4K_j=nhA0
+R2
+R0
+w1523885018
+8C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlecyclearm.v
+FC:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlecyclearm.v
+L0 20
+R3
+r1
+!s85 0
+31
+!s108 1523887169.624000
+!s107 C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlecyclearm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice|C:/Users/KaanFurkan/Desktop/lab3/laboratory_practice/singlecyclearm.v|
+!i113 1
+R4
+R5

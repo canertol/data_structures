@@ -1,4 +1,4 @@
-// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
 // and other software and tools, and its AMPP partner logic 
 // functions, and any output files from any of the foregoing 
@@ -13,8 +13,8 @@
 // refer to the applicable agreement for further details.
 
 // PROGRAM		"Quartus Prime"
-// VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Mon May 06 23:01:48 2019"
+// VERSION		"Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition"
+// CREATED		"Sun May 12 20:26:39 2019"
 
 module multicycle(
 	reset,
@@ -64,7 +64,7 @@ output wire	RD2en;
 output wire	[2:0] ALUCtrl;
 output wire	[1:0] ASrc1;
 output wire	[1:0] BSrc;
-output wire	[15:0] Instr;
+output wire	[7:0] Instr;
 output wire	[7:0] LR;
 output wire	[3:0] next_state;
 output wire	[7:0] PCout;
@@ -139,6 +139,8 @@ assign	SYNTHESIZED_WIRE_4 = 0;
 assign	SYNTHESIZED_WIRE_20 = 1;
 assign	SYNTHESIZED_WIRE_28 = 0;
 assign	SYNTHESIZED_WIRE_34 = 1;
+
+
 PC	b2v_inst000(
 	.CLK(CLK),
 	.RST(RST),
@@ -341,6 +343,6 @@ assign	RST = reset;
 assign	carry = carry_ALTERA_SYNTHESIZED;
 assign	FlgWrite = FlgWrite_ALTERA_SYNTHESIZED;
 assign	RD2en = RD2en_ALTERA_SYNTHESIZED;
-assign	Instr = Instr_ALTERA_SYNTHESIZED;
+assign	Instr[7:0] = Instr_ALTERA_SYNTHESIZED[7:0];
 
 endmodule

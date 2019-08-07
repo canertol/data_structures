@@ -1,0 +1,591 @@
+Analysis & Synthesis report for pre
+Tue Mar 27 23:28:53 2018
+Quartus II 64-Bit Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: simple_reg:inst6
+ 12. Parameter Settings for User Entity Instance: mux_2to1:inst119
+ 13. Parameter Settings for User Entity Instance: demultiplexer1_2:inst44
+ 14. Parameter Settings for User Entity Instance: alu:inst
+ 15. Parameter Settings for User Entity Instance: mux_2to1:inst8
+ 16. Parameter Settings for User Entity Instance: constant_value_generator:inst111
+ 17. Parameter Settings for User Entity Instance: constant_value_generator:inst244
+ 18. Parameter Settings for User Entity Instance: simple_reg:inst7
+ 19. Parameter Settings for User Entity Instance: constant_value_generator:inst2
+ 20. Parameter Settings for User Entity Instance: shift_reg:inst9
+ 21. Parameter Settings for User Entity Instance: shift_reg:inst5
+ 22. Parameter Settings for User Entity Instance: constant_value_generator:inst3
+ 23. Parameter Settings for User Entity Instance: constant_value_generator:inst11
+ 24. Parameter Settings for User Entity Instance: constant_value_generator:inst4
+ 25. Parameter Settings for User Entity Instance: constant_value_generator:inst10
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Mar 27 23:28:53 2018      ;
+; Quartus II 64-Bit Version          ; 15.0.2 Build 153 07/15/2015 SJ Web Edition ;
+; Revision Name                      ; pre                                        ;
+; Top-level Entity Name              ; datapath                                   ;
+; Family                             ; Cyclone IV GX                              ;
+; Total logic elements               ; 56                                         ;
+;     Total combinational functions  ; 56                                         ;
+;     Dedicated logic registers      ; 32                                         ;
+; Total registers                    ; 32                                         ;
+; Total pins                         ; 22                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total GXB Receiver Channel PCS     ; 0                                          ;
+; Total GXB Receiver Channel PMA     ; 0                                          ;
+; Total GXB Transmitter Channel PCS  ; 0                                          ;
+; Total GXB Transmitter Channel PMA  ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; datapath           ; pre                ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+; constant_value_generator.v       ; yes             ; User Verilog HDL File              ; C:/Users/KaanFurkan/Desktop/lab1/constant_value_generator.v ;         ;
+; mux_2to1.v                       ; yes             ; User Verilog HDL File              ; C:/Users/KaanFurkan/Desktop/lab1/mux_2to1.v                 ;         ;
+; alu.v                            ; yes             ; User Verilog HDL File              ; C:/Users/KaanFurkan/Desktop/lab1/alu.v                      ;         ;
+; simple_reg.v                     ; yes             ; User Verilog HDL File              ; C:/Users/KaanFurkan/Desktop/lab1/simple_reg.v               ;         ;
+; shift_reg.v                      ; yes             ; User Verilog HDL File              ; C:/Users/KaanFurkan/Desktop/lab1/shift_reg.v                ;         ;
+; demultiplexer1_2.v               ; yes             ; User Verilog HDL File              ; C:/Users/KaanFurkan/Desktop/lab1/demultiplexer1_2.v         ;         ;
+; datapath.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/KaanFurkan/Desktop/lab1/datapath.bdf               ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 22               ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; clock~input      ;
+; Maximum fan-out          ; 32               ;
+; Total fan-out            ; 253              ;
+; Average fan-out          ; 1.92             ;
++--------------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                     ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Library Name ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+--------------+
+; |datapath                    ; 56 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0         ; 22   ; 0            ; |datapath                         ; work         ;
+;    |alu:inst|                ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |datapath|alu:inst                ; work         ;
+;    |demultiplexer1_2:inst44| ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |datapath|demultiplexer1_2:inst44 ; work         ;
+;    |shift_reg:inst5|         ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |datapath|shift_reg:inst5         ; work         ;
+;    |shift_reg:inst9|         ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |datapath|shift_reg:inst9         ; work         ;
+;    |simple_reg:inst6|        ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |datapath|simple_reg:inst6        ; work         ;
+;    |simple_reg:inst7|        ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |datapath|simple_reg:inst7        ; work         ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; demultiplexer1_2:inst44|dout1[7]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout1[6]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout1[5]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout1[4]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout1[3]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout1[2]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout1[1]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout1[0]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout2[7]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout2[6]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout2[5]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout2[4]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout2[3]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout2[2]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout2[1]                    ; aluoutselect        ; yes                    ;
+; demultiplexer1_2:inst44|dout2[0]                    ; aluoutselect        ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 32    ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |datapath|simple_reg:inst6|out[7] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |datapath|shift_reg:inst5|out[7]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_reg:inst6 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; W              ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2to1:inst119 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; W              ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: demultiplexer1_2:inst44 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; W              ; 8     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:inst ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; W              ; 8     ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2to1:inst8 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; W              ; 8     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: constant_value_generator:inst111 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                       ;
+; D              ; 0     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: constant_value_generator:inst244 ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; W              ; 8     ; Signed Integer                                       ;
+; D              ; 1     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_reg:inst7 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; W              ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: constant_value_generator:inst2 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; W              ; 3     ; Signed Integer                                     ;
+; D              ; 0     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shift_reg:inst9 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; W              ; 8     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shift_reg:inst5 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; W              ; 8     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: constant_value_generator:inst3 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; W              ; 1     ; Signed Integer                                     ;
+; D              ; 0     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: constant_value_generator:inst11 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; W              ; 1     ; Signed Integer                                      ;
+; D              ; 0     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: constant_value_generator:inst4 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; W              ; 1     ; Signed Integer                                     ;
+; D              ; 0     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: constant_value_generator:inst10 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; W              ; 1     ; Signed Integer                                      ;
+; D              ; 1     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 32                          ;
+;     SCLR              ; 16                          ;
+;     plain             ; 16                          ;
+; cycloneiii_lcell_comb ; 56                          ;
+;     arith             ; 7                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 49                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 31                          ;
+;                       ;                             ;
+; Max LUT depth         ; 2.70                        ;
+; Average LUT depth     ; 1.38                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.2 Build 153 07/15/2015 SJ Web Edition
+    Info: Processing started: Tue Mar 27 23:28:40 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pre -c pre
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file constant_value_generator.v
+    Info (12023): Found entity 1: constant_value_generator
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_2to4.v
+    Info (12023): Found entity 1: decoder_2to4
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2to1.v
+    Info (12023): Found entity 1: mux_2to1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4to1.v
+    Info (12023): Found entity 1: mux_4to1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu
+Info (12021): Found 1 design units, including 1 entities, in source file simple_reg.v
+    Info (12023): Found entity 1: simple_reg
+Info (12021): Found 1 design units, including 1 entities, in source file simple_reg_we.v
+    Info (12023): Found entity 1: simple_reg_we
+Info (12021): Found 1 design units, including 1 entities, in source file shift_reg.v
+    Info (12023): Found entity 1: shift_reg
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.v
+    Info (12023): Found entity 1: regfile
+Info (12021): Found 1 design units, including 1 entities, in source file registerfile.bdf
+    Info (12023): Found entity 1: registerfile
+Info (12021): Found 1 design units, including 1 entities, in source file demultiplexer1_4.v
+    Info (12023): Found entity 1: demultiplexer1_4
+Info (12021): Found 1 design units, including 1 entities, in source file demultiplexer1_2.v
+    Info (12023): Found entity 1: demultiplexer1_2
+Info (12021): Found 1 design units, including 1 entities, in source file datapath.bdf
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 1 design units, including 1 entities, in source file test_decoder_2to4.v
+    Info (12023): Found entity 1: test_decoder_2to4
+Info (12021): Found 1 design units, including 1 entities, in source file test_mux_2to1.v
+    Info (12023): Found entity 1: test_mux_2to1
+Info (12021): Found 1 design units, including 1 entities, in source file test_mux_4to1.v
+    Info (12023): Found entity 1: test_mux_4to1
+Info (12021): Found 1 design units, including 1 entities, in source file test_alu.v
+    Info (12023): Found entity 1: test_alu
+Info (12021): Found 1 design units, including 1 entities, in source file test_reg1.v
+    Info (12023): Found entity 1: test_reg1
+Info (12021): Found 1 design units, including 1 entities, in source file test_reg2.v
+    Info (12023): Found entity 1: test_reg2
+Info (12021): Found 1 design units, including 1 entities, in source file test_shiftreg.v
+    Info (12023): Found entity 1: test_shiftreg
+Info (12021): Found 1 design units, including 1 entities, in source file test_registerfile.v
+    Info (12023): Found entity 1: test_registerfile
+Warning (12019): Can't analyze file -- file registerfile.v is missing
+Info (12127): Elaborating entity "datapath" for the top level hierarchy
+Info (12128): Elaborating entity "simple_reg" for hierarchy "simple_reg:inst6"
+Info (12128): Elaborating entity "mux_2to1" for hierarchy "mux_2to1:inst119"
+Info (12128): Elaborating entity "demultiplexer1_2" for hierarchy "demultiplexer1_2:inst44"
+Warning (10240): Verilog HDL Always Construct warning at demultiplexer1_2.v(13): inferring latch(es) for variable "dout2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at demultiplexer1_2.v(13): inferring latch(es) for variable "dout1", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "dout1[0]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout1[1]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout1[2]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout1[3]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout1[4]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout1[5]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout1[6]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout1[7]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout2[0]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout2[1]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout2[2]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout2[3]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout2[4]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout2[5]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout2[6]" at demultiplexer1_2.v(13)
+Info (10041): Inferred latch for "dout2[7]" at demultiplexer1_2.v(13)
+Info (12128): Elaborating entity "alu" for hierarchy "alu:inst"
+Warning (10230): Verilog HDL assignment warning at alu.v(15): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at alu.v(30): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at alu.v(31): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at alu.v(46): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at alu.v(47): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at alu.v(65): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at alu.v(77): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at alu.v(89): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at alu.v(101): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at alu.v(113): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "constant_value_generator" for hierarchy "constant_value_generator:inst111"
+Warning (10230): Verilog HDL assignment warning at constant_value_generator.v(3): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "constant_value_generator" for hierarchy "constant_value_generator:inst244"
+Warning (10230): Verilog HDL assignment warning at constant_value_generator.v(3): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "constant_value_generator" for hierarchy "constant_value_generator:inst2"
+Warning (10230): Verilog HDL assignment warning at constant_value_generator.v(3): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "shift_reg" for hierarchy "shift_reg:inst9"
+Info (12128): Elaborating entity "constant_value_generator" for hierarchy "constant_value_generator:inst3"
+Warning (10230): Verilog HDL assignment warning at constant_value_generator.v(3): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "constant_value_generator" for hierarchy "constant_value_generator:inst10"
+Warning (10230): Verilog HDL assignment warning at constant_value_generator.v(3): truncated value with size 32 to match size of target (1)
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/KaanFurkan/Desktop/lab1/output_files/pre.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 78 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 56 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 787 megabytes
+    Info: Processing ended: Tue Mar 27 23:28:53 2018
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:31
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/KaanFurkan/Desktop/lab1/output_files/pre.map.smsg.
+
+

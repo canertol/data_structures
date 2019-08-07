@@ -1,0 +1,25 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do pre_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/KaanFurkan/Desktop/lab1 {C:/Users/KaanFurkan/Desktop/lab1/decoder_2to4.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 01:36:53 on Mar 25,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/KaanFurkan/Desktop/lab1" C:/Users/KaanFurkan/Desktop/lab1/decoder_2to4.v 
+# -- Compiling module decoder_2to4
+# 
+# Top level modules:
+# 	decoder_2to4
+# End time: 01:36:53 on Mar 25,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 

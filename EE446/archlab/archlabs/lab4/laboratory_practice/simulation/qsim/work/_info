@@ -1,0 +1,210 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/KaanFurkan/Desktop/lab4/laboratory_practice/simulation/qsim
+vdatamemsematest
+Z1 !s110 1525191576
+!i10b 1
+!s100 a[KN57NjCdE>k;MKFD``D2
+IIJ=]hBWYi8fljPVHS^49m2
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1525191574
+Z3 8de0nano_embedding.vo
+Z4 Fde0nano_embedding.vo
+Z5 L0 32
+Z6 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1525191576.656000
+Z7 !s107 de0nano_embedding.vo|
+Z8 !s90 -work|work|de0nano_embedding.vo|
+!i113 1
+Z9 o-work work
+vdatamemsematest_vlg_check_tst
+R1
+!i10b 1
+!s100 WUQagNkECW53Aei1cZKkG0
+I4L>DoN9RO=`R587Ic:IRe1
+R2
+R0
+Z10 w1525191572
+Z11 8datamemsematest.vwf.vt
+Z12 Fdatamemsematest.vwf.vt
+L0 58
+R6
+r1
+!s85 0
+31
+Z13 !s108 1525191576.738000
+Z14 !s107 datamemsematest.vwf.vt|
+Z15 !s90 -work|work|datamemsematest.vwf.vt|
+!i113 1
+R9
+vdatamemsematest_vlg_sample_tst
+R1
+!i10b 1
+!s100 @fQRZVLlQ:[a25Z2<i4L:2
+Ia12_dl5P@@5m7=lB?6a8k1
+R2
+R0
+R10
+R11
+R12
+Z16 L0 30
+R6
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R9
+vdatamemsematest_vlg_vec_tst
+R1
+!i10b 1
+!s100 XQHX`90<2<da:i:G=Do[82
+I<BLdDX6fz9zk7kO]7829G2
+R2
+R0
+R10
+R11
+R12
+L0 422
+R6
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R9
+vde0nano_embedding
+Z17 !s110 1526036827
+!i10b 1
+!s100 @GKQe8jPk^4OQ?[?=G=<=1
+IPXO;5[z60_?E?baiNM`<a0
+R2
+R0
+w1526036825
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!s108 1526036827.122000
+R7
+R8
+!i113 1
+R9
+vde0nano_embedding_vlg_vec_tst
+R17
+!i10b 1
+!s100 PG3L@JXUYXi;TFM[J<5U@0
+I:=i<E^cDe:5`X]I@GlX>O1
+R2
+R0
+w1526036823
+Z18 8multicycle.vwf.vt
+Z19 Fmulticycle.vwf.vt
+R16
+R6
+r1
+!s85 0
+31
+!s108 1526036827.497000
+!s107 multicycle.vwf.vt|
+Z20 !s90 -work|work|multicycle.vwf.vt|
+!i113 1
+R9
+vmulticycle
+Z21 !s110 1526464292
+!i10b 1
+!s100 CVzoj8IWTLbOc4g<g^z<70
+I^_N]bO>UR9^>IhMX]]AZC1
+R2
+R0
+w1526464291
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!s108 1526464292.162000
+R7
+R8
+!i113 1
+R9
+vmulticycle_vlg_check_tst
+R21
+!i10b 1
+!s100 AlRj<VUzN?KY<b9nBeQT^3
+I5GYIi;k0CQ9:AnI^UDT7W1
+R2
+R0
+Z22 w1526464288
+R18
+R19
+L0 60
+R6
+r1
+!s85 0
+31
+Z23 !s108 1526464292.491000
+Z24 !s107 multicycle.vwf.vt|
+R20
+!i113 1
+R9
+vmulticycle_vlg_sample_tst
+R21
+!i10b 1
+!s100 52ED`gAK@AkI9ChbT2@L:2
+Il99T[jP=9Ugai^GG;0M9D2
+R2
+R0
+R22
+R18
+R19
+R16
+R6
+r1
+!s85 0
+31
+R23
+R24
+R20
+!i113 1
+R9
+vmulticycle_vlg_vec_tst
+R21
+!i10b 1
+!s100 3ZUTB?dXSZ0TZggYHND190
+IP2YVI9P20kXZ4>IfcEY[C0
+R2
+R0
+R22
+R18
+R19
+L0 2819
+R6
+r1
+!s85 0
+31
+R23
+R24
+R20
+!i113 1
+R9

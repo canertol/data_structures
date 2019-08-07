@@ -1,0 +1,27 @@
+C:/Users/yetig/Desktop/UndergradAssistants/EE446_20172/lab/laboratory_test/alu_test/library.v {1 {vlog -work work -stats=none C:/Users/yetig/Desktop/UndergradAssistants/EE446_20172/lab/laboratory_test/alu_test/library.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module reg_w_rst
+-- Compiling module reg_w_rst_en
+-- Compiling module reg_w_shft
+-- Compiling module alu
+-- Compiling module mux_2x1
+-- Compiling module mux_4x1
+-- Compiling module dec_2x4
+
+Top level modules:
+	reg_w_rst
+	reg_w_rst_en
+	reg_w_shft
+	alu
+	mux_2x1
+	mux_4x1
+	dec_2x4
+
+} {} {}} C:/Users/yetig/Desktop/UndergradAssistants/EE446_20172/lab/laboratory_test/alu_test/test_bench.v {1 {vlog -work work -stats=none {C:\Users\yetig\Desktop\UndergradAssistants\EE446_20172\lab\laboratory_test\alu_test\test_bench.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module test_bench
+
+Top level modules:
+	test_bench
+
+} {} {}}

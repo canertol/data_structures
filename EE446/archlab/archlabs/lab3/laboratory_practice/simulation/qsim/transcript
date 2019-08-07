@@ -1,0 +1,41 @@
+# do de0nano_embedding.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 19:21:49 on Apr 19,2018
+# vlog -work work de0nano_embedding.vo 
+# -- Compiling module singlecyclearm
+# 
+# Top level modules:
+# 	singlecyclearm
+# End time: 19:21:50 on Apr 19,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 19:21:50 on Apr 19,2018
+# vlog -work work singlecyclearm.vwf.vt 
+# -- Compiling module singlecyclearm_vlg_sample_tst
+# -- Compiling module singlecyclearm_vlg_check_tst
+# -- Compiling module singlecyclearm_vlg_vec_tst
+# 
+# Top level modules:
+# 	singlecyclearm_vlg_vec_tst
+# End time: 19:21:50 on Apr 19,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -c -do "de0nano_embedding.do" 
+# Start time: 19:21:50 on Apr 19,2018
+# Loading work.singlecyclearm_vlg_vec_tst
+# Loading work.singlecyclearm
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading work.singlecyclearm_vlg_sample_tst
+# Loading work.singlecyclearm_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: Design size of 21146 statements exceeds ModelSim Altera Starter recommended capacity.
+# Expect performance to be adversely affected.
+# Simulation passed !
+# ** Note: $finish    : singlecyclearm.vwf.vt(6150)
+#    Time: 1 us  Iteration: 0  Instance: /singlecyclearm_vlg_vec_tst/tb_out
+# End time: 19:21:54 on Apr 19,2018, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 1

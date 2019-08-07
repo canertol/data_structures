@@ -163,7 +163,7 @@ begin
 			//Branch Type
 			else if(Op[4:3] == 2'b10)
 				begin
-					if(Op[2:0] == 3'b010)
+					if(Op[2:0] == 3'b010 || Op[2:0] == 3'b001)
 						next_state = S4;
 					else 
 						begin

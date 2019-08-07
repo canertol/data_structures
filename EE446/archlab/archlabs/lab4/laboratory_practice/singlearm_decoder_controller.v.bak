@@ -1,0 +1,11 @@
+module singlearm_decoder_controller(Op,Funct,Rd,FlagW,PCS,RegW,MemW,MemtoReg,ALUSrc,ImmSrc,RegSrc,ALUControl);
+
+input [1:0]Op;
+input [5:0]Funct;
+input [3:0]Rd;
+
+output [1:0]FlagW,ImmSrc,RegSrc,ALUControl;
+output PCS,RegW,MemW,MemtoReg,ALUSrc,
+
+
+endmodule

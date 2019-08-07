@@ -4,7 +4,7 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2017  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -374,23 +374,6 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 3320 480 3496 496)
-	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "ToReg[7..0]" (rect 29 0 86 12)(font "Arial" ))
-	(pt 176 8)
-	(drawing
-		(line (pt 176 8)(pt 124 8))
-		(line (pt 124 4)(pt 98 4))
-		(line (pt 124 12)(pt 98 12))
-		(line (pt 124 12)(pt 124 4))
-		(line (pt 98 4)(pt 94 8))
-		(line (pt 94 8)(pt 98 12))
-		(line (pt 98 12)(pt 94 8))
-	)
-	(flipy)
-)
-(pin
-	(output)
 	(rect 1296 -104 1472 -88)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "state[3..0]" (rect 90 0 140 12)(font "Arial" ))
@@ -420,23 +403,6 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-)
-(pin
-	(output)
-	(rect 1104 32 1120 208)
-	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
-	(text "Instr[15..0]" (rect 0 32 12 86)(font "Arial" )(vertical))
-	(pt 8 176)
-	(drawing
-		(line (pt 8 176)(pt 8 124))
-		(line (pt 4 124)(pt 4 98))
-		(line (pt 12 124)(pt 12 98))
-		(line (pt 12 124)(pt 4 124))
-		(line (pt 4 98)(pt 8 94))
-		(line (pt 8 94)(pt 12 98))
-		(line (pt 12 98)(pt 8 94))
-	)
-	(rotate90)
 )
 (pin
 	(output)
@@ -476,6 +442,40 @@ refer to the applicable agreement for further details.
 	(rect 1704 264 1720 440)
 	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
 	(text "RD2en" (rect 0 52 12 86)(font "Arial" )(vertical))
+	(pt 8 176)
+	(drawing
+		(line (pt 8 176)(pt 8 124))
+		(line (pt 4 124)(pt 4 98))
+		(line (pt 12 124)(pt 12 98))
+		(line (pt 12 124)(pt 4 124))
+		(line (pt 4 98)(pt 8 94))
+		(line (pt 8 94)(pt 12 98))
+		(line (pt 12 98)(pt 8 94))
+	)
+	(rotate90)
+)
+(pin
+	(output)
+	(rect 3368 464 3544 480)
+	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
+	(text "ToReg[7..0]" (rect 29 0 86 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 1112 40 1128 216)
+	(text "OUTPUT" (rect 0 137 10 175)(font "Arial" (font_size 6))(vertical))
+	(text "Instr[15..0]" (rect 0 32 12 86)(font "Arial" )(vertical))
 	(pt 8 176)
 	(drawing
 		(line (pt 8 176)(pt 8 124))
@@ -1755,18 +1755,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 3480 336)
-	(pt 3496 336)
-	(bus)
-)
-(connector
 	(pt 3288 384)
 	(pt 3272 384)
-	(bus)
-)
-(connector
-	(pt 1120 272)
-	(pt 1120 288)
 	(bus)
 )
 (connector
@@ -1832,11 +1822,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 1248 -16)
 	(pt 1336 -16)
-)
-(connector
-	(pt 1120 208)
-	(pt 1120 272)
-	(bus)
 )
 (connector
 	(pt 1096 -224)
@@ -2112,11 +2097,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1152 552)
-	(pt 3224 552)
-	(bus)
-)
-(connector
 	(pt 2416 440)
 	(pt 2424 440)
 	(bus)
@@ -2298,16 +2278,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 328 600)
-	(pt 1280 600)
-	(bus)
-)
-(connector
-	(pt 1280 600)
-	(pt 3496 600)
-	(bus)
-)
-(connector
 	(pt 1648 208)
 	(pt 1648 408)
 )
@@ -2450,6 +2420,32 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
+	(text "Instr[15..0]" (rect 1088 192 1137 209)(font "Intel Clear" ))
+	(pt 1088 208)
+	(pt 1120 208)
+	(bus)
+)
+(connector
+	(pt 328 600)
+	(pt 1280 600)
+	(bus)
+)
+(connector
+	(pt 1280 600)
+	(pt 3544 600)
+	(bus)
+)
+(connector
+	(pt 3480 336)
+	(pt 3544 336)
+	(bus)
+)
+(connector
+	(pt 1152 552)
+	(pt 3224 552)
+	(bus)
+)
+(connector
 	(pt -128 136)
 	(pt -120 136)
 )
@@ -2514,27 +2510,6 @@ refer to the applicable agreement for further details.
 	(pt 1408 24)
 )
 (connector
-	(pt 3496 336)
-	(pt 3496 488)
-	(bus)
-)
-(connector
-	(pt 3496 488)
-	(pt 3496 600)
-	(bus)
-)
-(connector
-	(pt 1088 208)
-	(pt 1112 208)
-	(bus)
-)
-(connector
-	(text "Instr[15..0]" (rect 1088 192 1137 209)(font "Intel Clear" ))
-	(pt 1112 208)
-	(pt 1120 208)
-	(bus)
-)
-(connector
 	(pt 2432 -176)
 	(pt 2432 -24)
 	(bus)
@@ -2554,6 +2529,32 @@ refer to the applicable agreement for further details.
 	(pt 2760 -128)
 	(bus)
 )
+(connector
+	(text "ToReg[7..0]" (rect 3528 424 3545 478)(font "Intel Clear" )(vertical))
+	(pt 3544 336)
+	(pt 3544 472)
+	(bus)
+)
+(connector
+	(pt 3544 472)
+	(pt 3544 600)
+	(bus)
+)
+(connector
+	(pt 1120 208)
+	(pt 1120 216)
+	(bus)
+)
+(connector
+	(pt 1120 216)
+	(pt 1120 272)
+	(bus)
+)
+(connector
+	(pt 1120 272)
+	(pt 1120 288)
+	(bus)
+)
 (junction (pt 304 224))
 (junction (pt 1896 208))
 (junction (pt 328 600))
@@ -2564,7 +2565,6 @@ refer to the applicable agreement for further details.
 (junction (pt 1280 600))
 (junction (pt 1280 336))
 (junction (pt 1088 208))
-(junction (pt 1112 208))
 (junction (pt 1896 56))
 (junction (pt 288 224))
 (junction (pt -112 168))
@@ -2576,7 +2576,6 @@ refer to the applicable agreement for further details.
 (junction (pt 3256 -112))
 (junction (pt 1632 424))
 (junction (pt 1120 384))
-(junction (pt 3496 488))
 (junction (pt 1096 528))
 (junction (pt 1488 -40))
 (junction (pt 1408 -184))
@@ -2584,3 +2583,5 @@ refer to the applicable agreement for further details.
 (junction (pt 872 224))
 (junction (pt 2432 -24))
 (junction (pt 1776 -128))
+(junction (pt 3544 472))
+(junction (pt 1120 216))

@@ -1,0 +1,9 @@
+module controller
+	(  input wire [31:0] Instr,
+		input wire CO,N,Z,OVF,
+		output wire MemWrite,
+		output reg PCsrc,LR,RegWrite,
+		output wire [1:0] MemtoReg,
+		output wire ALUSrc,RegSrc,
+		output reg [2:0] ALUControl,
+		output wire [3:0] Flags);

@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <cstdio>
+#include <algorithm>
 using namespace std;
 
 //QUEUE declaration
@@ -201,7 +202,7 @@ int Stack<T>::StackFull(void) const
     return top==MaxStackSize-1;
 }
 
-int visit(int vertex, int& k)
+int visit(int vertex, int& k, char destination)
 {   char v;
     int mul;
     switch(vertex)
@@ -228,8 +229,11 @@ int visit(int vertex, int& k)
 
     if(k%mul!=0) // if this node is visited before, return without visiting
     {
-       cout<<v<<" ";
-       return k*mul; // mark as visited with the corresponding prime number
+        if(destination==v)
+       {
+        return -1;
+       }
+       else return k*mul; // mark as visited with the corresponding prime number
     }
     else return k;
 
@@ -237,51 +241,116 @@ int visit(int vertex, int& k)
 }
 
 template <class T>
-void bft(T  currentNode,int graph[6][6]){
+void bft(T  currentNode,int graph[6][6],char destination){
     cout<<"BFT -> ";
-    int x = 0;
-    int y = 0;
     int temp;
-    const int MUL = 510510; // 2*3*5*7*11*13*17
+    int array[7];
+    fill_n(array, 7, -1);
+    const int MUL = 510510; // 2*3*5*7*11*13*17 each prime number represents one of 6 vertices
     int k = 17;
-
+    int i = 0;
     Queue<T> Q; // construct a QueueLast for keeping the last visited vertices
-    k = visit(currentNode,k); // visit the current node
+    k = visit(currentNode,k, destination); // visit the current node
 
     Q.QInsert(currentNode); // add the visited node to the QueueLast
-
-    while(k<MUL) // execute below until all nodes are visited
+    array[i]=currentNode;
+    i++;
+    while(k<MUL&&k>0) // execute below until all nodes are visited
     {   if(Q.QEmpty()==1)  // if the QueueLAST is empty, return from BFT.
             break;
         currentNode = Q.QDelete(); // get currentNode  from the QueueLAST
         for(int y = 0; y<6; y++)
         {
-           if(graph[currentNode][y] == 1)
+           if(graph[currentNode][y] == 1)       // if there is a path, ATTEMPT VISITING!
             {
                 temp = k;
-                k = visit(y,k);       // if the entry is 1, visit next entry from the currentNode
-                if(temp!=k)
-                Q.QInsert(y);        // insert it to the QueueLast
+                k = visit(y,k,destination);       // if the entry is 1, visit next entry from the currentNode
+                if(k==-1)
+                    {array[i]=y;
+                    array[i+1]=-1;
+                    break;}
+                if(temp!=k)                     // check if visiting happened
+                {Q.QInsert(y);        // insert it to the QueueLast
+                 array[i] = y;
+
+                 i++;}
                 else
                 temp = 1;
             }
         }
     }
+//*************************************************************
+//THIS BLOCK REDUCES THE PATH SIZE IF POSSIBLE
+    int b = destination;
+    b = b-65;
+    //Check if a short path exists to the destination from the previous nodes
+    for(i = 0; i<7;i++)
+      { temp = array[i];
+        if(array[i]==-1)
+            break;
+        if(graph[temp][b]==1)
+            {
+             array[++i]=b;
+             array[++i]=-1;
+             break;
+            }
+      }
+      i = i - 2; // index of previous node of destination node
+      int tempi = i;
+      b = array[i];
+    //Check if a short path exists AMONG the previous nodes
+     for(i = 0; i<7;i++)
+      { temp = array[i];
+        if(array[i]==-1)
+            break;
+        if(graph[temp][b]==1)
+            {
+             copy(array + tempi, // copy everything starting here
+                    array + 7, // and ending here, not including it,
+                    array + i+1); // to this destination
+             break;
+            }
+      }
+//*************************************************************
+    i=0;
+// PRINT OUT THE PATH ARRAY until seeing -1
+    while(array[i]!=-1)
+     {
+       int vertex = array[i];
+         switch(vertex)
+        {
+        case 0: cout<<"A ";
+                break;
+        case 1: cout<<"B ";
+                break;
+        case 2: cout<<"C ";
+                break;
+        case 3: cout<<"D ";
+                break;
+        case 4: cout<<"E ";
+                break;
+        case 5: cout<<"F ";
+                break;
+        }
+        i++;
+     }
+
     cout<<endl;
 }
 template <class T>
-void dft(T  currentNode,int graph[6][6])
+void dft(T  currentNode,int graph[6][6], char destination)
 {   cout<<"DFT -> ";
     int x = 0;
     int y = 0;
-    const int MUL = 510510; // 2*3*5*7*11*13*17
+    char v;
+    const int MUL = 510510; // 2*3*5*7*11*13*17 each prime number represents one of 6 vertices
     int k = 17;
     int temp,flag;
-    Stack<T> Stack;
-    k = visit(currentNode,k); // visit the current node
+    Stack<T> Stack, Stack2;
+    k = visit(currentNode,k,destination); // visit the current node
 
     Stack.Push(currentNode); // add the visited node to the stack
-    while(k<MUL) // execute below until all nodes are visited
+    while(k<MUL&&k>0) // execute below until all nodes are visited
     {   if(Stack.StackEmpty()==1)  // if the Stack is empty, return from DFT.
            break;
         if(flag==1)
@@ -293,7 +362,7 @@ void dft(T  currentNode,int graph[6][6])
              if(graph[currentNode][y] == 1)
              {
                 temp = k;
-                k = visit(y,k);       // if the entry is 1, visit next entry from the currentNode
+                k = visit(y,k,destination);       // if the entry is 1, visit next entry from the currentNode
 
                 if(temp!=k)
                 {
@@ -310,14 +379,45 @@ void dft(T  currentNode,int graph[6][6])
              }
         }
     }
-    cout<<endl;
+   // PRINT OUT THE NODES IN THE PATH FROM STARTING TO DESTINATION
+   //Revert the stack order to print from starting node
+    while(Stack.StackEmpty()==0)
+    {
+       int vertex = Stack.Pop();
+       Stack2.Push(vertex);
+    }
+
+     while(Stack2.StackEmpty()==0)
+     {
+       int vertex = Stack2.Pop();
+
+         switch(vertex)
+        {
+        case 0: cout<<"A ";
+                break;
+        case 1: cout<<"B ";
+                break;
+        case 2: cout<<"C ";
+                break;
+        case 3: cout<<"D ";
+                break;
+        case 4: cout<<"E ";
+                break;
+        case 5: cout<<"F ";
+                break;
+        }
+     }
 }
 
 int main()
 {
      int x, y = 5, number;
      int graph[6][6];
-     ifstream in("EE441HW1.txt", ios::binary);
+
+     char destination;
+
+    // READS and PARSES the text file into a MATRIX
+     ifstream in("edges.txt", ios::binary);
       if (!in) {
         cout << "Cannot open file.\n";
         return 0;
@@ -338,9 +438,14 @@ int main()
                 number /= 10;
             }
         }
+    cout<<"You are in A now."<<endl;
+    cout<<"Choose your destination from A, B, C, D, E or F : ";
+    cin>>destination; // read the destination node
+    cout<<endl;
 
-    bft( 0, graph );
-    dft( 0, graph );
+    bft( 0, graph , destination);
+    dft( 0, graph , destination);
+
     cout<<"Press enter to exit.";
     getchar();
     return 0;

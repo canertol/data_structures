@@ -1,9 +1,0 @@
-transcript on
-if {[file exists rtl_work]} {
-	vdel -lib rtl_work -all
-}
-vlib rtl_work
-vmap work rtl_work
-
-vlog -sv -work work +incdir+C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3 {C:/Users/Caner/Documents/GitHub/Course-Projects/EE445/hw3/basic_comp.sv}
-

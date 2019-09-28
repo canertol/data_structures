@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1541890376 source:c:\users\caner\desktop\ee441\hw1\part2\main.cpp
-	<iostream>
-	<stdlib.h>
-	<string>
-	<fstream>
-	<cstdio>
-

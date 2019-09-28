@@ -1,2 +1,0 @@
-module registerfile(clk,we3,ra1,ra2,wa3,wd3,r15,rd1,rd2);
-input clk,

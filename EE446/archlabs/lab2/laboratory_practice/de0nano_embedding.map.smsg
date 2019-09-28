@@ -1,4 +1,0 @@
-Warning (10268): Verilog HDL information at shift_reg.v(7): always construct contains both blocking and non-blocking assignments
-Info (10281): Verilog HDL Declaration information at control_unit.v(6): object "y" differs only in case from object "Y" in the same scope
-Warning (10268): Verilog HDL information at shift_reg_fordivid.v(7): always construct contains both blocking and non-blocking assignments
-Info (10281): Verilog HDL Declaration information at control_unit_v1.v(6): object "y" differs only in case from object "Y" in the same scope

@@ -1,4 +1,0 @@
-Info (10281): Verilog HDL Declaration information at datapath.v(7): object "PC" differs only in case from object "Pc" in the same scope File: C:/Users/mc_fe/Desktop/lab3/datapath.v Line: 7
-Info (10281): Verilog HDL Declaration information at datapath.v(9): object "AluResult" differs only in case from object "ALUResult" in the same scope File: C:/Users/mc_fe/Desktop/lab3/datapath.v Line: 9
-Warning (10273): Verilog HDL warning at controller.v(55): extended using "x" or "z" File: C:/Users/mc_fe/Desktop/lab3/controller.v Line: 55
-Warning (10273): Verilog HDL warning at controller.v(104): extended using "x" or "z" File: C:/Users/mc_fe/Desktop/lab3/controller.v Line: 104

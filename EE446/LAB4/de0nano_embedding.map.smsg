@@ -1,6 +1,0 @@
-Warning (10273): Verilog HDL warning at INST_REG.v(7): extended using "x" or "z" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB4/INST_REG.v Line: 7
-Warning (10273): Verilog HDL warning at EXTEND.v(13): extended using "x" or "z" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB4/EXTEND.v Line: 13
-Warning (10273): Verilog HDL warning at DEC.v(25): extended using "x" or "z" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB4/DEC.v Line: 25
-Warning (10273): Verilog HDL warning at DEC.v(62): extended using "x" or "z" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB4/DEC.v Line: 62
-Warning (10273): Verilog HDL warning at DEC.v(68): extended using "x" or "z" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB4/DEC.v Line: 68
-Warning (10273): Verilog HDL warning at DATA_REG.v(7): extended using "x" or "z" File: C:/Users/Caner/Documents/GitHub/Course-Projects/EE446/LAB4/DATA_REG.v Line: 7
